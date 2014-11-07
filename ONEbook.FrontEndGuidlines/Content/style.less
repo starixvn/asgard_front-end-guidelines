@@ -1,0 +1,111 @@
+﻿@import "variables.less";
+@import "mixins.less";
+
+body {
+	font-family: @font-family;
+	color: @text-color;
+	line-height: @line-height;
+	background-color: @bg-color;
+}
+ a, a:hover, a:focus, a:active,
+ .btn, .btn:hover, .btn:focus, .btn:active, .btn:active:focus {
+	outline: none;
+}
+
+/********************************************************/
+/*					      Header                        */
+/********************************************************/
+
+.header {
+    background-color: @primary-color;
+    height: 60px;
+    padding: 17px 20px;
+    position: fixed;
+    left: 0;
+    right: 0;
+
+    .logo {
+        background: url(img/logo.png) no-repeat;
+        width: 235px;
+        height: 25px;
+        display: inline-block;
+    }
+}
+
+/********************************************************/
+/*					      Content                       */
+/********************************************************/
+
+.content {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.left-panel {
+    width: 230px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: @left-panel-bg;
+    border-right: 1px solid @border-color;
+
+    ul {
+        li {
+            border-bottom: 1px solid @border-color;                        
+            color: @left-panel-color;
+
+            a {
+                color: @left-panel-color;
+                padding: 5px 10px;
+                line-height: 20px;
+                display: block;
+            }
+
+            span {
+                padding: 5px 10px;
+                line-height: 20px;
+                display: block;
+            }
+
+            &.has-child {
+                .sub-menu {
+                    background-color: @left-sub-menu-bg;
+                    border-top: 1px solid @border-color;
+
+                    li {
+                        border-bottom: none;
+
+                        a {
+                            color: @left-sub-menu-color;
+                            &.active {
+                                color: @left-sub-menu-color-active;
+                            }
+                        }
+                    }
+                }                
+            }
+        }
+    }
+}
+
+.right-panel {
+    position: absolute;
+    left: 230px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/********************************************************/
+/*					      Icon                          */
+/********************************************************/
+.icon-left-panel {
+    color: #fff;
+    display: inline-block;
+    margin: 0 20px;
+    top: -6px;
+}
