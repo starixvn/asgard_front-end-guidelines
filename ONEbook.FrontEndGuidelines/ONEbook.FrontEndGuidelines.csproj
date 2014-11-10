@@ -165,6 +165,29 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\HtmlRules.cshtml" />
+    <Content Include="Views\Home\CssRules.cshtml" />
+    <Content Include="Views\Home\JavaScriptRules.cshtml" />
+    <Content Include="Views\Home\Calendar.cshtml" />
+    <Content Include="Views\Home\ContextMenu.cshtml" />
+    <Content Include="Views\Home\Navigation.cshtml" />
+    <Content Include="Views\Home\DropdownList.cshtml" />
+    <Content Include="Views\Home\Tree.cshtml" />
+    <Content Include="Views\Home\Tooltip.cshtml" />
+    <Content Include="Views\Home\Textbox.cshtml" />
+    <Content Include="Views\Home\Checkbox.cshtml" />
+    <Content Include="Views\Home\RadioButton.cshtml" />
+    <Content Include="Views\Home\Button.cshtml" />
+    <Content Include="Views\Home\Chart.cshtml" />
+    <Content Include="Views\Home\CountdownTimer.cshtml" />
+    <Content Include="Views\Home\Switch.cshtml" />
+    <Content Include="Views\Home\Dialog.cshtml" />
+    <Content Include="Views\Home\List.cshtml" />
+    <Content Include="Views\Home\Panel.cshtml" />
+    <Content Include="Views\Home\Tab.cshtml" />
+    <Content Include="Views\Home\MessageBox.cshtml" />
+    <Content Include="Views\Home\ProgressBar.cshtml" />
+    <Content Include="Views\Home\Breadcrumb.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Dictionary<string, string> webControls = ViewBag.WebControls as Dictionary<string, string>;
+    string tabName = (string)ViewBag.TabName;
+    bool isWebControl = ViewBag.IsWebControl != null ? (bool)ViewBag.IsWebControl : false;
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -15,32 +20,24 @@
     <div class="content">
         <div class="left-panel">
             <ul class="list-unstyled">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Css</a></li>
-                <li><a href="#">Javascript</a></li>
+                <li>@Html.ActionLink("Introduction", "Index", "Home", new { @class = tabName == "introduction" ? "active" : string.Empty })</li>
+                <li>@Html.ActionLink("Html Rules", "HtmlRules", "Home", new { @class = tabName == "htmlrules" ? "active" : string.Empty })</li>
+                <li>@Html.ActionLink("CSS Rules", "CssRules", "Home", new { @class = tabName == "cssrules" ? "active" : string.Empty })</li>
+                <li>@Html.ActionLink("JavaScript Rules", "JavaScriptRules", "Home", new { @class = tabName == "javascriptrules" ? "active" : string.Empty })</li>
                 <li class="has-child">
-                    <span>Web controls</span>
+                    <span>Web Controls</span>
                     <ul class="sub-menu list-unstyled">
-                        <li><a href="#">Calendar</a></li>
-                        <li><a href="#">Context menu</a></li>
-                        <li><a href="#">Nav</a></li>
-                        <li><a href="#">Dropdown list</a></li>
-                        <li><a href="#">Tree</a></li>
-                        <li><a href="#">Tooltip</a></li>
-                        <li><a href="#">Textbox</a></li>
-                        <li><a href="#">Checkbox</a></li>
-                        <li><a href="#">Radio button</a></li>
-                        <li><a href="#" class="active">Button</a></li>
-                        <li><a href="#">Chart</a></li>
-                        <li><a href="#">Countdown Timer</a></li>
-                        <li><a href="#">Switch</a></li>
-                        <li><a href="#">Dialog</a></li>
-                        <li><a href="#">List</a></li>
-                        <li><a href="#">Panel</a></li>
-                        <li><a href="#">Tab</a></li>
-                        <li><a href="#">Message box</a></li>
-                        <li><a href="#">Progress</a></li>
-                        <li><a href="#">Breadcrumb</a></li>
+                        @foreach (var control in webControls)
+                        {
+                        <li>
+                            @Html.ActionLink(
+                                     control.Value,
+                                     "WebControl",
+                                     "Home",
+                                      new { tabName = control.Key, viewName = control.Value.Replace(" ", string.Empty) },
+                                     new { @class = tabName == control.Key ? "active" : string.Empty })
+                        </li>
+                        }
                     </ul>
                 </li>
             </ul>
@@ -50,8 +47,15 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <ol class=" breadcrumb cust-breadcrumb">
-                            <li>Web controls</li>
-                            <li><a href="#">Button</a></li>
+                            @if (isWebControl)
+                            {
+                                <li>Web controls</li>
+                                <li><a href="#">@ViewBag.Title</a></li>
+                            }
+                            else
+                            {
+                                <li>@ViewBag.Title</li>
+                            }
                         </ol>
                     </div>
                 </div>
