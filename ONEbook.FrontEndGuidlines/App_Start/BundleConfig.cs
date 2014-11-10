@@ -24,11 +24,8 @@ namespace ONEbook.FrontEndGuidlines
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap32/css/bootstrap.css"));
-
-            // Set EnableOptimizations to false for debugging. For more information,
-            // visit http://go.microsoft.com/fwlink/?LinkId=301862
-            BundleTable.EnableOptimizations = true;
+                      "~/Content/bootstrap32/css/bootstrap.css",
+                      "~/Content/style.less"));
         }
     }
 }
