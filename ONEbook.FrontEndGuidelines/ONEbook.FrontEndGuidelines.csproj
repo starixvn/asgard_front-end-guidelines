@@ -123,12 +123,18 @@
     <Content Include="Content\Bootstrap\CSS\bootstrap-theme.min.css" />
     <Content Include="Content\Bootstrap\CSS\bootstrap.css" />
     <Content Include="Content\Bootstrap\CSS\bootstrap.min.css" />
-    <Content Include="Scripts\Bootstrap\bootstrap.js" />
-    <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
+    <Content Include="Content\MaterialDesign\CSS\material-wfont.css" />
+    <Content Include="Content\MaterialDesign\CSS\material-wfont.min.css" />
+    <Content Include="Content\MaterialDesign\CSS\material.css" />
+    <Content Include="Content\MaterialDesign\CSS\material.min.css" />
+    <Content Include="Content\MaterialDesign\CSS\ripples.min.css" />
+    <Content Include="Content\MaterialDesign\Fonts\LICENSE.txt" />
+    <Content Include="Content\MaterialDesign\Fonts\Material-Design-Icons.svg" />
+    <Content Include="Scripts\Libraries\Bootstrap\bootstrap.js" />
+    <Content Include="Scripts\Libraries\Bootstrap\bootstrap.min.js" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Content\style.less" />
     <Content Include="Content\mixins.less" />
     <Content Include="Content\variables.less" />
@@ -138,21 +144,30 @@
     <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.woff" />
-    <None Include="Scripts\jQuery\jquery-1.11.1.intellisense.js" />
-    <Content Include="Scripts\jQuery\jquery-1.11.1.js" />
-    <Content Include="Scripts\jQuery\jquery-1.11.1.min.js" />
-    <Content Include="Scripts\jQuery\jquery-1.11.1.min.map" />
-    <None Include="Scripts\jQuery\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jQuery\jquery.validate.js" />
-    <Content Include="Scripts\jQuery\jquery.validate.min.js" />
-    <Content Include="Scripts\jQuery\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jQuery\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\Modernizr\modernizr-2.8.3.js" />
-    <Content Include="Scripts\Respond\respond.js" />
-    <Content Include="Scripts\Respond\respond.matchmedia.addListener.js" />
-    <Content Include="Scripts\Respond\respond.matchmedia.addListener.min.js" />
-    <Content Include="Scripts\Respond\respond.min.js" />
-    <Content Include="Scripts\_references.js" />
+    <Content Include="Content\MaterialDesign\Fonts\Material-Design-Icons.eot" />
+    <Content Include="Content\MaterialDesign\Fonts\Material-Design-Icons.ttf" />
+    <Content Include="Content\MaterialDesign\Fonts\Material-Design-Icons.woff" />
+    <None Include="Scripts\Libraries\jQuery\jquery-1.11.1.intellisense.js" />
+    <Content Include="Scripts\Libraries\jQuery\jquery-1.11.1.js" />
+    <Content Include="Scripts\Libraries\jQuery\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\Libraries\jQuery\jquery-1.11.1.min.map" />
+    <None Include="Scripts\Libraries\jQuery\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Libraries\jQuery\jquery.validate.js" />
+    <Content Include="Scripts\Libraries\jQuery\jquery.validate.min.js" />
+    <Content Include="Scripts\Libraries\jQuery\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\Libraries\jQuery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Libraries\MaterialDesign\material.js" />
+    <Content Include="Scripts\Libraries\MaterialDesign\material.min.js" />
+    <Content Include="Scripts\Libraries\MaterialDesign\ripples.js" />
+    <Content Include="Scripts\Libraries\MaterialDesign\ripples.min.js" />
+    <Content Include="Scripts\Libraries\Modernizr\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Libraries\NoUISlider\jquery.nouislider.all.js" />
+    <Content Include="Scripts\Libraries\NoUISlider\jquery.nouislider.js" />
+    <Content Include="Scripts\Libraries\Respond\respond.js" />
+    <Content Include="Scripts\Libraries\Respond\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\Libraries\Respond\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\Libraries\Respond\respond.min.js" />
+    <Content Include="Scripts\Libraries\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -191,7 +206,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\CustomizedControls\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
