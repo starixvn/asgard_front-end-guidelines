@@ -136,7 +136,7 @@ a, a:hover, a:focus, a:active,
 
     .cust-breadcrumb {
         background: none;
-        margin-bottom: 4px;
+        margin: 4px 0;
         padding: 4px 0;
         font-size: @font-size + 2;
 
@@ -152,25 +152,59 @@ a, a:hover, a:focus, a:active,
         .border-radius(2px);
         .box-shadow(1px 1px 1px rgba(#000, 0.1));
 
+        .title {
+            color: @primary-color;
+            font-size: @font-size + 15;
+            margin-top: 5px;
+        }
+
         .block-title {
-            color: #666;
-            font-size: @font-size + 3;
-            border-bottom: 1px solid @border-color;
-            margin-top: 0;
-            padding-bottom: 10px;
+            color: #555;
+            font-size: @font-size + 4;
+            font-family: @font-family;
         }
 
         .txt-class {
             color: #f53292;
         }
 
-        .list-demo {
-            li {
-                padding: 0 2px;
-                margin: 5px 0;
+        .docs-section {
+            .example-section {
+                background-color: #fff;
+                border: 1px solid @border-color;
+                border-width: 1px 1px 0;
+                padding: 15px;
+                .border-radius(3px 3px 0 0);
 
-                .btn {
-                    width: 80px;
+                h2 {
+                    margin: 0;
+                    font-size: @font-size + 4;
+                    font-family: @font-family;
+                    color: #959595;
+                }
+
+                .demo-section {
+                    margin: 5px 0;
+                }
+            }
+
+            .code-section {
+                border: 1px solid @border-color;
+                .border-radius(0 0 3px 3px);
+
+                .nav-tabs {
+                    background-color: #80d6f0;
+                    border: 1px solid #5cbcd9;
+                }
+
+                pre {
+                    background: none;
+                    border: none;
+                    margin: 0;
+                }
+
+                .tab-pane {
+                    padding: 15px;
                 }
             }
         }
@@ -192,115 +226,5 @@ a, a:hover, a:focus, a:active,
     {
         cursor: pointer;
         background-color: #c8c4c4;
-    }
-}
-
-/********************************************************/
-/*                       Button                         */
-/********************************************************/
-.btn {
-    .border-radius(0);
-
-    &.btn-rad {
-        .border-radius(3px);
-    }
-
-    &.btn-primary {
-        background-color: #428bca;
-        color: #fff;
-
-        &.btn-trans {
-            background: none;
-            color: #428bca;
-            border: 1px solid #428bca;
-        }
-    }
-
-    &.btn-success {
-        background-color: #5cb85c;
-        color: #fff;
-
-        &.btn-trans {
-            background: none;
-            color: #5cb85c;
-            border: 1px solid #5cb85c;
-        }
-    }
-
-    &.btn-info {
-        background-color: #5bc0de;
-        color: #fff;
-
-        &.btn-trans {
-            background: none;
-            color: #5bc0de;
-            border: 1px solid #5bc0de;
-        }
-    }
-
-    &.btn-warning {
-        background-color: #f0ad4e;
-        color: #fff;
-
-        &.btn-trans {
-            background: none;
-            color: #f0ad4e;
-            border: 1px solid #f0ad4e;
-        }
-    }
-
-    &.btn-danger {
-        background-color: #d9534f;
-        color: #fff;
-
-        &.btn-trans {
-            background: none;
-            color: #d9534f;
-            border: 1px solid #d9534f;
-        }
-    }
-
-    &.btn-inverse {
-        background-color: #000;
-        color: #fff;
-
-        &.btn-trans {
-            background: none;
-            color: #000;
-            border: 1px solid #000;
-        }
-    }
-
-    &.btn-green {
-        background-color: #37bc9b;
-        color: #fff;
-
-        &.btn-trans {
-            background: none;
-            color: #37bc9b;
-            border: 1px solid #37bc9b;
-        }
-    }
-
-    &.btn-purple {
-        background-color: #7266ba;
-        color: #fff;
-
-        &.btn-trans {
-            background: none;
-            color: #7266ba;
-            border: 1px solid #7266ba;
-        }
-    }
-
-    &.btn-pink {
-        background-color: #f532e5;
-        color: #fff;
-
-        &.btn-trans {
-            background: none;
-            color: #f532e5;
-            border: 1px solid #f532e5;
-        }
     }
 }
