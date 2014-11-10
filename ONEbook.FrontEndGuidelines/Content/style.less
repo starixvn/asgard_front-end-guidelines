@@ -2,21 +2,21 @@
 @import "mixins.less";
 
 body {
-	font-family: @font-family;
-	color: @text-color;
-	line-height: @line-height;
-	background-color: @bg-color;    
+    font-family: @font-family;
+    color: @text-color;
+    line-height: @line-height;
+    background-color: @bg-color;
     font-size: @font-size;
     overflow: none;
 }
 
- a, a:hover, a:focus, a:active,
- .btn, .btn:hover, .btn:focus, .btn:active, .btn:active:focus {
-	outline: none;
+a, a:hover, a:focus, a:active,
+.btn, .btn:hover, .btn:focus, .btn:active, .btn:active:focus {
+    outline: none;
 }
 
 /********************************************************/
-/*					      Header                        */
+/*                        Header                        */
 /********************************************************/
 
 .header {
@@ -29,7 +29,7 @@ body {
     z-index: 100;
 
     .logo {
-        background: url(img/logo.png) no-repeat;
+        background: url(Images/logo.png) no-repeat;
         width: 210px;
         height: 16px;
         display: inline-block;
@@ -37,7 +37,7 @@ body {
 }
 
 /********************************************************/
-/*					      Content                       */
+/*                        Content                       */
 /********************************************************/
 
 .content {
@@ -60,7 +60,7 @@ body {
 
     ul {
         li {
-            border-bottom: 1px dotted @border-color;                        
+            border-bottom: 1px dotted @border-color;
             color: @left-panel-color;
 
             a {
@@ -98,7 +98,7 @@ body {
                             }
                         }
                     }
-                }                
+                }
             }
         }
     }
@@ -137,7 +137,7 @@ body {
             margin-top: 0;
             padding-bottom: 10px;
         }
-        
+
         .txt-class {
             color: #f53292;
         }
@@ -156,7 +156,7 @@ body {
 }
 
 /********************************************************/
-/*					      Icon                          */
+/*                        Icon                          */
 /********************************************************/
 .icon-left-panel {
     color: #fff;
@@ -166,7 +166,7 @@ body {
 }
 
 /********************************************************/
-/*					     Button                         */
+/*                       Button                         */
 /********************************************************/
 .btn {
     .border-radius(0);
@@ -178,67 +178,67 @@ body {
     &.btn-primary {
         background-color: #428bca;
         color: #fff;
-        
+
         &.btn-trans {
             background: none;
             color: #428bca;
             border: 1px solid #428bca;
-        }     
+        }
     }
 
     &.btn-success {
         background-color: #5cb85c;
         color: #fff;
-        
+
         &.btn-trans {
             background: none;
             color: #5cb85c;
             border: 1px solid #5cb85c;
-        }     
+        }
     }
 
     &.btn-info {
         background-color: #5bc0de;
         color: #fff;
-        
+
         &.btn-trans {
             background: none;
             color: #5bc0de;
             border: 1px solid #5bc0de;
-        }     
+        }
     }
 
     &.btn-warning {
         background-color: #f0ad4e;
         color: #fff;
-        
+
         &.btn-trans {
             background: none;
             color: #f0ad4e;
             border: 1px solid #f0ad4e;
-        }     
+        }
     }
 
     &.btn-danger {
         background-color: #d9534f;
         color: #fff;
-        
+
         &.btn-trans {
             background: none;
             color: #d9534f;
             border: 1px solid #d9534f;
-        }     
+        }
     }
 
     &.btn-inverse {
         background-color: #000;
         color: #fff;
-        
+
         &.btn-trans {
             background: none;
             color: #000;
             border: 1px solid #000;
-        }     
+        }
     }
 
     &.btn-green {

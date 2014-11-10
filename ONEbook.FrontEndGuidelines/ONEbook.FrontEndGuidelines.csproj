@@ -111,7 +111,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -120,42 +119,39 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap32\css\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap32\css\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap32\css\bootstrap.css" />
-    <Content Include="Content\bootstrap32\css\bootstrap.min.css" />
-    <Content Include="Content\bootstrap32\js\bootstrap.js" />
-    <Content Include="Content\bootstrap32\js\bootstrap.min.js" />
-    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\Bootstrap\CSS\bootstrap-theme.css" />
+    <Content Include="Content\Bootstrap\CSS\bootstrap-theme.min.css" />
+    <Content Include="Content\Bootstrap\CSS\bootstrap.css" />
+    <Content Include="Content\Bootstrap\CSS\bootstrap.min.css" />
+    <Content Include="Scripts\Bootstrap\bootstrap.js" />
+    <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
+    <Content Include="Content\Images\logo.png" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\style.less" />
     <Content Include="Content\mixins.less" />
     <Content Include="Content\variables.less" />
-    <Content Include="Content\bootstrap32\css\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap32\css\bootstrap.css.map" />
-    <Content Include="Content\bootstrap32\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap32\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\bootstrap32\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\bootstrap32\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="Scripts\jquery-1.11.1.intellisense.js" />
-    <Content Include="Scripts\jquery-1.11.1.js" />
-    <Content Include="Scripts\jquery-1.11.1.min.js" />
-    <Content Include="Scripts\jquery-1.11.1.min.map" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Content\Bootstrap\CSS\bootstrap-theme.css.map" />
+    <Content Include="Content\Bootstrap\CSS\bootstrap.css.map" />
+    <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Scripts\jQuery\jquery-1.11.1.intellisense.js" />
+    <Content Include="Scripts\jQuery\jquery-1.11.1.js" />
+    <Content Include="Scripts\jQuery\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\jQuery\jquery-1.11.1.min.map" />
+    <None Include="Scripts\jQuery\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jQuery\jquery.validate.js" />
+    <Content Include="Scripts\jQuery\jquery.validate.min.js" />
+    <Content Include="Scripts\jQuery\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jQuery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Modernizr\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Respond\respond.js" />
+    <Content Include="Scripts\Respond\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\Respond\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\Respond\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -168,8 +164,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -177,9 +171,6 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
