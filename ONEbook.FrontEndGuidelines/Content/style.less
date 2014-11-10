@@ -68,12 +68,27 @@ a, a:hover, a:focus, a:active,
                 padding: 5px 15px;
                 line-height: 20px;
                 display: block;
+
+                &:hover {
+                    background-color: @left-sub-menu-hover-bg;
+                }
+
+                &.active {
+                    color: @left-sub-menu-color-active;
+                    background-color: @left-sub-menu-hover-bg;
+                    font-weight: bold;
+                }
             }
 
             span {
                 padding: 5px 15px;
                 line-height: 20px;
                 display: block;
+
+                &:hover {
+                    background-color: @left-sub-menu-hover-bg;
+                    cursor: pointer;
+                }
             }
 
             &.has-child {
@@ -90,10 +105,12 @@ a, a:hover, a:focus, a:active,
 
                             &:hover {
                                 color: darken(@left-sub-menu-color, 10%);
+                                background-color: @left-sub-menu-hover-bg;
                             }
 
                             &.active {
                                 color: @left-sub-menu-color-active;
+                                background-color: @left-sub-menu-hover-bg;
                                 font-weight: bold;
                             }
                         }

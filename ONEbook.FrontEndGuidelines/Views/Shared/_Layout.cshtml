@@ -21,13 +21,13 @@
     </header>
     <div class="content">
         <div class="left-panel">
-            <ul class="list-unstyled">
-                <li>@Html.ActionLink("Introduction", "Index", "Home", new { @class = tabName == "introduction" ? "active" : string.Empty })</li>
-                <li>@Html.ActionLink("Html Rules", "HtmlRules", "Home", new { @class = tabName == "htmlrules" ? "active" : string.Empty })</li>
-                <li>@Html.ActionLink("CSS Rules", "CssRules", "Home", new { @class = tabName == "cssrules" ? "active" : string.Empty })</li>
-                <li>@Html.ActionLink("JavaScript Rules", "JavaScriptRules", "Home", new { @class = tabName == "javascriptrules" ? "active" : string.Empty })</li>
+            <ul class="list-unstyled" id="guideLineList">
+                <li>@Html.ActionLink("Introduction", "Index", "Home", new { @class = (tabName == "introduction" ? "active" : string.Empty) + " withripple" })</li>
+                <li>@Html.ActionLink("Html Rules", "HtmlRules", "Home", new { @class = (tabName == "htmlrules" ? "active" : string.Empty) + " withripple" })</li>
+                <li>@Html.ActionLink("CSS Rules", "CssRules", "Home", new { @class = (tabName == "cssrules" ? "active" : string.Empty) + " withripple" })</li>
+                <li>@Html.ActionLink("JavaScript Rules", "JavaScriptRules", "Home", new { @class = (tabName == "javascriptrules" ? "active" : string.Empty) + " withripple" })</li>
                 <li class="has-child">
-                    <span>Web Controls</span>
+                    <span class="withripple">Web Controls</span>
                     <ul class="sub-menu list-unstyled">
                         @foreach (var control in webControls)
                         {
@@ -37,7 +37,7 @@
                                      "WebControl",
                                      "Home",
                                       new { tabName = control.Key, viewName = control.Value.Replace(" ", string.Empty) },
-                                     new { @class = tabName == control.Key ? "active" : string.Empty })
+                                      new { @class = (tabName == control.Key ? "active" : string.Empty) + " withripple" })
                             </li>
                         }
                     </ul>
@@ -70,9 +70,12 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/materialdesign")
+    @Scripts.Render("~/bundle/layoutjs")
     @RenderSection("scripts", required: false)
     <script>
-        $.material.init();
+        $(function () { 
+            $.material.init();
+        });
     </script>
 </body>
 </html>

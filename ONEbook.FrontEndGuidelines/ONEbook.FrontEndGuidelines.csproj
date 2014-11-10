@@ -130,6 +130,7 @@
     <Content Include="Content\MaterialDesign\CSS\ripples.min.css" />
     <Content Include="Content\MaterialDesign\Fonts\LICENSE.txt" />
     <Content Include="Content\MaterialDesign\Fonts\Material-Design-Icons.svg" />
+    <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Layout.js" />
     <Content Include="Scripts\Libraries\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\Libraries\Bootstrap\bootstrap.min.js" />
     <Content Include="Content\Images\logo.png" />
@@ -168,6 +169,7 @@
     <Content Include="Scripts\Libraries\Respond\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\Libraries\Respond\respond.min.js" />
     <Content Include="Scripts\Libraries\_references.js" />
+    <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -208,7 +210,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\CustomizedControls\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
