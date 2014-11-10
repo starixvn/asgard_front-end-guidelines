@@ -121,8 +121,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap32\css\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap32\css\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap32\css\bootstrap.css" />
+    <Content Include="Content\bootstrap32\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap32\js\bootstrap.js" />
+    <Content Include="Content\bootstrap32\js\bootstrap.min.js" />
     <Content Include="Content\img\logo.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -133,6 +137,12 @@
     <Content Include="Content\style.less" />
     <Content Include="Content\mixins.less" />
     <Content Include="Content\variables.less" />
+    <Content Include="Content\bootstrap32\css\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap32\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap32\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap32\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bootstrap32\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bootstrap32\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\jquery-1.11.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.11.1.js" />
     <Content Include="Scripts\jquery-1.11.1.min.js" />
