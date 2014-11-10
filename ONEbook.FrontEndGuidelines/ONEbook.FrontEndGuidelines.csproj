@@ -130,7 +130,6 @@
     <Content Include="Content\MaterialDesign\CSS\ripples.min.css" />
     <Content Include="Content\MaterialDesign\Fonts\LICENSE.txt" />
     <Content Include="Content\MaterialDesign\Fonts\Material-Design-Icons.svg" />
-    <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Layout.js" />
     <Content Include="Scripts\Libraries\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\Libraries\Bootstrap\bootstrap.min.js" />
     <Content Include="Content\Images\logo.png" />
@@ -148,6 +147,7 @@
     <Content Include="Content\MaterialDesign\Fonts\Material-Design-Icons.eot" />
     <Content Include="Content\MaterialDesign\Fonts\Material-Design-Icons.ttf" />
     <Content Include="Content\MaterialDesign\Fonts\Material-Design-Icons.woff" />
+    <Content Include="Content\CustomizedControls\button.less" />
     <None Include="Scripts\Libraries\jQuery\jquery-1.11.1.intellisense.js" />
     <Content Include="Scripts\Libraries\jQuery\jquery-1.11.1.js" />
     <Content Include="Scripts\Libraries\jQuery\jquery-1.11.1.min.js" />
@@ -169,7 +169,6 @@
     <Content Include="Scripts\Libraries\Respond\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\Libraries\Respond\respond.min.js" />
     <Content Include="Scripts\Libraries\_references.js" />
-    <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -208,8 +207,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\CustomizedControls\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
