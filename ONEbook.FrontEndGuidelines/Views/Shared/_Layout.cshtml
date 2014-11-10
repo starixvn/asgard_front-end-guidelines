@@ -17,9 +17,9 @@
 <body>
     <header class="header">
         <a href="#" class="logo"></a>
-        <i class="glyphicon glyphicon-align-justify icon-left-panel"></i>
+        <i class="glyphicon glyphicon-align-justify icon-left-panel withripple" id="toggleMenu"></i>
     </header>
-    <div class="content">
+    <div class="content" id="mainContent">
         <div class="left-panel">
             <ul class="list-unstyled" id="guideLineList">
                 <li>@Html.ActionLink("Introduction", "Index", "Home", new { @class = (tabName == "introduction" ? "active" : string.Empty) + " withripple" })</li>
