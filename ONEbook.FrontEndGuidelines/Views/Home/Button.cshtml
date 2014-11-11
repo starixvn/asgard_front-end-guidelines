@@ -1,6 +1,8 @@
 ﻿@{
     ViewBag.Title = "Button";
 }
+
+
 <div class="col-sm-12">
     <h1 class="title">Overview</h1>
     <p>Use any of the available button classes to quickly create a styled button.</p>
@@ -24,14 +26,110 @@
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
                 <li role="presentation"><a href="#css" role="tab" data-toggle="tab">Css</a></li>
+                    <li role="presentation"><a href="#javascript" role="tab" data-toggle="tab">Javascript</a></li>
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="html">
-                    <pre>&lt;button class="btn btn-default"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-primary"&gt;Default&lt;/button&gt; </br>&lt;button class="btn btn-success"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-info"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-warning"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-danger"&gt;Default&lt;/button&gt;                  
+                        @*<pre class="htmlCode"><code>&lt;button class="btn btn-default"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-primary"&gt;Default&lt;/button&gt; </br>&lt;button class="btn btn-success"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-info"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-warning"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-danger"&gt;Default&lt;/button&gt;
+                            </code></pre>*@
+
+                        <pre class="brush: html">
+                        <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
+                        <li role="presentation"><a href="#css" role="tab" data-toggle="tab">Css</a></li>
+                                </ul>
+                        </pre>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="css">
+                        <pre class="brush: css">
+                                .btn-default,
+                                .btn-primary,
+                                .btn-success,
+                                .btn-info,
+                                .btn-warning,
+                                .btn-danger {
+                                  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+                                  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
+                                          box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
+                                }
+                                .btn-default:active,
+                                .btn-primary:active,
+                                .btn-success:active,
+                                .btn-info:active,
+                                .btn-warning:active,
+                                .btn-danger:active,
+                                .btn-default.active,
+                                .btn-primary.active,
+                                .btn-success.active,
+                                .btn-info.active,
+                                .btn-warning.active,
+                                .btn-danger.active {
+                                  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+                                          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+                                }
+                                .btn:active,
+                                .btn.active {
+                                  background-image: none;
+                                }
+                                .btn-default {
+                                  text-shadow: 0 1px 0 #fff;
+                                  background-image: -webkit-linear-gradient(top, #fff 0%, #e0e0e0 100%);
+                                  background-image:      -o-linear-gradient(top, #fff 0%, #e0e0e0 100%);
+                                  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e0e0e0));
+                                  background-image:         linear-gradient(to bottom, #fff 0%, #e0e0e0 100%);
+                                  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
+                                  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+                                  background-repeat: repeat-x;
+                                  border-color: #dbdbdb;
+                                  border-color: #ccc;
+                                }
+                        </pre>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="javascript">
+                        <pre class="brush: js">
+                            ONEbook.FrontEndGuidelines.Layout = (function ($) {
+                                    'use strict';
+                                    var me = {
+                                        cachedElements: {
+                                            menuHasChildList: null,
+                                            toggleMenu: null,
+                                            leftContent: null,
+                                            rightContent: null
+                                        },
+                                        init: function () {
+                                            me.cachedElements.menuHasChildList = $('#guideLineList .menu-parent-text');
+                                            me.cachedElements.toggleMenu = $('#toggleMenu');
+                                            me.cachedElements.leftContent = $('#mainContent .left-panel');
+                                            me.cachedElements.rightContent = $('#mainContent .right-panel');
+                                            me.registerEvents();
+                                        },
+                                        registerEvents: function () {
+                                            me.cachedElements.menuHasChildList.click(me.parentClick);
+                                            me.cachedElements.toggleMenu.click(me.toggleMenu);
+                                        },
+                                        parentClick: function () {
+                                            var $this = $(this);
+                                            $this.next().toggle(200);
+                                        },
+                                        toggleMenu: function () {
+                                            var $this = $(this);
+                                            if ($this.hasClass('menu-hide')) {
+                                                $this.removeClass('menu-hide');
+                                                me.cachedElements.leftContent.show(100);
+                                                me.cachedElements.rightContent.removeClass('hide-content');
+                                            }
+                                            else {
+                                                $this.addClass('menu-hide')
+                                                me.cachedElements.leftContent.hide(100);
+                                                me.cachedElements.rightContent.addClass('hide-content');
+                                            }
+                                        }
+                                    };
+                                    return me;
+                                }) (jQuery);
                         </pre>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="css">Css</div>
             </div>
         </div>
     </div>
@@ -84,16 +182,22 @@
         <div class="code-section">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
-                <li role="presentation"><a href="#css" role="tab" data-toggle="tab">Css</a></li>
+                    <li role="presentation" class="active"><a href="#html1" role="tab" data-toggle="tab">Html</a></li>
+                    <li role="presentation"><a href="#css1" role="tab" data-toggle="tab">Css</a></li>
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="html">
-                    <pre>&lt;button class="btn btn-default"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-primary"&gt;Default&lt;/button&gt; </br>&lt;button class="btn btn-success"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-info"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-warning"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-danger"&gt;Default&lt;/button&gt;                  
+                    <div role="tabpanel" class="tab-pane active" id="html1">
+                        <pre class="brush: html">&lt;button class="btn btn-default"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-primary"&gt;Default&lt;/button&gt; </br>&lt;button class="btn btn-success"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-info"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-warning"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-danger"&gt;Default&lt;/button&gt;                  
                         </pre>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="css">Css</div>
+                    <div role="tabpanel" class="tab-pane" id="css1">
+                        <pre class="brush: css">.btn-default:hover,
+                        .btn-default:focus {
+                        background-color: #e0e0e0;
+                        background-position: 0 -15px;
+                        }</pre>
+                    </div>
             </div>
         </div>
     </div>

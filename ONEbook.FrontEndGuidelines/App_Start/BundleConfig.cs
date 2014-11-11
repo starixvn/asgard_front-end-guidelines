@@ -42,9 +42,16 @@ namespace ONEbook.FrontEndGuidelines
                       "~/Scripts/Libraries/MaterialDesign/ripples.js",
                       "~/Scripts/Libraries/NoUISlider/jquery.nouislider.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/highlightjs").Include(
+                    "~/Scripts/Libraries/CodeHighlight/shCore.js",
+                    "~/Scripts/Libraries/CodeHighlight/shBrushCss.js",
+                    "~/Scripts/Libraries/CodeHighlight/shBrushJScript.js",
+                    "~/Scripts/Libraries/CodeHighlight/shBrushXml.js"
+                ));
+
             bundles.Add(new ScriptBundle("~/bundles/layoutjs").Include(
                     "~/Scripts/Home/ONEbook.FrontEndGuidelines.js",
-                      "~/Scripts/Home/ONEbook.FrontEndGuidelines.Layout.js"
+                    "~/Scripts/Home/ONEbook.FrontEndGuidelines.Layout.js"
                 ));
 
 
@@ -57,6 +64,10 @@ namespace ONEbook.FrontEndGuidelines
 
             bundles.Add(new StyleBundle("~/Content/style").Include(
                       "~/Content/style.less"));
+
+            bundles.Add(new StyleBundle("~/Content/highlightcss").Include(
+                     "~/Scripts/Libraries/CodeHighlight/Styles/shCore.css",
+                     "~/Scripts/Libraries/CodeHighlight/Styles/shCoreMidnight.css"));
 
         }
     }

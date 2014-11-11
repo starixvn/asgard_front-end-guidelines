@@ -13,6 +13,8 @@
     @Styles.Render("~/Content/materialdesign")
     @Styles.Render("~/Content/style")
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/highlightcss")
+    
 </head>
 <body>
     <header class="header">
@@ -81,11 +83,13 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/materialdesign")
     @Scripts.Render("~/bundles/layoutjs")
+    @Scripts.Render("~/bundles/highlightjs")
     @RenderSection("scripts", required: false)
     <script>
         $(function () {
             $.material.init();
         });
+        SyntaxHighlighter.all();
     </script>
 </body>
 </html>
