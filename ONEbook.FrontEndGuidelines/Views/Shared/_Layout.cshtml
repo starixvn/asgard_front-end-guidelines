@@ -27,14 +27,15 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Introduction</a></li>
-                        <li><a href="#">Rule</a></li>
-                        <li class="active"><a href="#">Web Controls</a></li>
+                        <li class="@(tabName == "introduction" ? "active" : string.Empty)">@Html.ActionLink("Introduction", "Index", "Home")</li>
+                        <li class="@(tabName == "htmlrules" ? "active" : string.Empty)">@Html.ActionLink("Html Rules", "HtmlRules", "Home")</li>
+                        <li class="@(tabName == "cssrules" ? "active" : string.Empty)">@Html.ActionLink("CSS Rules", "CssRules", "Home")</li>
+                        <li class="@(tabName == "javascriptrules" ? "active" : string.Empty)">@Html.ActionLink("JavaScript Rules", "JavaScriptRules", "Home")</li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        
+
         <i class="mdi-image-dehaze icon-left-panel withripple" id="toggleMenu"></i>
     </header>
     <div class="content" id="mainContent">
@@ -52,29 +53,6 @@
                     </li>
                 }
             </ul>
-
-            @*<ul class="list-unstyled" id="guideLineList">
-                <li>@Html.ActionLink("Introduction", "Index", "Home", new { @class = (tabName == "introduction" ? "active" : string.Empty) + " withripple" })</li>
-                <li>@Html.ActionLink("Html Rules", "HtmlRules", "Home", new { @class = (tabName == "htmlrules" ? "active" : string.Empty) + " withripple" })</li>
-                <li>@Html.ActionLink("CSS Rules", "CssRules", "Home", new { @class = (tabName == "cssrules" ? "active" : string.Empty) + " withripple" })</li>
-                <li>@Html.ActionLink("JavaScript Rules", "JavaScriptRules", "Home", new { @class = (tabName == "javascriptrules" ? "active" : string.Empty) + " withripple" })</li>
-                <li class="has-child">
-                    <span class="withripple menu-parent-text">Web Controls</span>
-                    <ul class="sub-menu list-unstyled">
-                        @foreach (var control in webControls)
-                        {
-                            <li>
-                                @Html.ActionLink(
-                                     control.Value,
-                                     "WebControl",
-                                     "Home",
-                                      new { tabName = control.Key, viewName = control.Value.Replace(" ", string.Empty) },
-                                      new { @class = (tabName == control.Key ? "active" : string.Empty) + " withripple" })
-                            </li>
-                        }
-                    </ul>
-                </li>
-            </ul>*@
         </div>
         <div class="right-panel">
             <div class="container-fluid">
@@ -105,7 +83,7 @@
     @Scripts.Render("~/bundles/layoutjs")
     @RenderSection("scripts", required: false)
     <script>
-        $(function () { 
+        $(function () {
             $.material.init();
         });
     </script>
