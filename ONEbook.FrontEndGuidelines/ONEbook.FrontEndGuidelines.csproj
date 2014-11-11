@@ -159,6 +159,7 @@
     <Content Include="Scripts\Libraries\CodeHighlight\shCore.js" />
     <Content Include="Scripts\Libraries\CodeHighlight\shLegacy.js" />
     <Content Include="Scripts\Libraries\CodeHighlight\Styles\shCore.css" />
+    <Content Include="Scripts\Libraries\CodeHighlight\Styles\shCoreDefault.css" />
     <Content Include="Scripts\Libraries\CodeHighlight\Styles\shCoreDjango.css" />
     <Content Include="Scripts\Libraries\CodeHighlight\Styles\shCoreEmacs.css" />
     <Content Include="Scripts\Libraries\CodeHighlight\Styles\shCoreFadeToGrey.css" />
