@@ -22,7 +22,7 @@ a, a:hover, a:focus, a:active,
 .header {
     background-color: @primary-color;
     height: 50px;
-    padding: 15px;
+    padding: 13px 15px;
     position: fixed;
     left: 0;
     right: 0;
@@ -71,6 +71,7 @@ a, a:hover, a:focus, a:active,
 
                 &:hover {
                     background-color: @left-sub-menu-hover-bg;
+                    text-decoration: none;
                 }
 
                 &.active {
@@ -101,7 +102,7 @@ a, a:hover, a:focus, a:active,
 
                         a {
                             color: @left-sub-menu-color;
-                            padding: 3px 15px;
+                            padding: 5px 15px;
 
                             &:hover {
                                 color: darken(@left-sub-menu-color, 10%);
@@ -169,6 +170,8 @@ a, a:hover, a:focus, a:active,
         }
 
         .docs-section {
+            margin-bottom: 30px;
+
             .example-section {
                 background-color: #fff;
                 border: 1px solid @border-color;
@@ -218,13 +221,12 @@ a, a:hover, a:focus, a:active,
     color: #fff;
     display: inline-block;
     margin: 0 2px;
-    top: -2px;
+    top: -1px;
     padding: 6px 6px;
     font-size:16px;
 
-    &:hover
-    {
+    &:hover {
         cursor: pointer;
-        background-color: #c8c4c4;
+        background-color: #08a1d0;
     }
 }
