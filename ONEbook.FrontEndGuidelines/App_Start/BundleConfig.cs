@@ -23,7 +23,8 @@ namespace ONEbook.FrontEndGuidelines
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/Libraries/jQuery/jquery-{version}.js"));
+                        "~/Scripts/Libraries/jQuery/jquery-{version}.js",
+                        "~/Scripts/Libraries/jQuery/jquery.cookie.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/Libraries/jQuery/jquery.validate*"));

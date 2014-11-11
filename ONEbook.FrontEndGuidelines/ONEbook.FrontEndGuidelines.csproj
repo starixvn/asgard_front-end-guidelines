@@ -171,6 +171,7 @@
     <Content Include="Scripts\Libraries\jQuery\jquery-1.11.1.min.js" />
     <Content Include="Scripts\Libraries\jQuery\jquery-1.11.1.min.map" />
     <None Include="Scripts\Libraries\jQuery\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Libraries\jQuery\jquery.cookie.js" />
     <Content Include="Scripts\Libraries\jQuery\jquery.validate.js" />
     <Content Include="Scripts\Libraries\jQuery\jquery.validate.min.js" />
     <Content Include="Scripts\Libraries\jQuery\jquery.validate.unobtrusive.js" />

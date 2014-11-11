@@ -7,26 +7,25 @@ if (ONEbook.FrontEndGuidelines) {
     ONEbook.FrontEndGuidelines.Layout = (function ($) {
         'use strict';
         var me = {
+            toggleCookieName: 'ONEbook.FrontEndGuidelines.Layout.toggleCookieName',
             cachedElements: {
-                menuHasChildList: null,
                 toggleMenu: null,
                 leftContent: null,
                 rightContent: null
             },
             init: function () {
-                me.cachedElements.menuHasChildList = $('#guideLineList .menu-parent-text');
                 me.cachedElements.toggleMenu = $('#toggleMenu');
                 me.cachedElements.leftContent = $('#mainContent .left-panel');
                 me.cachedElements.rightContent = $('#mainContent .right-panel');
+                if ($.cookie(me.toggleCookieName) === 'hide') {
+                    me.cachedElements.toggleMenu.addClass('menu-hide');
+                    me.cachedElements.leftContent.hide(100);
+                    me.cachedElements.rightContent.addClass('hide-content');
+                }
                 me.registerEvents();
             },
             registerEvents: function () {
-                me.cachedElements.menuHasChildList.click(me.parentClick);
                 me.cachedElements.toggleMenu.click(me.toggleMenu);
-            },
-            parentClick: function () {
-                var $this = $(this);
-                $this.next().toggle(200);
             },
             toggleMenu: function () {
                 var $this = $(this);
@@ -34,11 +33,13 @@ if (ONEbook.FrontEndGuidelines) {
                     $this.removeClass('menu-hide');
                     me.cachedElements.leftContent.show(100);
                     me.cachedElements.rightContent.removeClass('hide-content');
+                    $.cookie(me.toggleCookieName, 'show', { path: '/' });
                 }
                 else {
-                    $this.addClass('menu-hide')
+                    $this.addClass('menu-hide');
                     me.cachedElements.leftContent.hide(100);
                     me.cachedElements.rightContent.addClass('hide-content');
+                    $.cookie(me.toggleCookieName, 'hide', { path: '/' });
                 }
             }
         };
