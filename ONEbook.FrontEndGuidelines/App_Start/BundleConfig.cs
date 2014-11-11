@@ -67,7 +67,7 @@ namespace ONEbook.FrontEndGuidelines
 
             bundles.Add(new StyleBundle("~/Content/highlightcss").Include(
                      "~/Scripts/Libraries/CodeHighlight/Styles/shCore.css",
-                     "~/Scripts/Libraries/CodeHighlight/Styles/shCoreEclipse.css"));
+                     "~/Scripts/Libraries/CodeHighlight/Styles/shCoreDefault.css"));
 
         }
     }
