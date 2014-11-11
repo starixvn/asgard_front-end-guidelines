@@ -161,6 +161,7 @@
     <Content Include="Scripts\Libraries\CodeHighlight\Styles\shCore.css" />
     <Content Include="Scripts\Libraries\CodeHighlight\Styles\shCoreDefault.css" />
     <Content Include="Scripts\Libraries\CodeHighlight\Styles\shCoreDjango.css" />
+    <Content Include="Scripts\Libraries\CodeHighlight\Styles\shCoreEclipse.css" />
     <Content Include="Scripts\Libraries\CodeHighlight\Styles\shCoreEmacs.css" />
     <Content Include="Scripts\Libraries\CodeHighlight\Styles\shCoreFadeToGrey.css" />
     <Content Include="Scripts\Libraries\CodeHighlight\Styles\shCoreMDUltra.css" />
