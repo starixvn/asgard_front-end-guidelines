@@ -85,7 +85,20 @@
 }
 .syntaxhighlighter table td.code .container {
   position: relative !important;
+  display: block !important;
+
 }
+
+.syntaxhighlighter table td.code .container::after
+{
+    display: block !important;
+}
+
+.syntaxhighlighter table td.code .container::before
+{
+    display: block !important;
+}
+
 .syntaxhighlighter table td.code .container textarea {
   box-sizing: border-box !important;
   position: absolute !important;
