@@ -9,6 +9,7 @@
 
 namespace ONEbook.FrontEndGuidelines.Controllers
 {
+    using System.Linq;
     using System.Collections.Generic;
     using System.Web.Mvc;
 
@@ -49,8 +50,12 @@ namespace ONEbook.FrontEndGuidelines.Controllers
             this.webControls.Add("messagebox", "Message Box");
             this.webControls.Add("progressbar", "Progress Bar");
             this.webControls.Add("breadcrumb", "Breadcrumb");
+            this.webControls.Add("blockui", "Block UI");
+            this.webControls.Add("form", "Form");
 
-            ViewBag.WebControls = this.webControls;
+            ViewBag.WebControls = this.webControls
+                .OrderBy(control => control.Key)
+                .ToDictionary(item => item.Key, item => item.Value);
         }
 
         /// <summary>

@@ -42,7 +42,7 @@ namespace ONEbook.FrontEndGuidelines
                       "~/Scripts/Libraries/MaterialDesign/ripples.js",
                       "~/Scripts/Libraries/NoUISlider/jquery.nouislider.js"));
 
-            bundles.Add(new ScriptBundle("~/bundle/layoutjs").Include(
+            bundles.Add(new ScriptBundle("~/bundles/layoutjs").Include(
                     "~/Scripts/Home/ONEbook.FrontEndGuidelines.js",
                       "~/Scripts/Home/ONEbook.FrontEndGuidelines.Layout.js"
                 ));
