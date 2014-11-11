@@ -27,7 +27,7 @@
                 <li>@Html.ActionLink("CSS Rules", "CssRules", "Home", new { @class = (tabName == "cssrules" ? "active" : string.Empty) + " withripple" })</li>
                 <li>@Html.ActionLink("JavaScript Rules", "JavaScriptRules", "Home", new { @class = (tabName == "javascriptrules" ? "active" : string.Empty) + " withripple" })</li>
                 <li class="has-child">
-                    <span class="withripple">Web Controls</span>
+                    <span class="withripple menu-parent-text">Web Controls</span>
                     <ul class="sub-menu list-unstyled">
                         @foreach (var control in webControls)
                         {

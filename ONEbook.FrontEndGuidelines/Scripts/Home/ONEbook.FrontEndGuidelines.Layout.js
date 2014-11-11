@@ -14,19 +14,19 @@ if (ONEbook.FrontEndGuidelines) {
                 rightContent: null
             },
             init: function () {
-                this.cachedElements.menuHasChildList = $('#guideLineList .has-child');
-                this.cachedElements.toggleMenu = $('#toggleMenu');
-                this.cachedElements.leftContent = $('#mainContent .left-panel');
-                this.cachedElements.rightContent = $('#mainContent .right-panel');
-                this.registerEvents();
+                me.cachedElements.menuHasChildList = $('#guideLineList .menu-parent-text');
+                me.cachedElements.toggleMenu = $('#toggleMenu');
+                me.cachedElements.leftContent = $('#mainContent .left-panel');
+                me.cachedElements.rightContent = $('#mainContent .right-panel');
+                me.registerEvents();
             },
             registerEvents: function () {
-                this.cachedElements.menuHasChildList.click(this.parentClick);
-                this.cachedElements.toggleMenu.click(this.toggleMenu);
+                me.cachedElements.menuHasChildList.click(me.parentClick);
+                me.cachedElements.toggleMenu.click(me.toggleMenu);
             },
             parentClick: function () {
                 var $this = $(this);
-                $this.find('.sub-menu').toggle(200);
+                $this.next().toggle(200);
             },
             toggleMenu: function () {
                 var $this = $(this);
