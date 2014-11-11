@@ -2,7 +2,6 @@
     ViewBag.Title = "Button";
 }
 
-
 <div class="col-sm-12">
     <p>Use any of the available button classes to quickly create a styled button.</p>
     <!-- Default buttons -->
@@ -41,7 +40,7 @@
     </div>
     <!-- Flat buttons -->
     <h2 class="sub-title">Flat button</h2>
-    <p>Just add <span class="txt-class">".btn-flat"</span> class to the button</p>
+    <p>Just add <span class="txt-class">.btn-flat</span> class</p>
     <div class="docs-section">
         <div class="example-section">
             <h2>Example</h2>
@@ -58,13 +57,18 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
-                <li role="presentation"><a href="#css" role="tab" data-toggle="tab">Css</a></li>
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="html">
-                    <pre>&lt;button class="btn btn-default"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-primary"&gt;Default&lt;/button&gt; </br>&lt;button class="btn btn-success"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-info"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-warning"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-danger"&gt;Default&lt;/button&gt;                  
-                        </pre>
+                    <pre class="brush: html">
+                    <button class="btn btn-default btn-flat">Default</button>
+                    <button class="btn btn-primary btn-flat">Primary</button>
+                    <button class="btn btn-success btn-flat">Success</button>
+                    <button class="btn btn-info btn-flat">Info</button>
+                    <button class="btn btn-warning btn-flat">Warning</button>
+                    <button class="btn btn-danger btn-flat">Danger</button>
+                    </pre>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="css">Css</div>
             </div>
@@ -72,7 +76,7 @@
     </div>
     <!-- Disabled buttons -->
     <h2 class="sub-title">Disabled button</h2>
-    <p>Just add <span class="txt-class">".disabled"</span> class to the button</p>
+    <p>Just add <span class="txt-class">.disabled</span> class</p>
     <div class="docs-section">
         <div class="example-section">
             <h2>Example</h2>
@@ -88,28 +92,26 @@
         <div class="code-section">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#html1" role="tab" data-toggle="tab">Html</a></li>
-                <li role="presentation"><a href="#css1" role="tab" data-toggle="tab">Css</a></li>
+                <li role="presentation" class="active"><a href="#html2" role="tab" data-toggle="tab">Html</a></li>
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="html1">
-                    <pre class="brush: html">&lt;button class="btn btn-default"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-primary"&gt;Default&lt;/button&gt; </br>&lt;button class="btn btn-success"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-info"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-warning"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-danger"&gt;Default&lt;/button&gt;                  
-                        </pre>
-                </div>
-                <div role="tabpanel" class="tab-pane" id="css1">
-                    <pre class="brush: css">.btn-default:hover,
-                        .btn-default:focus {
-                        background-color: #e0e0e0;
-                        background-position: 0 -15px;
-                        }</pre>
+                <div role="tabpanel" class="tab-pane active" id="html2">
+                    <pre class="brush: html">
+                        <button class="btn btn-default disabled">Default</button>
+                        <button class="btn btn-primary disabled">Primary</button>
+                        <button class="btn btn-success disabled">Success</button>
+                        <button class="btn btn-info disabled">Info</button>
+                        <button class="btn btn-warning disabled">Warning</button>
+                        <button class="btn btn-danger disabled">Danger</button>
+                    </pre>
                 </div>
             </div>
         </div>
     </div>
     <!-- Button with dropdown -->
     <h2 class="sub-title">Button with dropdown</h2>
-    <p>Use <span class="txt-class">".btn-group"</span> combine with <span class="txt-class">".dropdown-menu"</span> class to the button</p>
+    <p>Combine <span class="txt-class">.btn-group</span> class and <span class="txt-class">.dropdown-menu</span> class to create the button</p>
     <div class="docs-section">
         <div class="example-section">
             <h2>Example</h2>
@@ -185,14 +187,79 @@
         <div class="code-section">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
-                <li role="presentation"><a href="#css" role="tab" data-toggle="tab">Css</a></li>
+                <li role="presentation" class="active"><a href="#html3" role="tab" data-toggle="tab">Html</a></li>
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="html">
-                    <pre>&lt;button class="btn btn-default"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-primary"&gt;Default&lt;/button&gt; </br>&lt;button class="btn btn-success"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-info"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-warning"&gt;Default&lt;/button&gt;</br>&lt;button class="btn btn-danger"&gt;Default&lt;/button&gt;                  
-                        </pre>
+                <div role="tabpanel" class="tab-pane active" id="html3">
+                    <pre class="brush: html">
+                    <div class="btn-group">
+                    <a class="btn btn-default withripple" href="javascript:void(0)">Default<div class="ripple-wrapper"></div></a>
+                    <a data-toggle="dropdown" class="btn btn-default dropdown-toggle withripple" href="javascript:void(0)"><span class="caret"></span><div class="ripple-wrapper"></div></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)">Action</a></li>
+                    <li><a href="javascript:void(0)">Another action</a></li>
+                    <li><a href="javascript:void(0)">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="javascript:void(0)">Separated link</a></li>
+                            </ul>
+                        </div>
+                    <div class="btn-group">
+                    <a class="btn btn-primary withripple" href="javascript:void(0)">Primary<div class="ripple-wrapper"></div></a>
+                    <a data-toggle="dropdown" class="btn btn-primary dropdown-toggle withripple" href="javascript:void(0)"><span class="caret"></span><div class="ripple-wrapper"></div></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)">Action</a></li>
+                    <li><a href="javascript:void(0)">Another action</a></li>
+                    <li><a href="javascript:void(0)">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="javascript:void(0)">Separated link</a></li>
+                            </ul>
+                        </div>
+                    <div class="btn-group">
+                    <a class="btn btn-success withripple" href="javascript:void(0)">Success<div class="ripple-wrapper"></div></a>
+                    <a data-toggle="dropdown" class="btn btn-success dropdown-toggle" href="javascript:void(0)"><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)">Action</a></li>
+                    <li><a href="javascript:void(0)">Another action</a></li>
+                    <li><a href="javascript:void(0)">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="javascript:void(0)">Separated link</a></li>
+                            </ul>
+                        </div>
+                    <div class="btn-group">
+                    <a class="btn btn-info" href="javascript:void(0)">Info</a>
+                    <a data-toggle="dropdown" class="btn btn-info dropdown-toggle" href="javascript:void(0)"><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)">Action</a></li>
+                    <li><a href="javascript:void(0)">Another action</a></li>
+                    <li><a href="javascript:void(0)">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="javascript:void(0)">Separated link</a></li>
+                            </ul>
+                        </div>
+                    <div class="btn-group">
+                    <a class="btn btn-warning withripple" href="javascript:void(0)">Warning<div class="ripple-wrapper"></div></a>
+                    <a data-toggle="dropdown" class="btn btn-warning dropdown-toggle withripple" href="javascript:void(0)"><span class="caret"></span><div class="ripple-wrapper"></div></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)">Action</a></li>
+                    <li><a href="javascript:void(0)">Another action</a></li>
+                    <li><a href="javascript:void(0)">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="javascript:void(0)">Separated link</a></li>
+                            </ul>
+                        </div>
+                    <div class="btn-group">
+                    <a class="btn btn-danger withripple" href="javascript:void(0)">Danger<div class="ripple-wrapper"></div></a>
+                    <a data-toggle="dropdown" class="btn btn-danger dropdown-toggle" href="javascript:void(0)"><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)">Action</a></li>
+                    <li><a href="javascript:void(0)">Another action</a></li>
+                    <li><a href="javascript:void(0)">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="javascript:void(0)">Separated link</a></li>
+                            </ul>
+                        </div>
+                    </pre>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="css">Css</div>
             </div>
@@ -200,8 +267,7 @@
     </div>
     <!-- Grouped buttons -->
     <h2 class="sub-title">Grouped button</h2>
-    <p>Use <span class="txt-class">".btn-group"</span> class to the button for display horizontal.</p>
-    <p>Use <span class="txt-class">".btn-group-vertical"</span> class to the button for display vertical.</p>
+    <p>Use <span class="txt-class">".btn-group"</span> class if user want to display horizontal and use <span class="txt-class">".btn-group-vertical"</span> class if user want to display vertical.</p>
     <div class="docs-section">
         <div class="example-section">
             <h2>Example</h2>
