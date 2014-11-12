@@ -123,6 +123,10 @@
     <Content Include="Content\Bootstrap\CSS\bootstrap-theme.min.css" />
     <Content Include="Content\Bootstrap\CSS\bootstrap.css" />
     <Content Include="Content\Bootstrap\CSS\bootstrap.min.css" />
+    <Content Include="Content\DropdownList\Select2\select2-bootstrap.css" />
+    <Content Include="Content\DropdownList\Select2\select2-spinner.gif" />
+    <Content Include="Content\DropdownList\Select2\select2.css" />
+    <Content Include="Content\DropdownList\Select2\select2.png" />
     <Content Include="Content\MaterialDesign\CSS\material-wfont.css" />
     <Content Include="Content\MaterialDesign\CSS\material-wfont.min.css" />
     <Content Include="Content\MaterialDesign\CSS\material.css" />
@@ -191,6 +195,16 @@
     <Content Include="Scripts\Libraries\Respond\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\Libraries\Respond\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\Libraries\Respond\respond.min.js" />
+    <Content Include="Scripts\Libraries\DropdownList\Select2\select2.js" />
+    <Content Include="Scripts\Libraries\DropdownList\Select2\select2.min.js" />
+    <Content Include="Scripts\Libraries\DropdownList\Select2\select2_locale_el.js" />
+    <Content Include="Scripts\Libraries\DropdownList\Select2\select2_locale_ja.js" />
+    <Content Include="Scripts\Libraries\DropdownList\Select2\select2_locale_ko.js" />
+    <Content Include="Scripts\Libraries\DropdownList\Select2\select2_locale_th.js" />
+    <Content Include="Scripts\Libraries\DropdownList\Select2\select2_locale_uk.js" />
+    <Content Include="Scripts\Libraries\DropdownList\Select2\select2_locale_vi.js" />
+    <Content Include="Scripts\Libraries\DropdownList\Select2\select2_locale_zh-CN.js" />
+    <Content Include="Scripts\Libraries\DropdownList\Select2\select2_locale_zh-TW.js" />
     <Content Include="Scripts\Libraries\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

@@ -86,6 +86,13 @@ namespace ONEbook.FrontEndGuidelines
         /// <param name="bundles">The bundle collections.</param>
         private static void RegisterSitesBundles(BundleCollection bundles)
         {
+            //// Bundle for Dropdown List
+            bundles.Add(new ScriptBundle("~/bundles/controls/js/dropdownlist").Include(
+                "~/Scripts/Libraries/DropdownList/Select2/select2.js"));
+
+            bundles.Add(new StyleBundle("~/bundles/controls/css/dropdownlist").Include(
+                "~/Content/DropdownList/Select2/select2.css",
+                "~/Content/DropdownList/Select2/select2-bootstrap.css"));
         }
     }
 }

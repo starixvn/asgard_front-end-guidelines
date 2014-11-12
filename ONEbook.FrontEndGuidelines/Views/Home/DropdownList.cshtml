@@ -2,6 +2,57 @@
     ViewBag.Title = "Dropdown List";
 }
 
+@section css
+{
+    @Styles.Render("~/bundles/controls/css/dropdownlist")
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/controls/js/dropdownlist")
+    <script type="text/javascript">
+        $(function () {
+            $('#defaultSelect').select2();
+        });
+    </script>
+}
+
 <div class="col-sm-12">
     <p>Support select single or multiple items from list item.</p>
+
+    <!-- Default dropdownlist -->
+    <h2 class="sub-title">Default d</h2>
+    <p>This is the basic set of button</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <select id="defaultSelect">
+                    <option value="AL" selected>Alabama</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#javascript" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html">
+                    <pre class="brush: html">
+                    <div>aaaa</div>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript">
+                    <pre class="brush: javascript">
+                        var demo = "";
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
