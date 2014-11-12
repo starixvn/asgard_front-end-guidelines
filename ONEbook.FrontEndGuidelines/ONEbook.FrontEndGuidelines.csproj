@@ -127,6 +127,7 @@
     <Content Include="Content\DropdownList\Select2\select2-spinner.gif" />
     <Content Include="Content\DropdownList\Select2\select2.css" />
     <Content Include="Content\DropdownList\Select2\select2.png" />
+    <Content Include="Content\DropdownList\Select2\select2x2.png" />
     <Content Include="Content\MaterialDesign\CSS\material-wfont.css" />
     <Content Include="Content\MaterialDesign\CSS\material-wfont.min.css" />
     <Content Include="Content\MaterialDesign\CSS\material.css" />
