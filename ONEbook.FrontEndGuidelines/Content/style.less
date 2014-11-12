@@ -140,7 +140,7 @@ a, a:hover, a:focus, a:active,
 
     .docs-section {
         margin: 15px 0 30px;
-        position:relative;
+        position: relative;
 
         .example-section {
             background-color: @example-section-bg;
@@ -187,8 +187,7 @@ a, a:hover, a:focus, a:active,
             }
         }
 
-        .view-source 
-        {
+        .view-source {
             position: absolute;
             top: 0;
             right: 0;
@@ -196,6 +195,23 @@ a, a:hover, a:focus, a:active,
             font-weight: bold;
             padding: 5px 10px;
             margin-top: 0px;
+        }
+    }
+
+    .rule-section {
+        .example-code {
+            border: 1px solid @border-color;
+            .border-radius(3px);
+
+            pre {
+                background: none;
+                border: none;
+                margin: 0;
+            }
+        }
+
+        &.last {
+            margin-bottom: 10px;
         }
     }
 }
