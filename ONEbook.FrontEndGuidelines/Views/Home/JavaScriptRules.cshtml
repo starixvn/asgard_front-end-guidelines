@@ -1,3 +1,72 @@
 ﻿@{
     ViewBag.Title = "JavaScript Rules";
 }
+<div class="col-sm-12">
+    <div class="rule-section">
+        <h2 class="sub-title">All code must pass the rules of jsHint</h2>
+        <p>jsHint will ensure that your JavaScript code follows some coding conventions and standards to meet the expected quality.</p>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Using namespacing and object creation patterns in your code</h2>
+        <p>
+            There are some reasons that you should apply namespacing pattern in your code:
+            <ul>
+                <li>Help to avoid collisions with other objects or variables in the global namespace</li>
+                <li>You can declare your object in local scope.</li>
+                <li>Result in nearly the same experience with one when coding with C#</li>
+            </ul>
+            <br />
+            In the following code, we use a library named <code>namespace</code> to register our class to a specific namespace.
+        </p>
+        <div class="example-code">
+            <pre class="text-success">
+/* Recommended */
+Namespace.Register('ONEbook.FrontEndGuidelines.JavaScriptRules');
+ONEbook.FrontEndGuidelines.JavaScriptRules = function () {
+    var $this = this;
+
+    // Property and functions come here.
+};/pre>
+        </div>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Avoid DOM manipulation as possible</h2>
+        <p>
+            Make sure that you’re manipulating elements fragments just before they are added to the DOM.
+            It will help to speed up JavaScript performance.
+        </p>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Avoid using global variables</h2>
+        <p>
+            Variables in the local scope will be found more quickly. They are destroyed when the local scope is lost.
+            The memory they use can be freed up by the garbage collector.
+        </p>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Use function inlining</h2>
+        <p>
+            Function inlining is a powerful high level optimization which eliminates call cost
+            and increase the chances of other optimization taking effect due to the breaking down of the call boundaries.
+        </p>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Modify an invisible element</h2>
+        <p>
+            When an element is invisible, it will not need to repaint to the screen, even if its contents are changed, since it is not being displayed.
+            This can be used as an advantage if we make several changes to an invisible element or its contents before repainting it.
+        </p>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Making several style changes at once</h2>
+        <p>
+            Using CSS classes rather than changing each property one by one to limit the times the browser refreshes your presentation.
+        </p>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Cache DOM elements that are commonly used</h2>
+        <p>
+            Caching DOM elements will help to improve the performance by avoiding querying DOM many times.
+        </p>
+    </div>
+</div>
