@@ -146,11 +146,12 @@ a, a:hover, a:focus, a:active,
 
     .docs-section {
         margin: 15px 0 30px;
+        position:relative;
 
         .example-section {
             background-color: #fff;
             border: 1px solid @border-color;
-            border-width: 1px 1px 0;
+            border-width: 1px 1px 1px;
             padding: 15px;
             .border-radius(3px 3px 0 0);
 
@@ -168,6 +169,7 @@ a, a:hover, a:focus, a:active,
 
         .code-section {
             border: 1px solid @border-color;
+            display: none;
             .border-radius(0 0 3px 3px);
 
             .nav-tabs {
@@ -189,6 +191,17 @@ a, a:hover, a:focus, a:active,
                 max-height: 400px;
                 overflow: auto;
             }
+        }
+
+        .view-source 
+        {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 100;
+            font-weight: bold;
+            padding: 5px 10px;
+            margin-top: 0px;
         }
     }
 }
