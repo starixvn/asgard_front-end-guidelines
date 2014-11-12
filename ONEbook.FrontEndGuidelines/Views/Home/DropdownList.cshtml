@@ -12,7 +12,7 @@
     @Scripts.Render("~/bundles/controls/js/dropdownlist")
     <script type="text/javascript">
         $(function () {
-            $('#defaultSelect').select2();
+            $('#default-select').select2();
         });
     </script>
 }
@@ -21,17 +21,73 @@
     <p>Support select single or multiple items from list item.</p>
 
     <!-- Default dropdownlist -->
-    <h2 class="sub-title">Default d</h2>
-    <p>This is the basic set of button</p>
+    <h2 class="sub-title">Default Dropdown List </h2>
+    <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> plugin for rendering dropdown list. This is the default option, it converts from select element to select2 plugin. By default config select2 provided:</p>
+    <ul>
+        <li>Shows all items linearly as the native dropdown list.</li>
+        <li>Shows search box for choosing item quickly.</li>
+    </ul>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
         <div class="example-section">
             <h2>Example</h2>
             <div class="demo-section">
-                <select id="defaultSelect">
-                    <option value="AL" selected>Alabama</option>
-                    <option value="WY">Wyoming</option>
-                </select>
+                <div>
+                    <span>Select2 Select2 can take a regular select box like this: </span>
+                </div>
+                <div>
+                    <select style="width:300px" id="default-select-native">
+                        <optgroup label="Alaskan/Hawaiian Time Zone">
+                            <option value="AK">Alaska</option>
+                            <option value="HI">Hawaii</option>
+                        </optgroup>
+                        <optgroup label="Pacific Time Zone">
+                            <option value="CA">California</option>
+                            <option value="NV">Nevada</option>
+                            <option value="OR">Oregon</option>
+                            <option value="WA">Washington</option>
+                        </optgroup>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ">Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="UT">Utah</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <span>and turns it into: </span>
+                </div>
+                <div>
+                    <select style="width:300px" id="default-select">
+                        <optgroup label="Alaskan/Hawaiian Time Zone">
+                            <option value="AK">Alaska</option>
+                            <option value="HI">Hawaii</option>
+                        </optgroup>
+                        <optgroup label="Pacific Time Zone">
+                            <option value="CA">California</option>
+                            <option value="NV">Nevada</option>
+                            <option value="OR">Oregon</option>
+                            <option value="WA">Washington</option>
+                        </optgroup>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ">Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="UT">Utah</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                    </select>
+                </div>
             </div>
         </div>
         <div class="code-section">
@@ -44,12 +100,24 @@
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="html">
                     <pre class="brush: html">
-                    <div>aaaa</div>
+                        <select id="default-select">
+                            <optgroup label="Alaskan/Hawaiian Time Zone">
+                                <option value="AK">Alaska</option>
+                                <option value="HI">Hawaii</option>
+                            </optgroup>
+                                <optgroup label="Pacific Time Zone">
+                                <option value="CA">California</option>
+                                <option value="NV">Nevada</option>
+                                ...
+                            </optgroup>
+                        </select>
                     </pre>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="javascript">
                     <pre class="brush: javascript">
-                        var demo = "";
+                        $(function () {
+                            $('#default-select').select2();
+                        });
                     </pre>
                 </div>
             </div>

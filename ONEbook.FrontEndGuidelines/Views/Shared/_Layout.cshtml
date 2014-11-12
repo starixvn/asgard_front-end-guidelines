@@ -76,12 +76,13 @@
     @Scripts.Render("~/bundles/layoutjs")
     @Scripts.Render("~/bundles/highlightjs")
     @RenderSection("scripts", required: false)
-    <script>
+    <script type="text/javascript">
         $(function () {
             $.material.init();
         });
         SyntaxHighlighter.defaults['toolbar'] = false;
         SyntaxHighlighter.all();
     </script>
+
 </body>
 </html>
