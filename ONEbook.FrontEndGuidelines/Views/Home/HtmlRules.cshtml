@@ -2,37 +2,24 @@
     ViewBag.Title = "HTML Rules";
 }
 <div class="col-sm-12">
-    <h2 class="sub-title">Use HTML5 doctype declaration</h2>
-    <div class="docs-section">
-        <div class="code-section">
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
-            </ul>
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="html">
-                    <pre class="text-info">&lt;!DOCTYPE html&gt;</pre>
-                </div>
-            </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Use HTML5 doctype declaration</h2>
+        <div class="example-code">
+            <pre class="text-success">&lt;!DOCTYPE html&gt;</pre>
         </div>
     </div>
-    <h2 class="sub-title">
-        All HTML code must pass the tests of <a href="http://validator.w3.org/nu/"> W3C HTML validator</a>
-        or <a href="https://addons.mozilla.org/en-US/firefox/addon/html-validator/">HTML validator addon</a> of firefox
-    </h2>
-    <p>
-        Using valid HTML is a measurable baseline quality attribute that contributes to learning about technical
-        requirements and constraints, and that ensures proper HTML usage.
-    </p>
-    <div class="docs-section">
-        <div class="code-section">
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
-            </ul>
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="html">
-                    <pre class="text-danger">&lt;!-- Not recommended --&gt;<br />&lt;title&gt;Test&lt;/title&gt;<br />&lt;article&gt;This is only a test.</pre>
-                    <pre class="text-info">&lt;!-- Recommended --&gt;<br />&lt;!DOCTYPE html&gt;<br />&lt;meta charset="utf-8"&gt;<br />&lt;title&gt;Test&lt;/title&gt;<br />&lt;article&gt;This is only a test.&gt;article&lt;</pre>
-                </div>
-            </div>
+    <div class="rule-section">
+        <h2 class="sub-title">
+            All HTML code must pass the tests of <a href="http://validator.w3.org/nu/"> W3C HTML validator</a>
+            or <a href="https://addons.mozilla.org/en-US/firefox/addon/html-validator/">HTML validator addon</a> of firefox
+        </h2>
+        <p>
+            Using valid HTML is a measurable baseline quality attribute that contributes to learning about technical
+            requirements and constraints, and that ensures proper HTML usage.
+        </p>
+        <div class="example-code">
+            <pre class="text-danger">&lt;!-- Not recommended --&gt;<br />&lt;title&gt;Test&lt;/title&gt;<br />&lt;article&gt;This is only a test.</pre>
+            <pre class="text-success">&lt;!-- Recommended --&gt;<br />&lt;!DOCTYPE html&gt;<br />&lt;meta charset="utf-8"&gt;<br />&lt;title&gt;Test&lt;/title&gt;<br />&lt;article&gt;This is only a test.&gt;article&lt;</pre>
         </div>
     </div>
+</div>

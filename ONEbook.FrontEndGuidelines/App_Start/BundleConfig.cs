@@ -73,7 +73,7 @@ namespace ONEbook.FrontEndGuidelines
 
             bundles.Add(new StyleBundle("~/Content/style").Include(
                         "~/Content/style.less",
-                        "~/Content/CustomizedControls/tab.less"));            
+                        "~/Content/CustomizedControls/tab.less"));
 
             bundles.Add(new StyleBundle("~/Content/highlightcss").Include(
                         "~/Scripts/Libraries/CodeHighlight/Styles/shCore.css",
@@ -93,6 +93,14 @@ namespace ONEbook.FrontEndGuidelines
             bundles.Add(new StyleBundle("~/bundles/controls/css/dropdownlist").Include(
                 "~/Content/DropdownList/Select2/select2.css",
                 "~/Content/DropdownList/Select2/select2-bootstrap.css"));
+
+            // Bundles for Datepicker.
+            bundles.Add(new ScriptBundle("~/bundles/controls/js/datepicker").Include(
+                "~/Scripts/Libraries/Moment/moment-with-locales.min.js",
+                "~/Scripts/Libraries/Datepicker/bootstrap-datetimepicker.min.js"));
+
+            bundles.Add(new StyleBundle("~/bundles/controls/css/datepicker").Include(
+                "~/Content/Datepicker/bootstrap-datetimepicker.min.css"));
         }
     }
 }

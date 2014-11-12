@@ -1,5 +1,4 @@
-﻿var Namespace =
-{
+﻿var Namespace = {
     Register: function (namespace) {
         var isExist = false;
         var objectPath = '';

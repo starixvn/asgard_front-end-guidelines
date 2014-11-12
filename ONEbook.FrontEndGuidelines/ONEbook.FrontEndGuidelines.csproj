@@ -123,6 +123,8 @@
     <Content Include="Content\Bootstrap\CSS\bootstrap-theme.min.css" />
     <Content Include="Content\Bootstrap\CSS\bootstrap.css" />
     <Content Include="Content\Bootstrap\CSS\bootstrap.min.css" />
+    <Content Include="Content\Datepicker\bootstrap-datetimepicker.css" />
+    <Content Include="Content\Datepicker\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\DropdownList\Select2\select2-bootstrap.css" />
     <Content Include="Content\DropdownList\Select2\select2-spinner.gif" />
     <Content Include="Content\DropdownList\Select2\select2.css" />
@@ -135,8 +137,10 @@
     <Content Include="Content\MaterialDesign\CSS\ripples.min.css" />
     <Content Include="Content\MaterialDesign\Fonts\LICENSE.txt" />
     <Content Include="Content\MaterialDesign\Fonts\Material-Design-Icons.svg" />
+    <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.HtmlRules.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Layout.js" />
+    <Content Include="Scripts\Libraries\Datepicker\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\Libraries\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\Libraries\Bootstrap\bootstrap.min.js" />
     <Content Include="Content\Images\logo.png" />
