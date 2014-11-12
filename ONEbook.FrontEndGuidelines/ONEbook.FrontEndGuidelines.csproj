@@ -125,6 +125,13 @@
     <Content Include="Content\Bootstrap\CSS\bootstrap.min.css" />
     <Content Include="Content\Datepicker\bootstrap-datetimepicker.css" />
     <Content Include="Content\Datepicker\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\DropdownList\Select2\Images\ak.png" />
+    <Content Include="Content\DropdownList\Select2\Images\az.png" />
+    <Content Include="Content\DropdownList\Select2\Images\ca.png" />
+    <Content Include="Content\DropdownList\Select2\Images\co.png" />
+    <Content Include="Content\DropdownList\Select2\Images\hi.png" />
+    <Content Include="Content\DropdownList\Select2\Images\id.png" />
+    <Content Include="Content\DropdownList\Select2\Images\nv.png" />
     <Content Include="Content\DropdownList\Select2\select2-bootstrap.css" />
     <Content Include="Content\DropdownList\Select2\select2-spinner.gif" />
     <Content Include="Content\DropdownList\Select2\select2.css" />

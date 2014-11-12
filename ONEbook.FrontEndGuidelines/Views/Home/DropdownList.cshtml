@@ -5,15 +5,67 @@
 @section css
 {
     @Styles.Render("~/bundles/controls/css/dropdownlist")
+    <style type="text/css">
+        .flag {
+            height: 18px;
+            width: 35px;
+            padding-right: 5px;
+        }
+    </style>
 }
 
 @section scripts
 {
     @Scripts.Render("~/bundles/controls/js/dropdownlist")
     <script type="text/javascript">
+
+        function format(state) {
+            if (!state.id) return state.text; // optgroup
+            return "<img class='flag' src='/Content/DropdownList/Select2/Images/" + state.id.toLowerCase() + ".png'/>" + state.text;
+        }
+
         $(function () {
             $('#default-select').select2();
+
+            $("#select-item-template").select2({
+                formatResult: format,
+                formatSelection: format,
+                escapeMarkup: function (m) { return m; }
+            });
+
+
+            var listItem = {
+                results: [
+                    {
+                        id: 11, text: "First Group", children: [
+                          { id: 1, text: "First Item" },
+                          { id: 2, text: "Second Disabled Item", disabled: true },
+                          { id: 3, text: "Third Item" }
+                        ],
+                    },
+                    {
+                        id: 22, text: "Second Group",
+                        children: [
+                          { id: 4, text: "Fourth Disabled Item", disabled: true },
+                          { id: 5, text: "Fifth Item" },
+                          { id: 6, text: "Sixth Item" }
+                        ]
+                    }
+                ]
+            };
+            $('#select-list-item').select2({
+                query: function (query) {
+                    query.callback(listItem);
+                },
+                initSelection: function (element, callback) {
+                    callback(listItem.results[0].children[0]);
+                }
+            }).select2("val", 1);;
+
+
         });
+
+
     </script>
 }
 
@@ -24,8 +76,9 @@
     <h2 class="sub-title">Default Dropdown List </h2>
     <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> plugin for rendering dropdown list. This is the default option, it converts from select element to select2 plugin. By default config select2 provided:</p>
     <ul>
-        <li>Shows all items linearly as the native dropdown list.</li>
+        <li>Shows all items linearly or group as the native dropdown list.</li>
         <li>Shows search box for choosing item quickly.</li>
+        <li>Predefined selected, disabled item.</li>
     </ul>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
@@ -38,8 +91,8 @@
                 <div>
                     <select style="width:300px" id="default-select-native">
                         <optgroup label="Alaskan/Hawaiian Time Zone">
-                            <option value="AK">Alaska</option>
-                            <option value="HI">Hawaii</option>
+                            <option value="AK" disabled="disabled">Alaska</option>
+                            <option value="HI" selected="selected">Hawaii</option>
                         </optgroup>
                         <optgroup label="Pacific Time Zone">
                             <option value="CA">California</option>
@@ -66,8 +119,8 @@
                 <div>
                     <select style="width:300px" id="default-select">
                         <optgroup label="Alaskan/Hawaiian Time Zone">
-                            <option value="AK">Alaska</option>
-                            <option value="HI">Hawaii</option>
+                            <option value="AK" disabled="disabled">Alaska</option>
+                            <option value="HI" selected="selected">Hawaii</option>
                         </optgroup>
                         <optgroup label="Pacific Time Zone">
                             <option value="CA">California</option>
@@ -102,13 +155,13 @@
                     <pre class="brush: html">
                         <select id="default-select">
                             <optgroup label="Alaskan/Hawaiian Time Zone">
-                                <option value="AK">Alaska</option>
-                                <option value="HI">Hawaii</option>
+                                <option value="AK" disabled="disabled">Alaska</option>
+                                <option value="HI" selected="selected">Hawaii</option>
                             </optgroup>
-                                <optgroup label="Pacific Time Zone">
+                            <optgroup label="Pacific Time Zone">
                                 <option value="CA">California</option>
                                 <option value="NV">Nevada</option>
-                                ...
+                                    ...
                             </optgroup>
                         </select>
                     </pre>
@@ -117,6 +170,136 @@
                     <pre class="brush: javascript">
                         $(function () {
                             $('#default-select').select2();
+                        });
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="sub-title">Customize item template.</h2>
+    <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> for customizing item template.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <select style="width:300px" id="select-item-template">
+                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                        <option value="AK">Alaska</option>
+                        <option value="HI">Hawaii</option>
+                    </optgroup>
+                    <optgroup label="Pacific Time Zone">
+                        <option value="CA">California</option>
+                        <option value="NV">Nevada</option>
+                    </optgroup>
+                    <optgroup label="Mountain Time Zone">
+                        <option value="AZ">Arizona</option>
+                        <option value="CO">Colorado</option>
+                        <option value="ID">Idaho</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html-item-template" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#javascript-item-template" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html-item-template">
+                    <pre class="brush: html">
+                        <select style="width:300px" id="select-item-template">
+                            <optgroup label="Alaskan/Hawaiian Time Zone">
+                                <option value="AK">Alaska</option>
+                                <option value="HI">Hawaii</option>
+                            </optgroup>
+                                <optgroup label="Pacific Time Zone">
+                                <option value="CA">California</option>
+                                <option value="NV">Nevada</option>
+                            </optgroup>
+                                <optgroup label="Mountain Time Zone">
+                                <option value="AZ">Arizona</option>
+                                <option value="CO">Colorado</option>
+                                <option value="ID">Idaho</option>
+                            </optgroup>
+                        </select>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript-item-template">
+                    <pre class="brush: javascript">
+                        function format(state) {
+                            if (!state.id) return state.text; // optgroup
+                            return "&lt;img class='flag' src='imagelink' /&gt;" + state.text;
+                        }
+
+                        $(function () {
+                            $("#select-item-template").select2({
+                                formatResult: format,
+                                formatSelection: format,
+                                escapeMarkup: function (m) { return m; }
+                            });
+                        });
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="sub-title">Initiate items by list object.</h2>
+    <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> to initiating items by list object.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div id="select-list-item" style="width: 300px;"></div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html-list-item" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#javascript-list-item" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html-list-item">
+                    <pre class="brush: html">
+                        <select id="select-list-item"></select>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript-list-item">
+                    <pre class="brush: javascript">
+                            var listItem = {
+                                results: [
+                                    {
+                                        id: 11, text: "First Group", children: [
+                                          { id: 1, text: "First Item" },
+                                          { id: 2, text: "Second Disabled Item", disabled: true },
+                                          { id: 3, text: "Third Item" }
+                                        ],
+                                    },
+                                    {
+                                        id: 22, text: "Second Group",
+                                        children: [
+                                          { id: 4, text: "Fourth Disabled Item", disabled: true },
+                                          { id: 5, text: "Fifth Item" },
+                                          { id: 6, text: "Sixth Item" }
+                                        ]
+                                    }
+                                ]
+                            };
+                            $('#select-list-item').select2({
+                                query: function (query) {
+                                    query.callback(listItem);
+                                },
+                                initSelection: function (element, callback) {
+                                    callback(listItem.results[0].children[0]);
+                                }
+                            }).select2("val", 1);;
                         });
                     </pre>
                 </div>
