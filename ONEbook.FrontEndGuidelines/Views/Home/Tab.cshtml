@@ -3,10 +3,10 @@
 }
 
 <div class="col-sm-12">
-    <p>Add quick, dynamic tab functionality to transition through panes of local content.</p>
+    <p>Tabbed menus are a commonly used method of navigation within websites.</p>
     <!-- Default Tab -->
     <h2 class="sub-title">Default tab</h2>
-    <p>Note the <span class="txt-class">.nav-tabs</span> class requires the <span class="txt-class">.nav</span> base class.</p>
+    <p>Tabbed menu can use only text or icon or combine text with icon, but can't mix these methods.</p>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
         <div class="example-section">
@@ -80,7 +80,7 @@
     </div>
     <!-- Text tab -->
     <h2 class="sub-title">Text tab</h2>
-    <p>This is the basic set of button</p>
+    <p>Tabbed menu can only use text to display.</p>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
         <div class="example-section">
@@ -91,39 +91,42 @@
                         <a href="#dashboard" role="tab" data-toggle="tab">Dashboard</a>
                     </li>
                     <li role="presentation" class="">
-                        <a href="#profile" role="tab" data-toggle="tab">Reports</a>
+                        <a href="#reports" role="tab" data-toggle="tab">Reports</a>
                     </li>
                 </ul>
                 <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane active" id="home">
+                    <div class="tab-pane active" id="dashboard">
                         <p>
                             Raw denim you probably haven't heard of them jean shorts Austin.
-                            Nesciunt tofu stumptown aliqua, retro synth master cleanse. 
+                            Nesciunt tofu stumptown aliqua, retro synth master cleanse.
                         </p>
                     </div>
-                    <div class="tab-pane" id="profile">
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>mdo</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">2</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>fat</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="tab-pane" id="reports">
+                        <div class="container-fluid">
+                            <p class="text-info">Report about customer</p>
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">2</td>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>fat</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -137,29 +140,111 @@
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="html">
                     <pre class="brush: html">
-                    <ul id="myTab" class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active">
-                    <a href="#home" role="tab" data-toggle="tab"><i class="mdi-action-home"></i> Home</a></li>
-                    <li role="presentation" class="">
-                    <a href="#profile" role="tab" data-toggle="tab"><i class="mdi-social-person"></i> Profile</a></li>
+                        <ul id="myTab" class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#dashboard" role="tab" data-toggle="tab">Dashboard</a></li>
+                            <li role="presentation" class="">
+                                <a href="#reports" role="tab" data-toggle="tab">Reports</a></li>
                         </ul>
-                    <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane active" id="home">
-                    <p>Raw denim you probably haven't heard of them jean shorts Austin.
-                                 Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor,
-                                 williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
-                                 Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. 
-                                Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                        <div id="myTabContent" class="tab-content">
+                            <div class="tab-pane active" id="dashboard">
+                                <p>
+                                    Raw denim you probably haven't heard of them jean shorts Austin.
+                                    Nesciunt tofu stumptown aliqua, retro synth master cleanse.
+                                </p>
                             </div>
-                    <div class="tab-pane" id="profile">
-                    <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
-                                 Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan
-                                 four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft 
-                                 beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda
-                                 labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit
-                                 sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable
-                                 jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
-                                 stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                            <div class="tab-pane" id="reports">
+                                <div class="container-fluid">
+                                    <p class="text-info">Report about customer</p>
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <th>#</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Username</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">1</td>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>mdo</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">2</td>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>fat</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Icon tab -->
+    <h2 class="sub-title">Icon tab</h2>
+    <p>Tabbed menu can only use icon to display.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <ul id="myTab" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="">
+                        <a href="#search" role="tab" data-toggle="tab"><i class="mdi-action-search"></i></a>
+                    </li>
+                    <li role="presentation" class="active">
+                        <a href="#member" role="tab" data-toggle="tab"><i class="mdi-social-person"></i></a>
+                    </li>                    
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane active" id="search">
+                        <input type="text" placeholder="Value..." class="txt-search" />
+                        <button class="btn btn-success btn-raised btn-search">Search</button>
+                    </div>
+                    <div class="tab-pane" id="member">
+                          <ul class="list-unstyled">
+                              <li>First name: <strong>Mark</strong></li>
+                              <li>Last name: <strong>Otto</strong></li>
+                              <li>Username: <strong>mdo</strong></li>
+                          </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html">
+                    <pre class="brush: html">
+                        <ul id="myTab" class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#search" role="tab" data-toggle="tab"><i class="mdi-action-search"></i></a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#member" role="tab" data-toggle="tab"><i class="mdi-social-person"></i></a>
+                            </li>                    
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <div class="tab-pane active" id="search">
+                                <input type="text" placeholder="Value..." class="txt-search" />
+                                <button class="btn btn-success btn-raised btn-search">Search</button>
+                            </div>
+                            <div class="tab-pane" id="member">
+                                <ul class="list-unstyled">
+                                    <li>First name: <strong>Mark</strong></li>
+                                    <li>Last name: <strong>Otto</strong></li>
+                                    <li>Username: <strong>mdo</strong></li>
+                                </ul>
                             </div>
                         </div>
                     </pre>
