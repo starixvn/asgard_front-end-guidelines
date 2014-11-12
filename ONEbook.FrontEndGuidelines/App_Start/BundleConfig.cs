@@ -72,7 +72,8 @@ namespace ONEbook.FrontEndGuidelines
                         "~/Content/MaterialDesign/CSS/ripples.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/style").Include(
-                        "~/Content/style.less"));
+                        "~/Content/style.less",
+                        "~/Content/CustomizedControls/tab.less"));            
 
             bundles.Add(new StyleBundle("~/Content/highlightcss").Include(
                         "~/Scripts/Libraries/CodeHighlight/Styles/shCore.css",
