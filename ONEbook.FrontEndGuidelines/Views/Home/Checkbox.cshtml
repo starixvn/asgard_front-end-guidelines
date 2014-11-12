@@ -1,3 +1,231 @@
 ﻿@{
     ViewBag.Title = "Checkbox";
 }
+
+@section css {
+    @Styles.Render("~/bundles/controls/css/checkbox")
+}
+<div class="col-sm-12">
+    <p>Checkboxes are for selecting one or several options in a list, while radios are for selecting one option from many.</p>
+    <!-- Default checkbox -->
+    <h2 class="sub-title">Default checbox</h2>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="" />
+                        Option one is this and that&mdash;be sure to include why it's great
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="" checked />
+                        Option one is this and that—be sure to include why it's great
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html">
+                    <pre class="brush: html">
+                    <div class="checkbox">
+                    <label>
+                    <input type="checkbox" value="" />
+                                Option one is this and that&mdash;be sure to include why it's great
+                            </label>
+                        </div>
+                    <div class="checkbox">
+                    <label>
+                    <input type="checkbox" value="" checked="checked" />
+                                Option one is this and that—be sure to include why it's great
+                            </label>
+                        </div>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Disabled checkbox -->
+    <h2 class="sub-title">Disabled checbox</h2>
+    <p>
+        A checkbox with the disabled attribute will be styled appropriately.
+        To have the <code>&lt;label&gt;</code> for the checkbox or radio also display a "not-allowed" cursor when the user hovers over the label,
+        add the <span class="txt-class">.disabled</span> class to your <span class="txt-class">.checkbox</span>, <span class="txt-class">.checkbox-inline</span>.
+    </p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div class="checkbox disabled">
+                    <label>
+                        <input type="checkbox" value="" disabled />
+                        Option one is this and that&mdash;be sure to include why it's great
+                    </label>
+                </div>
+                <div class="checkbox disabled">
+                    <label>
+                        <input type="checkbox" value="" checked="checked" disabled checked />
+                        Option one is this and that—be sure to include why it's great
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html2" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html2">
+                    <pre class="brush: html">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="" disabled />
+                                Option one is this and that&mdash;be sure to include why it's great
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="" disabled checked />
+                                Option one is this and that—be sure to include why it's great
+                            </label>
+                        </div>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Inline checkbox -->
+    <h2 class="sub-title">Inline checbox</h2>
+    <p>Use the <span class="txt-class">.checkbox-inline</span> classes on a series of checkboxes for controls that appear on the same line.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div class="checkbox">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox1" value="option1" checked> 1
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox3" value="option3" checked> 3
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html3" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html3">
+                    <pre class="brush: html">
+                        <div class="checkbox">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1" checked> 1
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="inlineCheckbox3" value="option3" checked> 3
+                            </label>
+                        </div>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Checkbox group -->
+    <h2 class="sub-title">Checkbox group</h2>
+    <p>Use the <span class="txt-class">.checkbox-inline</span> classes on a series of checkboxes for controls that appear on the same line.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <ul class="list-unstyled">
+                    <li>
+                        <div class="checkbox"><label><input type="checkbox" value="" /> R&D</label></div>
+                        <ul class="check-group list-unstyled">
+                            <li>
+                                <div class="checkbox"><label><input type="checkbox" value="" /> Anders</label></div>
+                            </li>
+                            <li>
+                                <div class="checkbox"><label><input type="checkbox" value="" /> Ricky</label></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="checkbox"><label><input type="checkbox" value="" /> Design</label></div>
+                    </li>
+                    <li>
+                        <div class="checkbox"><label><input type="checkbox" value="" /> Business Analysis</label></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html4" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#less" role="tab" data-toggle="tab">Less</a></li>
+                <li role="presentation"><a href="#javascript" role="tab" data-toggle="tab">Javascript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html4">
+                    <pre class="brush: html">
+                        <ul class="list-unstyled">
+                            <li>
+                                <div class="checkbox"><label><input type="checkbox" value="" /> R&D</label></div>
+                                <ul class="check-group list-unstyled">
+                                    <li>
+                                        <div class="checkbox"><label><input type="checkbox" value="" /> Anders</label></div>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox"><label><input type="checkbox" value="" /> Ricky</label></div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="checkbox"><label><input type="checkbox" value="" /> Design</label></div>
+                            </li>
+                            <li>
+                                <div class="checkbox"><label><input type="checkbox" value="" checked /> Business Analysis</label></div>
+                            </li>
+                        </ul>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="less">
+                    <pre class="brush: css">
+                        .check-group {
+                            margin: 0 0 0 20px;
+                        }
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript">
+                    <pre class="brush: javascript">
+                        
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

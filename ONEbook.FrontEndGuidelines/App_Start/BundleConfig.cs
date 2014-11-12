@@ -101,6 +101,9 @@ namespace ONEbook.FrontEndGuidelines
 
             bundles.Add(new StyleBundle("~/bundles/controls/css/datepicker").Include(
                 "~/Content/Datepicker/bootstrap-datetimepicker.min.css"));
+
+            bundles.Add(new StyleBundle("~/bundles/controls/css/checkbox").Include(
+                "~/Content/CustomizedControls/checkbox.less"));
         }
     }
 }

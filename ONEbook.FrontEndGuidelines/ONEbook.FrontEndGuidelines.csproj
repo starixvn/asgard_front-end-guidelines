@@ -159,6 +159,7 @@
     <Content Include="Content\MaterialDesign\Fonts\Material-Design-Icons.ttf" />
     <Content Include="Content\MaterialDesign\Fonts\Material-Design-Icons.woff" />
     <Content Include="Content\CustomizedControls\tab.less" />
+    <Content Include="Content\CustomizedControls\checkbox.less" />
     <None Include="Properties\PublishProfiles\LocalPublication.pubxml" />
     <None Include="Scripts\Libraries\jQuery\jquery-1.11.1.intellisense.js" />
     <Content Include="Scripts\Libraries\CodeHighlight\shAutoloader.js" />
