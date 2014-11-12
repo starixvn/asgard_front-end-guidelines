@@ -1,3 +1,175 @@
 ﻿@{
-    ViewBag.Title = "CSS Rules";
+    ViewBag.Title = "CSS/LESS Rules";
 }
+<div class="col-sm-12">
+    <div class="rule-section">
+        <h2 class="sub-title">Must use LESS for your styling code</h2>
+        <p>It adds features which allow variables, mixins, functions and many other techniques that make CSS be more maintainable, themeable and extendible.</p>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Use valid CSS where possible</h2>
+        <p>
+            Unless dealing with CSS validator bugs or requiring proprietary syntax, you must ensure that your styling code is in valid form.
+            Use tools such as the <a href="http://jigsaw.w3.org/css-validator/">W3C CSS validator</a> to test.
+        </p>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Use meaningful or generic ID and class names</h2>
+        <p>
+            Names that are specific and reflect the purpose of the element should be preferred as these are most understandable and the least likely to change.
+            Using functional or generic names reduces the probability of unnecessary document or template changes.
+        </p>
+        <div class="example-code">
+            <pre class="text-danger">
+/* Not recommended: meaningless */
+#abc-123 {}</pre>
+            <pre class="text-success">
+/* Recommended: specific */
+#gallery {}
+#login {}
+.video {}</pre>
+        </div>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Use ID and class names that are as short as possible but as long as necessary</h2>
+        <p>
+            Try to convey what an ID or class is about while being as brief as possible.
+            It contributes to acceptable levels of understandability and code efficiency.
+        </p>
+        <div class="example-code">
+            <pre class="text-danger">
+/* Not recommended */
+#navigation {}
+.atr {}</pre>
+            <pre class="text-success">
+/* Recommended */
+#nav {}
+.author {}</pre>
+        </div>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Avoid qualifying ID and class name with type selectors</h2>
+        <p>
+            It dues to performance reason.
+        </p>
+        <div class="example-code">
+            <pre class="text-danger">
+/* Not recommended */
+ul#example {}
+div.error {}</pre>
+            <pre class="text-success">
+/* Recommended */
+#example {}
+.error {}</pre>
+        </div>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Prefer using class names as selectors to IDs</h2>
+        <p>Using class name helps the CSS code is more independent from the JavaScript code.</p>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Avoid descendant selector as possible</h2>
+        <p>
+            The descendant selectors are the most expensive selector in CSS.
+        </p>
+        <div class="example-code">
+            <pre class="text-danger">
+/* Not recommended */
+html body ul li a {
+color: #fff;
+}</pre>
+        </div>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Use shorthand properties where possible</h2>
+        <p>
+            The shorthand properties are useful for code efficiency and understandability.
+        </p>
+        <div class="example-code">
+            <pre class="text-danger">
+/* Not recommended */
+border-top-style: none;
+font-family: palatino, georgia, serif;
+font-size: 100%;
+line-height: 1.6;
+padding-bottom: 2em;
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 0;</pre>
+            <pre class="text-success">
+/* Recommended */
+border-top: 0;
+font: 100%/1.6 palatino, georgia, serif;
+padding: 0 1em 2em;</pre>
+        </div>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Omit unit specification after “0” values</h2>
+        <div class="example-code">
+            <pre class="text-success">
+/* Recommended */
+margin: 0;
+padding: 0;</pre>
+        </div>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Omit leading “0”s in values between -1 and 1</h2>
+        <div class="example-code">
+            <pre class="text-success">
+/* Recommended */
+font-size: .8em;</pre>
+        </div>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">For color values, use 3 character hexadecimal notation where possible</h2>
+        <p>
+            It make the code be shorter and more succinct.
+        </p>
+        <div class="example-code">
+            <pre class="text-danger">
+/* Not recommended */
+color: #eebbcc;</pre>
+            <pre class="text-success">
+/* Recommended */
+color: #ebc;</pre>
+        </div>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Separate words in ID and class names by a hyphen</h2>
+        <p>
+            Do not concatenate words and abbreviations in selectors by any characters (including none at all) other than hyphens,
+            in order to improve understanding and scannability.
+        </p>
+        <div class="example-code">
+            <pre class="text-danger">
+/* Not recommended: does not separate the words “demo” and “image” */
+.demoimage {}
+
+/* Not recommended: uses underscore instead of hyphen */
+.error_status {}
+</pre>
+            <pre class="text-success">
+/* Recommended */
+#video-id {}
+.ads-sample {}</pre>
+        </div>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Put declarations in alphabetical order</h2>
+        <p>
+            The purpose of this action is to achieve consistent code in a way that is easy to remember and maintain.
+            Ignore vendor-specific prefixes for sorting purposes.
+        </p>
+        <div class="example-code">
+            <pre class="text-success">
+/* Recommended */
+border: 1px solid;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+color: black;
+text-align: center;
+text-indent: 2em;</pre>
+        </div>
+    </div>
+</div>
