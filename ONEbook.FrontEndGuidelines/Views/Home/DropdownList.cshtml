@@ -56,13 +56,8 @@
             $('#select-list-item').select2({
                 query: function (query) {
                     query.callback(listItem);
-                },
-                initSelection: function (element, callback) {
-                    callback(listItem.results[0].children[0]);
                 }
-            }).select2("val", 1);;
-
-
+            }).select2("data", { id: 3, text: "Third Item" });
         });
 
 
@@ -177,6 +172,7 @@
         </div>
     </div>
 
+    <!-- Customize item template -->
     <h2 class="sub-title">Customize item template.</h2>
     <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> for customizing item template.</p>
     <div class="docs-section">
@@ -248,6 +244,7 @@
         </div>
     </div>
 
+    <!-- Initiate items by list object -->
     <h2 class="sub-title">Initiate items by list object.</h2>
     <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> to initiating items by list object.</p>
     <div class="docs-section">
@@ -295,12 +292,8 @@
                             $('#select-list-item').select2({
                                 query: function (query) {
                                     query.callback(listItem);
-                                },
-                                initSelection: function (element, callback) {
-                                    callback(listItem.results[0].children[0]);
                                 }
-                            }).select2("val", 1);;
-                        });
+                            }).select2("data", { id: 3, text: "Third Item" });
                     </pre>
                 </div>
             </div>
