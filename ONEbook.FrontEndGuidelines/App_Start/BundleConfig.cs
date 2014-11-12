@@ -22,6 +22,16 @@ namespace ONEbook.FrontEndGuidelines
         /// <param name="bundles">The bundle collections.</param>
         public static void RegisterBundles(BundleCollection bundles)
         {
+            RegisterCommonBundles(bundles);
+            RegisterSitesBundles(bundles);
+        }
+
+        /// <summary>
+        /// Registers common bundles.
+        /// </summary>
+        /// <param name="bundles">The bundle collections.</param>
+        private static void RegisterCommonBundles(BundleCollection bundles)
+        {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/Libraries/jQuery/jquery-{version}.js",
                         "~/Scripts/Libraries/jQuery/jquery.cookie.js"));
@@ -35,41 +45,46 @@ namespace ONEbook.FrontEndGuidelines
                         "~/Scripts/Libraries/Modernizr/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/Libraries/Bootstrap/bootstrap.js",
-                      "~/Scripts/Libraries/Respond/respond.js"));
+                        "~/Scripts/Libraries/Bootstrap/bootstrap.js",
+                        "~/Scripts/Libraries/Respond/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/materialdesign").Include(
-                      "~/Scripts/Libraries/MaterialDesign/material.js",
-                      "~/Scripts/Libraries/MaterialDesign/ripples.js",
-                      "~/Scripts/Libraries/NoUISlider/jquery.nouislider.js"));
+                        "~/Scripts/Libraries/MaterialDesign/material.js",
+                        "~/Scripts/Libraries/MaterialDesign/ripples.js",
+                        "~/Scripts/Libraries/NoUISlider/jquery.nouislider.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/highlightjs").Include(
-                    "~/Scripts/Libraries/CodeHighlight/shCore.js",
-                    "~/Scripts/Libraries/CodeHighlight/shBrushCss.js",
-                    "~/Scripts/Libraries/CodeHighlight/shBrushJScript.js",
-                    "~/Scripts/Libraries/CodeHighlight/shBrushXml.js"
-                ));
+                        "~/Scripts/Libraries/CodeHighlight/shCore.js",
+                        "~/Scripts/Libraries/CodeHighlight/shBrushCss.js",
+                        "~/Scripts/Libraries/CodeHighlight/shBrushJScript.js",
+                        "~/Scripts/Libraries/CodeHighlight/shBrushXml.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/layoutjs").Include(
-                    "~/Scripts/Home/ONEbook.FrontEndGuidelines.js",
-                    "~/Scripts/Home/ONEbook.FrontEndGuidelines.Layout.js"
-                ));
-
+                        "~/Scripts/Namespace/namespace.js",
+                        "~/Scripts/Home/ONEbook.FrontEndGuidelines.js",
+                        "~/Scripts/Home/ONEbook.FrontEndGuidelines.Layout.js"));
 
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
-                      "~/Content/Bootstrap/CSS/bootstrap.css"));
+                        "~/Content/Bootstrap/CSS/bootstrap.css"));
 
             bundles.Add(new StyleBundle("~/Content/materialdesign").Include(
-                      "~/Content/MaterialDesign/CSS/material-wfont.css",
-                      "~/Content/MaterialDesign/CSS/ripples.min.css"));
+                        "~/Content/MaterialDesign/CSS/material-wfont.css",
+                        "~/Content/MaterialDesign/CSS/ripples.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/style").Include(
-                      "~/Content/style.less"));
+                        "~/Content/style.less"));
 
             bundles.Add(new StyleBundle("~/Content/highlightcss").Include(
-                     "~/Scripts/Libraries/CodeHighlight/Styles/shCore.css",
-                     "~/Scripts/Libraries/CodeHighlight/Styles/shCoreDefault.css"));
+                        "~/Scripts/Libraries/CodeHighlight/Styles/shCore.css",
+                        "~/Scripts/Libraries/CodeHighlight/Styles/shCoreDefault.css"));
+        }
 
+        /// <summary>
+        /// Registers sites' bundles.
+        /// </summary>
+        /// <param name="bundles">The bundle collections.</param>
+        private static void RegisterSitesBundles(BundleCollection bundles)
+        {
         }
     }
 }

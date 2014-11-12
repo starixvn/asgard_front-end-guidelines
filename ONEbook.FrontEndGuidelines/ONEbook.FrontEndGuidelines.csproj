@@ -181,8 +181,12 @@
     <Content Include="Scripts\Libraries\MaterialDesign\ripples.js" />
     <Content Include="Scripts\Libraries\MaterialDesign\ripples.min.js" />
     <Content Include="Scripts\Libraries\Modernizr\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Libraries\Moment\moment-with-locales.min.js" />
+    <Content Include="Scripts\Libraries\Namespace\namespace.js" />
     <Content Include="Scripts\Libraries\NoUISlider\jquery.nouislider.all.js" />
     <Content Include="Scripts\Libraries\NoUISlider\jquery.nouislider.js" />
+    <Content Include="Scripts\Libraries\Numeral\languages.min.js" />
+    <Content Include="Scripts\Libraries\Numeral\numeral.min.js" />
     <Content Include="Scripts\Libraries\Respond\respond.js" />
     <Content Include="Scripts\Libraries\Respond\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\Libraries\Respond\respond.matchmedia.addListener.min.js" />
