@@ -1,4 +1,4 @@
-﻿/* global Namespace, ONEbook */
+﻿/* global ONEbook */
 
 'use strict';
 
@@ -17,7 +17,10 @@ ONEbook.FrontEndGuidelines.DropdownList = function () {
 
     me.templateSample = function () {
         var format = function (state) {
-            if (!state.id) return state.text; // optgroup
+            if (!state.id) {
+                return state.text; // optgroup
+            }
+
             return "<img class='flag' src='"
                 + ONEbook.FrontEndGuidelines.rootUrl
                 + "Content/DropdownList/Select2/Images/"
@@ -67,11 +70,11 @@ ONEbook.FrontEndGuidelines.DropdownList = function () {
             var markup = '<div>' + item.text + '</div>';
 
             return markup;
-        }
+        };
 
         var formatSelection = function (item) {
             return item.text;
-        }
+        };
         $("#select-lazy-load-item").select2({
             placeholder: "Search for a item",
             minimumInputLength: 1,
@@ -261,13 +264,17 @@ ONEbook.FrontEndGuidelines.DropdownList = function () {
 
     me.selectMethodsAndEvents = function () {
         $("#select-methods-events-single").select2({ width: 300 })
-            .on("select2-selecting", function (e) { alert("change") })
+            .on("select2-selecting", function () { alert("change");})
             .on("select2-open", function () { alert("open"); })
             .on("select2-close", function () { alert("close"); });
         $("#btn-get-single").click(function () { alert("Selected value is: " + $("#select-methods-events-single").select2("val")); });
         $("#btn-set-single").click(function () { $("#select-methods-events-single").select2("val", "CA"); });
         $("#btn-get-clear").click(function () { $("#select-methods-events-single").select2("val", ""); });
-        $("#btn-get-single-2").click(function () { var data = $("#select-methods-events-single").select2("data"); delete data.element; alert("Selected data is: " + JSON.stringify(data)); });
+        $("#btn-get-single-2").click(function ()
+        {
+            var data = $("#select-methods-events-single").select2("data"); delete data.element;
+            alert("Selected data is: " + JSON.stringify(data));
+        });
         $("#btn-set-single-2").click(function () { $("#select-methods-events-single").select2("data", { id: "CA", text: "California" }); });
         $("#btn-open").click(function () { $("#select-methods-events-single").select2("open"); });
         $("#btn-close").click(function () { $("#select-methods-events-single").select2("close"); });
@@ -275,7 +282,13 @@ ONEbook.FrontEndGuidelines.DropdownList = function () {
         $("#btn-get-multiple").click(function () { alert("Selected value is: " + $("#select-methods-events-multiple").select2("val")); });
         $("#btn-set-multiple").click(function () { $("#select-methods-events-multiple").select2("val", ["CA", "CO"]); });
         $("#btn-get-multiple-2").click(function () { alert("Selected value is: " + JSON.stringify($("#select-methods-events-multiple").select2("data"))); });
-        $("#btn-set-multiple-2").click(function () { $("#select-methods-events-multiple").select2("data", [{ id: "CA", text: "California" }, { id: "CO", text: "Colorado" }]); });
+        $("#btn-set-multiple-2").click(function () {
+            $("#select-methods-events-multiple").select2("data",
+                [
+                    { id: "CA", text: "California" },
+                    { id: "CO", text: "Colorado" }
+                ]);
+        });
         $("#btn-clear-multiple").click(function () { $("#select-methods-events-multiple").select2("val", ""); });
         $("#btn-open-multiple").click(function () { $("#select-methods-events-multiple").select2("open"); });
         $("#btn-close-multiple").click(function () { $("#select-methods-events-multiple").select2("close"); });

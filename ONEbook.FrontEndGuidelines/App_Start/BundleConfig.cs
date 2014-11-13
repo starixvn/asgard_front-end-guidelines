@@ -111,6 +111,14 @@ namespace ONEbook.FrontEndGuidelines
             bundles.Add(new StyleBundle("~/bundles/controls/css/datepicker").Include(
                 "~/Content/Datepicker/bootstrap-datetimepicker.min.css"));
 
+            // Bundles for Treeview.
+            bundles.Add(new ScriptBundle("~/bundles/controls/js/treeview").Include(
+               "~/Scripts/Libraries/TreeView/JSTree/jstree.js",
+               "~/Scripts/Home/ONEbook.FrontEndGuidelines.TreeView.js"));
+
+            bundles.Add(new StyleBundle("~/bundles/controls/css/treeview").Include(
+                "~/Content/TreeView/JSTree/default/style.css"));
+
             // Bundle for Checkbox.
             bundles.Add(new StyleBundle("~/bundles/controls/css/checkbox").Include(
                 "~/Content/CustomizedControls/checkbox.less"));
