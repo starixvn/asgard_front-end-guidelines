@@ -1,3 +1,152 @@
 ﻿@{
     ViewBag.Title = "Radio Button";
 }
+
+<div class="col-sm-12">
+    <p>Radio buttons are used when there is a list of two or more options that are mutually exclusive and the user must select exactly one choice.</p>
+    <!-- Default radio button -->
+    <h2 class="sub-title">Default radio button</h2>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="" />
+                        Option one is this and that&mdash;be sure to include why it's great
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" value="" checked />
+                        Option one is this and that—be sure to include why it's great
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html">
+                    <pre class="brush: html">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="" />
+                                Option one is this and that&mdash;be sure to include why it's great
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="" checked />
+                                Option one is this and that—be sure to include why it's great
+                            </label>
+                        </div>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Disabled radio button -->
+    <h2 class="sub-title">Disabled radio button</h2>
+    <p>
+        A radio with the disabled attribute will be styled appropriately.
+        To have the <code>&lt;label&gt;</code> for the checkbox or radio also display a "not-allowed" cursor when the user hovers over the label,
+        add the <span class="txt-class">.disabled</span> class to your <span class="txt-class">.radio</span>, <span class="txt-class">.radio-inline</span>.
+    </p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div class="radio disabled">
+                    <label>
+                        <input type="radio" value="" disabled />
+                        Option one is this and that&mdash;be sure to include why it's great
+                    </label>
+                </div>
+                <div class="radio disabled">
+                    <label>
+                        <input type="radio" value="" disabled checked />
+                        Option one is this and that—be sure to include why it's great
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html2" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html2">
+                    <pre class="brush: html">
+                        <div class="radio disabled">
+                            <label>
+                                <input type="radio" value="" disabled />
+                                Option one is this and that&mdash;be sure to include why it's great
+                            </label>
+                        </div>
+                        <div class="radio disabled">
+                            <label>
+                                <input type="radio" value="" disabled checked />
+                                Option one is this and that—be sure to include why it's great
+                            </label>
+                        </div>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Inline radio button -->
+    <h2 class="sub-title">Inline radio button</h2>
+    <p>Use the <span class="txt-class">.radio-inline</span> classes on a series of radios for controls that appear on the same line.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div class="radio">
+                    <label class="radio-inline">
+                        <input type="radio" id="inlineRadio1" value="option1" checked> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" id="inlineRadio2" value="option2"> 2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" id="inlineRadio3" value="option3" checked> 3
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html3" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html3">
+                    <pre class="brush: html">
+                        <div class="radio">
+                            <label class="radio-inline">
+                                <input type="radio" id="inlineRadio1" value="option1" checked> 1
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" id="inlineRadio2" value="option2"> 2
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" id="inlineRadio3" value="option3" checked> 3
+                            </label>
+                        </div>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>

@@ -37,15 +37,15 @@
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="html">
                     <pre class="brush: html">
-                    <div class="checkbox">
-                    <label>
-                    <input type="checkbox" value="" />
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="" />
                                 Option one is this and that&mdash;be sure to include why it's great
                             </label>
                         </div>
-                    <div class="checkbox">
-                    <label>
-                    <input type="checkbox" value="" checked="checked" />
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="" checked />
                                 Option one is this and that—be sure to include why it's great
                             </label>
                         </div>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="checkbox disabled">
                     <label>
-                        <input type="checkbox" value="" checked="checked" disabled checked />
+                        <input type="checkbox" value="" disabled checked />
                         Option one is this and that—be sure to include why it's great
                     </label>
                 </div>
@@ -154,7 +154,7 @@
     </div>
     <!-- Checkbox group -->
     <h2 class="sub-title">Checkbox group</h2>
-    <p>Use the <span class="txt-class">.checkbox-inline</span> classes on a series of checkboxes for controls that appear on the same line.</p>
+    <p>Use the <span class="txt-class">.checkbox-group</span> class to containing checkboxes</p>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
         <div class="example-section">
@@ -163,7 +163,7 @@
                 <ul class="list-unstyled">
                     <li>
                         <div class="checkbox"><label><input type="checkbox" value="" /> R&D</label></div>
-                        <ul class="check-group list-unstyled">
+                        <ul class="checkbox-group list-unstyled">
                             <li>
                                 <div class="checkbox"><label><input type="checkbox" value="" /> Anders</label></div>
                             </li>
@@ -173,7 +173,7 @@
                         </ul>
                     </li>
                     <li>
-                        <div class="checkbox"><label><input type="checkbox" value="" /> Design</label></div>
+                        <div class="checkbox"><label><input type="checkbox" value="" checked /> Design</label></div>
                     </li>
                     <li>
                         <div class="checkbox"><label><input type="checkbox" value="" /> Business Analysis</label></div>
@@ -195,7 +195,7 @@
                         <ul class="list-unstyled">
                             <li>
                                 <div class="checkbox"><label><input type="checkbox" value="" /> R&D</label></div>
-                                <ul class="check-group list-unstyled">
+                                <ul class="checkbox-group list-unstyled">
                                     <li>
                                         <div class="checkbox"><label><input type="checkbox" value="" /> Anders</label></div>
                                     </li>
@@ -215,7 +215,7 @@
                 </div>
                 <div role="tabpanel" class="tab-pane" id="less">
                     <pre class="brush: css">
-                        .check-group {
+                        .checkbox-group {
                             margin: 0 0 0 20px;
                         }
                     </pre>
