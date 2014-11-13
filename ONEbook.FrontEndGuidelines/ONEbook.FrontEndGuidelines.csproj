@@ -191,6 +191,7 @@
     <Content Include="Content\CustomizedControls\tab.less" />
     <Content Include="Content\CustomizedControls\checkbox.less" />
     <Content Include="Content\CustomizedControls\dropdownlist.less" />
+    <Content Include="Content\CustomizedControls\material-design.less" />
     <None Include="Properties\PublishProfiles\LocalPublication.pubxml" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Calendar.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.TreeView.js" />

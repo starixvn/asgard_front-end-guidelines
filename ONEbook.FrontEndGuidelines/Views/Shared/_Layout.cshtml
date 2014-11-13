@@ -79,7 +79,9 @@
     @RenderSection("scripts", required: false)
     <script type="text/javascript">
         $(function () {
-            $.material.init();
+            $.material.ripples();
+            $.material.checkbox();
+            $.material.radio();
         });
         SyntaxHighlighter.defaults['toolbar'] = false;
         SyntaxHighlighter.all();

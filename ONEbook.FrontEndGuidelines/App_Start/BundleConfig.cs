@@ -70,7 +70,8 @@ namespace ONEbook.FrontEndGuidelines
 
             bundles.Add(new StyleBundle("~/Content/materialdesign").Include(
                         "~/Content/MaterialDesign/CSS/material-wfont.css",
-                        "~/Content/MaterialDesign/CSS/ripples.min.css"));
+                        "~/Content/MaterialDesign/CSS/ripples.min.css",
+                        "~/Content/CustomizedControls/material-design.less"));
 
             bundles.Add(new StyleBundle("~/Content/style").Include(
                         "~/Content/style.less",

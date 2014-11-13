@@ -11,25 +11,34 @@
         For this type of requirements, we will mainly use <a href="http://eonasdan.github.io/bootstrap-datetimepicker/">Bootstrap DateTime picker</a>
         with some addtional JavaScript codes for some special cases.
     </p>
-    <!-- Single DateTime picker -->
-    <h2 class="sub-title">Single DateTime picker</h2>
+    <!-- Simple DateTime picker -->
+    <h2 class="sub-title">Simple DateTime picker</h2>
     <p>
         The following example shows how to configure <a href="http://eonasdan.github.io/bootstrap-datetimepicker/">Bootstrap DateTime picker</a>
         to satisfy some common scenarios in a real project:
         <ul>
             <li>Pick any date.</li>
             <li>Select a date which must be in a given range.</li>
-            <li>Show the picker in the language which is selected by the user or the language of the location where the user is.</li>
+            <li>Show the date picker in a specific language.</li>
+            <li>Show, hide, enable, disable the control programmatically.</li>
         </ul>
     </p>
+    <div class="bs-callout bs-callout-warning">
+        <h4>Note</h4>
+        <p>
+            When you change the language of the DateTime picker, it needs to repaint the control.
+            Due to the performance issue of creating new DateTime picker, you should decide which language will be displayed when initializing the control
+            , or you must destroy it programmatically and create it again.
+        </p>
+    </div>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
         <div class="example-section">
             <h2>Example</h2>
             <div class="demo-section row">
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <label for="dpkSamepleDate" class="control-label">Email</label>
+                <div class="col-sm-7">
+                    <div class="form-group col-sm-10">
+                        <label for="dpkSamepleDate" class="control-label">Date</label>
                         <div class="input-group" id="dpkSamepleDate">
                             <input type="text" class="form-control" placeholder="Pick a date" />
                             <span class="input-group-addon">
@@ -37,6 +46,241 @@
                             </span>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="row col-sm-12">
+                            <button class="btn btn-primary" type="button" id="btnShowSampleDate">Show</button>
+                            <button class="btn btn-primary" type="button" id="btnHideSampleDate">Hide</button>
+                            <button class="btn btn-primary" type="button" id="btnEnableSampleDate">Enable</button>
+                            <button class="btn btn-primary" type="button" id="btnDisableSampleDate">Disable</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 calendar-form">
+                    <div class="form-group">
+                        <label class="control-label">Min Date</label>
+                        <div class="row">
+                            <div class=" col-sm-6">
+                                <input type="text" id="txtMinDate" class="form-control" placeholder="mm/dd/yyyy"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn btn-primary" type="button" id="btnSetMinDate">Set Min Date</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Max Date</label>
+                        <div class="row">
+                            <div class=" col-sm-6">
+                                <input type="text" id="txtMaxDate" class="form-control" placeholder="mm/dd/yyyy" />
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn btn-primary" type="button" id="btnSetMaxDate">Set Max Date</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Language</label>
+                        <div class="row">
+                            <div class=" col-sm-6">
+                                <select id="ddlLanguage" class="form-control">
+                                    <option value="en">English</option>
+                                    <option value="zh-cn">Simplified Chinese</option>
+                                    <option value="zh-tw">Traditional Chinese</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn btn-primary" type="button" id="btnSetLanguage">Set Language</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#singleDatepickerHtml" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#singleDatepickerJavascript" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="singleDatepickerHtml">
+                    <pre class="brush: html">
+                        <div class="col-sm-7">
+                            <div class="form-group col-sm-10">
+                                <label for="dpkSamepleDate" class="control-label">Date</label>
+                                <div class="input-group" id="dpkSamepleDate">
+                                    <input type="text" class="form-control" placeholder="Pick a date" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row col-sm-12">
+                                    <button class="btn btn-primary" type="button" id="btnShowSampleDate">Show</button>
+                                    <button class="btn btn-primary" type="button" id="btnHideSampleDate">Hide</button>
+                                    <button class="btn btn-primary" type="button" id="btnEnableSampleDate">Enable</button>
+                                    <button class="btn btn-primary" type="button" id="btnDisableSampleDate">Disable</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 calendar-form">
+                            <div class="form-group">
+                                <label class="control-label">Min Date</label>
+                                <div class="row">
+                                    <div class=" col-sm-6">
+                                        <input type="text" id="txtMinDate" class="form-control" placeholder="mm/dd/yyyy"/>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button class="btn btn-primary" type="button" id="btnSetMinDate">Set Min Date</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Max Date</label>
+                                <div class="row">
+                                    <div class=" col-sm-6">
+                                        <input type="text" id="txtMaxDate" class="form-control" placeholder="mm/dd/yyyy" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button class="btn btn-primary" type="button" id="btnSetMaxDate">Set Max Date</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Language</label>
+                                <div class="row">
+                                    <div class=" col-sm-6">
+                                        <select id="ddlLanguage" class="form-control">
+                                            <option value="en">English</option>
+                                            <option value="zh-cn">Simplified Chinese</option>
+                                            <option value="zh-tw">Traditional Chinese</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button class="btn btn-primary" type="button" id="btnSetLanguage">Set Language</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="singleDatepickerJavascript">
+                    <pre class="brush: javascript">
+                        /* global Namespace, ONEbook */
+
+                        'use strict';
+
+                        $(document).ready(function () {
+                            var calendarPage = new ONEbook.FrontEndGuidelines.Calendar();
+
+                            calendarPage.Initialize();
+                        });
+
+                        Namespace.Register('ONEbook.FrontEndGuidelines.Calendar');
+                        ONEbook.FrontEndGuidelines.Calendar = function () {
+                            var me = this;
+                            var cachedDOM = {
+                                dpkSamepleDate: null,
+                                txtMinDate: null,
+                                btnSetMinDate: null,
+                                txtMaxDate: null,
+                                btnSetMaxDate: null,
+                                btnShowSampleDate: null,
+                                btnHideSampleDate: null,
+                                btnEnableSampleDate: null,
+                                btnDisableSampleDate: null,
+                                ddlLanguage: null,
+                                btnSetLanguage: null
+                            };
+
+                            // Cache DOM elements for later uses.
+                            var cacheElements = function () {
+                                cachedDOM.dpkSamepleDate = $('#dpkSamepleDate');
+                                cachedDOM.txtMinDate = $('#txtMinDate');
+                                cachedDOM.btnSetMinDate = $('#btnSetMinDate');
+                                cachedDOM.txtMaxDate = $('#txtMaxDate');
+                                cachedDOM.btnSetMaxDate = $('#btnSetMaxDate');
+                                cachedDOM.btnShowSampleDate = $('#btnShowSampleDate');
+                                cachedDOM.btnHideSampleDate = $('#btnHideSampleDate');
+                                cachedDOM.btnEnableSampleDate = $('#btnEnableSampleDate');
+                                cachedDOM.btnDisableSampleDate = $('#btnDisableSampleDate');
+                                cachedDOM.ddlLanguage = $('#ddlLanguage');
+                                cachedDOM.btnSetLanguage = $('#btnSetLanguage');
+                            };
+
+                            // Initialize a simple date picker.
+                            var initializeSampleDate = function () {
+                                cachedDOM.dpkSamepleDate.datetimepicker({
+                                    pickTime: false,
+                                    useCurrent: false
+                                });
+                            };
+
+                            // Set minimum date that the datepicker can allow the user to select.
+                            var setMinDate = function () {
+                                var minDate = cachedDOM.txtMinDate.val();
+
+                                cachedDOM.dpkSamepleDate.data('DateTimePicker').setMinDate(minDate);
+                            };
+
+                            // Set maximum date that the datepicker can allow the user to select.
+                            var setMaxDate = function () {
+                                var maxDate = cachedDOM.txtMaxDate.val();
+
+                                cachedDOM.dpkSamepleDate.data('DateTimePicker').setMaxDate(maxDate);
+                            };
+
+                            // Show the datepicker programmatically.
+                            var showDatePicker = function () {
+                                cachedDOM.dpkSamepleDate.data('DateTimePicker').show();
+                            };
+
+                            // Hide the datepicker programmatically.
+                            var hideDatePicker = function () {
+                                cachedDOM.dpkSamepleDate.data('DateTimePicker').hide();
+                            };
+
+                            // Enable the datepicker.
+                            var enableDatePicker = function () {
+                                cachedDOM.dpkSamepleDate.data('DateTimePicker').enable();
+                            };
+
+                            // Disable the datepicker.
+                            var disableDatePicker = function () {
+                                cachedDOM.dpkSamepleDate.data('DateTimePicker').disable();
+                            };
+
+                            var changeLanguage = function () {
+                                var language = cachedDOM.ddlLanguage.val();
+
+                                cachedDOM.dpkSamepleDate.data('DateTimePicker').destroy();
+                                cachedDOM.dpkSamepleDate.datetimepicker({
+                                    language: language,
+                                    pickTime: false,
+                                    useCurrent: false
+                                });
+                            }
+
+                            // Register all handlers to events of controls.
+                            var registerEvents = function () {
+                                cachedDOM.btnSetMinDate.on('click', setMinDate);
+                                cachedDOM.btnSetMaxDate.on('click', setMaxDate);
+                                cachedDOM.btnShowSampleDate.on('click', showDatePicker);
+                                cachedDOM.btnHideSampleDate.on('click', hideDatePicker);
+                                cachedDOM.btnEnableSampleDate.on('click', enableDatePicker);
+                                cachedDOM.btnDisableSampleDate.on('click', disableDatePicker);
+                                cachedDOM.btnSetLanguage.on('click', changeLanguage);
+                            };
+
+                            me.Initialize = function () {
+                                cacheElements();
+                                initializeSampleDate();
+                                registerEvents();
+                            };
+                        };
+                    </pre>
                 </div>
             </div>
         </div>
