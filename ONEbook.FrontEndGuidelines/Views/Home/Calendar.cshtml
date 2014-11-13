@@ -1,3 +1,49 @@
 ﻿@{
     ViewBag.Title = "Calendar";
 }
+@section css
+{
+    @Styles.Render("~/bundles/controls/css/calendar")
+}
+<div class="col-sm-12">
+    <p>
+        Provide a friendlier UI than a classic textbox to support the user to pick a date, a month, a date range or a month range for updating or querying data purposes.
+        For this type of requirements, we will mainly use <a href="http://eonasdan.github.io/bootstrap-datetimepicker/">Bootstrap DateTime picker</a>
+        with some addtional JavaScript codes for some special cases.
+    </p>
+    <!-- Single DateTime picker -->
+    <h2 class="sub-title">Single DateTime picker</h2>
+    <p>
+        The following example shows how to configure <a href="http://eonasdan.github.io/bootstrap-datetimepicker/">Bootstrap DateTime picker</a>
+        to satisfy some common scenarios in a real project:
+        <ul>
+            <li>Pick any date.</li>
+            <li>Select a date which must be in a given range.</li>
+            <li>Show the picker in the language which is selected by the user or the language of the location where the user is.</li>
+        </ul>
+    </p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="dpkSamepleDate" class="control-label">Email</label>
+                        <div class="input-group" id="dpkSamepleDate">
+                            <input type="text" class="form-control" placeholder="Pick a date" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---------------------------->
+</div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/controls/js/calendar")
+}

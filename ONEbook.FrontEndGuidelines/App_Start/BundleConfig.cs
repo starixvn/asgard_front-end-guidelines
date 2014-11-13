@@ -104,11 +104,12 @@ namespace ONEbook.FrontEndGuidelines
                 "~/Content/CustomizedControls/dropdownlist.less"));
 
             // Bundles for Datepicker.
-            bundles.Add(new ScriptBundle("~/bundles/controls/js/datepicker").Include(
+            bundles.Add(new ScriptBundle("~/bundles/controls/js/calendar").Include(
                 "~/Scripts/Libraries/Moment/moment-with-locales.min.js",
-                "~/Scripts/Libraries/Datepicker/bootstrap-datetimepicker.min.js"));
+                "~/Scripts/Libraries/Datepicker/bootstrap-datetimepicker.min.js",
+                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Calendar.js"));
 
-            bundles.Add(new StyleBundle("~/bundles/controls/css/datepicker").Include(
+            bundles.Add(new StyleBundle("~/bundles/controls/css/calendar").Include(
                 "~/Content/Datepicker/bootstrap-datetimepicker.min.css"));
 
             // Bundles for Treeview.

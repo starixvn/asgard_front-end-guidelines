@@ -192,6 +192,7 @@
     <Content Include="Content\CustomizedControls\checkbox.less" />
     <Content Include="Content\CustomizedControls\dropdownlist.less" />
     <None Include="Properties\PublishProfiles\LocalPublication.pubxml" />
+    <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Calendar.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.TreeView.js" />
     <None Include="Scripts\Libraries\jQuery\jquery-1.11.1.intellisense.js" />
     <Content Include="Scripts\Libraries\CodeHighlight\shAutoloader.js" />
