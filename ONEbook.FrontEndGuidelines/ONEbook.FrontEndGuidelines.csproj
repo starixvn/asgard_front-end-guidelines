@@ -145,8 +145,10 @@
     <Content Include="Content\MaterialDesign\Fonts\LICENSE.txt" />
     <Content Include="Content\MaterialDesign\Fonts\Material-Design-Icons.svg" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Rules.js" />
+    <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.DropdownList.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Layout.js" />
+    <Content Include="Scripts\Libraries\CodeHighlight\shBrushCSharp.js" />
     <Content Include="Scripts\Libraries\Datepicker\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\Libraries\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\Libraries\Bootstrap\bootstrap.min.js" />
@@ -167,6 +169,7 @@
     <Content Include="Content\MaterialDesign\Fonts\Material-Design-Icons.woff" />
     <Content Include="Content\CustomizedControls\tab.less" />
     <Content Include="Content\CustomizedControls\checkbox.less" />
+    <Content Include="Content\CustomizedControls\dropdownlist.less" />
     <None Include="Properties\PublishProfiles\LocalPublication.pubxml" />
     <None Include="Scripts\Libraries\jQuery\jquery-1.11.1.intellisense.js" />
     <Content Include="Scripts\Libraries\CodeHighlight\shAutoloader.js" />

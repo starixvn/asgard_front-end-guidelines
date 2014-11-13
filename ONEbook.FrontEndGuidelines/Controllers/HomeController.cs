@@ -12,6 +12,7 @@ namespace ONEbook.FrontEndGuidelines.Controllers
     using System.Linq;
     using System.Collections.Generic;
     using System.Web.Mvc;
+    using System;
 
     /// <summary>
     /// Handles common views.
@@ -115,5 +116,29 @@ namespace ONEbook.FrontEndGuidelines.Controllers
 
             return this.View(viewName);
         }
+
+        [HttpGet]
+        public JsonResult GetDropdownListData(string searchText, int pageNumber)
+        {
+            List<string> sampleItems = new List<string>();
+            int pageLength = 30;
+            int totalItem = 1000;
+            int startIndex = pageLength * (pageNumber - 1);
+            int endIndex = Math.Min(startIndex + pageLength, totalItem);
+
+
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                sampleItems.Add(searchText + i.ToString());
+            }
+
+            return Json(
+                new
+                {
+                    Total = totalItem,
+                    Items = sampleItems,
+                }, JsonRequestBehavior.AllowGet);
+        }
     }
+
 }

@@ -57,7 +57,8 @@ namespace ONEbook.FrontEndGuidelines
                         "~/Scripts/Libraries/CodeHighlight/shCore.js",
                         "~/Scripts/Libraries/CodeHighlight/shBrushCss.js",
                         "~/Scripts/Libraries/CodeHighlight/shBrushJScript.js",
-                        "~/Scripts/Libraries/CodeHighlight/shBrushXml.js"));
+                        "~/Scripts/Libraries/CodeHighlight/shBrushXml.js",
+                        "~/Scripts/Libraries/CodeHighlight/shBrushCSharp.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/layoutjs").Include(
                         "~/Scripts/Libraries/Namespace/namespace.js",
@@ -92,11 +93,13 @@ namespace ONEbook.FrontEndGuidelines
 
             // Bundle for Dropdown List
             bundles.Add(new ScriptBundle("~/bundles/controls/js/dropdownlist").Include(
-                "~/Scripts/Libraries/DropdownList/Select2/select2.js"));
+                "~/Scripts/Libraries/DropdownList/Select2/select2.js",
+                "~/Scripts/Home/ONEbook.FrontEndGuidelines.DropdownList.js"));
 
             bundles.Add(new StyleBundle("~/bundles/controls/css/dropdownlist").Include(
                 "~/Content/DropdownList/Select2/select2.css",
-                "~/Content/DropdownList/Select2/select2-bootstrap.css"));
+                "~/Content/DropdownList/Select2/select2-bootstrap.css",
+                "~/Content/CustomizedControls/dropdownlist.less"));
 
             // Bundles for Datepicker.
             bundles.Add(new ScriptBundle("~/bundles/controls/js/datepicker").Include(

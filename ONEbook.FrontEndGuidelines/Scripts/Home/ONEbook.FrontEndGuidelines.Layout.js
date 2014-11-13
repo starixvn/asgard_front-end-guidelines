@@ -31,19 +31,19 @@ if (ONEbook.FrontEndGuidelines) {
                 me.cachedElements.codeDemoBlocks.click(me.toogleCodeDemo);
             },
             toogleCodeDemo: function () {
-                $(this).parent().find('.code-section').toggle(200);
+                $(this).parent().find('.code-section').slideToggle(200);
             },
             toggleMenu: function () {
                 var $this = $(this);
                 if ($this.hasClass('menu-hide')) {
                     $this.removeClass('menu-hide');
-                    me.cachedElements.leftContent.show(250);
+                    me.cachedElements.leftContent.show(350);
                     me.cachedElements.rightContent.removeClass('hide-content');
                     $.cookie(me.toggleCookieName, 'show', { path: '/' });
                 }
                 else {
                     $this.addClass('menu-hide');
-                    me.cachedElements.leftContent.hide(250);
+                    me.cachedElements.leftContent.hide(350);
                     me.cachedElements.rightContent.addClass('hide-content');
                     $.cookie(me.toggleCookieName, 'hide', { path: '/' });
                 }
