@@ -2,4 +2,207 @@
     ViewBag.Title = "Form";
 }
 
-
+<div class="col-sm-12">
+    <p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with .form-control are set to width: 100%; by default. Wrap labels and controls in <span class="txt-class">.form-group</span> for optimum spacing.</p>
+    <!-- Basic form -->
+    <h2 class="sub-title">Basic form</h2>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section row">
+                <form role="form" class="col-sm-7">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">File input</label>
+                        <input type="file" id="exampleInputFile" />
+                        <p class="help-block">Example block-level help text here.</p>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" /> Check me out
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html">
+                    <pre class="brush: html">
+                        <form role="form" class="col-sm-7">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile">File input</label>
+                                <input type="file" id="exampleInputFile" />
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                <input type="checkbox" /> Check me out
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Inline form -->
+    <h2 class="sub-title">Inline form</h2>
+    <p>Add <span class="txt-class">.form-inline</span> to your <code>&lt;form&gt;</code> for left-aligned and inline-block controls. This only applies to forms within viewports that are at least 768px wide.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section row">
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                        <input type="password" class="form-control" id="exampleInputEmail2" placeholder="Email address" />
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" />
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" /> Remember me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </form>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html">
+                    <pre class="brush: html">
+                        <form class="form-inline" role="form">
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                <input type="password" class="form-control" id="exampleInputEmail2" placeholder="Email address" />
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" />
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" /> Remember me
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </form>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Horizontal form -->
+    <h2 class="sub-title">Horizontal form</h2>
+    <p>Use Bootstrap's predefined grid classes to align labels and groups of form controls in a horizontal layout by adding <span class="txt-class">.form-horizontal</span> to the form. Doing so changes <span class="txt-class">.form-groups</span> to behave as grid rows, so no need for <span class="txt-class">.row</span>.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section row">
+                <form class="form-horizontal col-sm-7" role="form">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword3" placeholder="Password" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" /> Remember me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html">
+                    <pre class="brush: html">
+                        <form class="form-horizontal col-sm-7" role="form">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" /> Remember me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                </div>
+                            </div>
+                        </form>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
