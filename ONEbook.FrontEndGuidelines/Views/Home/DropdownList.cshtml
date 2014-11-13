@@ -17,12 +17,15 @@
 
     <!-- Default dropdownlist -->
     <h2 class="sub-title">Default Dropdown List </h2>
-    <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> plugin for rendering dropdown list. This is the default option, it converts from select element to select2 plugin. By default config select2 provided:</p>
-    <ul>
-        <li>Shows all items linearly or group as the native dropdown list.</li>
-        <li>Shows search box for choosing item quickly.</li>
-        <li>Predefined selected, disabled item.</li>
-    </ul>
+    <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> plugin for rendering dropdown list.</p>
+    <div class="bs-callout bs-callout-info">
+        This is the default option, it converts from select element to select2 plugin. By default config select2 provided:
+        <ul>
+            <li>Shows all items linearly or group as the native dropdown list.</li>
+            <li>Shows search box for choosing item quickly.</li>
+            <li>Predefined selected, disabled item.</li>
+        </ul>
+    </div>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
         <div class="example-section">
@@ -120,9 +123,233 @@
         </div>
     </div>
 
+    <!-- Default dropdownlist -->
+    <h2 class="sub-title">Methods and Events</h2>
+    <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> plugin.</p>
+    <div class="bs-callout bs-callout-info">
+        Select2 supports methods that allow programmatic control of the component:
+        <ul>
+            <li>Get/Set value.</li>
+            <li>Using data for get/set value.</li>
+            <li>Open/Close selection panel.</li>
+            <li>Register events such as:
+                <ul>
+                    <li>Open</li>
+                    <li>Close</li>
+                    <li>Selecting</li>
+                    <li>Hightlight</li>
+                    <li>Removed</li>
+                    <li>Focus</li>
+                    <li>... please refer to select2 document.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div>
+                    <p>
+                        <input type="button" class="btn btn-info withripple" id="btn-set-single" value="Set to California">
+                        <input type="button" class="btn btn-primary withripple" id="btn-get-single" value="Alert selected value">
+                        <input type="button" class="btn btn-info withripple" id="btn-get-clear" value="Clear">
+                        </p>
+                    <p>
+                        <input type="button" class="btn btn-info withripple" id="btn-set-single-2" value="Set to California using data">
+                        <input type="button" class="btn btn-primary withripple" id="btn-get-single-2" value="Alert selected using data">
+                    </p>
+                    <p>
+                        <input type="button" class="btn btn-warning withripple" id="btn-open" value="Open">
+                        <input type="button" class="btn btn-warning withripple" id="btn-close" value="Close">
+                    </p>
+                    <select id="select-methods-events-single">
+                        <optgroup label="Alaskan/Hawaiian Time Zone">
+                            <option value="AK" disabled="disabled">Alaska</option>
+                            <option value="HI" selected="selected">Hawaii</option>
+                        </optgroup>
+                        <optgroup label="Pacific Time Zone">
+                            <option value="CA">California</option>
+                            <option value="NV">Nevada</option>
+                            <option value="OR">Oregon</option>
+                            <option value="WA">Washington</option>
+                        </optgroup>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ">Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="UT">Utah</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <p>
+                        <input type="button" class="btn btn-info withripple" id="btn-set-multiple" value="Set to California and Colorado">
+                        <input type="button" class="btn btn-primary withripple" id="btn-get-multiple" value="Alert selected value">
+                    </p>
+                    <p>
+                        <input type="button" class="btn btn-info withripple" id="btn-set-multiple-2" value="Set to California and Colorado using data">
+                        <input type="button" class="btn btn-primary withripple" id="btn-get-multiple-2" value="Alert selected value using data">
+                        <input type="button" class="btn btn-info withripple" id="btn-clear-multiple" value="Clear">
+                    </p>
+                    <p>
+                        <input type="button" class="btn btn-warning withripple" id="btn-open-multiple" value="Open">
+                        <input type="button" class="btn btn-warning withripple" id="btn-close-multiple" value="Close">
+                    </p>
+                    <select id="select-methods-events-multiple" multiple>
+                        <optgroup label="Alaskan/Hawaiian Time Zone">
+                            <option value="AK" disabled="disabled">Alaska</option>
+                            <option value="HI" selected="selected">Hawaii</option>
+                        </optgroup>
+                        <optgroup label="Pacific Time Zone">
+                            <option value="CA">California</option>
+                            <option value="NV">Nevada</option>
+                            <option value="OR">Oregon</option>
+                            <option value="WA">Washington</option>
+                        </optgroup>
+                        <optgroup label="Mountain Time Zone">
+                            <option value="AZ">Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="ID">Idaho</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="UT">Utah</option>
+                            <option value="WY">Wyoming</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html-medthods-events" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#javascript-medthods-events" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html-medthods-events">
+                    <pre class="brush: html">
+                        <div>
+                            <p>
+                                <input type="button" class="btn btn-info withripple" id="btn-set-single" value="Set to California">
+                                <input type="button" class="btn btn-primary withripple" id="btn-get-single" value="Alert selected value">
+                                <input type="button" class="btn btn-info withripple" id="btn-get-clear" value="Clear">
+                                </p>
+                                <p>
+                                <input type="button" class="btn btn-info withripple" id="btn-set-single-2" value="Set to California using data">
+                                <input type="button" class="btn btn-primary withripple" id="btn-get-single-2" value="Alert selected using data">
+                            </p>
+                            <p>
+                                <input type="button" class="btn btn-warning withripple" id="btn-open" value="Open">
+                                <input type="button" class="btn btn-warning withripple" id="btn-close" value="Close">
+                            </p>
+                                <select id="select-methods-events-single">
+                                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                                        <option value="AK" disabled="disabled">Alaska</option>
+                                        <option value="HI" selected="selected">Hawaii</option>
+                                    </optgroup>
+                                    <optgroup label="Pacific Time Zone">
+                                        <option value="CA">California</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="WA">Washington</option>
+                                    </optgroup>
+                                    <optgroup label="Mountain Time Zone">
+                                        <option value="AZ">Arizona</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="WY">Wyoming</option>
+                                    </optgroup>
+                                </select>
+                        </div>
+                        <div>
+                            <p>
+                                <input type="button" class="btn btn-info withripple" id="btn-set-multiple" value="Set to California and Colorado">
+                                <input type="button" class="btn btn-primary withripple" id="btn-get-multiple" value="Alert selected value">
+                            </p>
+                            <p>
+                                <input type="button" class="btn btn-info withripple" id="btn-set-multiple-2" value="Set to California and Colorado using data">
+                                <input type="button" class="btn btn-primary withripple" id="btn-get-multiple-2" value="Alert selected value using data">
+                                <input type="button" class="btn btn-info withripple" id="btn-clear-multiple" value="Clear">
+                            </p>
+                            <p>
+                                <input type="button" class="btn btn-warning withripple" id="btn-open-multiple" value="Open">
+                                <input type="button" class="btn btn-warning withripple" id="btn-close-multiple" value="Close">
+                            </p>
+                                <select id="select-methods-events-multiple" multiple>
+                                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                                        <option value="AK" disabled="disabled">Alaska</option>
+                                        <option value="HI" selected="selected">Hawaii</option>
+                                    </optgroup>
+                                    <optgroup label="Pacific Time Zone">
+                                        <option value="CA">California</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="WA">Washington</option>
+                                    </optgroup>
+                                    <optgroup label="Mountain Time Zone">
+                                        <option value="AZ">Arizona</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="WY">Wyoming</option>
+                                    </optgroup>
+                                </select>
+                        </div>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript-medthods-events">
+                    <pre class="brush: javascript">
+                        $("#select-methods-events-single").select2({ width: 300 })
+                            .on("select2-selecting", function (e) { alert("change") })
+                            .on("select2-open", function () { alert("open"); })
+                            .on("select2-close", function () { alert("close"); });
+                        $("#btn-get-single").click(function () { alert("Selected value is: " + $("#select-methods-events-single").select2("val")); });
+                        $("#btn-set-single").click(function () { $("#select-methods-events-single").select2("val", "CA"); });
+                        $("#btn-get-clear").click(function () { $("#select-methods-events-single").select2("val", ""); });
+                        $("#btn-get-single-2").click(function () { var data = $("#select-methods-events-single").select2("data"); delete data.element; alert("Selected data is: " + JSON.stringify(data)); });
+                        $("#btn-set-single-2").click(function () { $("#select-methods-events-single").select2("data", { id: "CA", text: "California" }); });
+                        $("#btn-open").click(function () { $("#select-methods-events-single").select2("open"); });
+                        $("#btn-close").click(function () { $("#select-methods-events-single").select2("close"); });
+                        $("#select-methods-events-multiple").select2({ placeholder: "Select a state", width: 300 });
+                        $("#btn-get-multiple").click(function () { alert("Selected value is: " + $("#select-methods-events-multiple").select2("val")); });
+                        $("#btn-set-multiple").click(function () { $("#select-methods-events-multiple").select2("val", ["CA", "CO"]); });
+                        $("#btn-get-multiple-2").click(function () { alert("Selected value is: " + JSON.stringify($("#select-methods-events-multiple").select2("data"))); });
+                        $("#btn-set-multiple-2").click(function () { $("#select-methods-events-multiple").select2("data", [{ id: "CA", text: "California" }, { id: "CO", text: "Colorado" }]); });
+                        $("#btn-clear-multiple").click(function () { $("#select-methods-events-multiple").select2("val", ""); });
+                        $("#btn-open-multiple").click(function () { $("#select-methods-events-multiple").select2("open"); });
+                        $("#btn-close-multiple").click(function () { $("#select-methods-events-multiple").select2("close"); });
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Customize item template -->
     <h2 class="sub-title">Customize item template.</h2>
     <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> for customizing item template.</p>
+    <div class="bs-callout bs-callout-info">
+        By default item display by text, in some cases, we want dropdown list to display other template.
+    </div>
+    <p>The following example demonstrates how this can be set up.</p>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
         <div class="example-section">
@@ -194,7 +421,9 @@
 
     <!-- Initiate items by list object -->
     <h2 class="sub-title">Initiate dropdown list by list object.</h2>
+    <div class="bs-callout bs-callout-info">With some requiments, by default we don't have any dropdown list data, and data will be available when we do some actions, then we need build dropdown list from that list of object. </div>
     <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> to initiating dropdown list by list object.</p>
+    <p>The following example demonstrates how this can be set up.</p>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
         <div class="example-section">
@@ -249,8 +478,10 @@
     </div>
 
     <!-- Lazy loading item -->
-    <h2 class="sub-title">Lazy loading item and virtual scroller.</h2>
-    <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> for lazy loading items and virtual scroller.</p>
+    <h2 class="sub-title">Load remote data, lazy loading item and virtual scroller.</h2>
+    <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> for loading remote data, lazy loading items and virtual scroller.</p>
+    <div class="bs-callout bs-callout-info">Select2 supports lazy-appending of results when the result list is scrolled to the end. In order to enable the remote service must support some sort of a paging mechanism and the query function given to Select2 must take advantage of it. </div>
+    <p>The following example demonstrates how this can be set up. Search for some keyword and then scroll the result list to the end to see more results load:</p>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
         <div class="example-section">
@@ -298,16 +529,16 @@
                                             text: data.Items[i]
                                         });
                                     }
-                                    return { results: convertedItems, more: more };
+                                    return { results: convertedItems, more: more }; // Specific more property for virtual scroller loading
                                 }
                             },
                             formatResult: function (item) {
                                 var markup = '&lt;div&gt;' + item.text + '&lt;/div&gt;';
                                 return markup;
-                            }, // omitted for brevity, see the source of this page
+                            }, // format item display in dropdownlist
                             formatSelection: function (item) {
                                 return item.text;
-                            }, // omitted for brevity, see the source of this page
+                            }, // format selected item
                             dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
                             escapeMarkup: function (m) { return m; }, // we do not want to escape markup since we are displaying html in results
                             width: "300"
@@ -341,15 +572,17 @@
         </div>
     </div>
 
-    <!-- Multiple items selections -->
-    <h2 class="sub-title">Multiple items selection.</h2>
-    <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> for multiple item selection.</p>
+    <!-- Multiple items selections with auto complete -->
+    <h2 class="sub-title">Multiple items selection with auto complete .</h2>
+    <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> for multiple item selection with auto complete.</p>
+    <div class="bs-callout bs-callout-info">We just need add <span class="txt-class">multiple</span> key to select element to allow user make multiple selection. </div>
+    <p>The following example demonstrates how this can be set up.</p>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
         <div class="example-section">
             <h2>Example</h2>
             <div class="demo-section">
-                <select id="select-multiple-items-selection">
+                <select id="select-multiple-items-selection" multiple>
                     <optgroup label="Alaskan/Hawaiian Time Zone">
                         <option value="AK">Alaska</option>
                         <option value="HI">Hawaii</option>
@@ -376,7 +609,7 @@
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="html-multiple-items-selection">
                     <pre class="brush: html">
-                        <select class="select2-custom" id="select-multiple-items-selection">
+                        <select id="select-multiple-items-selection" multiple>
                             <optgroup label="Alaskan/Hawaiian Time Zone">
                                 <option value="AK">Alaska</option>
                                 <option value="HI">Hawaii</option>
@@ -395,7 +628,124 @@
                 </div>
                 <div role="tabpanel" class="tab-pane" id="javascript-multiple-items-selection">
                     <pre class="brush: javascript">
-                        
+                        $('#select-multiple-items-selection').select2();
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Multiple items selections displayed by treeview -->
+    <h2 class="sub-title">Multiple items selection displayed by treeview.</h2>
+    <p>We use <a href="http://dev.nexcel.vn/index.php/fanex-multiselect-tutorials/" target="_blank">Fanex Multiple Select</a> for multiple item selection displayed by treeview.</p>
+    <div class="bs-callout bs-callout-info">
+        In some cases, we need a dropdown list can support:
+        <ul>
+            <li>Select/Deselect all item just by only click.</li>
+            <li>Group items, and displayed by tree view with multiple group level.</li>
+            <li>Collapse/Expand group.</li>
+        </ul>
+    </div>
+    <p>The following example demonstrates how this can be set up.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <select id="select-multiple-treeview">
+                </select>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html-multiple-treeview" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#javascript-multiple-treeview" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html-multiple-treeview">
+                    <pre class="brush: html">
+                    <select id="select-multiple-treeview">
+                        </select>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript-multiple-treeview">
+                    <pre class="brush: javascript">
+                        var myGroupData =
+                            [{
+                                id: "Food",
+                                value: "Food",
+                                text: "Food",
+                                checked: true,
+                                enable: true,
+                                cssClass: "demo-class",
+                                items: [
+                                    {
+                                        id: "Meet",
+                                        value: "Meet",
+                                        text: "Meet",
+                                        checked: true,
+                                        enable: true,
+                                        items: [{
+                                            id: "Beef",
+                                            value: "Beef",
+                                            text: "Beef",
+                                            checked: true,
+                                            enable: true,
+                                        }, {
+                                            id: "Pork",
+                                            value: "Pork",
+                                            text: "Pork",
+                                            checked: true,
+                                            enable: true,
+                                        }, {
+                                            id: "Chicken",
+                                            value: "Chicken",
+                                            text: "Chicken",
+                                            checked: true,
+                                            enable: true,
+                                        }]
+                                    },
+                                    {
+                                        id: "Fruit",
+                                        value: "Fruit",
+                                        text: "Fruit",
+                                        checked: true,
+                                        enable: true,
+                                        items: [{
+                                            id: "Red",
+                                            value: "Red",
+                                            text: "Red",
+                                            checked: true,
+                                            enable: true,
+                                            items: [{
+                                                id: "Cherry",
+                                                value: "Cherry",
+                                                text: "Cherry",
+                                                checked: true,
+                                                enable: false,
+                                            }, {
+                                                id: "Strawberry",
+                                                value: "Strawberry",
+                                                text: "Strawberry",
+                                                checked: true,
+                                                enable: true,
+                                            }, {
+                                                id: "Pineapple",
+                                                value: "Pineapple",
+                                                text: "Pineapple",
+                                                checked: true,
+                                                enable: true,
+                                            }]
+                                        }
+                                    ....
+                            }];
+                        $("#select-multiple-treeview").fanexMultiSelect({
+                            listData: myGroupData,
+                            position: 'top',
+                            maxHeight: 470,
+                        });
                     </pre>
                 </div>
             </div>
