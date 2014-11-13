@@ -25,15 +25,39 @@
                 ONEbook.FrontEndGuidelines.JavaScriptRules = function () {
                     var me = this;
 
-                    // Property and functions come here.
+                    // Properties and functions come here.
                 };
+            </pre>
+        </div>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Remove all trailing whitespaces</h2>
+        <p>
+            The number of whitespaces for a tab may vary with many editors, thus using whitespace instead of tab helps to keep the format of code be the same.
+            Do not use tabs or mix tabs and spaces for indentation.
+        </p>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Use spaces instead of tabs</h2>
+        <p>The trailing whitespaces because they are unnecessary and can complicate diffs.</p>
+    </div>
+    <div class="rule-section">
+        <h2 class="sub-title">Use single quotation marks for string values</h2>
+        <div class="example-code">
+            <pre class="text-danger">
+                /* Not recommended */
+                var exampleText = "example text";
+            </pre>
+            <pre class="text-success">
+                /* Recommended */
+                var exampleText = 'example text';
             </pre>
         </div>
     </div>
     <div class="rule-section">
         <h2 class="sub-title">Avoid DOM manipulation as possible</h2>
         <p>
-            Make sure that you’re manipulating elements fragments just before they are added to the DOM.
+            Make sure that you are manipulating elements fragments just before they are added to the DOM.
             It will help to speed up JavaScript performance.
         </p>
     </div>
