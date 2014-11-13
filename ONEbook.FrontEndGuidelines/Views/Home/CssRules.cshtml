@@ -21,13 +21,15 @@
         </p>
         <div class="example-code">
             <pre class="text-danger">
-/* Not recommended: meaningless */
-#abc-123 {}</pre>
+                /* Not recommended: meaningless */
+                #abc-123 {}
+            </pre>
             <pre class="text-success">
-/* Recommended: specific */
-#gallery {}
-#login {}
-.video {}</pre>
+                /* Recommended: specific */
+                #gallery {}
+                #login {}
+                .video {}
+            </pre>
         </div>
     </div>
     <div class="rule-section">
@@ -38,13 +40,15 @@
         </p>
         <div class="example-code">
             <pre class="text-danger">
-/* Not recommended */
-#navigation {}
-.atr {}</pre>
+                /* Not recommended */
+                #navigation {}
+                .atr {}
+            </pre>
             <pre class="text-success">
-/* Recommended */
-#nav {}
-.author {}</pre>
+                /* Recommended */
+                #nav {}
+                .author {}
+            </pre>
         </div>
     </div>
     <div class="rule-section">
@@ -54,13 +58,15 @@
         </p>
         <div class="example-code">
             <pre class="text-danger">
-/* Not recommended */
-ul#example {}
-div.error {}</pre>
+                /* Not recommended */
+                ul#example {}
+                div.error {}
+            </pre>
             <pre class="text-success">
-/* Recommended */
-#example {}
-.error {}</pre>
+                /* Recommended */
+                #example {}
+                .error {}
+            </pre>
         </div>
     </div>
     <div class="rule-section">
@@ -74,10 +80,11 @@ div.error {}</pre>
         </p>
         <div class="example-code">
             <pre class="text-danger">
-/* Not recommended */
-html body ul li a {
-    color: #fff;
-}</pre>
+                /* Not recommended */
+                html body ul li a {
+                    color: #fff;
+                }
+            </pre>
         </div>
     </div>
     <div class="rule-section">
@@ -87,37 +94,41 @@ html body ul li a {
         </p>
         <div class="example-code">
             <pre class="text-danger">
-/* Not recommended */
-border-top-style: none;
-font-family: palatino, georgia, serif;
-font-size: 100%;
-line-height: 1.6;
-padding-bottom: 2em;
-padding-left: 1em;
-padding-right: 1em;
-padding-top: 0;</pre>
+                /* Not recommended */
+                border-top-style: none;
+                font-family: palatino, georgia, serif;
+                font-size: 100%;
+                line-height: 1.6;
+                padding-bottom: 2em;
+                padding-left: 1em;
+                padding-right: 1em;
+                padding-top: 0;
+            </pre>
             <pre class="text-success">
-/* Recommended */
-border-top: 0;
-font: 100%/1.6 palatino, georgia, serif;
-padding: 0 1em 2em;</pre>
+                /* Recommended */
+                border-top: 0;
+                font: 100%/1.6 palatino, georgia, serif;
+                padding: 0 1em 2em;
+            </pre>
         </div>
     </div>
     <div class="rule-section">
         <h2 class="sub-title">Omit unit specification after “0” values</h2>
         <div class="example-code">
             <pre class="text-success">
-/* Recommended */
-margin: 0;
-padding: 0;</pre>
+                /* Recommended */
+                margin: 0;
+                padding: 0;
+            </pre>
         </div>
     </div>
     <div class="rule-section">
         <h2 class="sub-title">Omit leading “0”s in values between -1 and 1</h2>
         <div class="example-code">
             <pre class="text-success">
-/* Recommended */
-font-size: .8em;</pre>
+                /* Recommended */
+                font-size: .8em;
+            </pre>
         </div>
     </div>
     <div class="rule-section">
@@ -127,11 +138,13 @@ font-size: .8em;</pre>
         </p>
         <div class="example-code">
             <pre class="text-danger">
-/* Not recommended */
-color: #eebbcc;</pre>
+                /* Not recommended */
+                color: #eebbcc;
+            </pre>
             <pre class="text-success">
-/* Recommended */
-color: #ebc;</pre>
+                /* Recommended */
+                color: #ebc;
+            </pre>
         </div>
     </div>
     <div class="rule-section">
@@ -142,15 +155,16 @@ color: #ebc;</pre>
         </p>
         <div class="example-code">
             <pre class="text-danger">
-/* Not recommended: does not separate the words “demo” and “image” */
-.demoimage {}
+                /* Not recommended: does not separate the words “demo” and “image” */
+                .demoimage {}
 
-/* Not recommended: uses underscore instead of hyphen */
-.error_status {}</pre>
-            <pre class="text-success">
-/* Recommended */
-#video-id {}
-.ads-sample {}</pre>
+                /* Not recommended: uses underscore instead of hyphen */
+                .error_status {}</pre>
+                            <pre class="text-success">
+                /* Recommended */
+                #video-id {}
+                .ads-sample {}
+            </pre>
         </div>
     </div>
     <div class="rule-section">
@@ -161,14 +175,15 @@ color: #ebc;</pre>
         </p>
         <div class="example-code">
             <pre class="text-success">
-/* Recommended */
-border: 1px solid;
--moz-border-radius: 4px;
--webkit-border-radius: 4px;
-border-radius: 4px;
-color: black;
-text-align: center;
-text-indent: 2em;</pre>
+                /* Recommended */
+                border: 1px solid;
+                -moz-border-radius: 4px;
+                -webkit-border-radius: 4px;
+                border-radius: 4px;
+                color: black;
+                text-align: center;
+                text-indent: 2em;
+            </pre>
         </div>
     </div>
     <div class="rule-section">
@@ -178,17 +193,18 @@ text-indent: 2em;</pre>
         </p>
         <div class="example-code">
             <pre class="text-success">
-/* Recommended */
-body {
-    border: 1px solid;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
+                /* Recommended */
+                body {
+                    border: 1px solid;
+                    -moz-border-radius: 4px;
+                    -webkit-border-radius: 4px;
 
-    .header {
-        text-align: center;
-        text-indent: 2em;
-    }
-}</pre>
+                    .header {
+                        text-align: center;
+                        text-indent: 2em;
+                    }
+                }
+            </pre>
         </div>
     </div>
     <div class="rule-section">
@@ -198,32 +214,36 @@ body {
         </p>
         <div class="example-code">
             <pre class="text-danger">
-/* Not recommended: the second declaration must end with a semicolon */
-.test {
-  display: block;
-  height: 100px
-}</pre>
+                /* Not recommended: the second declaration must end with a semicolon */
+                .test {
+                  display: block;
+                  height: 100px
+                }
+            </pre>
             <pre class="text-success">
-/* Recommended */
-.test {
-  display: block;
-  height: 100px;
-}</pre>
+                /* Recommended */
+                .test {
+                  display: block;
+                  height: 100px;
+                }
+            </pre>
         </div>
     </div>
     <div class="rule-section">
         <h2 class="sub-title">Always use a single space between property and value (but no space between property and colon)</h2>
         <div class="example-code">
             <pre class="text-danger">
-/* Not recommended */
-h3 {
-  font-weight:bold;
-}</pre>
+                /* Not recommended */
+                h3 {
+                  font-weight:bold;
+                }
+            </pre>
             <pre class="text-success">
-/* Recommended */
-h3 {
-  font-weight: bold;
-}</pre>
+                /* Recommended */
+                h3 {
+                  font-weight: bold;
+                }
+            </pre>
         </div>
     </div>
     <div class="rule-section">
@@ -234,83 +254,93 @@ h3 {
         </p>
         <div class="example-code">
             <pre class="text-danger">
-/* Not recommended: missing space */
-#video{
-  margin-top: 1em;
-}
+                /* Not recommended: missing space */
+                #video{
+                  margin-top: 1em;
+                }
 
-/* Not recommended: unnecessary line break */
-#video
-{
-  margin-top: 1em;
-}</pre>
+                /* Not recommended: unnecessary line break */
+                #video
+                {
+                  margin-top: 1em;
+                }
+            </pre>
             <pre class="text-success">
-/* Recommended */
-#video {
-  margin-top: 1em;
-}</pre>
+                /* Recommended */
+                #video {
+                  margin-top: 1em;
+                }
+            </pre>
         </div>
     </div>
     <div class="rule-section">
         <h2 class="sub-title">Always put a blank line between rules</h2>
         <div class="example-code">
             <pre class="text-success">
-/* Recommended */
-html {
-  background: #fff;
-}
+                /* Recommended */
+                html {
+                  background: #fff;
+                }
 
-body {
-  margin: auto;
-  width: 50%;
-}</pre>
+                body {
+                  margin: auto;
+                  width: 50%;
+                }
+            </pre>
         </div>
     </div>
     <div class="rule-section">
         <h2 class="sub-title">Use single quotation marks for attribute selectors and property values. Exception: If you do need to use the <code>@@charset</code> rule, use double quotation marks</h2>
         <div class="example-code">
             <pre class="text-danger">
-/* Not recommended */
-@@import url("//www.google.com/css/maia.css");
+                /* Not recommended */
+                @@import url("//www.google.com/css/maia.css");
 
-html {
-  font-family: "open sans", arial, sans-serif;
-}</pre>
+                html {
+                  font-family: "open sans", arial, sans-serif;
+                }
+            </pre>
             <pre class="text-success">
-/* Recommended */
-@@import url(//www.google.com/css/maia.css);
+                /* Recommended */
+                @@import url(//www.google.com/css/maia.css);
 
-html {
-  font-family: 'open sans', arial, sans-serif;
-}</pre>
+                html {
+                  font-family: 'open sans', arial, sans-serif;
+                }
+            </pre>
         </div>
     </div>
     <div class="rule-section last">
         <h2 class="sub-title">If possible, group stylesheet sections together by using comments. Separate sections with new lines.</h2>
         <div class="example-code">
             <pre class="text-success">
-/********************************************************/
-/*                        Header                        */
-/********************************************************/
-.header {
-    background-color: @@primary-color;
-    height: 50px;
+                /********************************************************/
+                /*                        Header                        */
+                /********************************************************/
+                .header {
+                    background-color: @@primary-color;
+                    height: 50px;
 
-    .logo {
-        background: url(Images/logo.png) no-repeat;
-        width: 210px;
-        height: 16px;
-        display: inline-block;
-    }
-}
+                    .logo {
+                        background: url(Images/logo.png) no-repeat;
+                        width: 210px;
+                        height: 16px;
+                        display: inline-block;
+                    }
+                }
 
-/********************************************************/
-/*                        Content                       */
-/********************************************************/
-.content {
-    position: absolute;
-    top: 50px;
-}</pre>
+                /********************************************************/
+                /*                        Content                       */
+                /********************************************************/
+                .content {
+                    position: absolute;
+                    top: 50px;
+                }
+            </pre>
         </div>
     </div>
 </div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/rules/js")
+}

@@ -60,7 +60,7 @@ namespace ONEbook.FrontEndGuidelines
                         "~/Scripts/Libraries/CodeHighlight/shBrushXml.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/layoutjs").Include(
-                        "~/Scripts/Namespace/namespace.js",
+                        "~/Scripts/Libraries/Namespace/namespace.js",
                         "~/Scripts/Home/ONEbook.FrontEndGuidelines.js",
                         "~/Scripts/Home/ONEbook.FrontEndGuidelines.Layout.js"));
 
@@ -86,7 +86,11 @@ namespace ONEbook.FrontEndGuidelines
         /// <param name="bundles">The bundle collections.</param>
         private static void RegisterSitesBundles(BundleCollection bundles)
         {
-            //// Bundle for Dropdown List
+            // Bundle for Rules sites.
+            bundles.Add(new ScriptBundle("~/bundles/rules/js").Include(
+                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Rules.js"));
+
+            // Bundle for Dropdown List
             bundles.Add(new ScriptBundle("~/bundles/controls/js/dropdownlist").Include(
                 "~/Scripts/Libraries/DropdownList/Select2/select2.js"));
 
@@ -102,6 +106,7 @@ namespace ONEbook.FrontEndGuidelines
             bundles.Add(new StyleBundle("~/bundles/controls/css/datepicker").Include(
                 "~/Content/Datepicker/bootstrap-datetimepicker.min.css"));
 
+            // Bundle for Checkbox.
             bundles.Add(new StyleBundle("~/bundles/controls/css/checkbox").Include(
                 "~/Content/CustomizedControls/checkbox.less"));
         }

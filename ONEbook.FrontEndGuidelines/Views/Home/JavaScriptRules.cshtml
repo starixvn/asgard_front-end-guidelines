@@ -20,13 +20,14 @@
         </p>
         <div class="example-code">
             <pre class="text-success">
-/* Recommended */
-Namespace.Register('ONEbook.FrontEndGuidelines.JavaScriptRules');
-ONEbook.FrontEndGuidelines.JavaScriptRules = function () {
-    var $this = this;
+                /* Recommended */
+                Namespace.Register('ONEbook.FrontEndGuidelines.JavaScriptRules');
+                ONEbook.FrontEndGuidelines.JavaScriptRules = function () {
+                    var me = this;
 
-    // Property and functions come here.
-};/pre>
+                    // Property and functions come here.
+                };
+            </pre>
         </div>
     </div>
     <div class="rule-section">
@@ -70,3 +71,7 @@ ONEbook.FrontEndGuidelines.JavaScriptRules = function () {
         </p>
     </div>
 </div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/rules/js")
+}
