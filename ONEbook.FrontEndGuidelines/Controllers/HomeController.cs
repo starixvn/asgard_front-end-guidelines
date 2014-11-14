@@ -116,7 +116,13 @@ namespace ONEbook.FrontEndGuidelines.Controllers
 
             return this.View(viewName);
         }
-
+        
+        /// <summary>
+        /// Get Dropdown List Data.
+        /// </summary>
+        /// <param name="searchText">Search text for searching data.</param>
+        /// <param name="pageNumber">Page number for get paging data.</param>
+        /// <returns>Sample list data.</returns>
         [HttpGet]
         public JsonResult GetDropdownListData(string searchText, int pageNumber)
         {
@@ -139,6 +145,67 @@ namespace ONEbook.FrontEndGuidelines.Controllers
                     Items = sampleItems,
                 }, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult GetTreeviewList(string nodeId)
+        {
+            List<object> treeNodes = new List<object>();
+            if (string.Compare(nodeId, "#") == 0)
+            {
+                treeNodes.Add(
+                    new { 
+                        id = 1,
+                        text = "Root node",
+                        children = new List<object>
+                        {
+                            new 
+                            {
+                                children = true,
+                                id = 2,
+                                text = "Child node 1"
+                            },
+                            new 
+                            {
+                                id = 3,
+                                text = "Child node 2"
+                            }
+                        }
+                    });
+            }
+            else
+            {
+                var addLength = 5;
+                for (int i = 0; i < addLength; i++)
+                {
+                    var addId = Convert.ToInt32(nodeId) * 10 + i;
+                    if (addId > int.MaxValue)
+                    {
+                        break;
+                    }
+
+                    if(i == 2)
+                    {
+                        treeNodes.Add(new
+                            {
+                                children = true,
+                                id = addId,
+                                text = "Child node " + addId.ToString()
+                            });
+                    }
+                    else
+                    {
+                        treeNodes.Add(new
+                        {
+                            id = addId,
+                            text = "Child node " + addId.ToString()
+                        });
+                    }
+                }
+            }
+
+            return Json(treeNodes, JsonRequestBehavior.AllowGet);
+        }
+
+                
     }
 
 }

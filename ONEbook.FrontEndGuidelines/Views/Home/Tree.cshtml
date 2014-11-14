@@ -11,3 +11,301 @@
 {
     @Scripts.Render("~/bundles/controls/js/treeview")
 }
+
+
+<div class="col-sm-12">
+    <p>With Treeview We use <a href="https://github.com/vakata/jstree" target="_blank">JSTree</a> plugin for rendering treeview.</p>  
+    <p>JSTree supports selecting node, visualizing the hierarchical relationships between nodes with n levels.</p>
+
+    <!-- Populating a tree using HTML -->
+    <h2 class="sub-title">Populating a tree using HTML.</h2>
+    <div class="bs-callout bs-callout-info">
+        Now we are all set to create a tree, inline HTML is the easiest option (suitable for menus). All you need to do is select a node (using a jQuery selector) and invoke the <span class="text-info">.jstree()</span>  function to let jstree know you want to render a tree inside the selected node. You can add a few options when rendering a node using a data-attribute.
+    </div>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div id="tree-container-html">
+                    <ul>
+                        <li>
+                            Root node
+                            <ul>
+                                <li data-jstree='{ "selected" : true, "opened" : true }'>Child node 1</li>
+                                <li>Child node 2</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html-tree-html" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#javascript-tree-html" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html-tree-html">
+                    <pre class="brush: html">
+                        <div id="tree-container-html">
+                            <ul>
+                                <li>
+                                    Root node
+                                <ul>
+                                <li data-jstree='{ "selected" : true, "opened" : true }'>Child node 1</li>
+                                <li>Child node 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript-tree-html">
+                    <pre class="brush: javascript">
+                        $('#tree-container').jstree();
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Populating a tree using an array -->
+    <h2 class="sub-title">Populating a tree using an array (or JSON).</h2>
+    <p></p>
+    <div class="bs-callout bs-callout-info">
+        <p>Building trees from HTML is easy, but it is not very flexible, inline JS data is a better option.</p>
+        <p>The data you use must be in a specific format, each branch of the tree is represented by an object, which must at least have a text key. The children key can be used to add children to the branch, it should be an array of objects.</p>
+        <p>
+            There are other available options for each node, only set them if you need them like:
+            <ul>
+                <li><span class="text-info">id</span> - makes if possible to identify a node later (will also be used as a DOM ID of the LI node). Make sure you do not repeat the same ID in a tree instance (that would defeat its purpose of being a unique identifier and may cause problems for jstree).  </li>
+                <li><span class="text-info">icon</span> - a string which will be used for the node's icon - this can either be a path to a file, or a className (or list of classNames), which you can style in your CSS (font icons also work).</li>
+                <li><span class="text-info">data</span> - this can be anything you want - it is metadata you want attached to the node - you willbe able to access and modify it any time later - it has no effect on the visuals of the node.</li>
+                <li><span class="text-info">state</span> - and object specifyng a few options about the node: </li>
+                <li>
+                    <ul>
+                        <li><span class="text-info">selected</span> - if the node should be initially selected</li>
+                        <li><span class="text-info">opened</span> - if the node should be initially opened</li>
+                        <li><span class="text-info">disabled</span> - if the node should be disabled </li>
+                        <li><span class="text-info">checked</span> - checkbox plugin specific - if the node should be checked (only used when tie_to_selection is false, which you should only do if you really know what you are doing)</li>
+                    </ul>
+                </li>
+                <li><span class="text-info">undetermined</span> - checkbox plugin specific - if the node should be rendered in undetermined state (only used with lazy loading and when the node is not yet loaded, otherwise this state is automatically calculated).</li>
+                <li><span class="text-info">type</span> - types plugin specific - the type of the nodes (should be defined in the types config), if not set "default" is assumed.</li>
+                <li><span class="text-info">li_attr</span> - object of values which will be used to add HTML attributes on the resulting LI DOM node.</li>
+                <li><span class="text-info">a_attr</span> - object of values which will be used to add HTML attributes on the resulting A node.</li>
+            </ul>
+        </p>
+</div>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div id="tree-container-array-data">
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html-tree-array-data" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#javascript-tree-array-data" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html-tree-array-data">
+                    <pre class="brush: html">
+                        <div id="tree-container-array-data">
+                        </div>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript-tree-array-data">
+                    <pre class="brush: javascript">
+                        $('#tree-container-array-data').jstree({
+                            'core' : {
+                              'data' : [
+                                  { 
+                                      "text" : "Root node", 
+                                      "state" : {"opened" : true }, 
+                                      "children" : [
+                                          { 
+                                            "text" : "Child node 1", 
+                                            "state" : { "selected" : true },
+                                            "icon" : "glyphicon glyphicon-flash"
+                                          },
+                                          { "text" : "Child node 2", "state" : { "disabled" : true } }
+                                      ]
+                                }
+                              ]
+                            }
+                        });
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Populating the tree using AJAX and lazy loading nodes -->
+    <h2 class="sub-title">Populating the tree using AJAX and lazy loading nodes.</h2>
+    <p></p>
+    <div class="bs-callout bs-callout-info">
+        Lazy loading means nodes will be loaded then they are needed. 
+        Imagine you have a huge amount of nodes you want to show, but loading them with a single request is way too much traffic. 
+        Lazy loading makes it possible to load nodes on the fly - jstree will perform AJAX requests as the user browses the tree.
+    </div>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div id="tree-container-lazy-load">
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html-tree-lazy-load" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#javascript-tree-lazy-load" role="tab" data-toggle="tab">JavaScript</a></li>
+                <li role="presentation"><a href="#csharp-tree-lazy-load" role="tab" data-toggle="tab">C#</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html-tree-lazy-load">
+                    <pre class="brush: html">
+                        <div id="tree-container-lazy-load">
+                        </div>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript-tree-lazy-load">
+                    <pre class="brush: javascript">
+                        $('#tree-container-lazy-load').jstree({
+                            'core': {
+                                'data': {
+                                    "url": ONEbook.FrontEndGuidelines.rootUrl + 'Home/GetTreeviewList',
+                                    "data": function (node) {
+                                        return { "nodeId": node.id };
+                                    }
+                                }
+                            }
+                        });
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="csharp-tree-lazy-load">
+                    <pre class="brush: csharp">
+                        public JsonResult GetTreeviewList(string nodeId)
+                        {
+                            List&lt;object> treeNodes = new List&lt;object>();
+                            if (string.Compare(nodeId, "#") == 0)
+                            {
+                                treeNodes.Add(
+                                    new { 
+                                        id = 1,
+                                        text = "Root node",
+                                        children = new List&lt;object>
+                                        {
+                                            new 
+                                            {
+                                                children = true,
+                                                id = 2,
+                                                text = "Child node 1"
+                                            },
+                                            new 
+                                            {
+                                                id = 3,
+                                                text = "Child node 2"
+                                            }
+                                        }
+                                    });
+                            }
+                            else
+                            {
+                                var addLength = 5;
+                                for (int i = 0; i < addLength; i++)
+                                {
+                                    var addId = Convert.ToInt32(nodeId) * 10 + i;
+                                    if (addId > int.MaxValue)
+                                    {
+                                        break;
+                                    }
+
+                                    if(i == 2)
+                                    {
+                                        treeNodes.Add(new
+                                            {
+                                                children = true,
+                                                id = addId,
+                                                text = "Child node " + addId.ToString()
+                                            });
+                                    }
+                                    else
+                                    {
+                                        treeNodes.Add(new
+                                        {
+                                            id = addId,
+                                            text = "Child node " + addId.ToString()
+                                        });
+                                    }
+                                }
+                            }
+
+                            return Json(treeNodes, JsonRequestBehavior.AllowGet);
+                        }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Populating the tree using a callback function -->
+    <h2 class="sub-title">Populating a tree using an array (or JSON).</h2>
+    <p></p>
+    <div class="bs-callout bs-callout-info">
+        Sometimes you may not want jsTree to make AJAX calls for you - you might want to make them yourself, or use some other method of puplating the tree. In that case you can use a callback function.
+    </div>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div id="tree-container-call-back-function">
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html-tree-call-back-function" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#javascript-tree-call-back-function" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html-tree-call-back-function">
+                    <pre class="brush: html">
+                        <div id="tree-container-call-back-function">
+                        </div>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript-tree-call-back-function">
+                    <pre class="brush: javascript">
+                        $('#tree-container-call-back-function').jstree({
+                        'core': {
+                            'data': function (node, cb) {
+                                if (node.id === "#") {
+                                    cb([{ "text": "Root", "id": "1", "children": true }]);
+                                }
+                                else {
+                                    cb(["Child"]);
+                                }
+                            }
+                        }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

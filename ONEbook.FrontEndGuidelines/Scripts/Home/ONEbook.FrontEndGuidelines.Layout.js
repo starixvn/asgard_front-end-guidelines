@@ -18,6 +18,7 @@ if (ONEbook.FrontEndGuidelines) {
                 me.cachedElements.toggleMenu = $('#toggleMenu');
                 me.cachedElements.leftContent = $('#mainContent .left-panel');
                 me.cachedElements.rightContent = $('#mainContent .right-panel');
+                //me.cachedElements.rightContent.scrollTop(0);
                 me.cachedElements.codeDemoBlocks = $('.docs-section .view-source');
                 if ($.cookie(me.toggleCookieName) === 'hide') {
                     me.cachedElements.toggleMenu.addClass('menu-hide');
