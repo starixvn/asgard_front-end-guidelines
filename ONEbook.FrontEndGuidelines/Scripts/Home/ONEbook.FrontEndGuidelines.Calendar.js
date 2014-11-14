@@ -118,7 +118,7 @@ ONEbook.FrontEndGuidelines.Calendar = function () {
             pickTime: false,
             useCurrent: false
         });
-    }
+    };
 
     // Initialize pickers to allow to select a date range.
     var initializeDateRange = function () {

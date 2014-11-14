@@ -125,6 +125,11 @@
     <Content Include="Content\Bootstrap\CSS\bootstrap.min.css" />
     <Content Include="Content\Datepicker\bootstrap-datetimepicker.css" />
     <Content Include="Content\Datepicker\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\Dialog\BootstrapDialog\css\bootstrap-dialog.css" />
+    <Content Include="Content\Dialog\BootstrapDialog\css\bootstrap-dialog.min.css" />
+    <Content Include="Content\Dialog\BootstrapModal\css\bootstrap-modal-bs3patch.css" />
+    <Content Include="Content\Dialog\BootstrapModal\css\bootstrap-modal.css" />
+    <Content Include="Content\Dialog\BootstrapModal\img\ajax-loader.gif" />
     <Content Include="Content\DropdownList\FanexMultipleSelect\fanex.multiSelect.css" />
     <Content Include="Content\DropdownList\FanexMultipleSelect\images\BottomLine.png" />
     <Content Include="Content\DropdownList\FanexMultipleSelect\images\FirstNodeSpan.png" />
@@ -171,6 +176,7 @@
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.DropdownList.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Layout.js" />
+    <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Dialog.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Switch.js" />
     <Content Include="Scripts\Libraries\CodeHighlight\shBrushCSharp.js" />
     <Content Include="Scripts\Libraries\Datepicker\bootstrap-datetimepicker.min.js" />
@@ -195,6 +201,8 @@
     <Content Include="Content\CustomizedControls\checkbox.less" />
     <Content Include="Content\CustomizedControls\dropdownlist.less" />
     <Content Include="Content\CustomizedControls\material-design.less" />
+    <Content Include="Content\Dialog\BootstrapDialog\less\bootstrap-dialog.less" />
+    <Content Include="Content\CustomizedControls\dialog.less" />
     <None Include="Properties\PublishProfiles\LocalPublication.pubxml" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Calendar.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.TreeView.js" />
@@ -214,6 +222,10 @@
     <Content Include="Content\CodeHighlight\shCoreMDUltra.css" />
     <Content Include="Content\CodeHighlight\shCoreMidnight.css" />
     <Content Include="Content\CodeHighlight\shCoreRDark.css" />
+    <Content Include="Scripts\Libraries\Dialog\BootstrapDialog\bootstrap-dialog.js" />
+    <Content Include="Scripts\Libraries\Dialog\BootstrapDialog\bootstrap-dialog.min.js" />
+    <Content Include="Scripts\Libraries\Dialog\BootstrapModal\bootstrap-modal.js" />
+    <Content Include="Scripts\Libraries\Dialog\BootstrapModal\bootstrap-modalmanager.js" />
     <Content Include="Scripts\Libraries\DropdownList\FanexMultipleSelect\fanex.multiSelect.js" />
     <Content Include="Scripts\Libraries\jQuery\jquery-1.11.1.js" />
     <Content Include="Scripts\Libraries\jQuery\jquery-1.11.1.min.js" />

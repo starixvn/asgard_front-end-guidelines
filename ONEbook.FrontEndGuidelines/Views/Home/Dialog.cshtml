@@ -1,3 +1,165 @@
 ﻿@{
     ViewBag.Title = "Dialog";
 }
+
+@section css
+{
+    @Styles.Render("~/bundles/controls/css/dialog")
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/controls/js/dialog")
+}
+
+<div class="col-sm-12">
+    <p>We use <a href="https://github.com/nakupanda/bootstrap3-dialog">bootstrap3-dialog</a> plugin to uake use of Bootstrap Modal more monkey-friendly.</p>
+
+    <!-- Do bootstrap modal simplest way. -->
+    <h2 class="sub-title">Do bootstrap modal simplest way.</h2>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <button class="btn btn-primary" id="btn-dialog-default">Open dialog</button>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html-dialog-default" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#javascript-dialog-default" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html-dialog-default">
+                    <pre class="brush: html">
+                        <button class="btn btn-primary" id="btn-dialog-default">Open dialog</button>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript-dialog-default">
+                    <pre class="brush: javascript">
+                        $('#btn-dialog-default').click(function () {
+                            BootstrapDialog.show({
+                                message: 'Hi!'
+                            });
+                        });
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modify Dialog Content -->
+    <h2 class="sub-title">Modify Dialog Content when is opening.</h2>
+    <p></p>
+    <div class="bs-callout bs-callout-info">
+        With bootstrap3-dialog, we can modify:
+        <ul>
+            <li>Dialog Title</li>
+            <li>Dialog Buttons</li>
+            <li>Dialog Message</li>
+        </ul>
+    </div>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <button class="btn btn-primary" id="btn-dialog-modify">Open dialog for modifying.</button>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html-dialog-modify" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#javascript-dialog-modify" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html-dialog-modify">
+                    <pre class="brush: html">
+                        <button class="btn btn-primary" id="btn-dialog-modify">Open dialog for modifying.</button>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript-dialog-modify">
+                    <pre class="brush: javascript">
+                        $('#btn-dialog-modify').click(function () {
+                            BootstrapDialog.show({
+                                title: 'Default Title',
+                                message: 'Click buttons below.',
+                                buttons: [{
+                                    label: 'Modify 1',
+                                    hotkey: 65, // Keycode of keyup event of key 'A' is 65.
+                                    cssClass: 'btn-primary',
+                                    action: function (dialog) {
+                                        dialog.setTitle('Title 1');
+                                        dialog.setMessage('Message 1');
+                                    }
+                                }, {
+                                    label: 'Modify 2',
+                                    hotkey: 66,
+                                    cssClass: 'btn-success',
+                                    action: function (dialog) {
+                                        dialog.setTitle('Title 2');
+                                        dialog.setMessage('Message 2');
+                                    }
+                                }, {
+                                    icon: 'glyphicon glyphicon-ban-circle',
+                                    label: 'Disable myself',
+                                    cssClass: 'btn-warning',
+                                    action: function (dialog) {
+                                        var $button = this; // 'this' here is a jQuery object that wrapping the &lt;button&gt; DOM element.
+                                        $button.disable();
+                                    }
+                                }, {
+                                    label: 'Close',
+                                    cssClass: 'btn-danger',
+                                    action: function (dialogItself) {
+                                        dialogItself.close();
+                                    }
+                                }]
+                            });
+                        });
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Control dialog instances -->
+    <h2 class="sub-title">Control dialog instances for modifying later.</h2>
+    <div class="bs-callout bs-callout-info">
+        BootstrapDialog.show(...) is just a shortcut method, if you need dialog instances, use 'new'.
+    </div>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <button class="btn btn-primary" id="btn-dialog-instances">Open multiple dialogs.</button>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html-dialog-instances" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#javascript-dialog-instances" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html-dialog-instances">
+                    <pre class="brush: html">
+                        <button class="btn btn-primary" id="btn-dialog-instances">Open multiple dialogs.</button>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript-dialog-instances">
+                    <pre class="brush: javascript">
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

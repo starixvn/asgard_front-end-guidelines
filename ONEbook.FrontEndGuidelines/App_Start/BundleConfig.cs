@@ -130,6 +130,17 @@ namespace ONEbook.FrontEndGuidelines
             bundles.Add(new StyleBundle("~/bundles/controls/css/switch").Include(
                 "~/Content/Switch/bootstrap-switch.css"));
 
+            // Bundles for dialog
+            bundles.Add(new ScriptBundle("~/bundles/controls/js/dialog").Include(
+                "~/Scripts/Libraries/Dialog/BootstrapDialog/bootstrap-dialog.js",
+                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Dialog.js"
+             ));
+
+            bundles.Add(new StyleBundle("~/bundles/controls/css/dialog").Include(
+                "~/Content/Dialog/BootstrapDialog/css/bootstrap-dialog.css",
+                "~/Content/CustomizedControls/dialog.less"
+                ));
+
             // Bundle for Checkbox.
             bundles.Add(new StyleBundle("~/bundles/controls/css/checkbox").Include(
                 "~/Content/CustomizedControls/checkbox.less"));
