@@ -65,7 +65,13 @@
                 </div>
                 <div role="tabpanel" class="tab-pane" id="javascript-tree-html">
                     <pre class="brush: javascript">
-                        $('#tree-container').jstree();
+                        $('#tree-container-html').jstree({
+                            core: {
+                                themes: {
+                                    icons: false
+                                }
+                            }
+                        });
                     </pre>
                 </div>
             </div>
@@ -126,24 +132,23 @@
                 <div role="tabpanel" class="tab-pane" id="javascript-tree-array-data">
                     <pre class="brush: javascript">
                         $('#tree-container-array-data').jstree({
-                            'core' : {
-                              'data' : [
-                                  { 
-                                      "text" : "Root node", 
-                                      "state" : {"opened" : true }, 
-                                      "children" : [
-                                          { 
-                                            "text" : "Child node 1", 
-                                            "state" : { "selected" : true },
-                                            "icon" : "glyphicon glyphicon-flash"
-                                          },
-                                          { "text" : "Child node 2", "state" : { "disabled" : true } }
-                                      ]
-                                }
-                              ]
+                            core: {
+                                data: [
+                                    {
+                                        text: 'Root node',
+                                        state: { opened: true },
+                                        children: [
+                                            {
+                                                text: 'Child node 1',
+                                                state: { selected: true },
+                                                icon: 'glyphicon glyphicon-flash'
+                                            },
+                                            { text: 'Child node 2', state: { disabled: true } }
+                                        ]
+                                    }
+                                ]
                             }
                         });
-                    </pre>
                 </div>
             </div>
         </div>
@@ -184,11 +189,11 @@
                 <div role="tabpanel" class="tab-pane" id="javascript-tree-lazy-load">
                     <pre class="brush: javascript">
                         $('#tree-container-lazy-load').jstree({
-                            'core': {
-                                'data': {
-                                    "url": ONEbook.FrontEndGuidelines.rootUrl + 'Home/GetTreeviewList',
-                                    "data": function (node) {
-                                        return { "nodeId": node.id };
+                            core: {
+                                data: {
+                                    url: ONEbook.FrontEndGuidelines.rootUrl + 'Home/GetTreeviewList',
+                                    data: function (node) {
+                                        return { 'nodeId': node.id };
                                     }
                                 }
                             }
@@ -293,19 +298,146 @@
                 <div role="tabpanel" class="tab-pane" id="javascript-tree-call-back-function">
                     <pre class="brush: javascript">
                         $('#tree-container-call-back-function').jstree({
-                        'core': {
-                            'data': function (node, cb) {
-                                if (node.id === "#") {
-                                    cb([{ "text": "Root", "id": "1", "children": true }]);
-                                }
-                                else {
-                                    cb(["Child"]);
+                            core: {
+                                data: function (node, cb) {
+                                    if (node.id === '#') {
+                                        cb([{ text: 'Root', id: '1', children: true }]);
+                                    }
+                                    else {
+                                        cb(['Child']);
+                                    }
                                 }
                             }
-                        }
+                        });
                     </pre>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Working with events and interact with the tree using the API -->
+    <h2 class="sub-title">Working with events and interact with the tree using the APION).</h2>
+    <p></p>
+    <div class="bs-callout bs-callout-info">
+        <p>JSTree provides a lot of events to let you know something happened with the tree. 
+        The events are the same regardless of how you populate the tree.</p>
+        <p>JSTree also provides a lot of methods to let you interact with tree.</p>
+    </div>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <button id="btn-tree-select" class="btn btn-primary">Select node 1</button>
+                <div id="tree-container-events-methods">
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html-tree-events-methods" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#javascript-tree-events-methods" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html-tree-events-methods">
+                    <pre class="brush: html">
+                        <button id="btn-tree-select" class="btn btn-primary">Select node 1</button>
+                        <div id="tree-container-events-methods">
+                        </div>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript-tree-events-methods">
+                    <pre class="brush: javascript">
+                        $('#tree-container-events-methods').jstree({
+                            core: {
+                                data: [
+                                  { id: 1, text: 'Node 1' },
+                                  { id: 2, text: 'Node 2' },
+                                ]
+                            }
+                        }).on('changed.jstree', function (e, data) {
+                            window.console.log('The selected nodes are:');
+                            window.console.log(data.selected);
+                        });
+
+                        $('#btn-tree-select').click(function () {
+                            var instance = $('#tree-container-events-methods').jstree(true);
+                            instance.deselect_all();
+                            instance.select_node('1');
+                        });
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Other options and plugins -->
+    <h2 class="sub-title">Other options and plugins.</h2>
+    <p></p>
+    <div class="bs-callout bs-callout-info">
+        <ul>
+            JSTree allow you to:
+            <li>Show node with checkbox.</li>
+            <li>Display context menu.</li>
+            <li>Drag and drop node.</li>
+            <li>Search</li>
+            <li>Sort</li>
+            <li>State</li>
+            <li>Type</li>
+            <li>... please refer to <a href="http://www.jstree.com/api/">JSTree API Document</a></li>
+        </ul>
+    </div>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div id="tree-container-others">
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html-tree-others" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#javascript-tree-others" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html-tree-others">
+                    <pre class="brush: html">
+                        <div id="tree-container-others">
+                        </div>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript-tree-others">
+                    <pre class="brush: javascript">
+                        $('#tree-container-others').jstree({
+                            core: {
+                                data: [
+                                    {
+                                        text: 'Root node 1',
+                                        state: { 'opened': true },
+                                        children: [
+                                            {
+                                                text: 'Child node 1',
+                                                state: { 'selected': true },
+                                                icon: 'glyphicon glyphicon-flash'
+                                            },
+                                            { text: 'Child node 2', 'state': { 'disabled': true } },
+                                            { text: 'Child node 3' }
+                                        ]
+                                    },
+                                    { text: 'Root node 2', }
+                                ]
+                            },
+                            plugins: ['checkbox', 'contextmenu', 'dnd']
+                        });
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

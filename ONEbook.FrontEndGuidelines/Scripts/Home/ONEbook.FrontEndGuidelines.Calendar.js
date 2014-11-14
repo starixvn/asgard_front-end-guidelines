@@ -91,7 +91,7 @@ ONEbook.FrontEndGuidelines.Calendar = function () {
             pickTime: false,
             useCurrent: false
         });
-    }
+    };
 
     // Register all handlers to events of controls.
     var registerEvents = function () {
