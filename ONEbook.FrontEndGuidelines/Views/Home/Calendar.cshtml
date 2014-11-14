@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewBag.Title = "Calendar";
 }
 @section css
@@ -8,16 +8,17 @@
 <div class="col-sm-12">
     <p>
         Provide a friendlier UI than a classic textbox to support the user to pick a date, a month, a date range or a month range for updating or querying data purposes.
-        For this type of requirements, we will mainly use <a href="http://eonasdan.github.io/bootstrap-datetimepicker/">Bootstrap DateTime picker</a>
+        For this type of requirements, we will mainly use <a href="http://eonasdan.github.io/bootstrap-datetimepicker/" target="_blank">Bootstrap DateTime picker</a> with <a href="http://momentjs.com/" target="_blank">moment</a>
         with some addtional JavaScript codes for some special cases.
     </p>
     <!-- Simple DateTime picker -->
     <h2 class="sub-title">Simple DateTime picker</h2>
     <p>
-        The following example shows how to configure <a href="http://eonasdan.github.io/bootstrap-datetimepicker/">Bootstrap DateTime picker</a>
+        The following example shows how to configure <a href="http://eonasdan.github.io/bootstrap-datetimepicker/" target="_blank">Bootstrap DateTime picker</a>
         to satisfy some common scenarios in a real project:
         <ul>
             <li>Pick any date.</li>
+            <li>Sets a default date, accept JavaScript dates, strings and <a href="http://momentjs.com/" target="_blank">moment</a> objects.</li>
             <li>Select a date which must be in a given range.</li>
             <li>Show the date picker in a specific language.</li>
             <li>Show, hide, enable, disable the control programmatically.</li>
@@ -47,12 +48,10 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="row col-sm-12">
-                            <button class="btn btn-primary" type="button" id="btnShowSampleDate">Show</button>
-                            <button class="btn btn-primary" type="button" id="btnHideSampleDate">Hide</button>
-                            <button class="btn btn-primary" type="button" id="btnEnableSampleDate">Enable</button>
-                            <button class="btn btn-primary" type="button" id="btnDisableSampleDate">Disable</button>
-                        </div>
+                        <button class="btn btn-primary" type="button" id="btnShowSampleDate">Show</button>
+                        <button class="btn btn-primary" type="button" id="btnHideSampleDate">Hide</button>
+                        <button class="btn btn-primary" type="button" id="btnEnableSampleDate">Enable</button>
+                        <button class="btn btn-primary" type="button" id="btnDisableSampleDate">Disable</button>
                     </div>
                 </div>
                 <div class="col-sm-5 calendar-form">
@@ -117,12 +116,10 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="row col-sm-12">
-                                    <button class="btn btn-primary" type="button" id="btnShowSampleDate">Show</button>
-                                    <button class="btn btn-primary" type="button" id="btnHideSampleDate">Hide</button>
-                                    <button class="btn btn-primary" type="button" id="btnEnableSampleDate">Enable</button>
-                                    <button class="btn btn-primary" type="button" id="btnDisableSampleDate">Disable</button>
-                                </div>
+                                <button class="btn btn-primary" type="button" id="btnShowSampleDate">Show</button>
+                                <button class="btn btn-primary" type="button" id="btnHideSampleDate">Hide</button>
+                                <button class="btn btn-primary" type="button" id="btnEnableSampleDate">Enable</button>
+                                <button class="btn btn-primary" type="button" id="btnDisableSampleDate">Disable</button>
                             </div>
                         </div>
                         <div class="col-sm-5 calendar-form">
@@ -212,7 +209,8 @@
 
                             // Initialize a simple date picker.
                             var initializeSampleDate = function () {
-                                cachedDOM.dpkSamepleDate.datetimepicker({
+                                cachedDOM.dpkSamepleDate.datetimepicker({                        
+                                    defaultDate: new Date(),
                                     pickTime: false,
                                     useCurrent: false
                                 });
@@ -252,6 +250,7 @@
                                 cachedDOM.dpkSamepleDate.data('DateTimePicker').disable();
                             };
 
+                            // Change the displaying language.
                             var changeLanguage = function () {
                                 var language = cachedDOM.ddlLanguage.val();
 
@@ -277,6 +276,466 @@
                             me.Initialize = function () {
                                 cacheElements();
                                 initializeSampleDate();
+                                registerEvents();
+                            };
+                        };
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---------------------------->
+    <!-- Select a date range -->
+    <h2 class="sub-title">Select a date range</h2>
+    <p>
+        This example shows how to use two <a href="http://eonasdan.github.io/bootstrap-datetimepicker/">Bootstrap DateTime pickers</a>
+        to allow the user to pick a date range.
+    </p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="dpkFromDate" class="control-label">From Date</label>
+                        <div class="input-group" id="dpkFromDate">
+                            <input type="text" class="form-control" placeholder="Pick a date" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="dpkToDate" class="control-label">To Date</label>
+                        <div class="input-group" id="dpkToDate">
+                            <input type="text" class="form-control" placeholder="Pick a date" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="button" id="btnShowDateRange">Show Date Range</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#dateRangeHtml" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#dateRangeJavascript" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="dateRangeHtml">
+                    <pre class="brush: html">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="dpkFromDate" class="control-label">From Date</label>
+                                <div class="input-group" id="dpkFromDate">
+                                    <input type="text" class="form-control" placeholder="Pick a date" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="dpkToDate" class="control-label">To Date</label>
+                                <div class="input-group" id="dpkToDate">
+                                    <input type="text" class="form-control" placeholder="Pick a date" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <button class="btn btn-primary" type="button" id="btnShowDateRange">Show Date Range</button>
+                            </div>
+                        </div>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="dateRangeJavascript">
+                    <pre class="brush: javascript">
+                        /* global Namespace, ONEbook */
+
+                        'use strict';
+                        $(document).ready(function () {
+                            var calendarPage = new ONEbook.FrontEndGuidelines.Calendar();
+                            calendarPage.Initialize();
+                        });
+
+                        Namespace.Register('ONEbook.FrontEndGuidelines.Calendar');
+                        ONEbook.FrontEndGuidelines.Calendar = function () {
+                            var me = this;
+                            var cachedDOM = {
+                                dpkFromDate: null,
+                                dpkToDate: null,
+                                btnShowDateRange: null
+                            };
+
+                            // Cache DOM elements for later uses.
+                            var cacheElements = function () {
+                                cachedDOM.dpkFromDate = $('#dpkFromDate');
+                                cachedDOM.dpkToDate = $('#dpkToDate');
+                                cachedDOM.btnShowDateRange = $('#btnShowDateRange');
+                            };
+
+                            // Initialize the date range.
+                            var initializeDateRange = function () {
+                                cachedDOM.dpkFromDate.datetimepicker({
+                                    defaultDate: new Date(),
+                                    pickTime: false,
+                                    useCurrent: false
+                                });
+
+                                cachedDOM.dpkToDate.datetimepicker({
+                                    defaultDate: new Date(),
+                                    pickTime: false,
+                                    useCurrent: false
+                                });
+
+                                cachedDOM.dpkFromDate.on('dp.change', function (e) {
+                                    var currentToDateValue = cachedDOM.dpkToDate.data('DateTimePicker').getDate();
+
+                                    if (currentToDateValue < e.date) {
+                                        cachedDOM.dpkToDate.data('DateTimePicker').setDate(e.date);
+                                    }
+
+                                    cachedDOM.dpkToDate.data('DateTimePicker').setMinDate(e.date);
+                                });
+
+                                cachedDOM.dpkToDate.on('dp.change', function (e) {
+                                    var currentFromMonthValue = cachedDOM.dpkFromDate.data('DateTimePicker').getDate();
+
+                                    if (currentFromMonthValue > e.date) {
+                                        cachedDOM.dpkFromDate.data('DateTimePicker').setDate(e.date);
+                                    }
+
+                                    cachedDOM.dpkFromDate.data('DateTimePicker').setMaxDate(e.date);
+                                });
+                            };
+
+                            // Initialize pickers to allow to select a date range.
+                            var showSelectedDateRange = function () {
+                                var dateFrom = cachedDOM.dpkFromDate.data('DateTimePicker').getDate();
+                                var dateTo = cachedDOM.dpkToDate.data('DateTimePicker').getDate();
+                                alert('Date range: ' + new Date(dateFrom) + ' - ' + new Date(dateTo));
+                            };
+
+                            // Register all handlers to events of controls.
+                            var registerEvents = function () {
+                                cachedDOM.btnShowDateRange.on('click', showSelectedDateRange);
+                            };
+
+                            me.Initialize = function () {
+                                cacheElements();
+                                initializeDateRange();
+                                registerEvents();
+                            };
+                        };
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---------------------------->
+    <!-- Select a month -->
+    <h2 class="sub-title">Select month and year only</h2>
+    <p>
+        This example shows how to cutomize <a href="http://eonasdan.github.io/bootstrap-datetimepicker/" target="_blank">Bootstrap DateTime picker</a>
+        to allow the user to select month and year only.
+    </p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section row">
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="dpkMonth" class="control-label">Month</label>
+                        <div class="input-group" id="dpkMonth">
+                            <input type="text" class="form-control" placeholder="Pick a month" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="button" id="btnShowMonth">Show Month</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#monthPickerHtml" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#monthPickerJavascript" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="monthPickerHtml">
+                    <pre class="brush: html">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="dpkMonth" class="control-label">Month</label>
+                                <div class="input-group" id="dpkMonth">
+                                    <input type="text" class="form-control" placeholder="Pick a month" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <button class="btn btn-primary" type="button" id="btnShowMonth">Show Month</button>
+                            </div>
+                        </div>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="monthPickerJavascript">
+                    <pre class="brush: javascript">
+                        /* global Namespace, ONEbook */
+
+                        'use strict';
+
+                        $(document).ready(function () {
+                            var calendarPage = new ONEbook.FrontEndGuidelines.Calendar();
+                            calendarPage.Initialize();
+                        });
+
+                        Namespace.Register('ONEbook.FrontEndGuidelines.Calendar');
+                        ONEbook.FrontEndGuidelines.Calendar = function () {
+                            var me = this;
+                            var cachedDOM = {
+                                dpkMonth: null,
+                                btnShowMonth: null
+                            };
+
+                            // Cache DOM elements for later uses.
+                            var cacheElements = function () {
+                                cachedDOM.dpkMonth = $('#dpkMonth');
+                                cachedDOM.btnShowMonth = $('#btnShowMonth');
+                            };
+
+                            // Initialize month picker.
+                            var intializeMonthPicker = function () {
+                                cachedDOM.dpkMonth.datetimepicker({
+                                    defaultDate: new Date(),
+                                    format: 'MM/YYYY',
+                                    pickTime: false,
+                                    useCurrent: false,
+                                    viewMode: 'months',
+                                    minViewMode: 'months'
+                                });
+                            };
+
+                            // Show selected month with the format 'MM/YYYY'.
+                            var showSelectedMonth = function () {
+                                var selectedMonth = cachedDOM.dpkMonth.data('DateTimePicker').getDate();
+                                alert('Selected Month: ' + selectedMonth.format('MM/YYYY'));
+                            }
+
+                            // Register all handlers to events of controls.
+                            var registerEvents = function () {
+                                cachedDOM.btnShowMonth.on('click', showSelectedMonth);
+                            };
+
+                            me.Initialize = function () {
+                                cacheElements();
+                                intializeMonthPicker();
+                                registerEvents();
+                            };
+                        };
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---------------------------->
+    <!-- Select month range -->
+    <h2 class="sub-title">Select month range</h2>
+    <p>
+        This example shows how to cutomize two <a href="http://eonasdan.github.io/bootstrap-datetimepicker/" target="_blank">Bootstrap DateTime pickers</a>
+        to allow the user to pick a month range. The outputs are formatted with <a href="http://momentjs.com" target="_blank">moment</a>
+    </p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section row">
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="dpkFromMonth" class="control-label">From Month</label>
+                        <div class="input-group" id="dpkFromMonth">
+                            <input type="text" class="form-control" placeholder="Pick a month" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="dpkToMonth" class="control-label">To Month</label>
+                        <div class="input-group" id="dpkToMonth">
+                            <input type="text" class="form-control" placeholder="Pick a month" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <button class="btn btn-primary" type="button" id="btnShowMonths">Show Months</button>
+                    <button class="btn btn-primary" type="button" id="btnShowMonthRange">Show Range</button>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#monthRangeHtml" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#monthRangeJavascript" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="monthRangeHtml">
+                    <pre class="brush: html">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="dpkFromMonth" class="control-label">From Month</label>
+                                <div class="input-group" id="dpkFromMonth">
+                                    <input type="text" class="form-control" placeholder="Pick a month" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="dpkToMonth" class="control-label">To Month</label>
+                                <div class="input-group" id="dpkToMonth">
+                                    <input type="text" class="form-control" placeholder="Pick a month" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn btn-primary" type="button" id="btnShowMonths">Show Months</button>
+                            <button class="btn btn-primary" type="button" id="btnShowMonthRange">Show Range</button>
+                        </div>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="monthRangeJavascript">
+                    <pre class="brush: javascript">
+                        /* global Namespace, ONEbook */
+
+                        'use strict';
+
+                        $(document).ready(function () {
+                            var calendarPage = new ONEbook.FrontEndGuidelines.Calendar();
+                            calendarPage.Initialize();
+                        });
+
+                        Namespace.Register('ONEbook.FrontEndGuidelines.Calendar');
+                        ONEbook.FrontEndGuidelines.Calendar = function () {
+                            var me = this;
+                            var cachedDOM = {
+                                dpkFromMonth: null,
+                                dpkToMonth: null,
+                                btnShowMonths: null,
+                                btnShowMonthRange: null
+                            };
+
+                            // Cache DOM elements for later uses.
+                            var cacheElements = function () {
+                                cachedDOM.dpkFromMonth = $('#dpkFromMonth');
+                                cachedDOM.dpkToMonth = $('#dpkToMonth');
+                                cachedDOM.btnShowMonths = $('#btnShowMonths');
+                                cachedDOM.btnShowMonthRange = $('#btnShowMonthRange');
+                            };
+
+                            // Initialize month pickers.
+                            var intializeMonthPickers = function () {
+                                cachedDOM.dpkFromMonth.datetimepicker({
+                                    defaultDate: new Date(),
+                                    format: 'MM/YYYY',
+                                    pickTime: false,
+                                    useCurrent: false,
+                                    viewMode: 'months',
+                                    minViewMode: 'months'
+                                });
+
+                                cachedDOM.dpkToMonth.datetimepicker({
+                                    defaultDate: new Date(),
+                                    format: 'MM/YYYY',
+                                    pickTime: false,
+                                    useCurrent: false,
+                                    viewMode: 'months',
+                                    minViewMode: 'months'
+                                });
+
+                                cachedDOM.dpkFromMonth.on('dp.change', function (e) {
+                                    var currentToMonthValue = cachedDOM.dpkToMonth.data('DateTimePicker').getDate();
+
+                                    if (currentToMonthValue < e.date) {
+                                        cachedDOM.dpkToMonth.data('DateTimePicker').setDate(e.date);
+                                    }
+
+                                    cachedDOM.dpkToMonth.data('DateTimePicker').setMinDate(e.date);
+                                });
+
+                                cachedDOM.dpkToMonth.on('dp.change', function (e) {
+                                    var currentFromMonthValue = cachedDOM.dpkFromMonth.data('DateTimePicker').getDate();
+
+                                    if (currentFromMonthValue > e.date) {
+                                        cachedDOM.dpkFromMonth.data('DateTimePicker').setDate(e.date);
+                                    }
+
+                                    cachedDOM.dpkFromMonth.data('DateTimePicker').setMaxDate(e.date);
+                                });
+                            };
+
+                            // Show selected months with the format 'MM/YYYY'.
+                            var showSelectedMonths = function () {
+                                var selectedFromMonth = cachedDOM.dpkFromMonth.data('DateTimePicker').getDate();
+                                var selectedToMonth = cachedDOM.dpkToMonth.data('DateTimePicker').getDate();
+                                alert('Selected Months: ' + selectedFromMonth.format('MM/YYYY') + ' - ' + selectedToMonth.format('MM/YYYY'));
+                            }
+
+                            // Show selected range: [First date of From Month, Last date of To Month].
+                            var showSelectedMonthRange = function () {
+                                var selectedFromMonth = cachedDOM.dpkFromMonth.data('DateTimePicker').getDate();
+                                var selectedToMonth = cachedDOM.dpkToMonth.data('DateTimePicker').getDate();
+                                alert('Selected Months: ' + selectedFromMonth.startOf('month').format('MM/DD/YYYY') + ' - ' + selectedToMonth.endOf('month').format('MM/DD/YYYY'));
+                            }
+
+                            // Register all handlers to events of controls.
+                            var registerEvents = function () {
+                                cachedDOM.btnShowMonths.on('click', showSelectedMonths);
+                                cachedDOM.btnShowMonthRange.on('click', showSelectedMonthRange);
+                            };
+
+                            me.Initialize = function () {
+                                cacheElements();
+                                intializeMonthPickers();
                                 registerEvents();
                             };
                         };
