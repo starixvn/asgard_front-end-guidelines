@@ -155,6 +155,8 @@
     <Content Include="Content\MaterialDesign\CSS\ripples.min.css" />
     <Content Include="Content\MaterialDesign\Fonts\LICENSE.txt" />
     <Content Include="Content\MaterialDesign\Fonts\Material-Design-Icons.svg" />
+    <Content Include="Content\Switch\bootstrap-switch.css" />
+    <Content Include="Content\Switch\bootstrap-switch.min.css" />
     <Content Include="Content\TreeView\JSTree\default-dark\32px.png" />
     <Content Include="Content\TreeView\JSTree\default-dark\40px.png" />
     <Content Include="Content\TreeView\JSTree\default-dark\style.css" />
@@ -169,6 +171,7 @@
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.DropdownList.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Layout.js" />
+    <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Switch.js" />
     <Content Include="Scripts\Libraries\CodeHighlight\shBrushCSharp.js" />
     <Content Include="Scripts\Libraries\Datepicker\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\Libraries\Bootstrap\bootstrap.js" />
@@ -246,6 +249,8 @@
     <Content Include="Scripts\Libraries\DropdownList\Select2\select2_locale_vi.js" />
     <Content Include="Scripts\Libraries\DropdownList\Select2\select2_locale_zh-CN.js" />
     <Content Include="Scripts\Libraries\DropdownList\Select2\select2_locale_zh-TW.js" />
+    <Content Include="Scripts\Libraries\Switch\bootstrap-switch.js" />
+    <Content Include="Scripts\Libraries\Switch\bootstrap-switch.min.js" />
     <Content Include="Scripts\Libraries\TreeView\JSTree\jstree.js" />
     <Content Include="Scripts\Libraries\TreeView\JSTree\jstree.min.js" />
     <Content Include="Scripts\Libraries\_references.js" />

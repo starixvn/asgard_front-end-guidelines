@@ -121,6 +121,15 @@ namespace ONEbook.FrontEndGuidelines
             bundles.Add(new StyleBundle("~/bundles/controls/css/treeview").Include(
                 "~/Content/TreeView/JSTree/default/style.css"));
 
+            // Bundles for switch button
+            bundles.Add(new ScriptBundle("~/bundles/controls/js/switch").Include(
+                "~/Scripts/Libraries/Switch/bootstrap-switch.js",
+                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Switch.js"
+                ));
+
+            bundles.Add(new StyleBundle("~/bundles/controls/css/switch").Include(
+                "~/Content/Switch/bootstrap-switch.css"));
+
             // Bundle for Checkbox.
             bundles.Add(new StyleBundle("~/bundles/controls/css/checkbox").Include(
                 "~/Content/CustomizedControls/checkbox.less"));
