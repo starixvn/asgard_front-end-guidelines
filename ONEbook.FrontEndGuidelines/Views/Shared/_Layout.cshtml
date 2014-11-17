@@ -1,5 +1,5 @@
 ﻿@{
-    Dictionary<string, string> webControls = ViewBag.WebControls as Dictionary<string, string>;
+    Dictionary<string, Tuple<string, bool>> webControls = ViewBag.WebControls as Dictionary<string, Tuple<string, bool>>;
     string tabName = (string)ViewBag.TabName;
     bool isWebControl = ViewBag.IsWebControl != null ? (bool)ViewBag.IsWebControl : false;
 }
@@ -22,7 +22,7 @@
         <nav class="navbar" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">                    
+                <div class="navbar-header">
                     <i class="mdi-navigation-menu icon-left-panel withripple" id="toggleMenu"></i>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -38,23 +38,28 @@
                         <li class="@(tabName == "cssrules" ? "active" : string.Empty)"><a href="CssRules"><i class="mdi-image-blur-circular icon-menu"></i> CSS Rules</a></li>
                         <li class="@(tabName == "javascriptrules" ? "active" : string.Empty)"><a href="JavaScriptRules"><i class="mdi-action-settings-ethernet icon-menu"></i> JavaScript Rules</a></li>*@
                     </ul>
-                </div><!-- /.navbar-collapse -->                
+                </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <i class="mdi-action-help icon-help"></i>        
+        <i class="mdi-action-help icon-help"></i>
     </header>
     <div class="content" id="mainContent">
         <div class="left-panel">
             <ul class="sub-menu list-unstyled">
                 @foreach (var control in webControls)
                 {
+                    string cssClasses = tabName == control.Key ? "active" : string.Empty;
+
+                    cssClasses += control.Value.Item2 ? string.Empty : " content-not-available";
+                    cssClasses += " withripple";
+
                     <li>
                         @Html.ActionLink(
-                                     control.Value,
+                                     control.Value.Item1,
                                      "WebControl",
                                      "Home",
-                                      new { tabName = control.Key, viewName = control.Value.Replace(" ", string.Empty) },
-                                      new { @class = (tabName == control.Key ? "active" : string.Empty) + " withripple" })
+                                     new { tabName = control.Key, viewName = control.Value.Item1.Replace(" ", string.Empty) },
+                                     new { @class = cssClasses })
                     </li>
                 }
             </ul>
@@ -74,7 +79,6 @@
     </div>
     <footer class="footer">
         <p>This <span class="text-uppercase">front-end guideline</span> is applied for all Nexcelers —  © 2014 Nexcel Solution — All rights reserved.</p>
-        
     </footer>
     @Html.Hidden("FrontEndGuidelinesRootUrl", Url.Content("~/"))
     @Scripts.Render("~/bundles/jquery")
@@ -92,6 +96,5 @@
         SyntaxHighlighter.defaults['toolbar'] = false;
         SyntaxHighlighter.all();
     </script>
-
 </body>
 </html>
