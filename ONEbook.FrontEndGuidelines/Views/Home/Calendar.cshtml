@@ -449,6 +449,171 @@
         </div>
     </div>
     <!---------------------------->
+    <!-- Quickly select a defined date range -->
+    <h2 class="sub-title">Quickly select a defined date range.</h2>
+    <p>
+        In this example, we have some custom codes to provide eight defined date ranges. That is expected to help to user to select a date range quickly.
+    </p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="ddlDateRanges" class="control-label">Date Range</label>
+                        <select id="ddlDateRanges" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="dpkRangeFromDate" class="control-label">From Date</label>
+                        <div class="input-group" id="dpkRangeFromDate">
+                            <input type="text" class="form-control" placeholder="Pick a date" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="dpkRangeToDate" class="control-label">To Date</label>
+                        <div class="input-group" id="dpkRangeToDate">
+                            <input type="text" class="form-control" placeholder="Pick a date" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#dateRangeTypeHtml" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#dateRangeTypeJavascript" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="dateRangeTypeHtml">
+                    <pre class="brush: html">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="ddlDateRanges" class="control-label">Date Range</label>
+                                <select id="ddlDateRanges" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="dpkRangeFromDate" class="control-label">From Date</label>
+                                <div class="input-group" id="dpkRangeFromDate">
+                                    <input type="text" class="form-control" placeholder="Pick a date" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="dpkRangeToDate" class="control-label">To Date</label>
+                                <div class="input-group" id="dpkRangeToDate">
+                                    <input type="text" class="form-control" placeholder="Pick a date" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="dateRangeTypeJavascript">
+                    <pre class="brush: javascript">
+                        /* global Namespace, ONEbook */
+
+                        'use strict';
+
+                        $(document).ready(function () {
+                            var calendarPage = new ONEbook.FrontEndGuidelines.Calendar();
+
+                            calendarPage.Initialize();
+                        });
+
+                        Namespace.Register('ONEbook.FrontEndGuidelines.Calendar');
+                        ONEbook.FrontEndGuidelines.Calendar = function () {
+                            var me = this;
+                            var cachedDOM = {
+                                ddlDateRanges: null,
+                                dpkRangeFromDate: null,
+                                dpkRangeToDate: null
+                            };
+
+                            // Cache DOM elements for later uses.
+                            var cacheElements = function () {
+                                cachedDOM.ddlDateRanges = $('#ddlDateRanges');
+                                cachedDOM.dpkRangeFromDate = $('#dpkRangeFromDate');
+                                cachedDOM.dpkRangeToDate = $('#dpkRangeToDate');
+                            };
+
+                            // Initialize pickers to allow to select a date range.
+                            var initializeQuicklyDateRange = function () {
+                                cachedDOM.dpkRangeFromDate.datetimepicker({
+                                    defaultDate: new Date(),
+                                    pickTime: false,
+                                    useCurrent: false
+                                });
+
+                                cachedDOM.dpkRangeToDate.datetimepicker({
+                                    defaultDate: new Date(),
+                                    pickTime: false,
+                                    useCurrent: false
+                                });
+
+                                cachedDOM.dpkRangeFromDate.on('dp.change', function (e) {
+                                    var currentToDateValue = cachedDOM.dpkRangeToDate.data('DateTimePicker').getDate();
+
+                                    if (currentToDateValue < e.date) {
+                                        cachedDOM.dpkRangeToDate.data('DateTimePicker').setDate(e.date);
+                                    }
+
+                                    cachedDOM.dpkRangeToDate.data('DateTimePicker').setMinDate(e.date);
+                                });
+
+                                cachedDOM.dpkRangeToDate.on('dp.change', function (e) {
+                                    var currentFromMonthValue = cachedDOM.dpkRangeFromDate.data('DateTimePicker').getDate();
+
+                                    if (currentFromMonthValue > e.date) {
+                                        cachedDOM.dpkRangeFromDate.data('DateTimePicker').setDate(e.date);
+                                    }
+
+                                    cachedDOM.dpkRangeFromDate.data('DateTimePicker').setMaxDate(e.date);
+                                });
+                            };
+
+                            // Initialize the deopdown list contains some defined date ranges.
+                            var initializeDateRanges = function () {
+                                cachedDOM.ddlDateRanges.daterangeselector({
+                                    language: 'en',
+                                    // defaultValue: 'yesterday',
+                                    dateFromElement: cachedDOM.dpkRangeFromDate,
+                                    dateToElement: cachedDOM.dpkRangeToDate
+                                });
+                            };
+
+                            me.Initialize = function () {
+                                cacheElements();
+                                initializeQuicklyDateRange();
+                                initializeDateRanges();
+                            };
+                        };
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---------------------------->
     <!-- Select a month -->
     <h2 class="sub-title">Select month and year only</h2>
     <p>

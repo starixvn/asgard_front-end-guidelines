@@ -34,7 +34,11 @@ ONEbook.FrontEndGuidelines.Calendar = function () {
         dpkFromMonth: null,
         dpkToMonth: null,
         btnShowMonths: null,
-        btnShowMonthRange: null
+        btnShowMonthRange: null,
+
+        ddlDateRanges: null,
+        dpkRangeFromDate: null,
+        dpkRangeToDate: null
     };
 
     // Cache DOM elements for later uses.
@@ -62,6 +66,10 @@ ONEbook.FrontEndGuidelines.Calendar = function () {
         cachedDOM.dpkToMonth = $('#dpkToMonth');
         cachedDOM.btnShowMonths = $('#btnShowMonths');
         cachedDOM.btnShowMonthRange = $('#btnShowMonthRange');
+
+        cachedDOM.ddlDateRanges = $('#ddlDateRanges');
+        cachedDOM.dpkRangeFromDate = $('#dpkRangeFromDate');
+        cachedDOM.dpkRangeToDate = $('#dpkRangeToDate');
     };
 
     // Initialize a simple date picker.
@@ -238,6 +246,50 @@ ONEbook.FrontEndGuidelines.Calendar = function () {
 
         alert('Selected Months: ' + selectedFromMonth.startOf('month').format('MM/DD/YYYY') + ' - ' + selectedToMonth.endOf('month').format('MM/DD/YYYY'));
     }
+    
+    // Initialize pickers to allow to select a date range.
+    var initializeQuicklyDateRange = function () {
+        cachedDOM.dpkRangeFromDate.datetimepicker({
+            defaultDate: new Date(),
+            pickTime: false,
+            useCurrent: false
+        });
+
+        cachedDOM.dpkRangeToDate.datetimepicker({
+            defaultDate: new Date(),
+            pickTime: false,
+            useCurrent: false
+        });
+
+        cachedDOM.dpkRangeFromDate.on('dp.change', function (e) {
+            var currentToDateValue = cachedDOM.dpkRangeToDate.data('DateTimePicker').getDate();
+
+            if (currentToDateValue < e.date) {
+                cachedDOM.dpkRangeToDate.data('DateTimePicker').setDate(e.date);
+            }
+
+            cachedDOM.dpkRangeToDate.data('DateTimePicker').setMinDate(e.date);
+        });
+
+        cachedDOM.dpkRangeToDate.on('dp.change', function (e) {
+            var currentFromMonthValue = cachedDOM.dpkRangeFromDate.data('DateTimePicker').getDate();
+
+            if (currentFromMonthValue > e.date) {
+                cachedDOM.dpkRangeFromDate.data('DateTimePicker').setDate(e.date);
+            }
+
+            cachedDOM.dpkRangeFromDate.data('DateTimePicker').setMaxDate(e.date);
+        });
+    };
+
+    // Initialize the deopdown list contains some defined date ranges.
+    var initializeDateRanges = function () {
+        cachedDOM.ddlDateRanges.daterangeselector({
+            language: 'en',
+            dateFromElement: cachedDOM.dpkRangeFromDate,
+            dateToElement: cachedDOM.dpkRangeToDate
+        });
+    };
 
     // Register all handlers to events of controls.
     var registerEvents = function () {
@@ -260,6 +312,8 @@ ONEbook.FrontEndGuidelines.Calendar = function () {
         initializeDateRange();
         intializeMonthPicker();
         intializeMonthPickers();
+        initializeQuicklyDateRange();
+        initializeDateRanges();
         registerEvents();
     };
 };

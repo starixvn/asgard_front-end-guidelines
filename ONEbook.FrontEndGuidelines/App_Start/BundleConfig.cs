@@ -108,7 +108,8 @@ namespace ONEbook.FrontEndGuidelines
             bundles.Add(new ScriptBundle("~/bundles/controls/js/calendar").Include(
                 "~/Scripts/Libraries/Moment/moment-with-locales.min.js",
                 "~/Scripts/Libraries/Datepicker/bootstrap-datetimepicker.min.js",
-                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Calendar.js"));
+                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Calendar.js",
+                "~/Scripts/CustomizedLibraries/daterangeselector.js"));
 
             bundles.Add(new StyleBundle("~/bundles/controls/css/calendar").Include(
                 "~/Content/Datepicker/bootstrap-datetimepicker.min.css"));
