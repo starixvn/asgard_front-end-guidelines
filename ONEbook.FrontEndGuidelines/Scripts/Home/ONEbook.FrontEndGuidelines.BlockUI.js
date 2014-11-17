@@ -3,9 +3,9 @@
 'use strict';
 
 $(document).ready(function () {
-    var calendarPage = new ONEbook.FrontEndGuidelines.BlockUI();
+    var blockUIPage = new ONEbook.FrontEndGuidelines.BlockUI();
 
-    calendarPage.Initialize();
+    blockUIPage.Initialize();
 });
 
 Namespace.Register('ONEbook.FrontEndGuidelines.BlockUI');

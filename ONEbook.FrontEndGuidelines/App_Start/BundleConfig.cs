@@ -147,6 +147,10 @@ namespace ONEbook.FrontEndGuidelines
             bundles.Add(new StyleBundle("~/bundles/controls/css/blockui").Include(
                 "~/Content/CustomizedControls/blockui.less"));
 
+            // Bundle for tooltip.
+            bundles.Add(new ScriptBundle("~/bundles/controls/js/tooltip").Include(
+                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Tooltip.js"));
+
             // Bundle for Checkbox.
             bundles.Add(new StyleBundle("~/bundles/controls/css/checkbox").Include(
                 "~/Content/CustomizedControls/checkbox.less"));

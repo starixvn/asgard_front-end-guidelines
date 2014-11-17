@@ -181,6 +181,7 @@
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Layout.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Dialog.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Switch.js" />
+    <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Tooltip.js" />
     <Content Include="Scripts\Libraries\CodeHighlight\shBrushCSharp.js" />
     <Content Include="Scripts\Libraries\Datepicker\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\Libraries\Bootstrap\bootstrap.js" />
