@@ -17,8 +17,31 @@
     <p>With Treeview We use <a href="https://github.com/vakata/jstree" target="_blank">JSTree</a> plugin for rendering treeview.</p>  
     <p>JSTree supports selecting node, visualizing the hierarchical relationships between nodes with n levels.</p>
 
+    <p>
+        Some scenarios <a href="https://github.com/vakata/jstree" target="_blank">JSTree</a> can be applied are:
+        <ul>
+            <li><a href="#populatingTreeUsingHtml">Convert from traditional hierarchical node (using ul li) to friendlier UI, predefined node state.</a></li>
+            <li><a href="#populatingTreeUsingArray">Populating a tree using an array (or JSON).</a></li>
+            <li><a href="#populatingUsingAJAXAndLazyLoadingNodes">Populating the tree using AJAX and lazy loading nodes.</a></li>
+            <li><a href="#populatingTreeUsingCallbackFunction">Populating a tree using callback function.</a></li>
+            <li><a href="#workingWithEventsAndInteractWithTree">Working with events like selected item change ..., or interact with the tree using the API.</a></li>
+            <li><a href="#otherOptionAndPlugin">Support other options and plugins:</a>
+                <ul>
+                    <li>Show node with checkbox.</li>
+                    <li>Display context menu.</li>
+                    <li>Drag and drop node.</li>
+                    <li>Search</li>
+                    <li>Sort</li>
+                    <li>State</li>
+                    <li>Type</li>
+                    <li>... please refer to <a href="http://www.jstree.com/api/">JSTree API Document</a></li>
+                </ul>
+            </li>
+        </ul>
+    </p>
+
     <!-- Populating a tree using HTML -->
-    <h2 class="sub-title">Populating a tree using HTML.</h2>
+    <h2 class="sub-title" id="populatingTreeUsingHtml">Populating a tree using HTML, predefined node state.</h2>
     <div class="bs-callout bs-callout-info">
         Now we are all set to create a tree, inline HTML is the easiest option (suitable for menus). All you need to do is select a node (using a jQuery selector) and invoke the <span class="text-info">.jstree()</span>  function to let jstree know you want to render a tree inside the selected node. You can add a few options when rendering a node using a data-attribute.
     </div>
@@ -79,7 +102,7 @@
     </div>
 
     <!-- Populating a tree using an array -->
-    <h2 class="sub-title">Populating a tree using an array (or JSON).</h2>
+    <h2 class="sub-title" id="populatingTreeUsingArray">Populating a tree using an array (or JSON).</h2>
     <p></p>
     <div class="bs-callout bs-callout-info">
         <p>Building trees from HTML is easy, but it is not very flexible, inline JS data is a better option.</p>
@@ -155,7 +178,7 @@
     </div>
 
     <!-- Populating the tree using AJAX and lazy loading nodes -->
-    <h2 class="sub-title">Populating the tree using AJAX and lazy loading nodes.</h2>
+    <h2 class="sub-title" id="populatingUsingAJAXAndLazyLoadingNodes">Populating the tree using AJAX and lazy loading nodes.</h2>
     <p></p>
     <div class="bs-callout bs-callout-info">
         Lazy loading means nodes will be loaded then they are needed. 
@@ -267,7 +290,7 @@
     </div>
 
     <!-- Populating the tree using a callback function -->
-    <h2 class="sub-title">Populating a tree using an array (or JSON).</h2>
+    <h2 class="sub-title" id="populatingTreeUsingCallbackFunction">Populating a tree using callback function.</h2>
     <p></p>
     <div class="bs-callout bs-callout-info">
         Sometimes you may not want jsTree to make AJAX calls for you - you might want to make them yourself, or use some other method of puplating the tree. In that case you can use a callback function.
@@ -316,7 +339,7 @@
     </div>
 
     <!-- Working with events and interact with the tree using the API -->
-    <h2 class="sub-title">Working with events and interact with the tree using the APION).</h2>
+    <h2 class="sub-title" id="workingWithEventsAndInteractWithTree">Working with events and interact with the tree using the API.</h2>
     <p></p>
     <div class="bs-callout bs-callout-info">
         <p>JSTree provides a lot of events to let you know something happened with the tree. 
@@ -373,7 +396,7 @@
     </div>
 
     <!-- Other options and plugins -->
-    <h2 class="sub-title">Other options and plugins.</h2>
+    <h2 class="sub-title" id="otherOptionAndPlugin">Other options and plugins.</h2>
     <p></p>
     <div class="bs-callout bs-callout-info">
         <ul>

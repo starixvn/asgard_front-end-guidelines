@@ -13,10 +13,33 @@
 }
 
 <div class="col-sm-12">
-    <p>Support select single or multiple items from list item.</p>
+    <p>Provide a friendlier UI than a default <span class="text-info">select</span> to support user choose an item, multiple items, search item, display by traditional view or treeview.</p>
+    <p>In this guide, we mainly use two plugin for all our cases, 
+    <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a>
+    and 
+    <a href="http://dev.nexcel.vn/index.php/fanex-multiselect-tutorials/" target="_blank">Fanex Multiple Select</a>
+    :
+        <ul>
+            <li>
+                Some scenarios <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> can be applied are:
+                <ul>
+                    <li><a href="#defaultDropdownlist">Show all items or group of items from select element, search box, predefined selected or disabled item.</a></li>
+                    <li><a href="#methodsAndEvents">Get/Set value, Open/Close panel, register event for listening Open/Close/Selecting/Removed ...</a></li>
+                    <li><a href="#customizeItemTemplate">Customize item template.</a></li>
+                    <li><a href="#initDropdownListByListObject">Initiate dropdown list by list object.</a></li>
+                    <li><a href="#loadRemoteDataVirtualScroller">Load remote data, lazy loading item and virtual scroller.</a></li>
+                    <li><a href="#multipleSelectionWithAutoComplete">Multiple items selection with auto complete.</a></li>
+                </ul>
+            </li>
+            <li>
+                Scenario <a href="http://dev.nexcel.vn/index.php/fanex-multiselect-tutorials/" target="_blank">Fanex Multiple Select</a> can be applied is
+                <a href="#multipleSelectionWithTreeView">display multiple items selection by treeview.</a>
+            </li>
+        </ul>
+    </p>
 
     <!-- Default dropdownlist -->
-    <h2 class="sub-title">Default Dropdown List </h2>
+    <h2 class="sub-title" id="defaultDropdownlist">Default Dropdown List </h2>
     <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> plugin for rendering dropdown list.</p>
     <div class="bs-callout bs-callout-info">
         This is the default option, it converts from select element to select2 plugin. By default config select2 provided:
@@ -124,7 +147,7 @@
     </div>
 
     <!-- Methods and Events -->
-    <h2 class="sub-title">Methods and Events</h2>
+    <h2 class="sub-title" id="methodsAndEvents">Methods and Events</h2>
     <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> plugin.</p>
     <div class="bs-callout bs-callout-info">
         Select2 supports methods that allow programmatic control of the component:
@@ -344,7 +367,7 @@
     </div>
 
     <!-- Customize item template -->
-    <h2 class="sub-title">Customize item template.</h2>
+    <h2 class="sub-title" id="customizeItemTemplate">Customize item template.</h2>
     <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> for customizing item template.</p>
     <div class="bs-callout bs-callout-info">
         By default item display by text, in some cases, we want dropdown list to display other template.
@@ -420,7 +443,7 @@
     </div>
 
     <!-- Initiate items by list object -->
-    <h2 class="sub-title">Initiate dropdown list by list object.</h2>
+    <h2 class="sub-title" id="initDropdownListByListObject">Initiate dropdown list by list object.</h2>
     <div class="bs-callout bs-callout-info">With some requiments, by default we don't have any dropdown list data, and data will be available when we do some actions, then we need build dropdown list from that list of object. </div>
     <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> to initiating dropdown list by list object.</p>
     <p>The following example demonstrates how this can be set up.</p>
@@ -478,7 +501,7 @@
     </div>
 
     <!-- Lazy loading item -->
-    <h2 class="sub-title">Load remote data, lazy loading item and virtual scroller.</h2>
+    <h2 class="sub-title" id="loadRemoteDataVirtualScroller">Load remote data, lazy loading item and virtual scroller.</h2>
     <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> for loading remote data, lazy loading items and virtual scroller.</p>
     <div class="bs-callout bs-callout-info">Select2 supports lazy-appending of results when the result list is scrolled to the end. In order to enable the remote service must support some sort of a paging mechanism and the query function given to Select2 must take advantage of it. </div>
     <p>The following example demonstrates how this can be set up. Search for some keyword and then scroll the result list to the end to see more results load:</p>
@@ -573,7 +596,7 @@
     </div>
 
     <!-- Multiple items selections with auto complete -->
-    <h2 class="sub-title">Multiple items selection with auto complete .</h2>
+    <h2 class="sub-title" id="multipleSelectionWithAutoComplete">Multiple items selection with auto complete.</h2>
     <p>We use <a href="https://github.com/ivaynberg/select2" target="_blank">Select2</a> for multiple item selection with auto complete.</p>
     <div class="bs-callout bs-callout-info">We just need add <span class="txt-class">multiple</span> key to select element to allow user make multiple selection. </div>
     <p>The following example demonstrates how this can be set up.</p>
@@ -636,7 +659,7 @@
     </div>
 
     <!-- Multiple items selections displayed by treeview -->
-    <h2 class="sub-title">Multiple items selection displayed by treeview.</h2>
+    <h2 class="sub-title" id="multipleSelectionWithTreeView">Multiple items selection displayed by treeview.</h2>
     <p>We use <a href="http://dev.nexcel.vn/index.php/fanex-multiselect-tutorials/" target="_blank">Fanex Multiple Select</a> for multiple item selection displayed by treeview.</p>
     <div class="bs-callout bs-callout-info">
         In some cases, we need a dropdown list can support:

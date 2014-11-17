@@ -15,8 +15,17 @@
 <div class="col-sm-12">
     <p>We use <a href="https://github.com/nakupanda/bootstrap3-dialog" target="_blank">bootstrap3-dialog</a> plugin to uake use of Bootstrap Modal more monkey-friendly.</p>
 
+    <p>
+        Some scenarios <a href="https://github.com/nakupanda/bootstrap3-dialog" target="_blank">bootstrap3-dialog</a> can be applied are:
+        <ul>
+            <li><a href="#showModal">Show bootstrap modal simplest way.</a></li>
+            <li><a href="#modifyDialogWhenOpening">Modify Dialog Content when is opening.</a></li>
+            <li><a href="#controlDialogInstances">Control dialog instances.</a></li>
+            <li><a href="#dialogEvents">Using dialog events to do actions before dialog showed or closed..</a></li>
+        </ul>
+    </p>
     <!-- Do bootstrap modal simplest way. -->
-    <h2 class="sub-title">Do bootstrap modal simplest way.</h2>
+    <h2 class="sub-title" id="showModal">Show bootstrap modal simplest way.</h2>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
         <div class="example-section">
@@ -53,7 +62,7 @@
 
 
     <!-- Modify Dialog Content -->
-    <h2 class="sub-title">Modify Dialog Content when is opening.</h2>
+    <h2 class="sub-title" id="modifyDialogWhenOpening">Modify Dialog Content when is opening.</h2>
     <p></p>
     <div class="bs-callout bs-callout-info">
         With bootstrap3-dialog, we can modify:
@@ -130,7 +139,7 @@
     </div>
 
     <!-- Control dialog instances -->
-    <h2 class="sub-title">Control dialog instances for modifying later.</h2>
+    <h2 class="sub-title" id="controlDialogInstances">Control dialog instances.</h2>
     <div class="bs-callout bs-callout-info">
         BootstrapDialog.show(...) is just a shortcut method, if you need dialog instances, use 'new'.
     </div>
@@ -188,7 +197,7 @@
     </div>
 
     <!-- Dialog events -->
-    <h2 class="sub-title">Dialog events.</h2>
+    <h2 class="sub-title" id="dialogEvents">Dialog events.</h2>
     <div class="bs-callout bs-callout-info">
         Using dialog events to do actions before dialog showed or closed.
     </div>
