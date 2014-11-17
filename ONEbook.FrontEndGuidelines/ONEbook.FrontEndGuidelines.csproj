@@ -123,6 +123,7 @@
     <Content Include="Content\Bootstrap\CSS\bootstrap-theme.min.css" />
     <Content Include="Content\Bootstrap\CSS\bootstrap.css" />
     <Content Include="Content\Bootstrap\CSS\bootstrap.min.css" />
+    <Content Include="Content\CustomizedControls\Images\loading.gif" />
     <Content Include="Content\Datepicker\bootstrap-datetimepicker.css" />
     <Content Include="Content\Datepicker\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\Dialog\BootstrapDialog\css\bootstrap-dialog.css" />
@@ -173,6 +174,7 @@
     <Content Include="Content\TreeView\JSTree\default\style.min.css" />
     <Content Include="Content\TreeView\JSTree\default\throbber.gif" />
     <Content Include="Scripts\CustomizedLibraries\daterangeselector.js" />
+    <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.BlockUI.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Rules.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.DropdownList.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.js" />
@@ -204,6 +206,7 @@
     <Content Include="Content\CustomizedControls\material-design.less" />
     <Content Include="Content\Dialog\BootstrapDialog\less\bootstrap-dialog.less" />
     <Content Include="Content\CustomizedControls\dialog.less" />
+    <Content Include="Content\CustomizedControls\blockui.less" />
     <None Include="Properties\PublishProfiles\LocalPublication.pubxml" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Calendar.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.TreeView.js" />
@@ -232,6 +235,7 @@
     <Content Include="Scripts\Libraries\jQuery\jquery-1.11.1.min.js" />
     <Content Include="Scripts\Libraries\jQuery\jquery-1.11.1.min.map" />
     <None Include="Scripts\Libraries\jQuery\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Libraries\jQuery\jquery.blockUI.js" />
     <Content Include="Scripts\Libraries\jQuery\jquery.cookie.js" />
     <Content Include="Scripts\Libraries\jQuery\jquery.validate.js" />
     <Content Include="Scripts\Libraries\jQuery\jquery.validate.min.js" />

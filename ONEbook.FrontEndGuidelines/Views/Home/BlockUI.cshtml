@@ -1,3 +1,206 @@
 ﻿@{
     ViewBag.Title = "Block UI";
 }
+@section css
+{
+    @Styles.Render("~/bundles/controls/css/blockui")
+}
+<div class="col-sm-12">
+    <p>
+        This page demonstrates how to use <a href="http://malsup.com/jquery/block" target="_blank">jQuery Block UI</a> library to block your site's UI
+        whena AJAX request is being called or when you want to prevent your users from inputting, etc.
+    </p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <button class="btn btn-primary pull-left"
+                                    type="button"
+                                    id="btnBlockUI"
+                                    data-toggle="tooltip"
+                                    data-placement="right"
+                                    data-original-title="Click on this button, the page will be locked for 5 seconds.">
+                                Block UI
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="well bs-component">
+                            <form class="form-horizontal">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <label for="txtEmail" class="col-sm-2 control-label">Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="txtEmail" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtPassword" class="col-sm-2 control-label">Password</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="txtPassword" placeholder="Password">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" /> Checkbox
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtContent" class="col-sm-2 control-label">Textarea</label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control" rows="3" id="txtContent"></textarea>
+                                            <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label">Radios</label>
+                                        <div class="col-lg-10">
+                                            <div class="radio radio-primary">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                    Option one is this
+                                                </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                                    Option two can be something else
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="select" class="col-lg-2 control-label">Selects</label>
+                                        <div class="col-lg-10">
+                                            <select class="form-control" id="select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                            <br>
+                                            <select multiple="" class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-10 col-lg-offset-2">
+                                            <button class="btn btn-default">Cancel</button>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#blockUIHtml" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#blockUIJavascript" role="tab" data-toggle="tab">JavaScript</a></li>
+                <li role="presentation"><a href="#blockUICss" role="tab" data-toggle="tab">CSS</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="blockUIHtml">
+                    <pre class="brush: html">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <button class="btn btn-primary pull-left"
+                                            type="button"
+                                            id="btnBlockUI"
+                                            data-toggle="tooltip"
+                                            data-placement="right"
+                                            data-original-title="Click on this button, the page will be locked for 5 seconds.">
+                                        Block UI
+                                    </button>
+                                </div>
+                            </div>
+                         </div>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="blockUIJavascript">
+                    <pre class="brush: javascript">
+                        /* global Namespace, ONEbook */
+
+                        'use strict';
+
+                        $(document).ready(function () {
+                            var calendarPage = new ONEbook.FrontEndGuidelines.BlockUI();
+
+                            calendarPage.Initialize();
+                        });
+
+                        Namespace.Register('ONEbook.FrontEndGuidelines.BlockUI');
+                        ONEbook.FrontEndGuidelines.BlockUI = function () {
+                            var me = this;
+                            var cachedDOM = {
+                                btnBlockUI: null
+                            };
+
+                            // Cache DOM elements for later uses.
+                            var cacheElements = function () {
+                                cachedDOM.btnBlockUI = $('#btnBlockUI');
+                            };
+
+                            // Show tooltip when hovering on button.
+                            var initializeTooltips = function () {
+                                cachedDOM.btnBlockUI.tooltip();
+                            };
+
+                            // Register event handlers.
+                            var registerEvents = function () {
+                                cachedDOM.btnBlockUI.on('click', function () {
+                                    $.blockUI({ message: '' });
+
+                                    setTimeout(function () {
+                                        $.unblockUI();
+                                    }, 5000);
+                                });
+                            };
+
+                            me.Initialize = function () {
+                                cacheElements();
+                                initializeTooltips();
+                                registerEvents();
+                            };
+                        };
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="blockUICss">
+                    <pre class="brush: css">
+                        .blockMsg {
+                            display: block !important;
+                            width: 210px;
+                            height: 210px;
+                            background: url(Images/loading.gif) no-repeat scroll 0 0 transparent;
+                            top: 40%;
+                            left: 40%;
+                        }
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---------------------------->
+</div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/controls/js/blockui")
+}

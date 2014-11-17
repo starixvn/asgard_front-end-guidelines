@@ -125,8 +125,7 @@ namespace ONEbook.FrontEndGuidelines
             // Bundles for switch button
             bundles.Add(new ScriptBundle("~/bundles/controls/js/switch").Include(
                 "~/Scripts/Libraries/Switch/bootstrap-switch.js",
-                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Switch.js"
-                ));
+                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Switch.js"));
 
             bundles.Add(new StyleBundle("~/bundles/controls/css/switch").Include(
                 "~/Content/Switch/bootstrap-switch.css"));
@@ -134,13 +133,19 @@ namespace ONEbook.FrontEndGuidelines
             // Bundles for dialog
             bundles.Add(new ScriptBundle("~/bundles/controls/js/dialog").Include(
                 "~/Scripts/Libraries/Dialog/BootstrapDialog/bootstrap-dialog.js",
-                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Dialog.js"
-             ));
+                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Dialog.js"));
 
             bundles.Add(new StyleBundle("~/bundles/controls/css/dialog").Include(
                 "~/Content/Dialog/BootstrapDialog/css/bootstrap-dialog.css",
-                "~/Content/CustomizedControls/dialog.less"
-                ));
+                "~/Content/CustomizedControls/dialog.less"));
+
+            // Bundles for block UI.
+            bundles.Add(new ScriptBundle("~/bundles/controls/js/blockui").Include(
+                "~/Scripts/Libraries/jQuery/jquery.blockUI.js",
+                "~/Scripts/Home/ONEbook.FrontEndGuidelines.BlockUI.js"));
+
+            bundles.Add(new StyleBundle("~/bundles/controls/css/blockui").Include(
+                "~/Content/CustomizedControls/blockui.less"));
 
             // Bundle for Checkbox.
             bundles.Add(new StyleBundle("~/bundles/controls/css/checkbox").Include(
