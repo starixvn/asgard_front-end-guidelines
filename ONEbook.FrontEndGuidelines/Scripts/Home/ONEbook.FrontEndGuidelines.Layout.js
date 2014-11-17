@@ -28,8 +28,8 @@ if (ONEbook.FrontEndGuidelines) {
                 me.registerEvents();
             },
             registerEvents: function () {
-                me.cachedElements.toggleMenu.click(me.toggleMenu);
-                me.cachedElements.codeDemoBlocks.click(me.toogleCodeDemo);
+                me.cachedElements.toggleMenu.on('click', me.toggleMenu);
+                me.cachedElements.codeDemoBlocks.on('click', me.toogleCodeDemo);
             },
             toogleCodeDemo: function () {
                 $(this).parent().find('.code-section').slideToggle(200);

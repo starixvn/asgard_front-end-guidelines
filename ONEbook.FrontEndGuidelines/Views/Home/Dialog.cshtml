@@ -13,7 +13,7 @@
 }
 
 <div class="col-sm-12">
-    <p>We use <a href="https://github.com/nakupanda/bootstrap3-dialog">bootstrap3-dialog</a> plugin to uake use of Bootstrap Modal more monkey-friendly.</p>
+    <p>We use <a href="https://github.com/nakupanda/bootstrap3-dialog" target="_blank">bootstrap3-dialog</a> plugin to uake use of Bootstrap Modal more monkey-friendly.</p>
 
     <!-- Do bootstrap modal simplest way. -->
     <h2 class="sub-title">Do bootstrap modal simplest way.</h2>
@@ -156,6 +156,63 @@
                     </pre>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="javascript-dialog-instances">
+                    <pre class="brush: javascript">
+                        // Using init options
+                        var dialogInstance1 = new BootstrapDialog({
+                            title: 'Dialog instance 1',
+                            message: 'Hi Apple!'
+                        });
+
+
+                        // Construct by using setters
+                        var dialogInstance2 = new BootstrapDialog();
+                        dialogInstance2.setTitle('Dialog instance 2');
+                        dialogInstance2.setMessage('Hi Orange!');
+                        dialogInstance2.setType(BootstrapDialog.TYPE_SUCCESS);
+
+
+                        // Using chain callings
+                        var dialogInstance3 = new BootstrapDialog()
+                            .setTitle('Dialog instance 3')
+                            .setMessage('Hi Everybody!')
+                            .setType(BootstrapDialog.TYPE_INFO);
+
+                        dialogInstance1.open();
+                        dialogInstance2.open();
+                        dialogInstance3.open();
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dialog events -->
+    <h2 class="sub-title">Dialog events.</h2>
+    <div class="bs-callout bs-callout-info">
+        Using dialog events to do actions before dialog showed or closed.
+    </div>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <button class="btn btn-primary" id="btn-dialog-events">Open dialog and show events.</button>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html-dialog-events" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#javascript-dialog-events" role="tab" data-toggle="tab">JavaScript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html-dialog-events">
+                    <pre class="brush: html">
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="javascript-dialog-events">
                     <pre class="brush: javascript">
                     </pre>
                 </div>

@@ -83,7 +83,7 @@ ONEbook.FrontEndGuidelines.TreeView = function () {
             window.console.log(data.selected);
         });
 
-        $('#btn-tree-select').click(function () {
+        $('#btn-tree-select').on('click', function () {
             var instance = $('#tree-container-events-methods').jstree(true);
             instance.deselect_all();
             instance.select_node('1');

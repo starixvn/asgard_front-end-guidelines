@@ -12,7 +12,7 @@ ONEbook.FrontEndGuidelines.Dialog = function () {
     var me = this;
 
     me.openDialogDefault = function () {
-        $('#btn-dialog-default').click(function () {
+        $('#btn-dialog-default').on('click', function () {
             BootstrapDialog.show({
                 message: 'Hi!'
             });
@@ -20,7 +20,7 @@ ONEbook.FrontEndGuidelines.Dialog = function () {
     };
 
     me.openDialogForModifying = function () {
-        $('#btn-dialog-modify').click(function () {
+        $('#btn-dialog-modify').on('click', function () {
             BootstrapDialog.show({
                 title: 'Default Title',
                 message: 'Click buttons below.',
@@ -60,30 +60,25 @@ ONEbook.FrontEndGuidelines.Dialog = function () {
     };
 
     me.controlDialogInstances = function () {
-        // Using init options
-        var dialogInstance1 = new BootstrapDialog({
-            title: 'Dialog instance 1',
-            message: 'Hi Apple!'
-        });
-        
+        $('#btn-dialog-instances').on('click', function () {
 
-        // Construct by using setters
-        var dialogInstance2 = new BootstrapDialog();
-        dialogInstance2.setTitle('Dialog instance 2');
-        dialogInstance2.setMessage('Hi Orange!');
-        dialogInstance2.setType(BootstrapDialog.TYPE_SUCCESS);
-        
+            // Using init options
+            var dialogInstance1 = new BootstrapDialog({
+                title: 'Dialog instance 1',
+                message: 'Hi Apple!'
+            });
 
-        // Using chain callings
-        var dialogInstance3 = new BootstrapDialog()
-            .setTitle('Dialog instance 3')
-            .setMessage('Hi Everybody!')
-            .setType(BootstrapDialog.TYPE_INFO);
+            // Construct by using setters
+            var dialogInstance2 = new BootstrapDialog();
+            dialogInstance2.setTitle('Dialog instance 2');
+            dialogInstance2.setMessage('Hi Orange!');
+            dialogInstance2.setType(BootstrapDialog.TYPE_SUCCESS);
 
-        $('#btn-dialog-instances').click(function () {
-            //dialogInstance1.close();
-            //dialogInstance2.close();
-            //dialogInstance3.close();
+            // Using chain callings
+            var dialogInstance3 = new BootstrapDialog()
+                .setTitle('Dialog instance 3')
+                .setMessage('Hi Everybody!')
+                .setType(BootstrapDialog.TYPE_INFO);
 
             dialogInstance1.open();
             dialogInstance2.open();
@@ -92,9 +87,33 @@ ONEbook.FrontEndGuidelines.Dialog = function () {
         });
     };
 
+    me.workWithDialogEvents = function () {
+        var $textAndPic = $('<div class="dialog-events-sample"></div>');
+        $textAndPic.append('Who\'s this?');
+
+        $('#btn-dialog-events').on('click', function () {
+            BootstrapDialog.show({
+                message: $textAndPic,
+                onshow: function (dialogRef) {
+                   //alert('Dialog is popping up, its message is ' + dialogRef.getMessage());
+                },
+                onshown: function (dialogRef) {
+                    alert('Dialog is popped up.');
+                },
+                onhide: function (dialogRef) {
+                   // alert('Dialog is popping down, its message is ' + dialogRef.getMessage());
+                },
+                onhidden: function (dialogRef) {
+                    //alert('Dialog is popped down.');
+                }
+            });
+        });
+    };
+
     me.initialize = function () {
         me.openDialogDefault();
         me.openDialogForModifying();
         me.controlDialogInstances();
+        me.workWithDialogEvents();
     };
 };

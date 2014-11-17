@@ -267,31 +267,31 @@ ONEbook.FrontEndGuidelines.DropdownList = function () {
             .on("select2-selecting", function () { alert("change");})
             .on("select2-open", function () { alert("open"); })
             .on("select2-close", function () { alert("close"); });
-        $("#btn-get-single").click(function () { alert("Selected value is: " + $("#select-methods-events-single").select2("val")); });
-        $("#btn-set-single").click(function () { $("#select-methods-events-single").select2("val", "CA"); });
-        $("#btn-get-clear").click(function () { $("#select-methods-events-single").select2("val", ""); });
-        $("#btn-get-single-2").click(function ()
+        $("#btn-get-single").on('click', function () { alert("Selected value is: " + $("#select-methods-events-single").select2("val")); });
+        $("#btn-set-single").on('click', function () { $("#select-methods-events-single").select2("val", "CA"); });
+        $("#btn-get-clear").on('click', function () { $("#select-methods-events-single").select2("val", ""); });
+        $("#btn-get-single-2").on('click', function ()
         {
             var data = $("#select-methods-events-single").select2("data"); delete data.element;
             alert("Selected data is: " + JSON.stringify(data));
         });
-        $("#btn-set-single-2").click(function () { $("#select-methods-events-single").select2("data", { id: "CA", text: "California" }); });
-        $("#btn-open").click(function () { $("#select-methods-events-single").select2("open"); });
-        $("#btn-close").click(function () { $("#select-methods-events-single").select2("close"); });
+        $("#btn-set-single-2").on('click', function () { $("#select-methods-events-single").select2("data", { id: "CA", text: "California" }); });
+        $("#btn-open").on('click', function () { $("#select-methods-events-single").select2("open"); });
+        $("#btn-close").on('click', function () { $("#select-methods-events-single").select2("close"); });
         $("#select-methods-events-multiple").select2({ placeholder: "Select a state", width: 300 });
-        $("#btn-get-multiple").click(function () { alert("Selected value is: " + $("#select-methods-events-multiple").select2("val")); });
-        $("#btn-set-multiple").click(function () { $("#select-methods-events-multiple").select2("val", ["CA", "CO"]); });
-        $("#btn-get-multiple-2").click(function () { alert("Selected value is: " + JSON.stringify($("#select-methods-events-multiple").select2("data"))); });
-        $("#btn-set-multiple-2").click(function () {
+        $("#btn-get-multiple").on('click', function () { alert("Selected value is: " + $("#select-methods-events-multiple").select2("val")); });
+        $("#btn-set-multiple").on('click', function () { $("#select-methods-events-multiple").select2("val", ["CA", "CO"]); });
+        $("#btn-get-multiple-2").on('click', function () { alert("Selected value is: " + JSON.stringify($("#select-methods-events-multiple").select2("data"))); });
+        $("#btn-set-multiple-2").on('click', function () {
             $("#select-methods-events-multiple").select2("data",
                 [
                     { id: "CA", text: "California" },
                     { id: "CO", text: "Colorado" }
                 ]);
         });
-        $("#btn-clear-multiple").click(function () { $("#select-methods-events-multiple").select2("val", ""); });
-        $("#btn-open-multiple").click(function () { $("#select-methods-events-multiple").select2("open"); });
-        $("#btn-close-multiple").click(function () { $("#select-methods-events-multiple").select2("close"); });
+        $("#btn-clear-multiple").on('click', function () { $("#select-methods-events-multiple").select2("val", ""); });
+        $("#btn-open-multiple").on('click', function () { $("#select-methods-events-multiple").select2("open"); });
+        $("#btn-close-multiple").on('click', function () { $("#select-methods-events-multiple").select2("close"); });
     };
 
     me.initialize = function () {
