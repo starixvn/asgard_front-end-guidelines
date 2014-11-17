@@ -20,6 +20,8 @@ a, a:hover, a:focus, a:active,
 /********************************************************/
 
 .header {
+    position: relative;
+
     .logo {
         color: @logo-color;
         text-transform: uppercase;
@@ -43,18 +45,42 @@ a, a:hover, a:focus, a:active,
         }
 
         .navbar-nav {
-            margin: 0 0 0 10px;
+            margin: 0;
 
             li > a {
-                padding: 20px;
                 font-size: @font-size;
                 color: @header-color;
                 text-transform: uppercase;
+                line-height: 40px;
+                padding: 10px 20px;
             }
 
-            .active > a, .active > a:hover, .active > a:focus {
+            .active > a, .active > a:hover, .active > a:focus, a:hover {
                 background-color: rgba(0, 0, 0, 0.1);
+                color: #FFE0B2;
             }
+        }
+    }
+
+    .icon-menu {
+        color: #fff;
+        font-size: @font-size + 11;
+        position: relative;
+        top: 5px;
+        right: 10px;
+    }
+
+    .icon-help {
+        color: #ECEFF1;
+        font-size: @font-size + 11;
+        position: absolute;
+        right: 15px;
+        top: 17px;
+        z-index: 100;
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
         }
     }
 }
@@ -68,7 +94,7 @@ a, a:hover, a:focus, a:active,
     top: 60px;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 40px;
 }
 
 .left-panel {
@@ -298,9 +324,34 @@ a, a:hover, a:focus, a:active,
     }
 }
 
+
+/********************************************************/
+/*                        Footer                        */
+/********************************************************/
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: #FFB74D;
+    border-top: 1px solid #FF9800;
+    color: #424242;
+    padding: 10px 0;
+    text-align: center;
+    font-size: @font-size - 1;
+
+    span {
+        color: #BF360C;
+        font-weight: bold;
+    }
+}
+
 /********************************************************/
 /*                        Icon                          */
 /********************************************************/
+
 .icon-left-panel {
     color: #fff;
     display: inline-block;

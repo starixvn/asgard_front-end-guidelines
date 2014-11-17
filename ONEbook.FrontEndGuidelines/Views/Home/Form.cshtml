@@ -205,4 +205,101 @@
             </div>
         </div>
     </div>
+    <!-- Validated form -->
+    <h2 class="sub-title">Validated form</h2>
+    <p>After validating all constrols in <code>form</code>, the <span class="txt-class">.form-group</span> class is added more some classes:</p>
+    <ul>
+        <li>Add more the <span class="txt-class">.has-success</span> class if textbox validates successfully.</li>
+        <li>Add more the <span class="txt-class">.has-warning</span> class if the value of validation can correct or wrong.</li>
+        <li>Add more the <span class="txt-class">.has-error</span> class if the validation fails.</li>
+    </ul>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section row">
+                <form class="form-horizontal col-sm-7" role="form">
+                    <div class="form-group has-error">
+                        <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email" />
+                        </div>
+                    </div>
+                    <div class="form-group has-success">
+                        <label for="firstName" class="col-sm-3 control-label">First name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="firstName" placeholder="First name" />
+                        </div>
+                    </div>
+                    <div class="form-group has-warning">
+                        <label for="lastName" class="col-sm-3 control-label">Last name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="lastName" placeholder="Last name" />
+                        </div>
+                    </div>
+                    <div class="form-group has-error">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" /> Remember me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-19">
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html">
+                    <pre class="brush: html">
+                        <form class="form-horizontal col-sm-7" role="form">
+                            <div class="form-group has-error">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email" />
+                                </div>
+                            </div>
+                            <div class="form-group has-success">
+                                <label for="firstName" class="col-sm-3 control-label">First name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="firstName" placeholder="First name" />
+                                </div>
+                            </div>
+                            <div class="form-group has-warning">
+                                <label for="lastName" class="col-sm-3 control-label">Last name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="lastName" placeholder="Last name" />
+                                </div>
+                            </div>
+                            <div class="form-group has-error">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" /> Remember me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-19">
+                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                </div>
+                            </div>
+                        </form>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

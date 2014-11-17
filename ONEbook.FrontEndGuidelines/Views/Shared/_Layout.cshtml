@@ -22,10 +22,8 @@
         <nav class="navbar" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <a href="#" class="logo">Front-end <span>Guideline</span></a>
+                <div class="navbar-header">                    
                     <i class="mdi-navigation-menu icon-left-panel withripple" id="toggleMenu"></i>
-                    @*<a href="#" class="logo"></a>*@
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -34,12 +32,16 @@
                         <li class="@(tabName == "htmlrules" ? "active" : string.Empty)">@Html.ActionLink("Html Rules", "HtmlRules", "Home")</li>
                         <li class="@(tabName == "cssrules" ? "active" : string.Empty)">@Html.ActionLink("CSS Rules", "CssRules", "Home")</li>
                         <li class="@(tabName == "javascriptrules" ? "active" : string.Empty)">@Html.ActionLink("JavaScript Rules", "JavaScriptRules", "Home")</li>
+                        
+                        @*<li class="@(tabName == "introduction" ? "active" : string.Empty)"><a href="Index"><i class="mdi-image-camera icon-menu"></i> Introduction</a></li>
+                        <li class="@(tabName == "htmlrules" ? "active" : string.Empty)"><a href="HtmlRules"><i class="mdi-device-developer-mode icon-menu"></i> Html Rules</a></li>
+                        <li class="@(tabName == "cssrules" ? "active" : string.Empty)"><a href="CssRules"><i class="mdi-image-blur-circular icon-menu"></i> CSS Rules</a></li>
+                        <li class="@(tabName == "javascriptrules" ? "active" : string.Empty)"><a href="JavaScriptRules"><i class="mdi-action-settings-ethernet icon-menu"></i> JavaScript Rules</a></li>*@
                     </ul>
-                </div><!-- /.navbar-collapse -->
+                </div><!-- /.navbar-collapse -->                
             </div><!-- /.container-fluid -->
         </nav>
-
-        <i class="mdi-image-dehaze icon-left-panel withripple" id="toggleMenu"></i>
+        <i class="mdi-action-help icon-help"></i>        
     </header>
     <div class="content" id="mainContent">
         <div class="left-panel">
@@ -70,6 +72,10 @@
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <p>This <span class="text-uppercase">front-end guideline</span> is applied for all Nexcelers —  © 2014 Nexcel Solution — All rights reserved.</p>
+        
+    </footer>
     @Html.Hidden("FrontEndGuidelinesRootUrl", Url.Content("~/"))
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
