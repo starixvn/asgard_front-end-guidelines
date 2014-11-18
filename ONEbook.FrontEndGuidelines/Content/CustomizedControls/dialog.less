@@ -1,13 +1,33 @@
-﻿.modal-content 
-{
-    .modal-header
-    {
-        padding: 20px;
-        padding-bottom: 8px;
+﻿@import "../variables.less";
+
+/********************************************************/
+/*                  Customize dialog                    */
+/********************************************************/
+
+.bootstrap-dialog {
+    z-index: 100;
+
+    &.type-primary .modal-header {
+        background-color: @primary-color;
+    }
+
+    .modal-dialog {
+        margin: 200px auto;
+    }
+
+    .modal-content {
+        background: none;
+
+        .modal-header {
+            padding: 10px 20px;
+        }
+
+        .modal-body {
+            background-color: #fff;
+        }
     }
 }
 
-.dialog-events-sample
-{
+.dialog-events-sample {
     height: 1000px;
 }

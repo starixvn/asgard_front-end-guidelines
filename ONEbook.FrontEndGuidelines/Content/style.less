@@ -42,7 +42,7 @@ a, a:hover, a:focus, a:active,
             li > a {
                 font-size: @font-size;
                 color: @header-color;
-                padding: 9px 20px;
+                padding: 8px 20px 10px;
             }
 
             .active > a, .active > a:hover, .active > a:focus, a:hover {
@@ -52,10 +52,7 @@ a, a:hover, a:focus, a:active,
     }
 
     .logo {
-        position: relative;
-        top: 0;
-        left: 0;
-        float: left;
+        display: inline-block;
         margin: 5px 10px 5px 15px;
         padding: 3px 15px 3px 0;
         height: 29px;
@@ -361,9 +358,15 @@ a, a:hover, a:focus, a:active,
     padding: 6px;
     font-size: @font-size + 4;
     top: 1px;
+    display: inline-block;
 
-    &:hover, &.menu-show {
+    &:hover {
         cursor: pointer;
-        background-color: darken(#5376bd, 10%);
+        color: darken(#5376bd, 30%);
+    }
+
+     &.menu-show {
+        cursor: pointer;
+        color: darken(#5376bd, 30%);
     }
 }
