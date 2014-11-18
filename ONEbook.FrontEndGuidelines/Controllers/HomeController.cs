@@ -45,7 +45,7 @@ namespace ONEbook.FrontEndGuidelines.Controllers
             this.webControls.Add("CountdownTimer", Tuple.Create<string, bool>("Countdown Timer", false));
             this.webControls.Add("Switch", Tuple.Create<string, bool>("Switch", true));
             this.webControls.Add("Dialog", Tuple.Create<string, bool>("Dialog", true));
-            this.webControls.Add("List", Tuple.Create<string, bool>("List", false));
+            this.webControls.Add("List", Tuple.Create<string, bool>("List", true));
             this.webControls.Add("Panel", Tuple.Create<string, bool>("Panel", false));
             this.webControls.Add("Tab", Tuple.Create<string, bool>("Tab", true));
             this.webControls.Add("Messagebox", Tuple.Create<string, bool>("Message Box", false));

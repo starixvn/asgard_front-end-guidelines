@@ -53,8 +53,8 @@ a, a:hover, a:focus, a:active,
 
     .logo {
         display: inline-block;
-        margin: 5px 5px 15px;
-        padding: 3px 15px 3px 0;
+        margin: 5px 10px 15px 5px;
+        padding: 3px 0 3px 10px;
         height: 29px;
         color: @logo-color;
         font-family: @font-logo;
@@ -345,19 +345,14 @@ a, a:hover, a:focus, a:active,
 .icon-left-panel {
     color: #fff;
     display: inline-block;
-    margin: 4px 10px 4px 5px;
-    padding: 6px;
+    margin: 4px 15px 4px 5px;
+    padding: 2px;
     font-size: @font-size + 4;
     top: 1px;
     display: inline-block;
 
-    &:hover {
+    &:hover, &.menu-show {
         cursor: pointer;
-        color: darken(#5376bd, 30%);
-    }
-
-     &.menu-show {
-        cursor: pointer;
-        color: darken(#5376bd, 30%);
+        background-color: darken(@header-bg, 4%);
     }
 }
