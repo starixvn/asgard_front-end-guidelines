@@ -31,31 +31,32 @@ namespace ONEbook.FrontEndGuidelines.Controllers
         {
             this.webControls = new Dictionary<string, Tuple<string, bool>>();
 
-            this.webControls.Add("calendar", Tuple.Create<string, bool>("Calendar", true));
-            this.webControls.Add("contextmenu", Tuple.Create<string, bool>("Context Menu", false));
-            this.webControls.Add("navigation", Tuple.Create<string, bool>("Navigation", false));
-            this.webControls.Add("dropdownlist", Tuple.Create<string, bool>("Dropdown List", true));
-            this.webControls.Add("tree", Tuple.Create<string, bool>("Tree", true));
-            this.webControls.Add("tooltip", Tuple.Create<string, bool>("Tooltip", true));
-            this.webControls.Add("textbox", Tuple.Create<string, bool>("Textbox", true));
-            this.webControls.Add("checkbox", Tuple.Create<string, bool>("Checkbox", true));
-            this.webControls.Add("radiobutton", Tuple.Create<string, bool>("Radio Button", true));
-            this.webControls.Add("button", Tuple.Create<string, bool>("Button", true));
-            this.webControls.Add("chart", Tuple.Create<string, bool>("Chart", false));
-            this.webControls.Add("countdowntimer", Tuple.Create<string, bool>("Countdown Timer", false));
-            this.webControls.Add("switch", Tuple.Create<string, bool>("Switch", true));
-            this.webControls.Add("dialog", Tuple.Create<string, bool>("Dialog", true));
-            this.webControls.Add("list", Tuple.Create<string, bool>("List", false));
-            this.webControls.Add("panel", Tuple.Create<string, bool>("Panel", false));
-            this.webControls.Add("tab", Tuple.Create<string, bool>("Tab", true));
-            this.webControls.Add("messagebox", Tuple.Create<string, bool>("Message Box", false));
-            this.webControls.Add("progress", Tuple.Create<string, bool>("Progress", false));
-            this.webControls.Add("breadcrumb", Tuple.Create<string, bool>("Breadcrumb", false));
-            this.webControls.Add("blockui", Tuple.Create<string, bool>("Block UI", true));
-            this.webControls.Add("form", Tuple.Create<string, bool>("Form", true));
+            this.webControls.Add("Calendar", Tuple.Create<string, bool>("Calendar", true));
+            this.webControls.Add("ContextMenu", Tuple.Create<string, bool>("Context Menu", false));
+            this.webControls.Add("Navigation", Tuple.Create<string, bool>("Navigation", false));
+            this.webControls.Add("DropdownList", Tuple.Create<string, bool>("Dropdown List", true));
+            this.webControls.Add("Tree", Tuple.Create<string, bool>("Tree", true));
+            this.webControls.Add("Tooltip", Tuple.Create<string, bool>("Tooltip", true));
+            this.webControls.Add("Textbox", Tuple.Create<string, bool>("Textbox", true));
+            this.webControls.Add("Checkbox", Tuple.Create<string, bool>("Checkbox", true));
+            this.webControls.Add("RadioButton", Tuple.Create<string, bool>("Radio Button", true));
+            this.webControls.Add("Button", Tuple.Create<string, bool>("Button", true));
+            this.webControls.Add("Chart", Tuple.Create<string, bool>("Chart", false));
+            this.webControls.Add("CountdownTimer", Tuple.Create<string, bool>("Countdown Timer", false));
+            this.webControls.Add("Switch", Tuple.Create<string, bool>("Switch", true));
+            this.webControls.Add("Dialog", Tuple.Create<string, bool>("Dialog", true));
+            this.webControls.Add("List", Tuple.Create<string, bool>("List", false));
+            this.webControls.Add("Panel", Tuple.Create<string, bool>("Panel", false));
+            this.webControls.Add("Tab", Tuple.Create<string, bool>("Tab", true));
+            this.webControls.Add("Messagebox", Tuple.Create<string, bool>("Message Box", false));
+            this.webControls.Add("Progress", Tuple.Create<string, bool>("Progress", false));
+            this.webControls.Add("Breadcrumb", Tuple.Create<string, bool>("Breadcrumb", false));
+            this.webControls.Add("BlockUI", Tuple.Create<string, bool>("Block UI", true));
+            this.webControls.Add("Form", Tuple.Create<string, bool>("Form (with validation)", true));
 
             ViewBag.WebControls = this.webControls
                 .OrderByDescending(control => control.Value.Item2)
+                .ThenBy(control => control.Key)
                 .ToDictionary(item => item.Key, item => item.Value);
         }
 
@@ -107,11 +108,10 @@ namespace ONEbook.FrontEndGuidelines.Controllers
         /// Redirects to WebControl view.
         /// </summary>
         /// <returns>WebControl view.</returns>
-        /// <param name="tabName">The tab name.</param>
         /// <param name="viewName">The view name.</param>
-        public ActionResult WebControl(string tabName, string viewName)
+        public ActionResult WebControl(string viewName)
         {
-            ViewBag.TabName = tabName;
+            ViewBag.TabName = viewName;
             ViewBag.IsWebControl = true;
 
             return this.View(viewName);

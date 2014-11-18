@@ -305,11 +305,11 @@
     <Content Include="Views\Home\Panel.cshtml" />
     <Content Include="Views\Home\Tab.cshtml" />
     <Content Include="Views\Home\MessageBox.cshtml" />
-    <Content Include="Views\Home\ProgressBar.cshtml" />
     <Content Include="Views\Home\Breadcrumb.cshtml" />
     <Content Include="Views\Home\BlockUI.cshtml" />
     <Content Include="Views\Home\Form.cshtml" />
     <Content Include="Views\Home\CommonControls.cshtml" />
+    <Content Include="Views\Home\Progress.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
