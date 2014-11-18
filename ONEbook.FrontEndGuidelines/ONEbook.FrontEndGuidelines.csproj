@@ -309,6 +309,7 @@
     <Content Include="Views\Home\Breadcrumb.cshtml" />
     <Content Include="Views\Home\BlockUI.cshtml" />
     <Content Include="Views\Home\Form.cshtml" />
+    <Content Include="Views\Home\CommonControls.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

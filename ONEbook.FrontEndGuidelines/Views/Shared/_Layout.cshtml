@@ -32,16 +32,13 @@
                         <li class="@(tabName == "htmlrules" ? "active" : string.Empty)">@Html.ActionLink("Html Rules", "HtmlRules", "Home")</li>
                         <li class="@(tabName == "cssrules" ? "active" : string.Empty)">@Html.ActionLink("CSS Rules", "CssRules", "Home")</li>
                         <li class="@(tabName == "javascriptrules" ? "active" : string.Empty)">@Html.ActionLink("JavaScript Rules", "JavaScriptRules", "Home")</li>
-                        
-                        @*<li class="@(tabName == "introduction" ? "active" : string.Empty)"><a href="Index"><i class="mdi-image-camera icon-menu"></i> Introduction</a></li>
-                        <li class="@(tabName == "htmlrules" ? "active" : string.Empty)"><a href="HtmlRules"><i class="mdi-device-developer-mode icon-menu"></i> Html Rules</a></li>
-                        <li class="@(tabName == "cssrules" ? "active" : string.Empty)"><a href="CssRules"><i class="mdi-image-blur-circular icon-menu"></i> CSS Rules</a></li>
-                        <li class="@(tabName == "javascriptrules" ? "active" : string.Empty)"><a href="JavaScriptRules"><i class="mdi-action-settings-ethernet icon-menu"></i> JavaScript Rules</a></li>*@
+                        <li class="@(tabName == "commoncontrols" ? "active" : string.Empty)" id="commonControls">@Html.ActionLink("Common Controls", "CommonControls", "Home")</li>                       
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <i class="mdi-action-help icon-help"></i>
+        <i class="logo"></i>
+        <i class="mdi-action-info icon-help" title="Help"></i>
     </header>
     <div class="content" id="mainContent">
         <div class="left-panel">
@@ -63,6 +60,7 @@
                     </li>
                 }
             </ul>
+            
         </div>
         <div class="right-panel">
             <div class="container-fluid">
@@ -77,8 +75,8 @@
             </div>
         </div>
     </div>
-    <footer class="footer">
-        <p>This <span class="text-uppercase">front-end guideline</span> is applied for all Nexcelers —  © 2014 Nexcel Solution — All rights reserved.</p>
+    <footer class="footer">        
+        <p>© 2014 Nexcel Solution — All rights reserved.</p>
     </footer>
     @Html.Hidden("FrontEndGuidelinesRootUrl", Url.Content("~/"))
     @Scripts.Render("~/bundles/jquery")

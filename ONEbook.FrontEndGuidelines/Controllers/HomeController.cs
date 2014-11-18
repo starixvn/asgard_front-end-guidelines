@@ -116,6 +116,17 @@ namespace ONEbook.FrontEndGuidelines.Controllers
 
             return this.View(viewName);
         }
+
+        /// <summary>
+        /// Redirects to WebControl view.
+        /// </summary>
+        /// <returns>WebControl view.</returns>
+        public ActionResult CommonControls()
+        {
+            ViewBag.TabName = "commoncontrols";
+
+            return this.View();
+        }
         
         /// <summary>
         /// Get Dropdown List Data.

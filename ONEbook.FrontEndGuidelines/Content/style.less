@@ -22,19 +22,6 @@ a, a:hover, a:focus, a:active,
 .header {
     position: relative;
 
-    .logo {
-        color: @logo-color;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: @font-size + 5;
-        margin: 15px 10px 15px 17px;
-        text-decoration: none;
-
-        span {
-            color: rgba(255, 255, 255, 0.5);
-        }
-    }
-
     .navbar {
         background-color: @header-bg;
         height: 60px;
@@ -69,17 +56,30 @@ a, a:hover, a:focus, a:active,
         top: 5px;
         right: 10px;
     }
-
-    .icon-help {
-        color: #ECEFF1;
-        font-size: @font-size + 11;
+   
+    .logo {
+        background: url(images/logo.png) no-repeat;
+        width: 208px;
+        height: 26px;
+        display: inline-block;
         position: absolute;
         right: 15px;
-        top: 17px;
+        top: 15px;
         z-index: 100;
+    }
+
+    .icon-help {
+        color: #F57C00;
+        font-size: @font-size + 6;
+        position: absolute;
+        right: 25px;
+        top: 65px;
+        z-index: 100;
+        background-color: #fff;
+        padding: 5px;
 
         &:hover {
-            color: #FFFDE7;
+            color: #FB8C00;
             cursor: pointer;
         }
     }
@@ -94,7 +94,7 @@ a, a:hover, a:focus, a:active,
     top: 60px;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 40px;
 }
 
 .left-panel {
@@ -129,26 +129,11 @@ a, a:hover, a:focus, a:active,
             }
         }
     }
-
-    .copyright {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 10px;
-        background-color: #CFD8DC;
-        border-top: 1px solid #B0BEC5;
-
-        p {
-            text-align: center;
-            margin: 0;
-        }
-    }
 }
 
 .right-panel {
     position: absolute;
-    left: 250px;
+    left: 0;
     top: 0;
     right: 0;
     bottom: 0;
@@ -156,8 +141,8 @@ a, a:hover, a:focus, a:active,
     background-color: @right-panel-bg;
     .box-shadow(-1px 1px 3px #ddd);
 
-    &.hide-content {
-        left: 0px;
+    &.show-left {
+        left: 250px;
     }
 
     .cust-breadcrumb {
@@ -336,6 +321,27 @@ a, a:hover, a:focus, a:active,
         .btn {
             margin: 0;
         }
+    }
+}
+
+/********************************************************/
+/*                        Footer                        */
+/********************************************************/
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    left: 0;
+    right: 0;
+    background-color: #CFD8DC;
+    border-top: 1px solid #B0BEC5;
+    padding: 10px 0;
+    font-size: @font-size - 1;
+
+    p {
+        text-align: center;
+        margin: 0;
     }
 }
 
