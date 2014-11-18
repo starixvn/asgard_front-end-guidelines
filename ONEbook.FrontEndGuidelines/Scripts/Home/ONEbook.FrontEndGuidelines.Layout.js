@@ -23,22 +23,17 @@ if (ONEbook.FrontEndGuidelines) {
                 //me.cachedElements.rightContent.scrollTop(0);
                 me.cachedElements.codeDemoBlocks = $('.docs-section .view-source');
                 
-                if (me.cachedElements.commonControls.hasClass('active')) {
+                if ($.cookie(me.toggleCookieName) === 'show') {
                     me.cachedElements.toggleMenu.addClass('menu-show');
                     me.cachedElements.leftContent.show();
                     me.cachedElements.rightContent.addClass('show-left');
-                }
-                else if ($.cookie(me.toggleCookieName) === 'hide') {
-                    me.cachedElements.toggleMenu.removeClass('menu-show');
-                    me.cachedElements.leftContent.hide();
-                    me.cachedElements.rightContent.removeClass('show-left');
                 }
 
                 me.registerEvents();
             },
             registerEvents: function () {
                 me.cachedElements.toggleMenu.on('click', me.toggleMenu);
-                me.cachedElements.commonControls.on('click', me.showLeftPanel);
+                me.cachedElements.commonControls.on('click', me.markShowLeftPanel);
                 me.cachedElements.codeDemoBlocks.on('click', me.toogleCodeDemo);
             },
             toogleCodeDemo: function () {
@@ -54,17 +49,13 @@ if (ONEbook.FrontEndGuidelines) {
                 } 
                 else {
                     $this.addClass('menu-show');
-                    me.cachedElements.leftContent.show();                    
-                    me.cachedElements.rightContent.addClass('show-left');
-                    $.cookie(me.toggleCookieName, 'show', { path: '/' });
-                }
-            },
-            showLeftPanel: function () {
-                if (me.cachedElements.commonControls.hasClass('active')) {
                     me.cachedElements.leftContent.show();
                     me.cachedElements.rightContent.addClass('show-left');
                     $.cookie(me.toggleCookieName, 'show', { path: '/' });
                 }
+            },
+            markShowLeftPanel: function () {
+                $.cookie(me.toggleCookieName, 'show', { path: '/' });
             }
         };
 

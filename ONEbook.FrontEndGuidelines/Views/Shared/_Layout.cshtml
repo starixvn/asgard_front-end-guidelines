@@ -32,7 +32,7 @@
                         <li class="@(tabName == "htmlrules" ? "active" : string.Empty)">@Html.ActionLink("Html Rules", "HtmlRules", "Home")</li>
                         <li class="@(tabName == "cssrules" ? "active" : string.Empty)">@Html.ActionLink("CSS Rules", "CssRules", "Home")</li>
                         <li class="@(tabName == "javascriptrules" ? "active" : string.Empty)">@Html.ActionLink("JavaScript Rules", "JavaScriptRules", "Home")</li>
-                        <li class="@(tabName == "commoncontrols" ? "active" : string.Empty)" id="commonControls">@Html.ActionLink("Common Controls", "CommonControls", "Home")</li>                       
+                        <li class="@(tabName == "commoncontrols" ? "active" : string.Empty)" id="commonControls">@Html.ActionLink("Common Controls", "CommonControls", "Home")</li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -75,7 +75,7 @@
             </div>
         </div>
     </div>
-    <footer class="footer">        
+    <footer class="footer">
         <p>© 2014 Nexcel Solution — All rights reserved.</p>
     </footer>
     @Html.Hidden("FrontEndGuidelinesRootUrl", Url.Content("~/"))
