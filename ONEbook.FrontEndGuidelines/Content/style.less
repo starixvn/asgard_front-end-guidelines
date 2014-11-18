@@ -23,11 +23,11 @@ a, a:hover, a:focus, a:active,
     position: relative;
 
     .navbar {       
-        background-color: #486CB8;
-        background: -moz-linear-gradient(center top , #7A97D1 1px, #5A7DC1 1px, #486CB8 100%);
-        background: -webkit-linear-gradient(top , #7A97D1 1px, #5A7DC1 1px, #486CB8 100%);
-        background: -ms-linear-gradient(top , #7A97D1 1px, #5A7DC1 1px, #486CB8 100%);
-        background: linear-gradient(top , #7A97D1 1px, #5A7DC1 1px, #486CB8 100%);
+        background-color: @header-bg;
+        background: -moz-linear-gradient(center top , #7A97D1 1px, #5A7DC1 1px, @header-bg 100%);
+        background: -webkit-linear-gradient(top , #7A97D1 1px, #5A7DC1 1px, @header-bg 100%);
+        background: -ms-linear-gradient(top , #7A97D1 1px, #5A7DC1 1px, @header-bg 100%);
+        background: linear-gradient(top , #7A97D1 1px, #5A7DC1 1px, @header-bg 100%);
         border: 1px solid #3C5B9B;
         height: 40px;
         margin: 0;
@@ -46,7 +46,7 @@ a, a:hover, a:focus, a:active,
             }
 
             .active > a, .active > a:hover, .active > a:focus, a:hover {
-                background-color: darken(#5376bd, 10%);      
+                background-color: darken(@header-bg, 4%);      
             }
         }
     }
@@ -56,7 +56,7 @@ a, a:hover, a:focus, a:active,
         margin: 5px 5px 15px;
         padding: 3px 15px 3px 0;
         height: 29px;
-        color: #fff;
+        color: @logo-color;
         font-family: @font-logo;
         font-size: @font-size + 6;
         text-transform: uppercase;
@@ -66,15 +66,6 @@ a, a:hover, a:focus, a:active,
 
         span {
             color: #c9d9f2;
-        }
-
-        .uat {
-            position: absolute;
-            bottom: 0;
-            right: 10px;
-            color: #fff;
-            font-weight: bold;
-            font-size: @font-size + 6;
         }
 
         &:hover {
@@ -121,7 +112,7 @@ a, a:hover, a:focus, a:active,
                 }
 
                 &.content-not-available {
-                    color: #9E9E9E;
+                    color: @content-not-available-color;
                 }
 
                 &.active {
