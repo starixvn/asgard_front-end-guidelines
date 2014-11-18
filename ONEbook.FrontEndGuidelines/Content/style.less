@@ -39,22 +39,17 @@ a, a:hover, a:focus, a:active,
                 color: @header-color;
                 text-transform: uppercase;
                 line-height: 40px;
-                padding: 10px 20px;
+                padding: 9px 20px;
+                border-top: 1px solid @header-bg;
             }
 
             .active > a, .active > a:hover, .active > a:focus, a:hover {
                 background-color: rgba(0, 0, 0, 0.1);
                 color: #FFFDE7;
+                border-top: 1px solid #ffca28;
+                transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1) 0.05s;
             }
         }
-    }
-
-    .icon-menu {
-        color: #fff;
-        font-size: @font-size + 11;
-        position: relative;
-        top: 5px;
-        right: 10px;
     }
    
     .logo {
@@ -66,22 +61,6 @@ a, a:hover, a:focus, a:active,
         right: 15px;
         top: 15px;
         z-index: 100;
-    }
-
-    .icon-help {
-        color: #F57C00;
-        font-size: @font-size + 6;
-        position: absolute;
-        right: 25px;
-        top: 65px;
-        z-index: 100;
-        background-color: #fff;
-        padding: 5px;
-
-        &:hover {
-            color: #FB8C00;
-            cursor: pointer;
-        }
     }
 }
 
@@ -120,6 +99,10 @@ a, a:hover, a:focus, a:active,
                 &:hover {
                     background-color: @left-menu-hover-bg;
                     text-decoration: none;
+                }
+
+                &.content-not-available {
+                    color: #9E9E9E;
                 }
 
                 &.active {
@@ -359,6 +342,10 @@ a, a:hover, a:focus, a:active,
 
     &:hover {
         cursor: pointer;
+        background-color: #1a5ecf;
+    }
+
+    &.menu-show {
         background-color: #1a5ecf;
     }
 }

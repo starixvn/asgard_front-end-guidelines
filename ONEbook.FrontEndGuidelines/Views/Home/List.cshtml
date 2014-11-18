@@ -1,3 +1,252 @@
 ﻿@{
     ViewBag.Title = "List";
 }
+<div class="col-sm-12">
+    <p> Lists can be styled further, and images can be used as the list item marker. There are two types of lists:</p>
+    <ul>
+        <li>unordered list - <span class="text-info">the list items are marked with bullets</span></li>
+        <li>ordered list - <span class="text-info">the list items are marked with numbers or letters</span></li>
+    </ul>
+    <!-- Ordered List -->
+    <h2 class="sub-title">Ordered List</h2>
+    <p>A list of items in which the order does explicitly matter.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <ol>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Consectetur adipiscing elit</li>
+                    <li>Integer molestie lorem at massa</li>
+                    <li>Facilisis in pretium nisl aliquet</li>
+                    <li>Nulla volutpat aliquam velit</li>
+                </ol>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#orderedHtml" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="orderedHtml">
+                    <pre class="brush: html">
+                        <ol>
+                            <li>Lorem ipsum dolor sit amet</li>
+                            <li>Consectetur adipiscing elit</li>
+                            <li>Integer molestie lorem at massa</li>
+                            <li>Facilisis in pretium nisl aliquet</li>
+                            <li>Nulla volutpat aliquam velit</li>
+                        </ol>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Unordered List -->
+    <h2 class="sub-title">Unordered List</h2>
+    <p>A list of items in which the order does not explicitly matter.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <ul>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Consectetur adipiscing elit</li>
+                    <li>Integer molestie lorem at massa</li>
+                    <li>Facilisis in pretium nisl aliquet</li>
+                    <li>Nulla volutpat aliquam velit</li>
+                </ul>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#unorderedHtml" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="unorderedHtml">
+                    <pre class="brush: html">
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet</li>
+                            <li>Consectetur adipiscing elit</li>
+                            <li>Integer molestie lorem at massa</li>
+                            <li>Facilisis in pretium nisl aliquet</li>
+                            <li>Nulla volutpat aliquam velit</li>
+                        </ul>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Unstyled List -->
+    <h2 class="sub-title">Unstyled List</h2>
+    <p>Remove the default <span class="txt-class">list-style</span> and left margin on list items (immediate children only). This only applies to immediate children list items, meaning you will need to add the class for any nested lists as well.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <ul class="list-unstyled">
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Consectetur adipiscing elit</li>
+                    <li>Integer molestie lorem at massa</li>
+                    <li>Facilisis in pretium nisl aliquet</li>
+                    <li>Nulla volutpat aliquam velit</li>
+                </ul>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#unstyledHtml" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="unstyledHtml">
+                    <pre class="brush: html">
+                        <ul class="list-unstyled">
+                            <li>Lorem ipsum dolor sit amet</li>
+                            <li>Consectetur adipiscing elit</li>
+                            <li>Integer molestie lorem at massa</li>
+                            <li>Facilisis in pretium nisl aliquet</li>
+                            <li>Nulla volutpat aliquam velit</li>
+                        </ul>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Inline List -->
+    <h2 class="sub-title">Inline List</h2>
+    <p>Place all list items on a single line with display: inline-block; and some light padding.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <ul class="list-unstyled list-inline">
+                    <li>Lorem ipsum</li>
+                    <li>Phasellus iaculis</li>
+                    <li>Nulla volutpat</li>
+                </ul>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#inlineHtml" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="inlineHtml">
+                    <pre class="brush: html">
+                        <ul class="list-unstyled list-inline">
+                            <li>Lorem ipsum</li>
+                            <li>Phasellus iaculis</li>
+                            <li>Nulla volutpat</li>
+                        </ul>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- List group -->
+    <h2 class="sub-title">List group</h2>
+    <p>List groups are a flexible and powerful component for displaying not only simple lists of elements, but complex ones with custom content.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section row">
+                <div class="list-group col-sm-7">
+                    <div class="list-group-item">
+                        <div class="row-action-primary">
+                            <i class="mdi-file-folder"></i>
+                        </div>
+                        <div class="row-content">
+                            <div class="least-content">15m</div>
+                            <h4 class="list-group-item-heading">Tile with a label</h4>
+                            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                    </div>
+                    <div class="list-group-separator"></div>
+                    <div class="list-group-item">
+                        <div class="row-action-primary">
+                            <i class="mdi-file-folder"></i>
+                        </div>
+                        <div class="row-content">
+                            <div class="least-content">10m</div>
+                            <h4 class="list-group-item-heading">Tile with a label</h4>
+                            <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                        </div>
+                    </div>
+                    <div class="list-group-separator"></div>
+                    <div class="list-group-item">
+                        <div class="row-action-primary">
+                            <i class="mdi-file-folder"></i>
+                        </div>
+                        <div class="row-content">
+                            <div class="least-content">8m</div>
+                            <h4 class="list-group-item-heading">Tile with a label</h4>
+                            <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                        </div>
+                    </div>
+                    <div class="list-group-separator"></div>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#groupHtml" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="groupHtml">
+                    <pre class="brush: html">
+                        <div class="list-group col-sm-7">
+                            <div class="list-group-item">
+                                <div class="row-action-primary">
+                                    <i class="mdi-file-folder"></i>
+                                </div>
+                                <div class="row-content">
+                                    <div class="least-content">15m</div>
+                                    <h4 class="list-group-item-heading">Tile with a label</h4>
+                                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </div>
+                            <div class="list-group-separator"></div>
+                            <div class="list-group-item">
+                                <div class="row-action-primary">
+                                    <i class="mdi-file-folder"></i>
+                                </div>
+                                <div class="row-content">
+                                    <div class="least-content">10m</div>
+                                    <h4 class="list-group-item-heading">Tile with a label</h4>
+                                    <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                                </div>
+                            </div>
+                            <div class="list-group-separator"></div>
+                            <div class="list-group-item">
+                                <div class="row-action-primary">
+                                    <i class="mdi-file-folder"></i>
+                                </div>
+                                <div class="row-content">
+                                    <div class="least-content">8m</div>
+                                    <h4 class="list-group-item-heading">Tile with a label</h4>
+                                    <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                                </div>
+                            </div>
+                            <div class="list-group-separator"></div>
+                        </div>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
