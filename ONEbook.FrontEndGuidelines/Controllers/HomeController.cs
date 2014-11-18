@@ -55,7 +55,7 @@ namespace ONEbook.FrontEndGuidelines.Controllers
             this.webControls.Add("form", Tuple.Create<string, bool>("Form", true));
 
             ViewBag.WebControls = this.webControls
-                .OrderBy(control => control.Key)
+                .OrderByDescending(control => control.Value.Item2)
                 .ToDictionary(item => item.Key, item => item.Value);
         }
 
