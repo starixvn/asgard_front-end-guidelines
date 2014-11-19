@@ -289,7 +289,7 @@
     <Content Include="Views\Home\JavaScriptRules.cshtml" />
     <Content Include="Views\Home\Calendar.cshtml" />
     <Content Include="Views\Home\ContextMenu.cshtml" />
-    <Content Include="Views\Home\Navigation.cshtml" />
+    <Content Include="Views\Home\Nav.cshtml" />
     <Content Include="Views\Home\DropdownList.cshtml" />
     <Content Include="Views\Home\Tree.cshtml" />
     <Content Include="Views\Home\Tooltip.cshtml" />

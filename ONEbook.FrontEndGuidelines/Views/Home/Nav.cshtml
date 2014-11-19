@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "Nav";
+}
+
+<div class="col-sm-12">
+    <p>Navbars are responsive meta components that serve as navigation headers for your application or site. They begin collapsed (and are toggleable) in mobile views and become horizontal as the available viewport width increases.</p>
+    <h2 class="sub-title">Navbar</h2>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="javascript:void(0)">Brand</a>
+                    </div>
+                    <div class="navbar-collapse collapse navbar-responsive-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="javascript:void(0)">Active</a></li>
+                            <li><a href="javascript:void(0)">Link</a></li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0)">Action</a></li>
+                                    <li><a href="javascript:void(0)">Another action</a></li>
+                                    <li><a href="javascript:void(0)">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Dropdown header</li>
+                                    <li><a href="javascript:void(0)">Separated link</a></li>
+                                    <li><a href="javascript:void(0)">One more separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-left">
+                            <input class="form-control col-lg-8" placeholder="Search" type="text">
+                        </form>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="javascript:void(0)">Link</a></li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0)">Action</a></li>
+                                    <li><a href="javascript:void(0)">Another action</a></li>
+                                    <li><a href="javascript:void(0)">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="javascript:void(0)">Separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#navbarHtml" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="navbarHtml">
+                    <pre class="brush: html">
+                        <div class="navbar navbar-default">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="javascript:void(0)">Brand</a>
+                            </div>
+                            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="javascript:void(0)">Active</a></li>
+                                    <li><a href="javascript:void(0)">Link</a></li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="javascript:void(0)">Action</a></li>
+                                            <li><a href="javascript:void(0)">Another action</a></li>
+                                            <li><a href="javascript:void(0)">Something else here</a></li>
+                                            <li class="divider"></li>
+                                            <li class="dropdown-header">Dropdown header</li>
+                                            <li><a href="javascript:void(0)">Separated link</a></li>
+                                            <li><a href="javascript:void(0)">One more separated link</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <form class="navbar-form navbar-left">
+                                    <input class="form-control col-lg-8" placeholder="Search" type="text">
+                                </form>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="javascript:void(0)">Link</a></li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="javascript:void(0)">Action</a></li>
+                                            <li><a href="javascript:void(0)">Another action</a></li>
+                                            <li><a href="javascript:void(0)">Something else here</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="javascript:void(0)">Separated link</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Left side -->
+    <h2 class="sub-title">SideNav</h2>
+    <p>By default, all the .panel does is apply some basic border and padding to contain some content.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        Basic panel example
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#basicHtml" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="basicHtml">
+                    <pre class="brush: html">
+                        
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

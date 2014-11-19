@@ -1,3 +1,232 @@
 ﻿@{
     ViewBag.Title = "Panel";
 }
+<div class="col-sm-12">
+    <p>While not always necessary, sometimes you need to put your DOM in a box. For those situations, try the panel component.</p>
+    <!-- Basic panel -->
+    <h2 class="sub-title">Basic panel</h2>
+    <p>By default, all the .panel does is apply some basic border and padding to contain some content.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        Basic panel example
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#basicHtml" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="basicHtml">
+                    <pre class="brush: html">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                Basic panel example
+                            </div>
+                        </div>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Panel with heading -->
+    <h2 class="sub-title">Panel with heading</h2>
+    <p>Easily add a heading container to your panel with <span class="txt-class">.panel-heading</span>. You may also include any <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> with a .panel-title class to add a pre-styled heading.
+    </p>
+    <p>For proper link coloring, be sure to place links in headings within .panel-title.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Panel title</h3>
+                    </div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#headingHtml" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="headingHtml">
+                    <pre class="brush: html">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Panel title</h3>
+                            </div>
+                            <div class="panel-body">
+                                Panel content
+                            </div>
+                        </div>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Panel with tables -->
+    <h2 class="sub-title">Panel with tables</h2>
+    <p>Add any non-bordered <span class="txt-class">.table</span> within a panel for a seamless design. If there is a <span class="txt-class">.panel-body</span>, we add an extra border to the top of the table for separation.</p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Panel heading</div>
+                    <div class="panel-body">
+                        <p>
+                            Some default panel content here. Nulla vitae elit libero, a pharetra augue.
+                            Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque
+                            ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                        </p>
+                    </div>
+                    <!-- Table -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Last Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Jacob</td>
+                                <td>Otto</td>
+                                <td>mdo</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Mark</td>
+                                <td>Thornton</td>
+                                <td>fat</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#tableHtml" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="tableHtml">
+                    <pre class="brush: html">
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">Panel heading</div>
+                            <div class="panel-body">
+                                <p>
+                                    Some default panel content here. Nulla vitae elit libero, a pharetra augue.
+                                    Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque
+                                    ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                </p>
+                            </div>
+                            <!-- Table -->
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Last Name</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Jacob</td>
+                                        <td>Otto</td>
+                                        <td>mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Mark</td>
+                                        <td>Thornton</td>
+                                        <td>fat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Panel with icon -->
+    <h2 class="sub-title">Panel with icon</h2>
+    <p>
+        
+    </p>
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="mdi-navigation-expand-less icon-heading-panel"></i>Panel title</h3>
+                    </div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#iconHtml" role="tab" data-toggle="tab">Html</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="iconHtml">
+                    <pre class="brush: html">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="mdi-navigation-expand-less icon-heading-panel"></i>Panel title</h3>
+                            </div>
+                            <div class="panel-body">
+                                Panel content
+                            </div>
+                        </div> 
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

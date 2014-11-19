@@ -33,7 +33,7 @@ namespace ONEbook.FrontEndGuidelines.Controllers
 
             this.webControls.Add("Calendar", Tuple.Create<string, bool>("Calendar", true));
             this.webControls.Add("ContextMenu", Tuple.Create<string, bool>("Context Menu", false));
-            this.webControls.Add("Navigation", Tuple.Create<string, bool>("Navigation", false));
+            this.webControls.Add("Nav", Tuple.Create<string, bool>("Nav", true));
             this.webControls.Add("DropdownList", Tuple.Create<string, bool>("Dropdown List", true));
             this.webControls.Add("Tree", Tuple.Create<string, bool>("Tree", true));
             this.webControls.Add("Tooltip", Tuple.Create<string, bool>("Tooltip", true));
@@ -46,11 +46,11 @@ namespace ONEbook.FrontEndGuidelines.Controllers
             this.webControls.Add("Switch", Tuple.Create<string, bool>("Switch", true));
             this.webControls.Add("Dialog", Tuple.Create<string, bool>("Dialog", true));
             this.webControls.Add("List", Tuple.Create<string, bool>("List", true));
-            this.webControls.Add("Panel", Tuple.Create<string, bool>("Panel", false));
+            this.webControls.Add("Panel", Tuple.Create<string, bool>("Panel", true));
             this.webControls.Add("Tab", Tuple.Create<string, bool>("Tab", true));
             this.webControls.Add("Messagebox", Tuple.Create<string, bool>("Message Box", false));
             this.webControls.Add("Progress", Tuple.Create<string, bool>("Progress", false));
-            this.webControls.Add("Breadcrumb", Tuple.Create<string, bool>("Breadcrumb", false));
+            this.webControls.Add("Breadcrumb", Tuple.Create<string, bool>("Breadcrumb", true));
             this.webControls.Add("BlockUI", Tuple.Create<string, bool>("Block UI", true));
             this.webControls.Add("Form", Tuple.Create<string, bool>("Form (with validation)", true));
 
