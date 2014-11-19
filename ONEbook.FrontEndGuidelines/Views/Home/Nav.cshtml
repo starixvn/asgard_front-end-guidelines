@@ -2,6 +2,11 @@
     ViewBag.Title = "Nav";
 }
 
+@section css
+{
+    @Styles.Render("~/bundles/controls/css/nav")
+}
+
 <div class="col-sm-12">
     <p>Navbars are responsive meta components that serve as navigation headers for your application or site. They begin collapsed (and are toggleable) in mobile views and become horizontal as the available viewport width increases.</p>
     <h2 class="sub-title">Navbar</h2>
@@ -116,15 +121,23 @@
     </div>
     <!-- Left side -->
     <h2 class="sub-title">SideNav</h2>
-    <p>By default, all the .panel does is apply some basic border and padding to contain some content.</p>
+    <p>This sidenav is locked open on your device. To go back to the default behavior, narrow your display. </p>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
         <div class="example-section">
             <h2>Example</h2>
-            <div class="demo-section">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        Basic panel example
+            <div class="demo-section row">
+                <div class="col-sm-12 demo-sidenav">
+                    <div class="col-sm-4 left-side">
+                        <h1>Sidenav Left</h1>
+                        <p>This sidenav is locked open on your device.</p>
+                    </div>
+                    <div class="col-sm-8 middle-side">
+                        <button class="btn btn-primary" id="btn-toggle">Toggle right</button>
+                        <div class="right-side closed" id="right-side">
+                            <h1>Sidenav Right</h1>
+                            <p>This sidenav is locked open on your device.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -145,3 +158,8 @@
         </div>
     </div>
 </div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/controls/js/nav")
+}

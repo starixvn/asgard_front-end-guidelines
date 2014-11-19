@@ -154,6 +154,17 @@ namespace ONEbook.FrontEndGuidelines
             // Bundle for Checkbox.
             bundles.Add(new StyleBundle("~/bundles/controls/css/checkbox").Include(
                 "~/Content/CustomizedControls/checkbox.less"));
+
+            // Bundle for Nav.
+            bundles.Add(new StyleBundle("~/bundles/controls/css/nav").Include(
+                "~/Content/CustomizedControls/nav.less"));
+
+            bundles.Add(new ScriptBundle("~/bundles/controls/js/nav").Include(
+                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Nav.js"));
+
+            // Bundle for Radio button.
+            bundles.Add(new StyleBundle("~/bundles/controls/css/radio").Include(
+                "~/Content/CustomizedControls/radio.less"));
         }
     }
 }

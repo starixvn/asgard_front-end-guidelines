@@ -1,0 +1,22 @@
+﻿@import "../variables.less";
+@import "../mixins.less";
+
+/********************************************************/
+/*                 Customize radio button               */
+/********************************************************/
+
+.radio label input[type="radio"]:not(:checked) ~ .check:after {
+    .animation(500ms ease 0s normal none 1 running rippleOff);
+}
+
+.radio label input[type="radio"]:checked ~ .check:after {
+    .animation(500ms ease 0s normal none 1 running rippleOn);
+}
+
+.radio label .check {
+    .transform(scale(0));
+}
+
+.radio input[type="radio"]:checked ~ .check {
+    .transform(scale(0.55));
+}

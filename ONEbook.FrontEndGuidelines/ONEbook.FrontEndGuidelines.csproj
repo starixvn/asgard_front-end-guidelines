@@ -180,6 +180,7 @@
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Layout.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Dialog.js" />
+    <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Nav.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Switch.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Tooltip.js" />
     <Content Include="Scripts\Libraries\CodeHighlight\shBrushCSharp.js" />
@@ -208,6 +209,8 @@
     <Content Include="Content\Dialog\BootstrapDialog\less\bootstrap-dialog.less" />
     <Content Include="Content\CustomizedControls\dialog.less" />
     <Content Include="Content\CustomizedControls\blockui.less" />
+    <Content Include="Content\CustomizedControls\nav.less" />
+    <Content Include="Content\CustomizedControls\radio.less" />
     <None Include="Properties\PublishProfiles\LocalPublication.pubxml" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Calendar.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.TreeView.js" />

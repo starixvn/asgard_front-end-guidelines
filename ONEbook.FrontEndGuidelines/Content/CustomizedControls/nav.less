@@ -1,0 +1,76 @@
+﻿@import "../variables.less";
+@import "../mixins.less";
+
+/********************************************************/
+/*                     Customize Nav                    */
+/********************************************************/
+.navbar {
+    .navbar-brand {
+        height: 50px;
+        line-height: 20px;
+    }
+
+    .navbar-nav > li > a {
+        padding: 15px;
+    }
+
+    .navbar-form {
+        margin: 10px;
+    }
+}
+
+/********************************************************/
+/*                      For example                     */
+/********************************************************/
+
+.demo-sidenav {
+    .box-shadow(0px 0px 4px #ccc);
+    padding: 0;
+    height: 300px;
+    position: relative;
+    z-index: 8;
+    overflow: hidden;
+
+    .left-side {
+        background-color: #fff;
+        border: 1px solid @border-color;
+        height: 100%;
+
+         h1 {
+            background-color: @primary-color;
+            color: #fff;
+            font-size: @font-size + 5;
+            padding: 7px 10px;
+         }
+    }
+
+    .middle-side {
+        height: 100%;
+    }
+
+    .right-side {
+        position: absolute;
+        width: 300px;
+        bottom: 0;
+        left: 100%;
+        top: 0;
+        background-color: #fff;
+        border: 1px solid @border-color;
+        padding: 0 15px;
+        .transform(translate3d(-100%, 0px, 0px));
+        .transition(all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0s);
+
+        &.closed {
+            .transform(translate3d(0%, 0px, 0px));
+            display: none;
+        }
+
+        h1 {
+            background-color: #0f9d58;
+            color: #fff;
+            font-size: @font-size + 5;
+            padding: 7px 10px;
+        }
+    }
+}
+

@@ -2,9 +2,31 @@
 @import "../mixins.less";
 
 /********************************************************/
-/*                     Customize tab                    */
+/*                  Customize checkbox                  */
 /********************************************************/
 
 .checkbox-group {
     margin: 0 0 0 20px;
+}
+
+.checkbox {
+    label .check:before {
+        .transform(rotate(45deg));
+    }
+
+    input[type="checkbox"]:checked ~ .check:before {
+        .animation(0.3s linear 0s normal forwards 1 running checkbox-on);
+    }
+
+    label .check:before {
+        .animation(0.3s linear 0s normal forwards 1 running checkbox-off);
+    }
+
+    label input[type="checkbox"]:not(:checked) ~ .ripple {
+        .animation(500ms ease 0s normal none 1 running rippleOff);
+    }
+
+    label input[type="checkbox"]:checked ~ .ripple {
+        .animation(500ms ease 0s normal none 1 running rippleOn);
+    }
 }

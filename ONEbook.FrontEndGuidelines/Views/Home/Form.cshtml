@@ -2,6 +2,11 @@
     ViewBag.Title = "Form";
 }
 
+@section css
+{
+    @Styles.Render("~/bundles/controls/css/checkbox")
+}
+
 <div class="col-sm-12">
     <p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with .form-control are set to width: 100%; by default. Wrap labels and controls in <span class="txt-class">.form-group</span> for optimum spacing.</p>
     <!-- Basic form -->
@@ -133,7 +138,7 @@
         <div class="example-section">
             <h2>Example</h2>
             <div class="demo-section row">
-                <form class="form-horizontal col-sm-7" role="form">
+                <form class="form-horizontal col-sm-10 col-md-7" role="form">
                     <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
@@ -172,7 +177,7 @@
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="html">
                     <pre class="brush: html">
-                        <form class="form-horizontal col-sm-7" role="form">
+                        <form class="form-horizontal col-sm-10 col-md-7" role="form">
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                                 <div class="col-sm-10">
@@ -218,7 +223,7 @@
         <div class="example-section">
             <h2>Example</h2>
             <div class="demo-section row">
-                <form class="form-horizontal col-sm-7" role="form">
+                <form class="form-horizontal col-sm-11 col-md-7" role="form">
                     <div class="form-group has-error">
                         <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
                         <div class="col-sm-9">
@@ -263,7 +268,7 @@
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="html">
                     <pre class="brush: html">
-                        <form class="form-horizontal col-sm-7" role="form">
+                        <form class="form-horizontal col-sm-11 col-md-7" role="form">
                             <div class="form-group has-error">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
                                 <div class="col-sm-9">
