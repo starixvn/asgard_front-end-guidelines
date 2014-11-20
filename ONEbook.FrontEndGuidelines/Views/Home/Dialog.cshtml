@@ -38,6 +38,7 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#html-dialog-default" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#less-dialog-default" role="tab" data-toggle="tab">Less</a></li>
                 <li role="presentation"><a href="#javascript-dialog-default" role="tab" data-toggle="tab">JavaScript</a></li>
             </ul>
             <!-- Tab panes -->
@@ -54,6 +55,34 @@
                                 message: 'Hi!'
                             });
                         });
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="less-dialog-default">
+                    <pre class="brush: css">
+                        /********************************************************/
+                        /*                  Customize dialog                    */
+                        /********************************************************/
+                        .bootstrap-dialog {
+                            z-index: 100;
+
+                            &.type-primary .modal-header {
+                                background-color: #486CB8;
+                            }
+
+                            .modal-dialog {
+                                margin: 200px auto;
+                            }
+
+                            .modal-content {
+                                .modal-header {
+                                    padding: 8px 20px;
+                                }
+
+                                .modal-body {
+                                    background-color: #fff;
+                                }
+                            }
+                        }
                     </pre>
                 </div>
             </div>

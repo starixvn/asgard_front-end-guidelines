@@ -8,8 +8,9 @@
 }
 
 <div class="col-sm-12">
-    <p>Navbars are responsive meta components that serve as navigation headers for your application or site. They begin collapsed (and are toggleable) in mobile views and become horizontal as the available viewport width increases.</p>
+    <p>The nav element represents a section of a page that links to other pages or to parts within the page. It's often placed horizontally above or below the header or on the left on this site. </p>
     <h2 class="sub-title">Navbar</h2>
+    <p>Navbars are responsive meta components that serve as navigation headers for your application or site. They begin collapsed (and are toggleable) in mobile views and become horizontal as the available viewport width increases.</p>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
         <div class="example-section">
@@ -65,6 +66,7 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#navbarHtml" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#navbarLess" role="tab" data-toggle="tab">Less</a></li>
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
@@ -116,12 +118,28 @@
                         </div>
                     </pre>
                 </div>
+                <div role="tabpanel" class="tab-pane" id="navbarLess">
+                    <pre class="brush: css">
+                        .navbar {
+                            .navbar-brand {
+                                height: 50px;
+                                line-height: 20px;
+                            }
+                            .navbar-nav > li > a {
+                                padding: 15px;
+                            }
+                            .navbar-form {
+                                margin: 10px;
+                            }
+                        }
+                    </pre>
+                </div>
             </div>
         </div>
     </div>
     <!-- Left side -->
     <h2 class="sub-title">SideNav</h2>
-    <p>This sidenav is locked open on your device. To go back to the default behavior, narrow your display. </p>
+    <p>This sidenav can be locked open on your device or only displayed when user need. </p>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
         <div class="example-section">
@@ -136,7 +154,7 @@
                         <button class="btn btn-primary" id="btn-toggle">Toggle right</button>
                         <div class="right-side closed" id="right-side">
                             <h1>Sidenav Right</h1>
-                            <p>This sidenav is locked open on your device.</p>
+                            <p>To go back to the default behavior, narrow your display.</p>
                         </div>
                     </div>
                 </div>
@@ -145,13 +163,106 @@
         <div class="code-section">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#basicHtml" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation" class="active"><a href="#sidenavHtml" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#sidenavLess" role="tab" data-toggle="tab">Less</a></li>
+                <li role="presentation"><a href="#sidenavJs" role="tab" data-toggle="tab">Javascript</a></li>                
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="basicHtml">
+                <div role="tabpanel" class="tab-pane active" id="sidenavHtml">
                     <pre class="brush: html">
-                        
+                        <div class="col-sm-12 demo-sidenav">
+                            <div class="col-sm-4 left-side">
+                                <h1>Sidenav Left</h1>
+                                <p>This sidenav is locked open on your device.</p>
+                            </div>
+                            <div class="col-sm-8 middle-side">
+                                <button class="btn btn-primary" id="btn-toggle">Toggle right</button>
+                                <div class="right-side closed" id="right-side">
+                                    <h1>Sidenav Right</h1>
+                                    <p>To go back to the default behavior, narrow your display.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="sidenavJs">
+                    <pre class="brush: javascript">                                                
+                        'use strict';
+                        $(document).ready(function () {
+                            var nav = new ONEbook.FrontEndGuidelines.Nav();
+                            nav.Initialize();
+                        });
+
+                        Namespace.Register('ONEbook.FrontEndGuidelines.Nav');
+                        ONEbook.FrontEndGuidelines.Nav = function () {
+                            var me = this;
+
+                            var toggleRightSide = function () {
+                                var rightSide = $('#right-side'),
+                                    btnToggle = $('#btn-toggle');
+
+                                btnToggle.on('click', function () {
+                                    if (rightSide.hasClass('closed')) {
+                                        rightSide.removeClass('closed');
+                                    } else {
+                                        rightSide.addClass('closed');
+                                    }
+                                });
+                            };
+
+                            me.Initialize = function () {
+                                toggleRightSide();
+                            };
+                        };
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="sidenavLess">
+                    <pre class="brush: css">
+                        .demo-sidenav {
+                            padding: 0;
+                            height: 300px;
+                            position: relative;
+                            z-index: 8;
+                            overflow: hidden;
+                            .box-shadow(0px 0px 4px #ccc);
+
+                            .left-side {
+                                background-color: #fff;
+                                border: 1px solid #d9d9d9;
+                                height: 100%;
+                            }
+
+                            .middle-side {
+                                height: 100%;
+                            }
+
+                            .left-side, .right-side {
+                                h1 {
+                                    background-color: #0f9d58;
+                                    color: #fff;
+                                    font-size: 18px;
+                                    padding: 7px 10px;
+                                }
+                            }
+
+                            .right-side {
+                                position: absolute;
+                                width: 300px;
+                                bottom: 0;
+                                left: 100%;
+                                top: 0;
+                                background-color: #fff;
+                                border: 1px solid #d9d9d9;
+                                padding: 0 15px;
+                                .transform(translate3d(-100%, 0px, 0px));
+                                .transition(all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0s);
+
+                                &.closed {
+                                    .transform(translate3d(0%, 0px, 0px));
+                                }
+                            }
+                        }
                     </pre>
                 </div>
             </div>

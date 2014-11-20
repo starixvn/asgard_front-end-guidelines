@@ -35,17 +35,19 @@
         background-color: #fff;
         border: 1px solid @border-color;
         height: 100%;
-
-         h1 {
-            background-color: @primary-color;
-            color: #fff;
-            font-size: @font-size + 5;
-            padding: 7px 10px;
-         }
     }
 
     .middle-side {
         height: 100%;
+    }
+
+    .left-side, .right-side {
+        h1 {
+            background-color: #0f9d58;
+            color: #fff;
+            font-size: @font-size + 5;
+            padding: 7px 10px;
+        }
     }
 
     .right-side {
@@ -62,15 +64,9 @@
 
         &.closed {
             .transform(translate3d(0%, 0px, 0px));
-            display: none;
         }
 
-        h1 {
-            background-color: #0f9d58;
-            color: #fff;
-            font-size: @font-size + 5;
-            padding: 7px 10px;
-        }
+        
     }
 }
 
