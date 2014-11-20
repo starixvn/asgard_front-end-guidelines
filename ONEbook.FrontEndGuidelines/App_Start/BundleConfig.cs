@@ -165,6 +165,15 @@ namespace ONEbook.FrontEndGuidelines
             // Bundle for Radio button.
             bundles.Add(new StyleBundle("~/bundles/controls/css/radio").Include(
                 "~/Content/CustomizedControls/radio.less"));
+
+            // Bundle for Progress.
+            bundles.Add(new StyleBundle("~/bundles/controls/css/progress").Include(
+                "~/Content/CustomizedControls/progress.less",
+                "~/Content/Progress/jquery.circliful.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/controls/js/progress").Include(
+                "~/Scripts/Libraries/Progress/jquery.circliful.js",
+                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Progress.js"));
         }
     }
 }

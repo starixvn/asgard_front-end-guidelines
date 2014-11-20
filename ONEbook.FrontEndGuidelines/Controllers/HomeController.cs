@@ -49,7 +49,7 @@ namespace ONEbook.FrontEndGuidelines.Controllers
             this.webControls.Add("Panel", Tuple.Create<string, bool>("Panel", true));
             this.webControls.Add("Tab", Tuple.Create<string, bool>("Tab", true));
             this.webControls.Add("Messagebox", Tuple.Create<string, bool>("Message Box", false));
-            this.webControls.Add("Progress", Tuple.Create<string, bool>("Progress", false));
+            this.webControls.Add("Progress", Tuple.Create<string, bool>("Progress", true));
             this.webControls.Add("Breadcrumb", Tuple.Create<string, bool>("Breadcrumb", true));
             this.webControls.Add("BlockUI", Tuple.Create<string, bool>("Block UI", true));
             this.webControls.Add("Form", Tuple.Create<string, bool>("Form (with validation)", true));
