@@ -167,13 +167,23 @@ namespace ONEbook.FrontEndGuidelines
                 "~/Content/CustomizedControls/radio.less"));
 
             // Bundle for Progress.
-            bundles.Add(new StyleBundle("~/bundles/controls/css/progress").Include(
-                "~/Content/CustomizedControls/progress.less",
-                "~/Content/Progress/jquery.circliful.css"));
+            bundles.Add(new StyleBundle("~/bundles/controls/css/progress").Include(                
+                "~/Content/Progress/jquery.circliful.css",
+                "~/Content/CustomizedControls/progress.less"));
 
             bundles.Add(new ScriptBundle("~/bundles/controls/js/progress").Include(
                 "~/Scripts/Libraries/Progress/jquery.circliful.js",
                 "~/Scripts/Home/ONEbook.FrontEndGuidelines.Progress.js"));
+
+            // Bundle for Message Box.
+            bundles.Add(new StyleBundle("~/bundles/controls/css/messagebox").Include(
+                "~/Content/msgbox/msgbox-0.0.1.css",
+                "~/Content/CustomizedControls/messagebox.less"));
+
+            bundles.Add(new ScriptBundle("~/bundles/controls/js/messagebox").Include(
+                "~/Scripts/Libraries/msgbox/msgbox-0.0.1.js",
+                "~/Scripts/Libraries/jQuery/jquery-migrate-1.2.1.js",
+                "~/Scripts/Home/ONEbook.FrontEndGuidelines.MessageBox.js"));
         }
     }
 }

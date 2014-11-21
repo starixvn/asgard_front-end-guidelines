@@ -2,31 +2,126 @@
     ViewBag.Title = "Message Box";
 }
 
+@section css
+{
+    @Styles.Render("~/bundles/controls/css/messagebox")
+}
+
 <div class="col-sm-12">
-    <p>Radio buttons are used when there is a list of two or more options that are mutually exclusive and the user must select exactly one choice.</p>
+    <p>Provide contextual feedback messages for typical user actions with the handful of available and flexible messages.</p>    
+    <ul>
+        <li>Show server side errors/warnings thrown via ajax calls</li>
+        <li>Show some warnings, not change the main layout of the sites, and will disappear after some seconds</li>
+        <li>Show some information in some few seconds, not change the main layout</li>
+    </ul>
     <!-- Default radio button -->
-    <h2 class="sub-title">Default radio button</h2>
+    <h2 class="sub-title">Show default message box</h2>
     <div class="docs-section">
         <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
         <div class="example-section">
             <h2>Example</h2>
-            <div class="demo-section">
-                
+            <div class="demo-section">                
+                <button class="btn btn-info" id="defaultInfoMessage">Info message</button>
+                <button class="btn btn-warning" id="defaultErrorMessage">Error message</button>
+                <button class="btn btn-primary" id="defaultConfirmMessage">Confirm message</button>
             </div>
         </div>
         <div class="code-section">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation" class="active"><a href="#defaultMessagehtml" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#defaultMessageJs" role="tab" data-toggle="tab">Javascript</a></li>
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="html">
+                <div role="tabpanel" class="tab-pane active" id="defaultMessagehtml">
                     <pre class="brush: html">
-                        
+                        <!-- Message box -->
+                        <button class="btn btn-info" id="defaultInfoMessage">Info message</button>
+                        <button class="btn btn-warning" id="defaultErrorMessage">Error message</button>
+                        <button class="btn btn-primary" id="defaultConfirmMessage">Confirm message</button>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="defaultMessageJs">
+                    <pre class="brush: javascript">
+                        'use strict';
+
+                        $(document).ready(function () {
+                            var messageBox = new ONEbook.FrontEndGuidelines.MessageBox();
+                            messageBox.Initialize();
+                        });
+
+                        Namespace.Register('ONEbook.FrontEndGuidelines.MessageBox');
+                        ONEbook.FrontEndGuidelines.MessageBox = function () {
+                            var me = this,
+                                MsgBox = $.msgbox({
+                                    message: '',
+                                    type: 'err',
+                                    modal: false,
+                                    position: ['top:130', 'center'],
+                                    theme: '',
+                                    zIndex: 9999,
+                                    useAnimation: false
+                                });
+    
+                            var showDefaultMessage = function () {
+                                var btnShowDefaultInfoMessage = $('#defaultInfoMessage'),
+                                    btnShowDefaultErrorMessage = $('#defaultErrorMessage'),
+                                    btnShowDefaultConfirmMessage = $('#defaultConfirmMessage');
+
+                                btnShowDefaultInfoMessage.on('click', function () {
+                                    showInfoMessage('Information message box');
+                                });
+
+                                btnShowDefaultErrorMessage.on('click', function () {
+                                    showErrorMessage('Error message box');
+                                });
+
+                                btnShowDefaultConfirmMessage.on('click', function () {
+                                    var message = 'Do you want to delete this user?',
+                                        callbackFunc = null;
+                                    showConfirmMessage(message, callbackFunc);
+                                });
+                            };
+
+                            var showErrorMessage = function (message) {
+                                var options = {
+                                    sticky: true
+                                };
+                                MsgBox.showErr(message, options);
+                            };
+
+                            var showInfoMessage = function (message, callbackFunc) {
+                                var options = {
+                                    duration: 3000
+                                };
+                                callbackFunc = callbackFunc || function () { };
+                                MsgBox.showInfo(message, options);
+                                setTimeout(callbackFunc, 3000);
+                            };
+
+                            var showConfirmMessage = function (message, callbackFunc) {
+                                var options = {
+                                    modal: true,
+                                    closeBtn: false,
+                                    header: true
+                                };
+                                callbackFunc = callbackFunc || function () { };
+                                MsgBox.confirm(message, callbackFunc, options);
+                            };
+
+                            me.Initialize = function () {
+                                showDefaultMessage();
+                            };
+                        };
                     </pre>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/controls/js/messagebox")
+}
