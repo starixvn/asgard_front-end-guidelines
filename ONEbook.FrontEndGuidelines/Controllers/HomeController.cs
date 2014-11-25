@@ -32,7 +32,7 @@ namespace ONEbook.FrontEndGuidelines.Controllers
             this.webControls = new Dictionary<string, Tuple<string, bool>>();
 
             this.webControls.Add("Calendar", Tuple.Create<string, bool>("Calendar", true));
-            this.webControls.Add("ContextMenu", Tuple.Create<string, bool>("Context Menu", false));
+            this.webControls.Add("ContextMenu", Tuple.Create<string, bool>("Context Menu", true));
             this.webControls.Add("Nav", Tuple.Create<string, bool>("Nav", true));
             this.webControls.Add("DropdownList", Tuple.Create<string, bool>("Dropdown List", true));
             this.webControls.Add("Tree", Tuple.Create<string, bool>("Tree", true));
