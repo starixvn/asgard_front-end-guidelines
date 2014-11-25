@@ -184,6 +184,13 @@ namespace ONEbook.FrontEndGuidelines
                 "~/Scripts/Libraries/msgbox/msgbox-0.0.1.js",
                 "~/Scripts/Libraries/jQuery/jquery-migrate-1.2.1.js",
                 "~/Scripts/Home/ONEbook.FrontEndGuidelines.MessageBox.js"));
+
+            // Bundle for Context Menu.
+            bundles.Add(new StyleBundle("~/bundles/controls/css/contextmenu").Include(
+                "~/Content/CustomizedControls/contextmenu.less"));
+
+            bundles.Add(new ScriptBundle("~/bundles/controls/js/contextmenu").Include(
+                "~/Scripts/Home/ONEbook.FrontEndGuidelines.ContextMenu.js"));
         }
     }
 }

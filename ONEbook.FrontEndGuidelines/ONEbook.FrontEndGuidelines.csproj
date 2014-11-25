@@ -190,6 +190,7 @@
     <Content Include="Content\TreeView\JSTree\default\throbber.gif" />
     <Content Include="Scripts\CustomizedLibraries\daterangeselector.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.BlockUI.js" />
+    <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.ContextMenu.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Progress.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.MessageBox.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Rules.js" />
@@ -230,6 +231,7 @@
     <Content Include="Content\CustomizedControls\radio.less" />
     <Content Include="Content\CustomizedControls\progress.less" />
     <Content Include="Content\CustomizedControls\messagebox.less" />
+    <Content Include="Content\CustomizedControls\contextmenu.less" />
     <None Include="Properties\PublishProfiles\LocalPublication.pubxml" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Calendar.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.TreeView.js" />

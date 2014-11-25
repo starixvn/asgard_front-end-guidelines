@@ -1,3 +1,310 @@
 ﻿@{
     ViewBag.Title = "Context Menu";
 }
+
+@section css
+{
+    @Styles.Render("~/bundles/controls/css/contextmenu")
+}
+
+<div class="col-sm-12">
+    <div class="docs-section">
+        <div class="btn btn-primary btn-xs withripple view-source">&lt; Source &gt;</div>
+        <p>Click on an icon in a row of a table, list out actions that user can do</p>
+        <div class="example-section">
+            <h2>Example</h2>
+            <div class="demo-section">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Last Name</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td>Jacob</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                            <td class="text-center">
+                                <span class="context-menu">
+                                    <i class="mdi-av-my-library-books icon-view"></i>
+                                    <ul class="content-menu">
+                                        <li><a href="#">View 1</a></li>
+                                        <li><a href="#">View 2</a></li>
+                                        <li><a href="#">View 1</a></li>
+                                    </ul>
+                                </span>
+                                <i class="mdi-content-clear icon-delete"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">2</td>
+                            <td>Mark</td>
+                            <td>Thornton</td>
+                            <td>fat</td>
+                            <td class="text-center">
+                                <span class="context-menu">
+                                    <i class="mdi-av-my-library-books icon-view"></i>
+                                    <ul class="content-menu">
+                                        <li><a href="#">View 1</a></li>
+                                        <li><a href="#">View 2</a></li>
+                                        <li><a href="#">View 1</a></li>
+                                    </ul>
+                                </span>
+                                <i class="mdi-content-clear icon-delete"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">3</td>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>twitter</td>
+                            <td class="text-center">
+                                <span class="context-menu">
+                                    <i class="mdi-av-my-library-books icon-view"></i>
+                                    <ul class="content-menu">
+                                        <li><a href="#">View 1</a></li>
+                                        <li><a href="#">View 2</a></li>
+                                        <li><a href="#">View 1</a></li>
+                                    </ul>
+                                </span>
+                                <i class="mdi-content-clear icon-delete"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="code-section">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html" role="tab" data-toggle="tab">Html</a></li>
+                <li role="presentation"><a href="#less" role="tab" data-toggle="tab">Less</a></li>
+                <li role="presentation"><a href="#javascript" role="tab" data-toggle="tab">Javascript</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html">
+                    <pre class="brush: html">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Last Name</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>Jacob</td>
+                                <td>Otto</td>
+                                <td>mdo</td>
+                                <td class="text-center">
+                                    <span class="context-menu">
+                                        <i class="mdi-av-my-library-books icon-view"></i>
+                                        <ul class="content-menu">
+                                            <li><a href="#">View 1</a></li>
+                                            <li><a href="#">View 2</a></li>
+                                            <li><a href="#">View 1</a></li>
+                                        </ul>
+                                    </span>
+                                    <i class="mdi-content-clear icon-delete"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">2</td>
+                                <td>Mark</td>
+                                <td>Thornton</td>
+                                <td>fat</td>
+                                <td class="text-center">
+                                    <span class="context-menu">
+                                        <i class="mdi-av-my-library-books icon-view"></i>
+                                        <ul class="content-menu">
+                                            <li><a href="#">View 1</a></li>
+                                            <li><a href="#">View 2</a></li>
+                                            <li><a href="#">View 1</a></li>
+                                        </ul>
+                                    </span>
+                                    <i class="mdi-content-clear icon-delete"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">3</td>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>twitter</td>
+                                <td class="text-center">
+                                    <span class="context-menu">
+                                        <i class="mdi-av-my-library-books icon-view"></i>
+                                        <ul class="content-menu">
+                                            <li><a href="#">View 1</a></li>
+                                            <li><a href="#">View 2</a></li>
+                                            <li><a href="#">View 1</a></li>
+                                        </ul>
+                                    </span>
+                                    <i class="mdi-content-clear icon-delete"></i>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane active" id="less">
+                    <pre class="brush: css">
+                        /********************************************************/
+                        /*                     Customize menu                   */
+                        /********************************************************/
+                        &#64;border-color: #d9d9d9;
+                        &#64;font-size: 13px;
+                        &#64;text-color: #666;
+
+                        .table {
+                            thead {
+                                th {
+                                    text-align: center;
+                                }
+                            }
+                            td {
+                                vertical-align: middle;
+                            }
+                        }
+
+                        .icon-view, .icon-delete {
+                            font-size: &#64;font-size + 3;
+                            padding: 1px;
+                            border: 1px solid &#64;border-color;
+                            margin: 0 4px;
+                            cursor: pointer;
+                            color: &#64;text-color;
+                            .border-radius(2px);
+
+                            &:hover, &.active {
+                                color: #9e9e9e;
+                            }
+                        }
+
+                        .context-menu {
+                            position: relative;
+
+                            .content-menu {
+                                display: none;
+                                position: absolute;
+                                top: 25px;
+                                left: 0px;
+                                z-index: 100;
+                                padding: 0;
+                                background-color: #fafafa;
+                                list-style: none;
+                                border: 1px solid &#64;border-color;
+                                .border-radius(2px);
+                                .box-shadow(1px 1px 2px #ccc);
+
+                                li {
+                                    white-space: nowrap;
+                                    padding: 3px 10px;
+                                    border-top: 1px solid #dfdfdf;
+                                    min-width: 100px;
+
+                                    &:first-child {
+                                        border-top: none;
+                                    }
+
+                                    &:hover {
+                                        background-color: #f3f3f3;
+                                    }
+
+                                    a {
+                                        display: block;
+                                        &:hover {
+                                            text-decoration: none;
+                                        }
+                                    }
+                                }
+
+                                &:before, &:after {
+                                    content: "";
+                                    border-color: transparent transparent #fff transparent;
+                                    border-style: solid;
+                                    border-width: 8px;
+                                    width: 0;
+                                    height: 0;
+                                    position: absolute;
+                                    top: -15px;
+                                    left: 6px;
+                                    z-index: 102;
+                                }
+
+                                &:after {
+                                    border-color: transparent transparent #dfdfdf transparent;
+                                    border-width: 9px;
+                                    top: -18px;
+                                    left: 5px;
+                                    z-index: 101;
+                                }
+                            }
+                        }
+                    </pre>
+                </div>
+                <div role="tabpanel" class="tab-pane active" id="javascript">
+                    <pre class="brush: javascript">
+                        'use strict';
+
+                        $(document).ready(function () {
+                            var contextmenu = new ONEbook.FrontEndGuidelines.ContextMenu();
+                            contextmenu.Initialize();
+                        });
+
+                        Namespace.Register('ONEbook.FrontEndGuidelines.ContextMenu');
+
+                        ONEbook.FrontEndGuidelines.ContextMenu = function () {
+                            var me = this;
+    
+                            var showContextMenu = function () {
+                                var iconView = $('.icon-view'),
+                                    iconDelete = $('.icon-delete'),
+                                    contentMenu = $('.content-menu');
+
+                                iconView.on('click', function () {
+                                    var $this = $(this);
+
+                                    if ($this.hasClass('active')) {
+                                        $this.removeClass('active');
+                                        $this.siblings('.content-menu').hide();
+                                    } else {
+                                        $this.addClass('active');
+                                        contentMenu.hide();
+                                        $this.siblings('.content-menu').show();
+                                    }            
+                                });
+
+                                iconDelete.on('click', function () {
+                                    var $this = $(this),
+                                        confirmMsg = confirm('Do you want to delete?');
+                                    if (confirmMsg) {
+                                        $this.parent().parent().remove();
+                                    }
+                                });
+                            };
+
+                            me.Initialize = function () {
+                                showContextMenu();
+                            };
+                        };
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/controls/js/contextmenu")
+}
