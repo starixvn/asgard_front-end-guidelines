@@ -2,354 +2,349 @@
     ViewBag.Title = "CSS/LESS Rules";
 }
 <div class="col-sm-12">
-    <div class="rule-section">
-        <h2 class="sub-title">Must use <a href="http://lesscss.org/" target="_blank">LESS</a> for your styling code</h2>
-        <p>It adds features which allow variables, mixins, functions and many other techniques that make CSS be more maintainable, themeable and extendible.</p>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Use valid CSS where possible</h2>
-        <p>
-            Unless dealing with CSS validator bugs or requiring proprietary syntax, you must ensure that your styling code is valid.
-            Use tools such as the <a href="http://jigsaw.w3.org/css-validator/" target="_blank">W3C CSS validator</a> to test.
-        </p>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Remove all trailing whitespaces</h2>
-        <p>
-            The number of whitespaces for a tab may vary with many editors, thus using whitespace instead of tab helps to keep the format of code be the same.
-            Do not use tabs or mix tabs and spaces for indentation.
-        </p>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Use spaces instead of tabs</h2>
-        <p>The trailing whitespaces are unnecessary and can complicate diffs.</p>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Use meaningful or generic ID and class names</h2>
-        <p>
-            Names that are specific and reflect the purpose of the element should be preferred since these are most understandable and the least likely to change.
-            Using functional or generic names reduces the probability of unnecessary document or template changes.
-        </p>
-        <div class="example-code">
-            <pre class="text-danger">
-                /* Not recommended: meaningless */
-                #abc-123 {}
-            </pre>
-            <pre class="text-success">
-                /* Recommended: specific */
-                #gallery {}
-                #login {}
-                .video {}
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Use ID and class names that are as short as possible but as long as necessary</h2>
-        <p>
-            Try to convey what an ID or class is about while being as brief as possible.
-            It contributes to acceptable levels of understandability and code efficiency.
-        </p>
-        <div class="example-code">
-            <pre class="text-danger">
-                /* Not recommended */
-                #navigation {}
-                .atr {}
-            </pre>
-            <pre class="text-success">
-                /* Recommended */
-                #nav {}
-                .author {}
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Avoid qualifying ID and class name with type selectors</h2>
-        <p>
-            It dues to performance reason.
-        </p>
-        <div class="example-code">
-            <pre class="text-danger">
-                /* Not recommended */
-                ul#example {}
-                div.error {}
-            </pre>
-            <pre class="text-success">
-                /* Recommended */
-                #example {}
-                .error {}
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Prefer using class names as selectors to IDs</h2>
-        <p>Using class name helps the CSS code is more independent from the JavaScript code.</p>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Avoid descendant selector as possible</h2>
-        <p>
-            The descendant selectors are the most expensive selector in CSS.
-        </p>
-        <div class="example-code">
-            <pre class="text-danger">
-                /* Not recommended */
-                html body ul li a {
-                    color: #fff;
-                }
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Use shorthand properties where possible</h2>
-        <p>
-            The shorthand properties are useful for code efficiency and understandability.
-        </p>
-        <div class="example-code">
-            <pre class="text-danger">
-                /* Not recommended */
-                border-top-style: none;
-                font-family: palatino, georgia, serif;
-                font-size: 100%;
-                line-height: 1.6;
-                padding-bottom: 2em;
-                padding-left: 1em;
-                padding-right: 1em;
-                padding-top: 0;
-            </pre>
-            <pre class="text-success">
-                /* Recommended */
-                border-top: 0;
-                font: 100%/1.6 palatino, georgia, serif;
-                padding: 0 1em 2em;
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Omit unit specification after “0” values</h2>
-        <div class="example-code">
-            <pre class="text-success">
-                /* Recommended */
-                margin: 0;
-                padding: 0;
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Omit leading “0”s in values between -1 and 1</h2>
-        <div class="example-code">
-            <pre class="text-success">
-                /* Recommended */
-                font-size: .8em;
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">For color values, use 3 character hexadecimal notation where possible</h2>
-        <p>
-            It make the code be shorter and more succinct.
-        </p>
-        <div class="example-code">
-            <pre class="text-danger">
-                /* Not recommended */
-                color: #eebbcc;
-            </pre>
-            <pre class="text-success">
-                /* Recommended */
-                color: #ebc;
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Separate words in ID and class names by a hyphen</h2>
-        <p>
-            Do not concatenate words and abbreviations in selectors by any characters (including none at all) other than hyphens,
-            in order to improve understanding and scannability.
-        </p>
-        <div class="example-code">
-            <pre class="text-danger">
-                /* Not recommended: does not separate the words “demo” and “image” */
-                .demoimage {}
-
-                /* Not recommended: uses underscore instead of hyphen */
-                .error_status {}</pre>
-                            <pre class="text-success">
-                /* Recommended */
-                #video-id {}
-                .ads-sample {}
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Put declarations in alphabetical order</h2>
-        <p>
-            The purpose of this action is to achieve consistent code in a way that is easy to remember and maintain.
-            Ignore vendor-specific prefixes for sorting purposes.
-        </p>
-        <div class="example-code">
-            <pre class="text-success">
-                /* Recommended */
-                border: 1px solid;
-                -moz-border-radius: 4px;
-                -webkit-border-radius: 4px;
-                border-radius: 4px;
-                color: black;
-                text-align: center;
-                text-indent: 2em;
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Indent all blocks</h2>
-        <p>
-            To reflect hierarchy and improve understanding.
-        </p>
-        <div class="example-code">
-            <pre class="text-success">
-                /* Recommended */
-                body {
+    <ol class="rules">
+        <li>
+            <h2 class="sub-title">Must use <a href="http://lesscss.org/" target="_blank">LESS</a> for your styling code</h2>
+            <p>It adds features which allow variables, mixins, functions and many other techniques that make CSS be more maintainable, themeable and extendible.</p>
+        </li>
+        <li>
+            <h2 class="sub-title">Use valid CSS where possible</h2>
+            <p>
+                Unless dealing with CSS validator bugs or requiring proprietary syntax, you must ensure that your styling code is valid.
+                Use tools such as the <a href="http://jigsaw.w3.org/css-validator/" target="_blank">W3C CSS validator</a> to test.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">Remove all trailing whitespaces</h2>
+            <p>
+                The number of whitespaces for a tab may vary with many editors, thus using whitespace instead of tab helps to keep the format of code be the same.
+                Do not use tabs or mix tabs and spaces for indentation.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">Use spaces instead of tabs</h2>
+            <p>The trailing whitespaces are unnecessary and can complicate diffs.</p>
+        </li>
+        <li>
+            <h2 class="sub-title">Use meaningful or generic ID and class names</h2>
+            <p>
+                Names that are specific and reflect the purpose of the element should be preferred since these are most understandable and the least likely to change.
+                Using functional or generic names reduces the probability of unnecessary document or template changes.
+            </p>
+            <div class="example-code">
+                <pre class="text-danger">
+                    /* Not recommended: meaningless */
+                    #abc-123 {}
+                </pre>
+                <pre class="text-success">
+                    /* Recommended: specific */
+                    #gallery {}
+                    #login {}
+                    .video {}
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">Use ID and class names that are as short as possible but as long as necessary</h2>
+            <p>
+                Try to convey what an ID or class is about while being as brief as possible.
+                It contributes to acceptable levels of understandability and code efficiency.
+            </p>
+            <div class="example-code">
+                <pre class="text-danger">
+                    /* Not recommended */
+                    #navigation {}
+                    .atr {}
+                </pre>
+                <pre class="text-success">
+                    /* Recommended */
+                    #nav {}
+                    .author {}
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">Avoid qualifying ID and class name with type selectors</h2>
+            <p>
+                It dues to performance reason.
+            </p>
+            <div class="example-code">
+                <pre class="text-danger">
+                    /* Not recommended */
+                    ul#example {}
+                    div.error {}
+                </pre>
+                <pre class="text-success">
+                    /* Recommended */
+                    #example {}
+                    .error {}
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">Prefer using class names as selectors to IDs</h2>
+            <p>Using class name helps the CSS code is more independent from the JavaScript code.</p>
+        </li>
+        <li>
+            <h2 class="sub-title">Avoid descendant selector as possible</h2>
+            <p>
+                The descendant selectors are the most expensive selector in CSS.
+            </p>
+            <div class="example-code">
+                <pre class="text-danger">
+                    /* Not recommended */
+                    html body ul li a {
+                        color: #fff;
+                    }
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">Use shorthand properties where possible</h2>
+            <p>
+                The shorthand properties are useful for code efficiency and understandability.
+            </p>
+            <div class="example-code">
+                <pre class="text-danger">
+                    /* Not recommended */
+                    border-top-style: none;
+                    font-family: palatino, georgia, serif;
+                    font-size: 100%;
+                    line-height: 1.6;
+                    padding-bottom: 2em;
+                    padding-left: 1em;
+                    padding-right: 1em;
+                    padding-top: 0;
+                </pre>
+                <pre class="text-success">
+                    /* Recommended */
+                    border-top: 0;
+                    font: 100%/1.6 palatino, georgia, serif;
+                    padding: 0 1em 2em;
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">Omit unit specification after “0” values</h2>
+            <div class="example-code">
+                <pre class="text-success">
+                    /* Recommended */
+                    margin: 0;
+                    padding: 0;
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">Omit leading “0”s in values between -1 and 1</h2>
+            <div class="example-code">
+                <pre class="text-success">
+                    /* Recommended */
+                    font-size: .8em;
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">For color values, use 3 character hexadecimal notation where possible</h2>
+            <p>
+                It make the code be shorter and more succinct.
+            </p>
+            <div class="example-code">
+                <pre class="text-danger">
+                    /* Not recommended */
+                    color: #eebbcc;
+                </pre>
+                <pre class="text-success">
+                    /* Recommended */
+                    color: #ebc;
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">Separate words in ID and class names by a hyphen</h2>
+            <p>
+                Do not concatenate words and abbreviations in selectors by any characters (including none at all) other than hyphens,
+                in order to improve understanding and scannability.
+            </p>
+            <div class="example-code">
+                <pre class="text-danger">
+                    /* Not recommended: does not separate the words “demo” and “image” */
+                    .demoimage {}
+                    /* Not recommended: uses underscore instead of hyphen */
+                    .error_status {}
+                </pre>
+                <pre class="text-success">
+                    /* Recommended */
+                    #video-id {}
+                    .ads-sample {}
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">Put declarations in alphabetical order</h2>
+            <p>
+                The purpose of this action is to achieve consistent code in a way that is easy to remember and maintain.
+                Ignore vendor-specific prefixes for sorting purposes.
+            </p>
+            <div class="example-code">
+                <pre class="text-success">
+                    /* Recommended */
                     border: 1px solid;
                     -moz-border-radius: 4px;
                     -webkit-border-radius: 4px;
-
+                    border-radius: 4px;
+                    color: black;
+                    text-align: center;
+                    text-indent: 2em;
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">Indent all blocks</h2>
+            <p>
+                To reflect hierarchy and improve understanding.
+            </p>
+            <div class="example-code">
+                <pre class="text-success">
+                    /* Recommended */
+                    body {
+                        border: 1px solid;
+                        -moz-border-radius: 4px;
+                        -webkit-border-radius: 4px;
+                        .header {
+                            text-align: center;
+                            text-indent: 2em;
+                        }
+                    }
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">Use a semicolon after every declaration</h2>
+            <p>
+                End every declaration with a semicolon for consistency and extensibility reasons.
+            </p>
+            <div class="example-code">
+                <pre class="text-danger">
+                    /* Not recommended: the second declaration must end with a semicolon */
+                    .test {
+                      display: block;
+                      height: 100px
+                    }
+                </pre>
+                <pre class="text-success">
+                    /* Recommended */
+                    .test {
+                      display: block;
+                      height: 100px;
+                    }
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">Always use a single space between property and value (but no space between property and colon)</h2>
+            <div class="example-code">
+                <pre class="text-danger">
+                    /* Not recommended */
+                    h3 {
+                      font-weight:bold;
+                    }
+                </pre>
+                <pre class="text-success">
+                    /* Recommended */
+                    h3 {
+                      font-weight: bold;
+                    }
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">Use a space between the last selector and the declaration block</h2>
+            <p>
+                Always use a single space between the last selector and the opening brace that begins the declaration block.
+                The opening brace should be on the same line as the last selector in a given rule.
+            </p>
+            <div class="example-code">
+                <pre class="text-danger">
+                    /* Not recommended: missing space */
+                    #video{
+                      margin-top: 1em;
+                    }
+                    /* Not recommended: unnecessary line break */
+                    #video
+                    {
+                      margin-top: 1em;
+                    }
+                </pre>
+                <pre class="text-success">
+                    /* Recommended */
+                    #video {
+                      margin-top: 1em;
+                    }
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">Always put a blank line between rules</h2>
+            <div class="example-code">
+                <pre class="text-success">
+                    /* Recommended */
+                    html {
+                      background: #fff;
+                    }
+                    body {
+                      margin: auto;
+                      width: 50%;
+                    }
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">Use single quotation marks for attribute selectors and property values. Exception: If you do need to use the <code>@@charset</code> rule, use double quotation marks</h2>
+            <div class="example-code">
+                <pre class="text-danger">
+                    /* Not recommended */
+                    @@import url("//www.google.com/css/maia.css");
+                    html {
+                      font-family: "open sans", arial, sans-serif;
+                    }
+                </pre>
+                <pre class="text-success">
+                    /* Recommended */
+                    @@import url(//www.google.com/css/maia.css);
+                    html {
+                      font-family: 'open sans', arial, sans-serif;
+                    }
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">If possible, group stylesheet sections together by using comments. Separate sections with new lines.</h2>
+            <div class="example-code">
+                <pre class="text-success">
+                    /********************************************************/
+                    /*                        Header                        */
+                    /********************************************************/
                     .header {
-                        text-align: center;
-                        text-indent: 2em;
+                        background-color: @@primary-color;
+                        height: 50px;
+                        .logo {
+                            background: url(Images/logo.png) no-repeat;
+                            width: 210px;
+                            height: 16px;
+                            display: inline-block;
+                        }
                     }
-                }
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Use a semicolon after every declaration</h2>
-        <p>
-            End every declaration with a semicolon for consistency and extensibility reasons.
-        </p>
-        <div class="example-code">
-            <pre class="text-danger">
-                /* Not recommended: the second declaration must end with a semicolon */
-                .test {
-                  display: block;
-                  height: 100px
-                }
-            </pre>
-            <pre class="text-success">
-                /* Recommended */
-                .test {
-                  display: block;
-                  height: 100px;
-                }
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Always use a single space between property and value (but no space between property and colon)</h2>
-        <div class="example-code">
-            <pre class="text-danger">
-                /* Not recommended */
-                h3 {
-                  font-weight:bold;
-                }
-            </pre>
-            <pre class="text-success">
-                /* Recommended */
-                h3 {
-                  font-weight: bold;
-                }
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Use a space between the last selector and the declaration block</h2>
-        <p>
-            Always use a single space between the last selector and the opening brace that begins the declaration block.
-            The opening brace should be on the same line as the last selector in a given rule.
-        </p>
-        <div class="example-code">
-            <pre class="text-danger">
-                /* Not recommended: missing space */
-                #video{
-                  margin-top: 1em;
-                }
-
-                /* Not recommended: unnecessary line break */
-                #video
-                {
-                  margin-top: 1em;
-                }
-            </pre>
-            <pre class="text-success">
-                /* Recommended */
-                #video {
-                  margin-top: 1em;
-                }
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Always put a blank line between rules</h2>
-        <div class="example-code">
-            <pre class="text-success">
-                /* Recommended */
-                html {
-                  background: #fff;
-                }
-
-                body {
-                  margin: auto;
-                  width: 50%;
-                }
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section">
-        <h2 class="sub-title">Use single quotation marks for attribute selectors and property values. Exception: If you do need to use the <code>@@charset</code> rule, use double quotation marks</h2>
-        <div class="example-code">
-            <pre class="text-danger">
-                /* Not recommended */
-                @@import url("//www.google.com/css/maia.css");
-
-                html {
-                  font-family: "open sans", arial, sans-serif;
-                }
-            </pre>
-            <pre class="text-success">
-                /* Recommended */
-                @@import url(//www.google.com/css/maia.css);
-
-                html {
-                  font-family: 'open sans', arial, sans-serif;
-                }
-            </pre>
-        </div>
-    </div>
-    <div class="rule-section last">
-        <h2 class="sub-title">If possible, group stylesheet sections together by using comments. Separate sections with new lines.</h2>
-        <div class="example-code">
-            <pre class="text-success">
-                /********************************************************/
-                /*                        Header                        */
-                /********************************************************/
-                .header {
-                    background-color: @@primary-color;
-                    height: 50px;
-
-                    .logo {
-                        background: url(Images/logo.png) no-repeat;
-                        width: 210px;
-                        height: 16px;
-                        display: inline-block;
+                    /********************************************************/
+                    /*                        Content                       */
+                    /********************************************************/
+                    .content {
+                        position: absolute;
+                        top: 50px;
                     }
-                }
-
-                /********************************************************/
-                /*                        Content                       */
-                /********************************************************/
-                .content {
-                    position: absolute;
-                    top: 50px;
-                }
-            </pre>
-        </div>
-    </div>
+                </pre>
+            </div>
+        </li>
+    </ol>
 </div>
 @section scripts
 {

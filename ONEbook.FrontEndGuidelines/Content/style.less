@@ -164,7 +164,7 @@ a, a:hover, a:focus, a:active,
     }
 
     .docs-section {
-        margin: 15px 0 30px;
+        margin: 10px 0 30px;
         position: relative;
 
         .example-section {
@@ -224,7 +224,17 @@ a, a:hover, a:focus, a:active,
         }
     }
 
-    .rule-section {
+    .rules {
+        padding: 0 10px 0 25px;
+
+        li {
+            font-size: @font-size + 3;
+
+            p, ul li {
+                font-size: @font-size;
+            }
+        }
+
         .example-code {
             border: 1px solid @border-color;
             .border-radius(3px);
