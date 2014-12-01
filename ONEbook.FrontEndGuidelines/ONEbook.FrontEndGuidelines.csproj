@@ -130,6 +130,7 @@
     <Content Include="Content\CustomizedControls\Images\loading-5.gif" />
     <Content Include="Content\CustomizedControls\Images\loading-6.gif" />
     <Content Include="Content\CustomizedControls\Images\loading.gif" />
+    <Content Include="Content\CustomizedControls\Images\resource.jpg" />
     <Content Include="Content\Datepicker\bootstrap-datetimepicker.css" />
     <Content Include="Content\Datepicker\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\Dialog\BootstrapDialog\css\bootstrap-dialog.css" />
@@ -191,6 +192,7 @@
     <Content Include="Scripts\CustomizedLibraries\daterangeselector.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.BlockUI.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.ContextMenu.js" />
+    <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.ASPMVC.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Progress.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.MessageBox.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Rules.js" />
@@ -232,6 +234,7 @@
     <Content Include="Content\CustomizedControls\progress.less" />
     <Content Include="Content\CustomizedControls\messagebox.less" />
     <Content Include="Content\CustomizedControls\contextmenu.less" />
+    <Content Include="Content\CustomizedControls\aspmvc.less" />
     <None Include="Properties\PublishProfiles\LocalPublication.pubxml" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.Calendar.js" />
     <Content Include="Scripts\Home\ONEbook.FrontEndGuidelines.TreeView.js" />
@@ -339,6 +342,8 @@
     <Content Include="Views\Home\Form.cshtml" />
     <Content Include="Views\Home\CommonControls.cshtml" />
     <Content Include="Views\Home\Progress.cshtml" />
+    <Content Include="Views\Home\ASPMVC.cshtml" />
+    <Content Include="Views\Home\CSharp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

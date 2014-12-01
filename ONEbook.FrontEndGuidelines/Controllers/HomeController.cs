@@ -127,6 +127,28 @@ namespace ONEbook.FrontEndGuidelines.Controllers
 
             return this.View();
         }
+
+        /// <summary>
+        /// Redirects to ASPMVC view.
+        /// </summary>
+        /// <returns>ASPMVC view.</returns>
+        public ActionResult ASPMVC()
+        {
+            ViewBag.TabName = "aspmvc";
+
+            return this.View();
+        }
+
+        /// <summary>
+        /// Redirects to CSharp view.
+        /// </summary>
+        /// <returns>CSharp view.</returns>
+        public ActionResult CSharp()
+        {
+            ViewBag.TabName = "csharp";
+
+            return this.View();
+        }
         
         /// <summary>
         /// Get Dropdown List Data.

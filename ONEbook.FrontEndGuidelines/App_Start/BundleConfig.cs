@@ -191,6 +191,13 @@ namespace ONEbook.FrontEndGuidelines
 
             bundles.Add(new ScriptBundle("~/bundles/controls/js/contextmenu").Include(
                 "~/Scripts/Home/ONEbook.FrontEndGuidelines.ContextMenu.js"));
+
+            // Bundle for ASP.Net MVC.
+            bundles.Add(new StyleBundle("~/bundles/controls/css/aspmvc").Include(
+                "~/Content/CustomizedControls/aspmvc.less"));
+
+            bundles.Add(new ScriptBundle("~/bundles/controls/js/aspmvc").Include(
+                "~/Scripts/Home/ONEbook.FrontEndGuidelines.ASPMVC.js"));
         }
     }
 }

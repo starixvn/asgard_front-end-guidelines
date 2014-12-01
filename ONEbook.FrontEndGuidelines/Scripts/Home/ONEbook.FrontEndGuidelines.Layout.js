@@ -13,11 +13,13 @@ if (ONEbook.FrontEndGuidelines) {
                 leftContent: null,
                 rightContent: null,
                 codeDemoBlocks: null,
-                commonControls: null
+                commonControls: null,
+                ASPMVC: null
             },
             init: function () {
                 me.cachedElements.toggleMenu = $('#toggleMenu');
                 me.cachedElements.commonControls = $('#commonControls');
+                me.cachedElements.ASPMVC = $('#aspmvc');
                 me.cachedElements.leftContent = $('#mainContent .left-panel');
                 me.cachedElements.rightContent = $('#mainContent .right-panel');
                 //me.cachedElements.rightContent.scrollTop(0);
@@ -34,6 +36,7 @@ if (ONEbook.FrontEndGuidelines) {
             registerEvents: function () {
                 me.cachedElements.toggleMenu.on('click', me.toggleMenu);
                 me.cachedElements.commonControls.on('click', me.markShowLeftPanel);
+                me.cachedElements.ASPMVC.on('click', me.unMarkShowLeftPanel);
                 me.cachedElements.codeDemoBlocks.on('click', me.toogleCodeDemo);
             },
             toogleCodeDemo: function () {
@@ -56,6 +59,9 @@ if (ONEbook.FrontEndGuidelines) {
             },
             markShowLeftPanel: function () {
                 $.cookie(me.toggleCookieName, 'show', { path: '/' });
+            },
+            unMarkShowLeftPanel: function () {
+                $.cookie(me.toggleCookieName, 'hide', { path: '/' });
             }
         };
 
