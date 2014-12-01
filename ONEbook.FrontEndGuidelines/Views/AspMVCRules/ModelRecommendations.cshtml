@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Model Recommendations";
+    ViewBag.Title = "Model Rules";
 }
 
 @section css
@@ -38,7 +38,7 @@
                         ErrorMessageResourceType = typeof(ViewResources))]
                         public string FunctionName { get; set; }
                     }
-                    </pre>
+                </pre>
             </div>
         </li>
         <li>
@@ -57,8 +57,8 @@
             <p>For example, if we want user name cannot be null and we could put the logic in the View as follows:</p>
             <div class="example-code">
                 <pre class="brush: html">
-                <div class=”label”>string.IsNullOrEmpty(Model.Username) ? string.Empty : Model.Username</div> 
-                        </pre>
+                    <div class=”label”>string.IsNullOrEmpty(Model.Username) ? string.Empty : Model.Username</div> 
+                </pre>
             </div>
             <p>
                 So, if another view needs the same business logic like the above, we have to do this again. Or we just need
@@ -66,28 +66,28 @@
             </p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                            public class User
+                    public class User
+                    {
+                        private string _username;
+                        public string Username
+                        {
+                            get
                             {
-                                private string _username;
-                                public string Username
-                                {
-                                    get
-                                    {
-                                        return string.IsNullOrEmpty(_username) ? string.Empty : _username;
-                                    }
-                                    set
-                                    {
-                                        _username = value;
-                                    }
-                                }
+                                return string.IsNullOrEmpty(_username) ? string.Empty : _username;
                             }
-                        </pre>
+                            set
+                            {
+                                _username = value;
+                            }
+                        }
+                    }
+                </pre>
             </div>
             <p>This would greatly simplify the view as shown:</p>
             <div class="example-code">
                 <pre class="brush: html">
-                <div class=”label”>Model.Username</div> 
-                        </pre>
+                    <div class=”label”>Model.Username</div> 
+                </pre>
             </div>
         </li>
         <li>
@@ -96,14 +96,14 @@
             <p>Beside, interfaces make your codes be testable.</p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                            public interface IfunctionDataAccess
-                            {
-                                IEnumerable<function> GetFunctionList(ICriteria criteria);
-                                ICommandResult Insert(InsertFunctionCriteria criteria, ICriteria logCriteria);
-                                ICommandResult Update(ICriteria criteria, ICriteria logCriteria);
-                                ICommandResult Delete(ICriteria criteria, ICriteria logCriteria);
-                            }
-                        </pre>
+                    public interface IfunctionDataAccess
+                    {
+                        IEnumerable&lt;function&gt; GetFunctionList(ICriteria criteria);
+                        ICommandResult Insert(InsertFunctionCriteria criteria, ICriteria logCriteria);
+                        ICommandResult Update(ICriteria criteria, ICriteria logCriteria);
+                        ICommandResult Delete(ICriteria criteria, ICriteria logCriteria);
+                    }
+                </pre>
             </div>
         </li>
         <li>
@@ -141,35 +141,35 @@
             <p>And here is the following example:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                            Our reusable, serializable object:
-                            [Serializable]
-                            public class UserProfileSessionData
+                    Our reusable, serializable object:
+                    [Serializable]
+                    public class UserProfileSessionData
+                    {
+                        public int UserId { get; set; }
+                        public string EmailAddress { get; set; }
+                    }
+                    Use case:
+                    public class LoginController : Controller
+                    {
+                        [HttpPost]
+                        public ActionResult Login(LoginModel model)
+                        {
+                            if (ModelState.IsValid)
                             {
-                                public int UserId { get; set; }
-                                public string EmailAddress { get; set; }
-                            }
-                            Use case:
-                            public class LoginController : Controller
-                            {
-                                [HttpPost]
-                                public ActionResult Login(LoginModel model)
+                                var profileData = new UserProfileSessionData
                                 {
-                                    if (ModelState.IsValid)
-                                    {
-                                        var profileData = new UserProfileSessionData
-                                        {
-                                            UserId = model.UserId,
-                                            EmailAddress = model.EmailAddress
-                                        };
-                                        Session["UserProfile"] = profileData;
-                                    }
-                                }
-                                public ActionResult LoggedInStateMessage()
-                                {
-                                    var profileData = this.Session["UserProfile"] as UserProfileSessionData;
-                                }
+                                    UserId = model.UserId,
+                                    EmailAddress = model.EmailAddress
+                                };
+                                Session["UserProfile"] = profileData;
                             }
-                        </pre>
+                        }
+                        public ActionResult LoggedInStateMessage()
+                        {
+                            var profileData = this.Session["UserProfile"] as UserProfileSessionData;
+                        }
+                    }
+                </pre>
             </div>
         </li>
         <li>
@@ -181,17 +181,17 @@
             </p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                            [HttpPost]
-                            public ActionResult AddNewGroup(InsertGroupCriteria criteria)
-                            {
-                                ICommandResut result = _groupService.Insert(criteria);
-                                if (result != null && result.IsSuccessful)
-                                {
-                                    ViewBag.Success = true;
-                                }
-                                return View(criteria);
-                            }
-                        </pre>
+                    [HttpPost]
+                    public ActionResult AddNewGroup(InsertGroupCriteria criteria)
+                    {
+                        ICommandResut result = _groupService.Insert(criteria);
+                        if (result != null && result.IsSuccessful)
+                        {
+                            ViewBag.Success = true;
+                        }
+                        return View(criteria);
+                    }
+                </pre>
             </div>
         </li>
         <li>
@@ -203,31 +203,31 @@
             </p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                            [AcceptVerbs(HttpVerbs.Get), OutputCache(CacheProfile = "About")]
-                            public ActionResult About()
-                            {
-                                return View();
-                            }
-                        </pre>
+                    [AcceptVerbs(HttpVerbs.Get), OutputCache(CacheProfile = "About")]
+                    public ActionResult About()
+                    {
+                        return View();
+                    }
+                </pre>
             </div>
             <p>And in web.config:</p>
             <div class="example-code">
                 <pre class="brush: xml">
-                <system.web>
-                <caching>
-                <outputcachesettings>
-                <outputcacheprofiles>
-                <clear />
-                                            <!-- 15 Seconds -->
-                <add name="Dashboard"
-                     duration="15"
-                     varybyparam="*"
-                     location="Client" />
-                                        </outputcacheprofiles>
-                                    </outputcachesettings>
-                                </caching>
-                            </system.web>
-                        </pre>
+                    <system.web>
+                        <caching>
+                            <outputcachesettings>
+                                <outputcacheprofiles>
+                                &lt;clear /&gt;
+                                <!-- 15 Seconds -->
+                                &lt;add name="Dashboard"
+                                        duration="15"
+                                        varybyparam="*"
+                                        location="Client" /&gt;
+                                </outputcacheprofiles>
+                            </outputcachesettings>
+                        </caching>
+                    </system.web>
+                </pre>
             </div>
         </li>
         <li>
@@ -238,16 +238,16 @@
             </p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                            [NapSuperAuth]
-                            public class FunctionController : BaseController
-                            {
-                            }
-                            [NapAuth(FunctionKey = FunctionKeys.ManageFunction, Policy = Constant.Policy.Red)]
-                            public ActionResult Manage(GetBySiteFunctionCriteria criteria)
-                            {
-                                return View(criteria);
-                            }
-                        </pre>
+                    [NapSuperAuth]
+                    public class FunctionController : BaseController
+                    {
+                    }
+                    [NapAuth(FunctionKey = FunctionKeys.ManageFunction, Policy = Constant.Policy.Red)]
+                    public ActionResult Manage(GetBySiteFunctionCriteria criteria)
+                    {
+                        return View(criteria);
+                    }
+                </pre>
             </div>
             <p>
                 If you mark a controller with the attribute, all action methods in the controller are restricted.
@@ -256,20 +256,20 @@
             </p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                            [Authorize]
-                            public class FunctionController : BaseController
-                            {
-                                public ActionResult Manage(GetBySiteFunctionCriteria criteria)
-                                {
-                                    return View(criteria);
-                                }
-                                [AllowAnonymous]
-                                public ActionResult Update(UpdateFunctionCriteria criteria)
-                                {
-                                    return View();
-                                }
-                            }
-                        </pre>
+                    [Authorize]
+                    public class FunctionController : BaseController
+                    {
+                        public ActionResult Manage(GetBySiteFunctionCriteria criteria)
+                        {
+                            return View(criteria);
+                        }
+                        [AllowAnonymous]
+                        public ActionResult Update(UpdateFunctionCriteria criteria)
+                        {
+                            return View();
+                        }
+                    }
+                </pre>
             </div>
         </li>
     </ol>

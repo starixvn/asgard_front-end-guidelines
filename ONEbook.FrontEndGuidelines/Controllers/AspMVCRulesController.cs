@@ -22,13 +22,13 @@ namespace ONEbook.FrontEndGuidelines.Controllers
         {
             var leftMenuItems = new Dictionary<string, Tuple<string, bool>>();
 
-            leftMenuItems.Add("ModelRecommendations", Tuple.Create<string, bool>("Model Recommendations", true));
-            leftMenuItems.Add("ViewRecommendations", Tuple.Create<string, bool>("View Recommendations", true));
-            leftMenuItems.Add("ControllerRecommendations", Tuple.Create<string, bool>("Controller Recommendations", true));
-            leftMenuItems.Add("RoutingRecommendations", Tuple.Create<string, bool>("Routing Recommendations", true));
-            leftMenuItems.Add("ExtensibilityRecommendations", Tuple.Create<string, bool>("Extensibility Recommendations", true));
-            leftMenuItems.Add("ResourceRecommendations", Tuple.Create<string, bool>("Resource Recommendations", true));
-            leftMenuItems.Add("PerformanceRecommendations", Tuple.Create<string, bool>("Performance Recommendations", true));
+            leftMenuItems.Add("ModelRecommendations", Tuple.Create<string, bool>("Model Rules", true));
+            leftMenuItems.Add("ViewRecommendations", Tuple.Create<string, bool>("View Rules", true));
+            leftMenuItems.Add("ControllerRecommendations", Tuple.Create<string, bool>("Controller Rules", true));
+            leftMenuItems.Add("RoutingRecommendations", Tuple.Create<string, bool>("Routing Rules", true));
+            leftMenuItems.Add("ExtensibilityRecommendations", Tuple.Create<string, bool>("Extensibility Rules", true));
+            leftMenuItems.Add("ResourceRecommendations", Tuple.Create<string, bool>("Resource Rules", true));
+            leftMenuItems.Add("PerformanceRecommendations", Tuple.Create<string, bool>("Performance Rules", true));
 
             leftMenuItems = leftMenuItems
                 .OrderByDescending(control => control.Value.Item2)

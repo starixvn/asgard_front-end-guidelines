@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Controller Recommendations";
+    ViewBag.Title = "Controller Rules";
 }
 
 @section css
@@ -24,54 +24,54 @@
             <p>Here is the following example: We have User class.</p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                        public class User
+                    public class User
+                    {
+                        private string _username;
+                        public string Username
                         {
-                            private string _username;
-                            public string Username
+                            get
                             {
-                                get
-                                {
-                                    return string.IsNullOrEmpty(_username) ? string.Empty : _username;
-                                }
-                                set
-                                {
-                                    _username = value;
-                                }
+                                return string.IsNullOrEmpty(_username) ? string.Empty : _username;
+                            }
+                            set
+                            {
+                                _username = value;
                             }
                         }
-                    </pre>
+                    }
+                </pre>
             </div>
             <p>And a view model class:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                        public class ManageUserViewModel
+                    public class ManageUserViewModel
+                    {
+                        private List&lt;user&gt; _userList;
+                        public ManageUserViewModel()
                         {
-                            private List<user> _userList;
-                            public ManageUserViewModel()
+                            _userList = new List&lt;user&gt;();
+                        }
+                        public List&lt;user&gt; UserList
+                        {
+                            get
                             {
-                                _userList = new List<user>();
-                            }
-                            public List<user> UserList
-                            {
-                                get
-                                {
-                                    return _userList;
-                                }
+                                return _userList;
                             }
                         }
-                    </pre>
+                    }
+                </pre>
             </div>
             <p>Then we have an action method which calling above view model:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                        public ActionResult ManageUser()
-                        {
-                            var userList = _userService.GetAllUsers();
-                            var model = new ManageUserViewModel();
-                            model.UserList.AddRange(userList);
-                            return View(model);
-                        }
-                    </pre>
+                    public ActionResult ManageUser()
+                    {
+                        var userList = _userService.GetAllUsers();
+                        var model = new ManageUserViewModel();
+                        model.UserList.AddRange(userList);
+                        return View(model);
+                    }
+                </pre>
             </div>
             <p>
                 The model binding system also runs the validation logic that has been applied to the model object,
@@ -100,16 +100,16 @@
             </p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                        public class BaseController : Controller
+                    public class BaseController : Controller
+                    {
+                        protected override void HandleUnknownAction(string actionName)
                         {
-                            protected override void HandleUnknownAction(string actionName)
-                            {
-                                var strError = string.Format("Unable to find action {0}", actionName);
-                                Logger.Log(strError);
-                                throw new ObjectNotFoundException(strError);
-                            }
+                            var strError = string.Format("Unable to find action {0}", actionName);
+                            Logger.Log(strError);
+                            throw new ObjectNotFoundException(strError);
                         }
-                    </pre>
+                    }
+                </pre>
             </div>
         </li>
         <li>
@@ -121,32 +121,32 @@
             <p>We have a controller method is declared as:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                        [AcceptVerbs(HttpVerbs.Get), OutputCache(CacheProfile = "Dashboard"), UserNameFilter]
-                        public ActionResult Dashboard(string userName, StoryListTab tab, OrderBy orderBy, int? page)
-                        {
-                            return View();
-                        }
-                    </pre>
+                    [AcceptVerbs(HttpVerbs.Get), OutputCache(CacheProfile = "Dashboard"), UserNameFilter]
+                    public ActionResult Dashboard(string userName, StoryListTab tab, OrderBy orderBy, int? page)
+                    {
+                        return View();
+                    }
+                </pre>
             </div>
             <p>The UsernameFilter is responsible for passing the Username:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                        public class UsernameFilter : ActionFilterAttribute
+                    public class UsernameFilter : ActionFilterAttribute
+                    {
+                        public override void OnActionExecuting(ActionExecutingContext filterContext)
                         {
-                            public override void OnActionExecuting(ActionExecutingContext filterContext)
+                            const string Key = "userName";
+                            if (filterContext.ActionParameters.ContainsKey(Key))
                             {
-                                const string Key = "userName";
-                                if (filterContext.ActionParameters.ContainsKey(Key))
+                                if (filterContext.HttpContext.User.Identity.IsAuthenticated)
                                 {
-                                    if (filterContext.HttpContext.User.Identity.IsAuthenticated)
-                                    {
-                                        filterContext.ActionParameters[Key] = filterContext.HttpContext.User.Identity.Name;
-                                    }
+                                    filterContext.ActionParameters[Key] = filterContext.HttpContext.User.Identity.Name;
                                 }
-                                base.OnActionExecuting(filterContext);
                             }
+                            base.OnActionExecuting(filterContext);
                         }
-                    </pre>
+                    }
+                </pre>
             </div>
         </li>
         <li>

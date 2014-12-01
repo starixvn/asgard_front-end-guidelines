@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Extensibility Recommendations";
+    ViewBag.Title = "Extensibility Rules";
 }
 
 @section css
@@ -27,21 +27,21 @@
     </p>
     <div class="example-code">
         <pre class="brush: csharp">
-                public class LogHeadersFilterAttribute : ActionFilterAttribute
+            public class LogHeadersFilterAttribute : ActionFilterAttribute
+            {
+                public override void OnActionExecuting(ActionExecutingContext filterContext)
                 {
-                    public override void OnActionExecuting(ActionExecutingContext filterContext)
+                    foreach (string header in
+                    filterContext.HttpContext.Request.Headers.AllKeys)
                     {
-                        foreach (string header in
-                        filterContext.HttpContext.Request.Headers.AllKeys)
-                        {
-                            Debug.WriteLine("Header " + header);
-                            Debug.WriteLine("Value " +
-                                    filterContext.HttpContext.Request.Headers.Get(header));
-                        }
-                        base.OnActionExecuting(filterContext);
+                        Debug.WriteLine("Header " + header);
+                        Debug.WriteLine("Value " +
+                                filterContext.HttpContext.Request.Headers.Get(header));
                     }
+                    base.OnActionExecuting(filterContext);
                 }
-            </pre>
+            }
+        </pre>
     </div>
 </div>
 @section scripts

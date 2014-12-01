@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Routing Recommendations";
+    ViewBag.Title = "Routing Rules";
 }
 
 @section css
@@ -18,32 +18,32 @@
             <h2 class="sub-title">OW5017 ORDER routes from specific to general when using standard routing <span class="badge lbl-importance">**</span></h2>
             <div class="example-code">
                 <pre class="brush: csharp">
-                        public static void RegisterRoutes(RouteCollection routes)
-                        {
-                            routes.MapRoute(
-                                null,
-                                "",
-                                new { controller = "Products", action = "List", category = (string)null, page = 1 }
-                                );
-                            routes.MapRoute(
-                                null,
-                                "Page{page}",
-                                new { controller = "Products", action = "List", category = (string)null },
-                                new { page = &#64;"\d+" }
-                                );
-                            routes.MapRoute(
-                                null,
-                                "{category}",
-                                new { controller = "Products", action = "List", page = 1 }
-                                );
-                            routes.MapRoute(
-                                null,
-                                "{category}/Page{page}",
-                                new { controller = "Products", action = "List" },
-                                new { page = &#64;"\d+" }
-                                );
-                        }
-                        </pre>
+                    public static void RegisterRoutes(RouteCollection routes)
+                    {
+                        routes.MapRoute(
+                            null,
+                            "",
+                            new { controller = "Products", action = "List", category = (string)null, page = 1 }
+                            );
+                        routes.MapRoute(
+                            null,
+                            "Page{page}",
+                            new { controller = "Products", action = "List", category = (string)null },
+                            new { page = &#64;"\d+" }
+                            );
+                        routes.MapRoute(
+                            null,
+                            "{category}",
+                            new { controller = "Products", action = "List", page = 1 }
+                            );
+                        routes.MapRoute(
+                            null,
+                            "{category}/Page{page}",
+                            new { controller = "Products", action = "List" },
+                            new { page = &#64;"\d+" }
+                            );
+                    }
+                </pre>
             </div>
             <p>The general route should be on top and specific route should be place in bottom.</p>
         </li>
@@ -52,21 +52,21 @@
             <p>For example, the following route mapping defines named routes:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                        public static void RegisterRoutes(RouteCollection routes)
-                        {
-                            routes.MapRoute(
-                                "Default",
-                                "",
-                                new { controller = "Products", action = "List", category = (string)null, page = 1 }
-                                );
-                            routes.MapRoute(
-                                "PageRoute",
-                                "Page{page}",
-                                new { controller = "Products", action = "List", category = (string)null },
-                                new { page = &#64;"\d+" }
-                                );
-                        }
-                    </pre>
+                    public static void RegisterRoutes(RouteCollection routes)
+                    {
+                        routes.MapRoute(
+                            "Default",
+                            "",
+                            new { controller = "Products", action = "List", category = (string)null, page = 1 }
+                            );
+                        routes.MapRoute(
+                            "PageRoute",
+                            "Page{page}",
+                            new { controller = "Products", action = "List", category = (string)null },
+                            new { page = &#64;"\d+" }
+                            );
+                    }
+                </pre>
             </div>
         </li>
     </ol>

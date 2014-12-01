@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "View Recommendations";
+    ViewBag.Title = "View Rules";
 }
 
 @section css
@@ -36,9 +36,9 @@
             <p>First, we need to enable client side validation in web.config:</p>
             <div class="example-code">
                 <pre class="brush: xml">
-                <appsettings>
-                <add key="ClientValidationEnabled" value="true" />
-                <add key="UnobtrusiveJavaScriptEnabled" value="true" />
+                    <appsettings>
+                        &lt;add key="ClientValidationEnabled" value="true" /&gt;
+                        &lt;add key="UnobtrusiveJavaScriptEnabled" value="true" /&gt;
                     </appsettings>
                 </pre>
             </div>
@@ -47,7 +47,7 @@
                 <pre class="brush: csharp">
                     &#64;using (Html.BeginForm())
                     {
-                <div class="form-row">
+                        <div class="form-row">
                             &#64;Html.LabelFor(m => m.UserName)
                             &#64;Html.TextBoxFor(m => m.UserName, new { &#64;class = "inputtext" })
                             &#64;Html.ValidationMessageFor(m => m.UserName, "<< " + ViewResources.required, new { id = "valMsgUserName" })

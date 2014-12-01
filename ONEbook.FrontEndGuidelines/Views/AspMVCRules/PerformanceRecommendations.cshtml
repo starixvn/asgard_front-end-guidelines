@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Performance Recommendations";
+    ViewBag.Title = "Performance Rules";
 }
 
 @section css
@@ -33,19 +33,19 @@
             <p>For example:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                        [HttpPost]
-                        public ActionResult LogIn(Seller person)
-                        {
-                            TempData["name"] = person.Name;
-                            return RedirectToAction("ItemUpload");
-                        }
-                        public ActionResult ItemUpload()
-                        {
-                            string name = TempData["name"].ToString();
-                            ViewBag.Name = name;
-                            return View();
-                        }
-                    </pre>
+                    [HttpPost]
+                    public ActionResult LogIn(Seller person)
+                    {
+                        TempData["name"] = person.Name;
+                        return RedirectToAction("ItemUpload");
+                    }
+                    public ActionResult ItemUpload()
+                    {
+                        string name = TempData["name"].ToString();
+                        ViewBag.Name = name;
+                        return View();
+                    }
+                </pre>
             </div>
         </li>
         <li>
@@ -59,11 +59,11 @@
             <p>For example:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
-                        [AcceptVerbs(HttpVerbs.Get), OutputCache(CacheProfile = "Dashboard")]
-                        public ActionResult Dashboard(string userName, StoryListTab tab, OrderBy orderBy, int? page)
-                        {
-                        }
-                    </pre>
+                    [AcceptVerbs(HttpVerbs.Get), OutputCache(CacheProfile = "Dashboard")]
+                    public ActionResult Dashboard(string userName, StoryListTab tab, OrderBy orderBy, int? page)
+                    {
+                    }
+                </pre>
             </div>
         </li>
         <li>
