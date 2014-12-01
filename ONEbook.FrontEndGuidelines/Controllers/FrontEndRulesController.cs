@@ -11,16 +11,19 @@ namespace ONEbook.FrontEndGuidelines.Controllers
         // GET: FrontEndRules
         public ActionResult CssRules()
         {
+            ViewBag.TabName = "cssrules";
             return View();
         }
 
         public ActionResult HtmlRules()
         {
+            ViewBag.TabName = "htmlrules";
             return View();
         }
 
         public ActionResult JavaScriptRules()
         {
+            ViewBag.TabName = "javascriptrules";
             return View();
         }
     }

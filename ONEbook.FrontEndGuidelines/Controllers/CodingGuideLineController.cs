@@ -11,6 +11,7 @@ namespace ONEbook.FrontEndGuidelines.Controllers
         // GET: CodingGuideLine
         public ActionResult Index()
         {
+            ViewBag.TabName = "introduction";
             return View();
         }
     }

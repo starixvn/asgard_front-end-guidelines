@@ -11,6 +11,7 @@ namespace ONEbook.FrontEndGuidelines.Controllers
         // GET: CSharpRules
         public ActionResult Index()
         {
+            ViewBag.TabName = "csharp";
             return View();
         }
     }
