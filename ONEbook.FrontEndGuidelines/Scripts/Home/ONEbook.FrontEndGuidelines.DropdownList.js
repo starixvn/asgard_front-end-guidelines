@@ -79,7 +79,7 @@ ONEbook.FrontEndGuidelines.DropdownList = function () {
             placeholder: "Search for a item",
             minimumInputLength: 1,
             ajax: {
-                url: ONEbook.FrontEndGuidelines.rootUrl + 'Home/GetDropdownListData',
+                url: ONEbook.FrontEndGuidelines.rootUrl + 'HtmlCommonControls/GetDropdownListData',
                 dataType: 'json',
                 quietMillis: 250,
                 data: function (term, page) { // page is the one-based page number tracked by Select2

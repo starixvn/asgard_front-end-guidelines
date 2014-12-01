@@ -46,7 +46,7 @@ ONEbook.FrontEndGuidelines.TreeView = function () {
         $('#tree-container-lazy-load').jstree({
             core: {
                 data: {
-                    url: ONEbook.FrontEndGuidelines.rootUrl + 'Home/GetTreeviewList',
+                    url: ONEbook.FrontEndGuidelines.rootUrl + 'HtmlCommonControls/GetTreeviewList',
                     data: function (node) {
                         return { 'nodeId': node.id };
                     }

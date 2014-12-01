@@ -1,0 +1,33 @@
+﻿@{
+    string tabName = (string)ViewBag.TabName;
+}
+<header class="header">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="logo" href="/">
+                    Coding
+                    <span> Guideline</span>
+                </a>
+                <i class="mdi-navigation-menu icon-left-panel withripple menu-show" id="toggleMenu"></i>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topmenu">
+                    <i class="mdi-navigation-more-horiz"></i>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="topmenu">
+                <ul class="nav navbar-nav">
+                    <li class="@(tabName == "introduction" ? "active" : string.Empty)">@Html.ActionLink("Introduction", "Index", "CodingGuideLine")</li>
+                    <li class="@(tabName == "commoncontrols" ? "active" : string.Empty)" id="commonControls">@Html.ActionLink("Common Controls", "Index", "HtmlCommonControls")</li>
+                    <li class="@(tabName == "htmlrules" ? "active" : string.Empty)">@Html.ActionLink("Html Rules", "HtmlRules", "FrontEndRules")</li>
+                    <li class="@(tabName == "cssrules" ? "active" : string.Empty)">@Html.ActionLink("CSS Rules", "CssRules", "FrontEndRules")</li>
+                    <li class="@(tabName == "javascriptrules" ? "active" : string.Empty)">@Html.ActionLink("JavaScript Rules", "JavaScriptRules", "FrontEndRules")</li>
+                    <li class="@(tabName == "csharp" ? "active" : string.Empty)">@Html.ActionLink("C#", "Index", "CSharpRules")</li>
+                    <li class="@(tabName == "aspmvc" ? "active" : string.Empty)" id="aspmvc">@Html.ActionLink("ASP.Net MVC", "Index", "AspMVCRules")</li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <i class="logo"></i>
+</header>
