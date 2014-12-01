@@ -18,7 +18,7 @@ namespace ONEbook.FrontEndGuidelines.Controllers
         public ActionResult Index(string viewName = "CommonControls")
         {
             ViewBag.LeftMenuViewModel = new LeftMenuViewModel(viewName, "Index", "HtmlCommonControls", GetMenuItems());
-            ViewBag.TabName = "commoncontrols";
+
             return this.View(viewName);
         }
 
