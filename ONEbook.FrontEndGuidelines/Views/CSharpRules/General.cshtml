@@ -1,3 +1,42 @@
 ﻿@{
     ViewBag.Title = "General";
 }
+
+@section css
+{
+    @Styles.Render("~/bundles/controls/css/aspmvc")
+}
+
+<div class="col-sm-12" id="doc-content">
+    <ul class="list-unstyled more-info">
+        <li><span class="badge lbl-importance">***</span> Guidelines that you should never skip and should be applicable to all situations.</li>
+        <li><span class="badge lbl-importance">**</span> Strongly recommended guidelines.</li>
+        <li><span class="badge lbl-importance">*</span> Recommended guidelines that may not be applicable in all situations.</li>
+    </ul>
+    <ol class="rules">
+        <li>
+            <h2 class="sub-title">OW0000 Sort and remove unused namespace usage <span class="badge lbl-importance">***</span></h2>
+            <p>All unused namespace usages should be removed to make code cleaner</p>
+            <p><b class="text-success">Tip</b> Use Visual Studio Add in: “Remove and Sort Using”</p>            
+        </li>
+        <li>
+            <h2 class="sub-title">OW0001 Add comment to unmanaged code, magic constant  <span class="badge lbl-importance">***</span></h2>
+            <p>Comment on unmanaged code and magic constant may help your code be readable and maintainable.</p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW0002 Remove dead code  <span class="badge lbl-importance">***</span></h2>
+            <p>Dead code means unnecessary, inoperative code that can be – and should be – removed. The opposite of dead code is live, operational code.</p>
+            <p>You can significantly improve a program's quality by removing dead code. While the functionality won't change, it will 
+            improve the internal quality – the quality of the source code. This will help in maintenance by decreasing the maintained 
+            code size, making it easier to understand the program and preventing bugs from being introduced</p>
+            <p><b class="text-success">Tip</b> Use FxCop to detect dead code.</p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW0003 Remove redundant code, reference libraries, spaces and files  <span class="badge lbl-importance">***</span></h2>
+            <p>All redundant code, reference libraries, spaces and files should be removed to reduce the size of code so that it is more maintainable.</p>
+            <p><b class="text-success">Tip</b> Use Visual Studio Add in: “Remove Unused References” to remove unused reference libraries.</p>
+            <p><b class="text-success">Tip</b> Use Visual Studio Add in: “Code Maid” to remove redundant spaces.</p>
+            <p><b class="text-success">Tip</b> Use FxCop to detect redundant code.</p>
+        </li>
+    </ol>
+</div>

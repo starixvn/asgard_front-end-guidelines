@@ -1,3 +1,95 @@
 ﻿@{
     ViewBag.Title = "Class Design Guidelines";
 }
+
+@section css
+{
+    @Styles.Render("~/bundles/controls/css/aspmvc")
+}
+
+<div class="col-sm-12" id="doc-content">
+    <ul class="list-unstyled more-info">
+        <li><span class="badge lbl-importance">***</span> Guidelines that you should never skip and should be applicable to all situations.</li>
+        <li><span class="badge lbl-importance">**</span> Strongly recommended guidelines.</li>
+        <li><span class="badge lbl-importance">*</span> Recommended guidelines that may not be applicable in all situations.</li>
+    </ul>
+    <ol class="rules">
+        <li>
+            <h2 class="sub-title">OW1000 A class or interface should have a single purpose <span class="badge lbl-importance">***</span></h2>
+            <p>A class or interface should have a single purpose within the system it participates in. In general, a class is 
+            either representing a primitive type like an email or ISBN number, an abstraction of some business concept, a plain 
+            data structure or responsible for orchestrating the interaction between other classes. It is never a combination of 
+            those. This rule is widely known as the <a href="http://www.objectmentor.com/resources/articles/srp.pdf">Single Responsibility Principle</a>, one of the SOLID principles.</p>
+            <p><b class="text-success">Tip</b> A class with the word and in it is an obvious violation of this rule.</p>
+            <p><b class="text-success">Tip</b> Use <a href="http://en.wikipedia.org/wiki/Software_design_pattern">Design Patterns</a> to communicate the intent of a class. if you can’t assign a single design
+   pattern to a class, chances are that it is doing more than one thing.</p>
+            <p><b class="text-warning">Note</b> If you create a class representing a primitive type you can greatly simplify it usage by making it immutable.</p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1001 Only create a constructor that returns a useful object <span class="badge lbl-importance">*</span></h2>
+            <p>There should be no need to set additional properties before the object can be used for whatever purpose it was
+             designed. However, if you your constructor needs more than three parameters (which violates <span class="text-info">OW1561</span>), your class might 
+            have too much responsibility (and violate <span class="text-info">OW1000</span>).</p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1003 An interface should be small and focused <span class="badge lbl-importance">**</span></h2>
+            <p>
+                Interfaces should have a name that clearly explains the purpose or role of that interface within the system. 
+                Do not combine many vaguely related members on the same interface just because they were all on the same class. 
+                Separate the members based on the responsibility of those members so that callers only need to call or implement 
+                the interface related to a particular task. This rule is more commonly known as the  <a href="http://www.objectmentor.com/resources/articles/isp.pdf">Interface Segregation Principle</a>.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1004 Use an interface rather than a base class to support multiple implementations <span class="badge lbl-importance">***</span></h2>
+            <p>
+                If you want to expose an extension point from your class, expose it as an interface rather than a base class. 
+                You don’t want to force users of that extension point to derive their implementations from a base-class that 
+                might have undesired behavior. However, for their convenience you may implement an (abstract) default 
+                implementation that can serve as a starting point.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1005 Use an interface to decouple classes from each other <span class="badge lbl-importance">**</span></h2>
+            <p>Interfaces are a very effective mechanism for decoupling classes from each other.</p>
+            <ul>
+                <li>They can prevent bidirectional associations.</li>
+                <li>They simplify the replacement of one implementation with another.</li>
+                <li>They allow replacing an expensive external service or resource with a temporary stub for use in a non-production environment.</li>
+                <li>They allow replacing the actual implementation with a dummy implementation or a fake object in a unit test.</li>
+                <li>Using a dependency injection framework you can centralize the choice which class is going to be used whenever a specific interface is requested.</li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1008 Avoid static classes <span class="badge lbl-importance">*</span></h2>
+            <p>With the exception of extension method containers static classes very often lead to badly designed code. 
+            They are also very difficult, if not impossible, to test in isolation unless you’re willing to use some very hacky tools.</p>
+            <p><b class="text-warning">Note</b> If you really need that static class, mark it as static so that the compiler can prevent instance members and instantiating your class. This relieves you of creating an explicit private constructor.</p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1010 Don’t hide inherited members with the <small>new</small> keyword  <span class="badge lbl-importance">***</span></h2>
+            <p>
+                Not only does the new keyword break <a href="http://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29">Polymorphism</a>, 
+                one of the most essential object-orientation principles, it also makes subclasses more difficult to understand. Consider the following two classes:
+            </p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    public class Book
+                    {
+                        public virtual void Print()
+                        {
+                            Console.WriteLine("Printing Book");
+                        }
+                    }
+                </pre>
+            </div>
+            <p>This will cause behavior that you would not normally expect from class hierarchies:</p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    PocketBook pocketBook = new PocketBook();
+                </pre>
+            </div>
+            <p>It should not make a difference whether you call Print through a reference to the base class or through the derived class.</p>
+        </li>
+    </ol>
+</div>
