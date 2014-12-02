@@ -347,7 +347,6 @@
     <Content Include="Views\FrontEndRules\CssRules.cshtml" />
     <Content Include="Views\FrontEndRules\HtmlRules.cshtml" />
     <Content Include="Views\FrontEndRules\JavaScriptRules.cshtml" />
-    <Content Include="Views\CSharpRules\Index.cshtml" />
     <Content Include="Views\CodingGuideLine\Index.cshtml" />
     <Content Include="Views\AspMVCRules\ModelRecommendations.cshtml" />
     <Content Include="Views\AspMVCRules\ViewRecommendations.cshtml" />
@@ -356,6 +355,17 @@
     <Content Include="Views\AspMVCRules\ExtensibilityRecommendations.cshtml" />
     <Content Include="Views\AspMVCRules\RoutingRecommendations.cshtml" />
     <Content Include="Views\AspMVCRules\ControllerRecommendations.cshtml" />
+    <Content Include="Views\CSharpRules\General.cshtml" />
+    <Content Include="Views\CSharpRules\DocumentationGuidelines.cshtml" />
+    <Content Include="Views\CSharpRules\FrameworkGuidelines.cshtml" />
+    <Content Include="Views\CSharpRules\PerformanceGuidelines.cshtml" />
+    <Content Include="Views\CSharpRules\NamingGuidelines.cshtml" />
+    <Content Include="Views\CSharpRules\MaintainabilityGuidelines.cshtml" />
+    <Content Include="Views\CSharpRules\MiscellaneousDesignGuidelines.cshtml" />
+    <Content Include="Views\CSharpRules\MemberDesignGuidelines.cshtml" />
+    <Content Include="Views\CSharpRules\ClassDesignGuidelines.cshtml" />
+    <Content Include="Views\CSharpRules\DataAccess.cshtml" />
+    <Content Include="Views\CSharpRules\LayoutGuidelines.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
