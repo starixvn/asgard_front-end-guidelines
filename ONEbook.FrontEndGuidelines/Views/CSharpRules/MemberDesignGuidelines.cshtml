@@ -1,3 +1,103 @@
 ﻿@{
     ViewBag.Title = "Member Design Guidelines";
 }
+
+@section css
+{
+    @Styles.Render("~/bundles/controls/css/aspmvc")
+}
+
+<div class="col-sm-12" id="doc-content">
+    <ul class="list-unstyled more-info">
+        <li><span class="badge lbl-importance">***</span> Guidelines that you should never skip and should be applicable to all situations.</li>
+        <li><span class="badge lbl-importance">**</span> Strongly recommended guidelines.</li>
+        <li><span class="badge lbl-importance">*</span> Recommended guidelines that may not be applicable in all situations.</li>
+    </ul>
+    <ol class="rules">
+        <li>
+            <h2 class="sub-title">OW1100 Allow properties to be set in any order <span class="badge lbl-importance">***</span></h2>
+            <p>Properties should be stateless with respect to other properties, i.e. there should not be a difference between 
+            first setting property <i>DataSource</i> and then <i>DataMember</i> or vice versa.</p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1105 Use a method instead of a property <span class="badge lbl-importance">*</span></h2>
+            <ul>
+                <li>If the work is more expensive than setting a field value.</li>
+                <li>If it represents a conversion such as the <i>Object.ToString</i> method.</li>
+                <li>If it returns a different result each time it is called, even if the arguments didn’t change. 
+                    <p>For example, the <i>NewGuid</i> method returns a different value each time it is called.</p>
+                </li>
+                <li>
+                    If the operation causes a side effect such as changing some internal state not directly related 
+                    the property (which violates the <a href="http://martinfowler.com/bliki/CommandQuerySeparation.html">Command Query Separation</a>).
+                </li>
+            </ul>
+            <p>
+                <b class="text-info">Exception</b> Populating an internal cache or implementing lazy-loading is a good exception.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1110 Don’t use mutual exclusive properties <span class="badge lbl-importance">***</span></h2>
+            <p>Having properties that cannot be used at the same time typically signals a type that is representing two 
+            conflicting concepts. Even though those concepts may share some of the behavior and state, they obviously 
+            have different rules that do not cooperate.</p>
+            <p>This violation is often seen in domain models and introduces all kinds of conditional logic related to 
+            those conflicting rules, causing a ripple effect that significantly worsens the maintenance burden.</p>
+            <p>For example, you shouldn’t write the code like this</p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    public class Settings : ISettings
+                    {
+                        public bool IsOnline { get; set; }
+                        public bool IsOffline
+                        {
+                            get { return !IsOnline; }
+                            set { IsOnline = !value; }
+                        }
+                    }
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1115 A method or property should do only one thing <span class="badge lbl-importance">***</span></h2>
+            <p>Similarly to rule <span class="text-info">OW1000</span>, a method should have a single responsibility.</p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1125 Don’t expose stateful objects through static members <span class="badge lbl-importance">**</span></h2>
+            <p>A stateful object is an object that contains many properties and lots of behavior behind that. If you expose such 
+            an object through a static property or method of some other object, it will be very difficult to refactor or unit 
+            test a class that relies on such a stateful object. In general, introducing a construction like that is a great 
+            example of violating many of the guidelines of this chapter.</p>
+            <p>A classic example of this is the <i>HttpContext.Current</i> property, part of ASP.NET. Many see the HttpContext 
+            class as a source for a lot of ugly code. In fact, the testing guideline <a href="http://msdn.microsoft.com/en-us/magazine/dd263069.aspx#id0070015">Isolate the Ugly Stuff</a> often refers 
+            to this class.</p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1130 Return an <i>IEnumerable</i>&lt;T&gt; or <i>ICollection</i>&lt;T&gt; instead of a concrete collection class <span class="badge lbl-importance">**</span></h2>
+            <p>In general, you don’t want callers to be able to change an internal collection, so don’t return arrays, 
+            lists or other collection classes directly. Instead, return an <i>IEnumerable</i>&lt;T&gt;, or, if the caller must be 
+                able to determine the count, an <i>ICollection</i>&lt;T&gt;.</p>
+            <p>
+                <b class="text-warning">Note</b> If you’re using .NET 4.5, you can also use <i>IReadOnlyCollection</i>&lt;T&gt;, <i>IReadOnlyList</i>&lt;T&gt; or <i>IReadOnlyDictionary</i>&lt;Tkey, Tvalue&gt;.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1135 Properties, methods and arguments representing strings or collections should never be null <span class="badge lbl-importance">***</span></h2>
+            <p>
+                Returning null can be unexpected by the caller. Always return an empty collection or an empty string instead 
+                of a null reference. This also prevents cluttering your code base with additional checks for null, or even 
+                worse (<i>string.IsNotNullOrEmpty()</i>).
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1137 Define parameters as specific as possible</h2>
+            <p>
+                If your member needs a specific piece of data, define parameters as specific as that and don’t take a container 
+                object instead. For instance, consider a method that needs a connection string that is exposed through some 
+                central <i>IConfiguration</i> interface. Rather than taking a dependency on the entire configuration, just define 
+                a parameter for the connection string. This not only prevents unnecessary coupling, it also improved 
+                maintainability in the long run.
+            </p>
+        </li>
+    </ol>
+</div>

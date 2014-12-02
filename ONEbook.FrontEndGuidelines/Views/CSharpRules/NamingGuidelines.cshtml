@@ -1,3 +1,305 @@
 ﻿@{
     ViewBag.Title = "Naming Guidelines";
 }
+
+@section css
+{
+    @Styles.Render("~/bundles/controls/css/aspmvc")
+}
+
+<div class="col-sm-12" id="doc-content">
+    <ul class="list-unstyled more-info">
+        <li><span class="badge lbl-importance">***</span> Guidelines that you should never skip and should be applicable to all situations.</li>
+        <li><span class="badge lbl-importance">**</span> Strongly recommended guidelines.</li>
+        <li><span class="badge lbl-importance">*</span> Recommended guidelines that may not be applicable in all situations.</li>
+    </ul>
+    <ol class="rules">
+        <li>
+            <h2 class="sub-title">OW1701 Use US-English <span class="badge lbl-importance">***</span></h2>
+            <p>All type members, parameters and variables should be named using words from the American English language.</p>
+            <ul>
+                <li>Choose easily readable, preferably grammatically correct names. For example, <i>HorizontalAlignment</i> is more readable than <i>AlignmentHorizontal</i>.</li>
+                <li>Favor readability over brevity. The property name <i>CanScrollHorizontally</i> is better than <i>ScrollableX</i> (an obscure reference to the X-axis).</li>
+                <li>Avoid using names that conflict with keywords of widely used programming languages.</li>
+            </ul>
+            <p>
+                <b class="text-info">Exception</b> In most projects, you will use words and phrases from your domain and names
+                 specific to your company. Visual Studio’s Static Code Analysis will perform a spelling check on all code,
+                 so you may need to add those terms to a <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/08/20/new-for-visual-studio-2008-custom-dictionaries.aspx">Custom Code Analysis Dictionary</a>.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1702 Use proper casing for language elements <span class="badge lbl-importance">***</span></h2>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Language element</th>
+                        <th>Casing</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Class, Struct</td>
+                        <td>Pascal</td>
+                        <td>AppDomain</td>
+                    </tr>
+                    <tr>
+                        <td>Interface</td>
+                        <td>Pascal</td>
+                        <td>IBusinessService</td>
+                    </tr>
+                    <tr>
+                        <td>Enumeration type</td>
+                        <td>Pascal</td>
+                        <td>ErrorLevel</td>
+                    </tr>
+                    <tr>
+                        <td>Enumeration values</td>
+                        <td>Pascal</td>
+                        <td>FatalError</td>
+                    </tr>
+                    <tr>
+                        <td>Event</td>
+                        <td>Pascal</td>
+                        <td>Click</td>
+                    </tr>
+                    <tr>
+                        <td>Private field</td>
+                        <td>Camel</td>
+                        <td>_listItem</td>
+                    </tr>
+                    <tr>
+                        <td>Protected field</td>
+                        <td>Pascal</td>
+                        <td>MainPanel</td>
+                    </tr>
+                    <tr>
+                        <td>Const field</td>
+                        <td>Pascal</td>
+                        <td>MaximumItems</td>
+                    </tr>
+                    <tr>
+                        <td>Const variable</td>
+                        <td>Camel</td>
+                        <td>maximumItems</td>
+                    </tr>
+                    <tr>
+                        <td>Read-only static field</td>
+                        <td>Pascal</td>
+                        <td>RedValue</td>
+                    </tr>
+                    <tr>
+                        <td>Variable</td>
+                        <td>Camel</td>
+                        <td>listOfValues</td>
+                    </tr>
+                    <tr>
+                        <td>Method</td>
+                        <td>Pascal</td>
+                        <td>ToString</td>
+                    </tr>
+                    <tr>
+                        <td>Namespace</td>
+                        <td>Pascal</td>
+                        <td>System.Drawing</td>
+                    </tr>
+                    <tr>
+                        <td>Parameter</td>
+                        <td>Camel</td>
+                        <td>typeName</td>
+                    </tr>
+                    <tr>
+                        <td>Type Parameter</td>
+                        <td>Pascal</td>
+                        <td>TView</td>
+                    </tr>
+                    <tr>
+                        <td>Property</td>
+                        <td>Pascal</td>
+                        <td>BackColor</td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1704 Don’t include numbers in variables, parameters and type members <span class="badge lbl-importance">*</span></h2>
+            <p>In most cases they are a lazy excuse for not defining a clear and intention-revealing name.</p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1706 Don’t use abbreviations <span class="badge lbl-importance">**</span></h2>
+            <p>
+                For example, use <i>OnButtonClick</i> rather than <i>OnBtnClick</i>. Avoid single character variable names, such
+                 as <i>i</i> or <i>q</i>. Use <i>index</i> or <i>query</i> instead.
+            </p>
+            <p>
+                <b class="text-info">Exceptions</b> Use well-known abbreviations that are widely accepted or well-known 
+                within the domain you work. For instance, use UI instead of <i>UserInterface</i>.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1707 Name a member, parameter or variable according its meaning and not its type <span class="badge lbl-importance">**</span></h2>
+            <ul>
+                <li>Use functional names. For example, <i>GetLength</i> is a better name than <i>GetInt</i>.</li>
+                <li>Don’t use terms like <i>Enum</i>, <i>Class</i> or <i>Struct</i> in a name.</li>
+                <li>Identifiers that refer to a collection type should have a plural name.</li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1708 Name types using nouns, noun phrases or adjective phrases <span class="badge lbl-importance">**</span></h2>
+            <p>
+                Bad examples include <i>SearchExamination</i> (a page for searching for examinations), <i>Common</i> (does not end with a noun,
+                 and does not explain its purpose) and <i>SiteSecurity</i> (although the name is technically okay, it does not say 
+                anything about its purpose). Good examples include <i>BusinessBinder</i>, <i>SmartTextBox</i>, or <i>EditableSingleCustomer</i>.
+            </p>
+            <p>
+                Don’t include terms like Utility or Helper in classes. Classes with a name like that are usually static 
+                classes and are introduced without considering the object-oriented principles (see also <span class="text-info">OW1008</span>).
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1709 Name generic type parameters with descriptive names <span class="badge lbl-importance">**</span></h2>
+            <ul>
+                <li>Always prefix descriptive type parameter names with the letter T.</li>
+                <li>Always use a descriptive names unless a single-letter name is completely self-explanatory and a longer name 
+                would not add value. Use the single letter T as the type parameter in that case.</li>
+                <li>Consider indicating constraints placed on a type parameter in the name of parameter. For example, 
+                a parameter constrained to <i>ISession</i> may be called <i>TSession</i>.</li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1710 Don’t repeat the name of a class or enumeration in its members <span class="badge lbl-importance">***</span></h2>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    class Employee
+                    {
+                        // Wrong!
+                        public Employee GetEmployee() { }
+                        public void DeleteEmployee() { }
+                        // Right
+                        public Employee Get() { }
+                        public void Delete() { }
+                        // Also correct. 
+                        public void AddNewJob() { }
+                        public void RegisterForMeeting() { }
+                    }
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1711 Name members similarly to members of related .NET Framework classes <span class="badge lbl-importance">*</span></h2>
+            <p>
+                .NET developers are already accustomed to the naming patterns the framework uses, so following this same pattern 
+                helps them find their way in your classes as well. For instance, if you define a class that behaves like a 
+                collection, provide members like <i>Add</i>, <i>Remove</i> and <i>Count</i> instead of <i>AddItem</i>, <i>Delete</i> or <i>NumberOfItems</i>.
+            </p>
+        <li>
+            <h2 class="sub-title">OW1712 Avoid short names or names that can be mistaken with other names <span class="badge lbl-importance">***</span></h2>
+            <p>Although technically correct, the following statement can be quite confusing.</p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    bool b001 = (lo == l0) ? (I1 == 11) : (lOl != 101);
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1715 Properly name properties <span class="badge lbl-importance">**</span></h2>
+            <ul>
+                <li>Do name properties with nouns, noun phrases, or occasionally adjective phrases.</li>
+                <li>Do name Boolean properties with an affirmative phrase. E.g. <i>CanSeek</i> instead of <i>CantSeek</i>.</li>
+                <li>Consider prefixing Boolean properties with <i>Is</i>, <i>Has</i>, <i>Can</i>, <i>Allows</i>, or <i>Supports</i>.</li>
+                <li>
+                    Consider giving a property the same name as its type. When you have a property that is strongly 
+                    typed to an enumeration, the name of the property can be the same as the name of the enumeration. 
+                    For example, if you have an enumeration named <i>CacheLevel</i>, a property that returns one of its values 
+                    can also be named <i>CacheLevel</i>.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1720 Name methods using verb-object pair <span class="badge lbl-importance">**</span></h2>
+            <p>
+                Name methods using a verb-object pair such as <i>ShowDialog</i>. A good name should give a hint on <i>what</i> of a member, 
+                and if possible, the <i>why</i>. Also, don’t include and in the name of the method. It implies that the method is 
+                doing more than one thing, which violates the single responsibility principle explained in <span class="text-info">OW1115</span>.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1725 Name namespaces using names, layers, verbs and features <span class="badge lbl-importance">*</span></h2>
+            <p>For instance, the following namespaces are good examples of that guideline.</p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    Fanex.Athena.Commerce.Web
+                    NHibernate.Extensibility
+                    Microsoft.ServiceModel.WebApi
+                    Microsoft.VisualStudio.Debugging
+                    FluentAssertion.Primitives
+                    CaliburnMicro.Extensions
+                </pre>
+            </div>
+            <p>
+                <b class="text-warning">Note</b> Never allow namespaces to contain the name of a type, but a noun in its plural form, e.g. Collections, is usually okay.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1735 Use a verb or verb phrase to name an event <span class="badge lbl-importance">**</span></h2>
+            <p>
+                Name events with a verb or a verb phrase. For example: <i>Click</i>, <i>Deleted</i>, <i>Closing</i>, <i>Minimizing</i>, and <i>Arriving</i>.
+                For example, the declaration of the Search event may look like this:
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1737 Use <small>-ing</small> and <small>-ed</small> to express pre-events and post-events <span class="badge lbl-importance">*</span></h2>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    public event EventHandler<searchargs> Search;
+                </pre>
+            </div>
+            <p>
+                For example, a close event that is raised before a window is closed would be called Closing and one that is 
+                raised after the window is closed would be called <i>Closed</i>. Don’t use <i>Before</i> or <i>After</i> prefixes or suffixes to 
+                indicate pre and post events.
+            </p>
+            <p>
+                Suppose you want to define events related to the deletion process of an object. Avoid defining the <i>Deleting</i> and
+                <i>Deleted</i> events as <i>BeginDelete</i> and <i>EndDelete</i>. Define those events as follows:
+            </p>
+            <ul>
+                <li><i>Deleting</i>: Occurs just before the object is getting deleted</li>
+                <li><i>Delete</i>: Occurs when the object needs to be deleted by the event handler.</li>
+                <li><i>Deleted</i>: Occurs when the object is already deleted.</li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1738 Prefix an event handler with <small>On</small> <span class="badge lbl-importance">*</span></h2>
+            <p>
+                It is good practice to prefix the method that handles an event with On. For example, a method that 
+                handles the Closing event could be named <i>OnClosing</i>.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1739 Use an underscore for irrelevant lambda parameters <span class="badge lbl-importance">*</span></h2>
+            <p>
+                If you use a lambda statement, for instance, to subscribe to an event, and the actual parameters of the event are 
+                irrelevant, use the following convention to make that more explicit.
+            </p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                     button.Click += (_, __) => HandleClick();
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1745 Group extension methods in a class suffixed with <small>Extensions</small> <span class="badge lbl-importance">*</span></h2>
+            <p>
+                If the name of an extension method conflicts with another member or extension method, you must prefix the call 
+                with the class name. Having them in a dedicated class with the <i>Extensions</i> suffix improves readability.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1755 Postfix asynchronous methods with Async of TaskAsync <span class="badge lbl-importance">**</span></h2>
+            <p>The general convention for methods that return <i>Task</i> or <i>Task&lt;TResult&gt;</i> is to post-fix them with <i>Async</i>, but 
+            if such a method already exist, use <i>TaskAsync</i> instead.</p>
+        </li>
+    </ol>
+</div>

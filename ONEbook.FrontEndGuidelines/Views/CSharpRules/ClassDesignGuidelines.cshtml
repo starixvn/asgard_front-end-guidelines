@@ -20,9 +20,12 @@
             either representing a primitive type like an email or ISBN number, an abstraction of some business concept, a plain 
             data structure or responsible for orchestrating the interaction between other classes. It is never a combination of 
             those. This rule is widely known as the <a href="http://www.objectmentor.com/resources/articles/srp.pdf">Single Responsibility Principle</a>, one of the SOLID principles.</p>
-            <p><b class="text-success">Tip</b> A class with the word and in it is an obvious violation of this rule.</p>
-            <p><b class="text-success">Tip</b> Use <a href="http://en.wikipedia.org/wiki/Software_design_pattern">Design Patterns</a> to communicate the intent of a class. if you can’t assign a single design
-   pattern to a class, chances are that it is doing more than one thing.</p>
+            <p><b class="text-success">Tip</b></p>
+            <ul>
+                <li>A class with the word and in it is an obvious violation of this rule.</li>
+                <li>Use <a href="http://en.wikipedia.org/wiki/Software_design_pattern">Design Patterns</a> to communicate the intent of a class. if you can’t assign a single design
+   pattern to a class, chances are that it is doing more than one thing.</li>
+            </ul>
             <p><b class="text-warning">Note</b> If you create a class representing a primitive type you can greatly simplify it usage by making it immutable.</p>
         </li>
         <li>
@@ -90,6 +93,60 @@
                 </pre>
             </div>
             <p>It should not make a difference whether you call Print through a reference to the base class or through the derived class.</p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1011 It should be possible to treat a derived object as if it were a base class object <span class="badge lbl-importance">**</span></h2>
+            <p>
+                In other words, you should be able to use a reference to an object of a derived class wherever a reference to its 
+                base class object is used without knowing the specific derived class. A very notorious example of a violation of 
+                this rule is throwing a <i>NotImplementedException</i> when overriding some of the base-class methods. A less subtle 
+                example is not honoring the behavior expected by the base-class.
+            </p>
+            <p><b class="text-warning">Note</b> This rule is also known as the Liskov Substitution Principle, one of the S.O.L.I.D principles.</p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1013 Don’t refer to derived classes from the base class  <span class="badge lbl-importance">***</span></h2>
+            <p>
+                Having dependencies from a base class to its sub-classes goes against proper object-oriented design 
+                and might prevent other developers from adding new derived classes.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1014 Avoid exposing the other objects an object depends on <span class="badge lbl-importance">**</span></h2>
+            <p>If you find yourself writing code like this then you might be violating the <a href="http://en.wikipedia.org/wiki/Law_of_Demeter">Law of Demeter</a>.</p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    someObject.SomeProperty.GetChild().Foo();
+                </pre>
+            </div>
+            <p>
+                An object should not expose any other classes it depends on because callers may misuse that exposed 
+                property or method to access the object behind it. By doing so, you allow calling code to become 
+                coupled to the class you are using, and thereby limiting the chance you can easily replace it in a future stage.
+            </p>
+            <p>
+                <b class="text-warning">Note</b> Using a class that is designed using the <a href="http://en.wikipedia.org/wiki/Fluent_interface">Fluent Interface</a> pattern does 
+                seem to violate this rule, but it is simply returning itself so that method chaining is allowed.
+            </p>
+            <p>
+                <b class="text-info">Exception</b> Inversion of Control or Dependency Injection frameworks often
+                 requires you to expose a dependency as a public property. As long as this property is not used for 
+                anything else than dependency injection I would not consider it a violation.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1020 Avoid bidirectional dependencies <span class="badge lbl-importance">***</span></h2>
+            <p>
+                This means that two classes know about each other’s public members or rely on each other’s internal behavior. 
+                Refactoring or replacing one of those two classes requires changes on both parties and may involve a lot of 
+                unexpected work. The most obvious way of breaking that dependency is introducing an interface for one of the 
+                classes and using Dependency Injection.
+            </p>
+            <p>
+                <b class="text-info">Exception</b> Domain models such as defined in <a href="http://domaindrivendesign.org/">Domain Driven Design</a> tend to occasionally 
+                involve bidirectional associations that model real-life associations. In those cases, I would make sure they 
+                are really necessary, but if they are, keep them in.
+            </p>
         </li>
     </ol>
 </div>
