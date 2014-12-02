@@ -1,3 +1,76 @@
 ﻿@{
     ViewBag.Title = "Performance Guidelines";
 }
+@section css
+{
+    @Styles.Render("~/bundles/controls/css/aspmvc")
+}
+<div class="col-sm-12" id="doc-content">
+    <ul class="list-unstyled more-info">
+        <li><span class="badge lbl-importance">***</span> Guidelines that you should never skip and should be applicable to all situations.</li>
+        <li><span class="badge lbl-importance">**</span> Strongly recommended guidelines.</li>
+        <li><span class="badge lbl-importance">*</span> Recommended guidelines that may not be applicable in all situations.</li>
+    </ul>
+    <ol class="rules">
+        <li>
+            <h2 class="sub-title">OW1800 Consider using <i>Any()</i> to determine whether an <i>IEnumerable&lt;t&gt;</i> is empty <span class="badge lbl-importance">*</span></h2>
+            <p>
+                When a method or other member returns an IEnumerable&lt;t&gt; or other collection class that does not expose a Count property, 
+                use the <i>Any()</i> extension method rather than <i>Count()</i> to determine whether the collection contains items. If you do use <i>Count()</i>, 
+                you risk that iterating over the entire collection might have a significant impact (such as when it really is an <i>IQueryable&lt;t&gt;</i> to a persistent store).
+            </p>
+            <p><b class="text-warning">Note</b> If you return an <i>IEnumerable&lt;t&gt;</i> to prevent editing from outside the owner as explained in 
+                <span class="text-info">OW1130</span> and you’re developing in .NET 4.5 or higher,
+                consider the new read-only classes.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1820 Only use <i>async</i>  for low-intensive long-running activities</h2>
+            <p>
+                The usage of <i>async</i> won’t auto magically run something on a worker thread like <i>Task.Run</i> does. 
+                It just adds the necessary logic to allow releasing the current thread and marshal the result back on that same thread if a long-running asynchronies operation has completed. 
+                In other words, use <i>async</i> only for I/O bound operations.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1825 Prefer <i>Task.Run</i> for CPU intensive activities</h2>
+            <p>
+                If you do need to execute a CPU bound operation, use <i>Task.Run</i> to offload the work to a thread from the Thread Pool. <br />
+                Just don’t forget that you have to marshal the result back to your main thread manually.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1830 Beware of mixing up <i>await/async</i> with <i>Task.Wait</i></h2>
+            <p>
+                <i>Await</i> not block the current thread but simply instruct to compiler to generate a state-machine. However,
+                <i>Task.Wait</i> will block the thread and may even cause dead-locks (see <span class="text-info">OW1835</span>)
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW1835 Beware of <i>async/await</i> deadlocks in single-threaded environments</h2>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    private async Task&lt;string&gt; GetDataAsync()
+                    {
+                        var result = await MyWebService.GetDataAsync();
+                        return result.ToString();
+                    }
+                </pre>
+            </div>
+            <p>Consider the following asynchronous method:</p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    public ActionResult ActionAsync()
+                    {
+                        var data = GetDataAsync().Result;
+                        return View(data);
+                    }
+                </pre>
+            </div>
+            <p>Now When an ASP.NET MVC controller action does this:
+                You’ll end up with a deadlock. Why? Because the Result property getter will block until the <i>async</i> operation has completed, 
+                but since an <i>async</i> method will automatically marshal the result back to the original thread and ASP.NET uses a single-threaded synchronization context, 
+                they’ll be waiting on each other. </p>
+        </li>
+    </ol>
+</div>

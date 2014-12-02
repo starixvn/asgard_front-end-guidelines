@@ -1,3 +1,112 @@
 ﻿@{
     ViewBag.Title = "Layout Guidelines";
 }
+@section css
+{
+    @Styles.Render("~/bundles/controls/css/aspmvc")
+}
+<div class="col-sm-12" id="doc-content">
+    <ul class="list-unstyled more-info">
+        <li><span class="badge lbl-importance">***</span> Guidelines that you should never skip and should be applicable to all situations.</li>
+        <li><span class="badge lbl-importance">**</span> Strongly recommended guidelines.</li>
+        <li><span class="badge lbl-importance">*</span> Recommended guidelines that may not be applicable in all situations.</li>
+    </ul>
+    <ol class="rules">
+        <li>
+            <h2 class="sub-title">OW2400 Use a common layout <span class="badge lbl-importance">***</span></h2>
+            <p>
+                Doesn’t indent object Initializers and initialize each property on a new line, so use a format like this:
+            </p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    var dto = new ConsumerDto()
+                    {
+                        Id = 123,
+                        Name = "Microsoft",
+                        PartnerShip = PartnerShip.Gold
+                    };
+                </pre>
+            </div>
+            <p>Don’t indent lambda statements and use a format like this:</p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    methodThatTakesAnAction.Do(x =>
+                    {
+                        // do something like this
+                    };
+                </pre>
+            </div>
+            <p>Put the entire LINQ statement on one line, or start each keyword at the same indentation, like this:</p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    var query = from product in products where product.Price > 10 select product;
+                </pre>
+            </div>
+            <p>Or:</p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    methodThatTakesAnAction.Do(x =>
+                    {
+                        // do something like this
+                    };
+                </pre>
+            </div>
+            <p>
+                Start the LINQ statement with all the expressions and don’t interweave them with <i>where</i> restrictions.<br />
+                Add braces around every comparison condition, but don’t add braces around a singular condition. For example:
+            </p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    if (!string.IsNullOrEmpty(str) && (str != "new"))
+                </pre>
+            </div>
+            <p>
+                Add an empty line between multi-line statements, between members, after the closing parentheses,
+                between unrelated code blocks, around the <i>#region</i> keyword, and between the <i>using</i> statements of different companies.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title">OW2402 Order and group namespaces according the company <span class="badge lbl-importance">*</span></h2>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    // Microsoft namespaces are first 
+                    using System;
+                    using System.Collections;
+                    using System.XML;
+                    // Then any other namespaces in alphabetic order 
+                    using Fanex.Athena.Business;
+                    using Fanex.Athena.Standard;
+                </pre>
+            </div>
+        </li>
+        <li>
+            <h2 class="sub-title">OW2406 Place members in a well-defined order <span class="badge lbl-importance">***</span></h2>
+            <p>
+                Maintaining a common order allows other team members to find their way in your code more easily. 
+                In general, a source file should be readable from top to bottom, as if you are reading a book. 
+                This prevents readers from having to browse up and down through the code file.
+            </p>
+            <ul>
+                <li>Private Fields and constants (in a region)</li>
+                <li>Public constants</li>
+                <li>Public read-only static fields</li>
+                <li>Factory Methods</li>
+                <li>Constructors and the Finalizer</li>
+                <li>Events</li>
+                <li>Public Properties</li>
+                <li>Other methods and private properties in calling order</li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="sub-title">OW2407 Be reluctant with #regions<span class="badge lbl-importance">***</span></h2>
+            <p>
+                Regions can be helpful, but can also hide the main purpose of a class. Therefore, use <i>#regions</i> only for:
+            </p>
+            <ul>
+                <li>Private Fields and constants (preferably in a Private Definitions region).</li>
+                <li>Nested classes</li>
+                <li>Interface implementations (only if the interface is not the main purpose of that class)</li>
+            </ul>
+        </li>
+    </ol>
+</div>
