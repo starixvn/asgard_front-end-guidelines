@@ -5,6 +5,81 @@
 /*                 Customize ASP.Net MVC                */
 /********************************************************/
 
+
+.help {
+    position: fixed;
+    right: 25px;
+    top: 55px;
+    color: #f58045;
+    font-size: @font-size + 10;
+    cursor: pointer;
+    z-index: 999;
+
+    &:hover {
+        color: lighten(#f58045, 5%);
+
+        .info {
+            display: block;
+        }
+    }
+
+    .info {
+        position: absolute;
+        top: 32px;
+        right: -4px;
+        padding: 15px;
+        background-color: #fafafa;
+        min-width: 400px;
+        color: @text-color;
+        font-size: @font-size;
+        font-family: @font-family;
+        list-style: none;
+        border: 1px solid #dfdfdf;
+        display: none;
+        .box-shadow(1px 1px 3px #ddd);
+        .border-radius(2px);
+
+        li {
+            line-height: 20px;
+            margin-bottom: 5px;
+            position: relative;
+            padding: 0 0 0 60px;
+
+            .lbl-importance {
+                position: absolute;
+                left: 0;
+                top: 4px;
+                margin-left: 0;
+            }
+        }
+
+        &:before, &:after {
+            content: "";
+            border-color: transparent transparent #fff transparent;
+            border-style: solid;
+            border-width: 8px;
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -15px;
+            right: 6px;
+            z-index: 102;
+        }
+
+        &:after {
+            border-color: transparent transparent #dfdfdf transparent;
+            border-width: 9px;
+            top: -18px;
+            right: 5px;
+            z-index: 101;
+        }
+
+        .lbl-importance {
+            margin-left: 0;
+        }
+    }
+}
+
 .more-info {
     background-color: #f3f3f3;
     border: 1px solid @border-color;
@@ -28,9 +103,9 @@
 
 .lbl-importance {
     background-color: #f58045;
-    padding: 2px 10px 1px;
+    padding: 2px 7px 0;
     font-size: @font-size + 1;
-    margin-left: 10px;
+    margin-left: 5px;
     display: inline-block;
     position: relative;
     top: 2px;
@@ -49,5 +124,29 @@
         padding: 5px;
         font-size: @font-size + 9;
         .border-radius(2px);
+    }
+}
+
+.rules {
+    &.unordered {
+        padding: 0;
+        list-style: none;
+    }
+}
+
+.rule-item {
+    color: #5275bd;
+    font-size: @font-size + 2;
+    font-weight: bold
+}
+
+/********************************************************/
+/*                      Resolution                      */
+/********************************************************/
+
+@media (max-width: 1100px) {
+
+    .help {
+        top: 98px;
     }
 }

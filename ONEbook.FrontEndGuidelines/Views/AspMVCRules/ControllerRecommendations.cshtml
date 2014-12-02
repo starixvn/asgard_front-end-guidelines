@@ -7,15 +7,17 @@
     @Styles.Render("~/bundles/controls/css/aspmvc")
 }
 
-<div class="col-sm-12" id="doc-content">
-    <ul class="list-unstyled more-info">
+<div class="mdi-action-info help" title="More information">
+    <ul class="info">
         <li><span class="badge lbl-importance">***</span> Guidelines that you should never skip and should be applicable to all situations.</li>
         <li><span class="badge lbl-importance">**</span> Strongly recommended guidelines.</li>
         <li><span class="badge lbl-importance">*</span> Recommended guidelines that may not be applicable in all situations.</li>
     </ul>
-    <ol class="rules">
+</div>
+<div class="col-sm-12" id="doc-content">
+    <ul class="rules unordered">
         <li>
-            <h2 class="sub-title">OW5012 USE model binding instead of manually parsing the request <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title first"><span class="rule-item">OW5012 -</span> USE model binding instead of manually parsing the request <span class="badge lbl-importance">**</span></h2>
             <p>
                 ASP.NET MVC abstracts much of the rote code of object deserialization by using model binding.
                 Model binding is a mechanism by which request context data is marshaled through reflection into the
@@ -80,7 +82,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title">OW5013 USE Post/Redirect/Get (PRG) when submitting forms (exclude case using ajax) <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW5013 -</span> USE Post/Redirect/Get (PRG) when submitting forms (exclude case using ajax) <span class="badge lbl-importance">***</span></h2>
             <p>Here are the examples:</p>
             <ul>
                 <li>HTTP GET of “/products/create”. “Create” view is rendered.</li>
@@ -91,7 +93,7 @@
             </ul>
         </li>
         <li>
-            <h2 class="sub-title">OW5014 IMPLEMENT HandleUnknownAction and HandleError <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW5014 -</span> IMPLEMENT HandleUnknownAction and HandleError <span class="badge lbl-importance">**</span></h2>
             <p>
                 The default response for the unknown action is 404 (Not Found) error. If we override the HandleUnknownAction
                 class in a Controller, we can implement a “default” view in this error. Additionally, put the HandleError
@@ -113,7 +115,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">OW5015 KEEP controllers free from HttpContext and its tail <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW5015 -</span> KEEP controllers free from HttpContext and its tail <span class="badge lbl-importance">***</span></h2>
             <p>
                 If you need to access any information from HttpContext, you can use custom filter or create some
                 interfaces and wrappers to pass in your controller. You can see it in the following example:
@@ -150,13 +152,13 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">OW5016 KEEP your controller to be a single responsibility <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW5016 -</span> KEEP your controller to be a single responsibility <span class="badge lbl-importance">**</span></h2>
             <p>
                 All methods you can put in your controller is for validating input, calling model while preparing view
                 and return view or redirect to another action.
             </p>
         </li>
-    </ol>
+    </ul>
 </div>
 @section scripts
 {

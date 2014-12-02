@@ -6,15 +6,16 @@
 {
     @Styles.Render("~/bundles/controls/css/aspmvc")
 }
-<div class="help">
 
-<div class="col-sm-12" id="doc-content">
-    <ul class="list-unstyled more-info">
+<div class="mdi-action-info help" title="More information">
+    <ul class="info">
         <li><span class="badge lbl-importance">***</span> Guidelines that you should never skip and should be applicable to all situations.</li>
         <li><span class="badge lbl-importance">**</span> Strongly recommended guidelines.</li>
         <li><span class="badge lbl-importance">*</span> Recommended guidelines that may not be applicable in all situations.</li>
     </ul>
-    <h2 class="sub-title">OW5019 USE filter for adding behaviors <span class="badge lbl-importance">**</span></h2>
+</div>
+<div class="col-sm-12" id="doc-content">
+    <h2 class="sub-title first"><span class="rule-item">OW5019 -</span> USE filter for adding behaviors <span class="badge lbl-importance">**</span></h2>
     <p>
         Filters can be applied to a specific action method to alter its behavior. Alternatively, a filter can
         be applied to a controller class, in which case it will take effect on every action method in the

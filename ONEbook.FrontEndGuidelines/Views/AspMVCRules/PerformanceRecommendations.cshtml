@@ -7,15 +7,17 @@
     @Styles.Render("~/bundles/controls/css/aspmvc")
 }
 
-<div class="col-sm-12" id="doc-content">
-    <ul class="list-unstyled more-info">
+<div class="mdi-action-info help" title="More information">
+    <ul class="info">
         <li><span class="badge lbl-importance">***</span> Guidelines that you should never skip and should be applicable to all situations.</li>
         <li><span class="badge lbl-importance">**</span> Strongly recommended guidelines.</li>
         <li><span class="badge lbl-importance">*</span> Recommended guidelines that may not be applicable in all situations.</li>
     </ul>
-    <ol class="rules">
+</div>
+<div class="col-sm-12" id="doc-content">
+    <ul class="rules unordered">
         <li>
-            <h2 class="sub-title">OW5021 CONSIDER partial page updates using AJAX for reducing bandwidth <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title first"><span class="rule-item">OW5021 -</span> CONSIDER partial page updates using AJAX for reducing bandwidth <span class="badge lbl-importance">***</span></h2>
             <p>
                 One way to mitigate performance issues involving both server processing and request size is to use
                 asynchronous JavaScript (AJAX) to do partial page updates. ASP.NET MVC has built-in AJAX support, which
@@ -24,7 +26,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title">OW5022 DO NOT overuses session, instead use TempData for short live (intra-request) storage <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW5022 -</span> DO NOT overuses session, instead use TempData for short live (intra-request) storage <span class="badge lbl-importance">**</span></h2>
             <p>
                 The problem with placing these objects in the Session is that can bog down the server by having to store
                 extra information that may only be necessary across a redirect. The correct way to store these temporary
@@ -49,7 +51,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">OW5023 USE an OutputCache Filter for static pages <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW5023 -</span> USE an OutputCache Filter for static pages <span class="badge lbl-importance">**</span></h2>
             <p>
                 Use OutputCache attribute when you are returning less frequently updated data; your home page
                 would be a good candidate. This technique can be used for both HTML and JSON data types. You should
@@ -67,7 +69,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">OW5024 CONSIDER using asynchronous controllers for long running requests <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW5024 -</span> CONSIDER using asynchronous controllers for long running requests <span class="badge lbl-importance">***</span></h2>
             <p>
                 ASP.NET's threading pool has a default limit of 12 concurrent worker threads per CPU. When the requests
                 overload the server's ability to process them, a queue is built up of requests.
@@ -78,9 +80,11 @@
                 default limits, there is a better way to mitigate long running requests by using asynchronous.
             </p>
         </li>
-    </ol>
+    </ul>
 </div>
-
+<div class="scroll-top">
+    <span class="mdi-editor-publish icon-scroll-top"></span>
+</div>
 @section scripts
 {
     @Scripts.Render("~/bundles/controls/js/aspmvc")
