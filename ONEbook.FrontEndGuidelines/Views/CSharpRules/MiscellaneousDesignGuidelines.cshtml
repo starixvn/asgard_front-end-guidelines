@@ -7,15 +7,17 @@
     @Styles.Render("~/bundles/controls/css/aspmvc")
 }
 
-<div class="col-sm-12" id="doc-content">
-    <ul class="list-unstyled more-info">
+<div class="mdi-action-info help" title="More information">
+    <ul class="info">
         <li><span class="badge lbl-importance">***</span> Guidelines that you should never skip and should be applicable to all situations.</li>
         <li><span class="badge lbl-importance">**</span> Strongly recommended guidelines.</li>
         <li><span class="badge lbl-importance">*</span> Recommended guidelines that may not be applicable in all situations.</li>
     </ul>
-    <ol class="rules">
+</div>
+<div class="col-sm-12" id="doc-content">
+    <ul class="rules unordered">
         <li>
-            <h2 class="sub-title">OW1200 Throw exceptions rather than returning some kind of status value <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title first"><span class="rule-item">OW1200 -</span> Throw exceptions rather than returning some kind of status value <span class="badge lbl-importance">**</span></h2>
             <p>
                 A code base that uses return values for reporting the success or failure tends to have nested <i>if-statements</i> 
                 sprinkled all over the code. Quite often, a caller forgets to check the return value anyhow. 
@@ -25,16 +27,16 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title">OW1202 Provide a rich and meaningful exception message text <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW1202 -</span> Provide a rich and meaningful exception message text <span class="badge lbl-importance">**</span></h2>
             <p>The message should explain the cause of the exception and clearly describe what needs to be done to avoid the exception.</p>
         </li>
         <li>
-            <h2 class="sub-title">OW1205 Throw the most specific exception that is appropriate <span class="badge lbl-importance">*</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW1205 -</span> Throw the most specific exception that is appropriate <span class="badge lbl-importance">*</span></h2>
             <p>For example, if a method receives a null argument, it should throw</p>
             <p><i>ArgumentNullException</i> instead of its base type <i>ArgumentException</i>.</p>
         </li>
         <li>
-            <h2 class="sub-title">OW1210 Don’t swallow errors by catching generic exceptions <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW1210 -</span> Don’t swallow errors by catching generic exceptions <span class="badge lbl-importance">***</span></h2>
             <p>
                 Avoid swallowing errors by catching non-specific exceptions, such as Exception, <i>SystemException</i>, and so on, 
                 in application code. Only top-level code, such as a last-chance exception handler, should catch a non-specific 
@@ -42,7 +44,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title">OW1220 Always check an event handler delegate for <small>null</small> <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW1220 -</span> Always check an event handler delegate for <small>null</small> <span class="badge lbl-importance">***</span></h2>
             <p>
                 An event that has no subscribers is null, so before invoking, always make sure that the delegate 
                 list represented by the event variable is not <small>null</small>. Furthermore, to prevent conflicting changes from 
@@ -71,7 +73,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">OW1235 Don’t pass <small>null</small> as the sender argument when raising an event <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW1235 -</span> Don’t pass <small>null</small> as the sender argument when raising an event <span class="badge lbl-importance">***</span></h2>
             <p>
                 Often, an event handler is used to handle similar events from multiple senders. The sender argument is then used
                  to get to the source of the event. Always pass a reference to the source (typically this) when raising the 
@@ -81,7 +83,7 @@
             <p><b class="text-info">Exception</b> On static events, the sender argument should be null.</p>
         </li>
         <li>
-            <h2 class="sub-title">OW1240 Use generic constraints if applicable <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW1240 -</span> Use generic constraints if applicable <span class="badge lbl-importance">**</span></h2>
             <p>
                 Instead of casting to and from the object type in generic types or methods, use where constraints or the as
                  operator to specify the exact characteristics of the generic parameter.
@@ -113,7 +115,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">OW1250 Evaluate the result of a LINQ expression before returning it <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW1250 -</span> Evaluate the result of a LINQ expression before returning it <span class="badge lbl-importance">***</span></h2>
             <p>Consider the following code snippet:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -138,5 +140,8 @@
                 evaluate the result of a LINQ query using <i>ToList()</i>, <i>ToArray()</i> or similar methods.
             </p>
         </li>
-    </ol>
+    </ul>
+</div>
+<div class="scroll-top">
+    <span class="mdi-editor-publish icon-scroll-top"></span>
 </div>

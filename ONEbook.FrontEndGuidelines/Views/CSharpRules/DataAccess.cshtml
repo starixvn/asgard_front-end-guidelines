@@ -5,15 +5,17 @@
 {
     @Styles.Render("~/bundles/controls/css/aspmvc")
 }
-<div class="col-sm-12" id="doc-content">
-    <ul class="list-unstyled more-info">
+<div class="mdi-action-info help" title="More information">
+    <ul class="info">
         <li><span class="badge lbl-importance">***</span> Guidelines that you should never skip and should be applicable to all situations.</li>
         <li><span class="badge lbl-importance">**</span> Strongly recommended guidelines.</li>
         <li><span class="badge lbl-importance">*</span> Recommended guidelines that may not be applicable in all situations.</li>
     </ul>
-    <ol class="rules">
+</div>
+<div class="col-sm-12" id="doc-content">
+    <ul class="rules unordered">
         <li>
-            <h2 class="sub-title">OW2501 Use <i>Fanex.Data</i> in data access. <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title first"><span class="rule-item">OW2501 -</span> Use <i>Fanex.Data</i> in data access. <span class="badge lbl-importance">***</span></h2>
             <p><i>Fanex.Data</i> supports many utilities for dealing with user stored procedure.</p>
             <ul>
                 <li>Query a result set</li>
@@ -22,14 +24,14 @@
             </ul>
         </li>
         <li>
-            <h2 class="sub-title">OW2502 Encrypt password for SQL server accounts. <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW2502 -</span> Encrypt password for SQL server accounts. <span class="badge lbl-importance">***</span></h2>
             <p>
                 Password in plain text violates security policy. It should be encrypted by DNAide<br />
                 For examples: Uqeq4MmLwveHZzqok3kHGf7fqd4SEfMq0vtQ5l2TQ50==
             </p>
         </li>
         <li>
-            <h2 class="sub-title">OW2503 Use <i>ExecuteNonQuery</i> for store procedures which do not return values. <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW2503 -</span> Use <i>ExecuteNonQuery</i> for store procedures which do not return values. <span class="badge lbl-importance">***</span></h2>
             <p>
                 You can use the <i>ExecuteNonQuery</i> to perform catalog operations 
                 (for example, querying the structure of a database or creating database objects such as tables), 
@@ -37,7 +39,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title">OW2504 Avoid using <i>DataSet</i>, using <i>Entity</i> instead.  <span class="badge lbl-importance">*</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW2504 -</span> Avoid using <i>DataSet</i>, using <i>Entity</i> instead.  <span class="badge lbl-importance">*</span></h2>
             <p>
                 A <i>DataSet</i> is (to quote Microsoft) an in-memory cache of data. 
                 Essentially it’s a snapshot of part of your database. <i>DataSets</i> can be very useful, 
@@ -55,7 +57,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">OW2505 Specify timeout value in data access requests.  <span class="badge lbl-importance">*</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW2505 -</span> Specify timeout value in data access requests.  <span class="badge lbl-importance">*</span></h2>
             <p>The timeout value should be set to reduce the overhead of database.</p>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -68,7 +70,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">OW2506 Use criteria to pass parameters to stored procedure.  <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW2506 -</span> Use criteria to pass parameters to stored procedure.  <span class="badge lbl-importance">***</span></h2>
             <p>
                 <i>Fanex.Data</i> supports passing Criteria to stored procedure. It will help our code be more readable and maintainable. 
             </p>
@@ -82,5 +84,8 @@
                 </pre>
             </div>
         </li>
-    </ol>
+    </ul>
+</div>
+<div class="scroll-top">
+    <span class="mdi-editor-publish icon-scroll-top"></span>
 </div>

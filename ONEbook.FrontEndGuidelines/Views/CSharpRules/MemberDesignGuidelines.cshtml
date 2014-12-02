@@ -7,20 +7,22 @@
     @Styles.Render("~/bundles/controls/css/aspmvc")
 }
 
-<div class="col-sm-12" id="doc-content">
-    <ul class="list-unstyled more-info">
+<div class="mdi-action-info help" title="More information">
+    <ul class="info">
         <li><span class="badge lbl-importance">***</span> Guidelines that you should never skip and should be applicable to all situations.</li>
         <li><span class="badge lbl-importance">**</span> Strongly recommended guidelines.</li>
         <li><span class="badge lbl-importance">*</span> Recommended guidelines that may not be applicable in all situations.</li>
     </ul>
-    <ol class="rules">
+</div>
+<div class="col-sm-12" id="doc-content">
+    <ul class="rules unordered">
         <li>
-            <h2 class="sub-title">OW1100 Allow properties to be set in any order <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title first"><span class="rule-item">OW1100 -</span> Allow properties to be set in any order <span class="badge lbl-importance">***</span></h2>
             <p>Properties should be stateless with respect to other properties, i.e. there should not be a difference between 
             first setting property <i>DataSource</i> and then <i>DataMember</i> or vice versa.</p>
         </li>
         <li>
-            <h2 class="sub-title">OW1105 Use a method instead of a property <span class="badge lbl-importance">*</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW1105 -</span> Use a method instead of a property <span class="badge lbl-importance">*</span></h2>
             <ul>
                 <li>If the work is more expensive than setting a field value.</li>
                 <li>If it represents a conversion such as the <i>Object.ToString</i> method.</li>
@@ -37,7 +39,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title">OW1110 Don’t use mutual exclusive properties <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW1110 -</span> Don’t use mutual exclusive properties <span class="badge lbl-importance">***</span></h2>
             <p>Having properties that cannot be used at the same time typically signals a type that is representing two 
             conflicting concepts. Even though those concepts may share some of the behavior and state, they obviously 
             have different rules that do not cooperate.</p>
@@ -59,7 +61,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">OW1115 A method or property should do only one thing <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW1115 -</span> A method or property should do only one thing <span class="badge lbl-importance">***</span></h2>
             <p>Similarly to rule <span class="text-info">OW1000</span>, a method should have a single responsibility.</p>
         </li>
         <li>
@@ -73,7 +75,7 @@
             to this class.</p>
         </li>
         <li>
-            <h2 class="sub-title">OW1130 Return an <i>IEnumerable</i>&lt;T&gt; or <i>ICollection</i>&lt;T&gt; instead of a concrete collection class <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW1130 -</span> Return an <i>IEnumerable</i>&lt;T&gt; or <i>ICollection</i>&lt;T&gt; instead of a concrete collection class <span class="badge lbl-importance">**</span></h2>
             <p>In general, you don’t want callers to be able to change an internal collection, so don’t return arrays, 
             lists or other collection classes directly. Instead, return an <i>IEnumerable</i>&lt;T&gt;, or, if the caller must be 
                 able to determine the count, an <i>ICollection</i>&lt;T&gt;.</p>
@@ -82,7 +84,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title">OW1135 Properties, methods and arguments representing strings or collections should never be null <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW1135 -</span> Properties, methods and arguments representing strings or collections should never be null <span class="badge lbl-importance">***</span></h2>
             <p>
                 Returning null can be unexpected by the caller. Always return an empty collection or an empty string instead 
                 of a null reference. This also prevents cluttering your code base with additional checks for null, or even 
@@ -90,7 +92,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title">OW1137 Define parameters as specific as possible</h2>
+            <h2 class="sub-title"><span class="rule-item">OW1137 -</span> Define parameters as specific as possible</h2>
             <p>
                 If your member needs a specific piece of data, define parameters as specific as that and don’t take a container 
                 object instead. For instance, consider a method that needs a connection string that is exposed through some 
@@ -99,5 +101,8 @@
                 maintainability in the long run.
             </p>
         </li>
-    </ol>
+    </ul>
+</div>
+<div class="scroll-top">
+    <span class="mdi-editor-publish icon-scroll-top"></span>
 </div>
