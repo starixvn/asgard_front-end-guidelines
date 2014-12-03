@@ -22,10 +22,16 @@
                 use the <i>Any()</i> extension method rather than <i>Count()</i> to determine whether the collection contains items. If you do use <i>Count()</i>, 
                 you risk that iterating over the entire collection might have a significant impact (such as when it really is an <i>IQueryable&lt;t&gt;</i> to a persistent store).
             </p>
-            <p><b class="text-warning">Note</b> If you return an <i>IEnumerable&lt;t&gt;</i> to prevent editing from outside the owner as explained in 
-                <span class="text-info">OW1130</span> and you’re developing in .NET 4.5 or higher,
-                consider the new read-only classes.
-            </p>
+            <div class="note-content">
+                <div class="note-title note">Note</div>
+                <ul class="note-list">
+                    <li>
+                        If you return an <i>IEnumerable&lt;t&gt;</i> to prevent editing from outside the owner as explained in
+                        <span class="text-info">OW1130</span> and you’re developing in .NET 4.5 or higher,
+                        consider the new read-only classes.
+                    </li>
+                </ul>
+            </div>
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1820 -</span> Only use <i>async</i>  for low-intensive long-running activities</h2>

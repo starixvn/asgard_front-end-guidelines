@@ -34,9 +34,14 @@
                     the property (which violates the <a href="http://martinfowler.com/bliki/CommandQuerySeparation.html">Command Query Separation</a>).
                 </li>
             </ul>
-            <p>
-                <b class="text-info">Exception</b> Populating an internal cache or implementing lazy-loading is a good exception.
-            </p>
+            <div class="note-content">
+                <div class="note-title exception">Exception</div>
+                <ul class="note-list">
+                    <li>
+                        Populating an internal cache or implementing lazy-loading is a good exception.
+                    </li>
+                </ul>
+            </div>
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1110 -</span> Don’t use mutual exclusive properties <span class="badge lbl-importance">***</span></h2>
@@ -79,9 +84,14 @@
             <p>In general, you don’t want callers to be able to change an internal collection, so don’t return arrays, 
             lists or other collection classes directly. Instead, return an <i>IEnumerable</i>&lt;T&gt;, or, if the caller must be 
                 able to determine the count, an <i>ICollection</i>&lt;T&gt;.</p>
-            <p>
-                <b class="text-warning">Note</b> If you’re using .NET 4.5, you can also use <i>IReadOnlyCollection</i>&lt;T&gt;, <i>IReadOnlyList</i>&lt;T&gt; or <i>IReadOnlyDictionary</i>&lt;Tkey, Tvalue&gt;.
-            </p>
+            <div class="note-content">
+                <div class="note-title note">Note</div>
+                <ul class="note-list">
+                    <li>
+                        If you’re using .NET 4.5, you can also use <i>IReadOnlyCollection</i>&lt;T&gt;, <i>IReadOnlyList</i>&lt;T&gt; or <i>IReadOnlyDictionary</i>&lt;Tkey, Tvalue&gt;.
+                    </li>
+                </ul>
+            </div>
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1135 -</span> Properties, methods and arguments representing strings or collections should never be null <span class="badge lbl-importance">***</span></h2>

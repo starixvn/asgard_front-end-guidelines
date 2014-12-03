@@ -63,9 +63,12 @@
                     }
                 </pre>
             </div>
-            <p>
-                <b class="text-success">Tip</b> You can prevent the delegate list from being empty altogether. Simply assign an empty delegate like this:
-            </p>
+            <div class="note-content">
+                <div class="note-title tip">Tip</div>
+                <ul class="note-list">
+                    <li>You can prevent the delegate list from being empty altogether. Simply assign an empty delegate like this.</li>
+                </ul>
+            </div>
             <div class="example-code">
                 <pre class="brush: csharp">
                      event EventHandler&lt;Notifyeventargs&gt; Notify = delegate { };
@@ -80,7 +83,12 @@
                 event. Furthermore don’t pass null as the event data parameter when raising an event. If there is no event data, 
                 pass <i>EventArgs.Empty</i> instead of <i>null</i>.
             </p>
-            <p><b class="text-info">Exception</b> On static events, the sender argument should be null.</p>
+            <div class="note-content">
+                <div class="note-title exception">Exception</div>
+                <ul class="note-list">
+                    <li>On static events, the sender argument should be null.</li>
+                </ul>
+            </div>
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1240 -</span> Use generic constraints if applicable <span class="badge lbl-importance">**</span></h2>

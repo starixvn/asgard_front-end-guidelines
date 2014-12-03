@@ -43,11 +43,16 @@
                 to your project’s name and <i>&lt;component&gt;</i> contains one or more dot-separated clauses. For 
                 example <i>Fanex.Athena.Web.Controllers.dll</i>.
             </p>
-            <p>
-                <b class="text-info">Exception</b> If you decide to combine classes from multiple unrelated namespaces 
-                into one assembly, consider post fixing the assembly with Core, but do not use that suffix 
-                in the namespaces. For instance, <i>Fanex.Mail.Core.dll</i>.
-            </p>
+            <div class="note-content">
+                <div class="note-title exception">Exception</div>
+                <ul class="note-list">
+                    <li>
+                        If you decide to combine classes from multiple unrelated namespaces
+                        into one assembly, consider post fixing the assembly with Core, but do not use that suffix
+                        in the namespaces. For instance, <i>Fanex.Mail.Core.dll</i>.
+                    </li>
+                </ul>
+            </div>
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1506 -</span> Name a source file to the type it contains <span class="badge lbl-importance">*</span></h2>
@@ -55,9 +60,14 @@
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1507 -</span> Limit the contents of a source code file to one type <span class="badge lbl-importance">*</span></h2>
-            <p>
-                <b class="text-info">Exception</b> Nested types should, for obvious reasons, be part of the same file.
-            </p>
+            <div class="note-content">
+                <div class="note-title exception">Exception</div>
+                <ul class="note-list">
+                    <li>
+                        Nested types should, for obvious reasons, be part of the same file.
+                    </li>
+                </ul>
+            </div>
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1508 -</span> Name a source file to the logical function of the partial type <span class="badge lbl-importance">*</span></h2>
@@ -125,7 +135,14 @@
                     }
                 </pre>
             </div>
-            <p><b class="text-warning">Note</b> An enumeration can often be used for certain types of symbolic constants.</p>
+            <div class="note-content">
+                <div class="note-title note">Note</div>
+                <ul class="note-list">
+                    <li>
+                        An enumeration can often be used for certain types of symbolic constants.
+                    </li>
+                </ul>
+            </div>
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1520 -</span> Only use <small>var</small> when the type is very obvious <span class="badge lbl-importance">***</span></h2>
@@ -430,10 +447,15 @@
                 complete overload and call that one from the other overloads using the this*) operator. Also notice that 
                 the parameters with the same name should appear in the same position in all overloads.
             </p>
-            <p>
-                <b class="text-primary">Important</b> If you also want to allow derived classes to override these methods, 
-                define the most complete overload as a protected virtual method that is called by all overloads.
-            </p>
+            <div class="note-content">
+                <div class="note-title important">Important</div>
+                <ul class="note-list">
+                    <li>
+                        If you also want to allow derived classes to override these methods,
+                        define the most complete overload as a protected virtual method that is called by all overloads.
+                    </li>
+                </ul>
+            </div>
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1553 -</span> Only use optional arguments to replace overloads <span class="badge lbl-importance">***</span></h2>
@@ -451,15 +473,21 @@
                 If the optional parameter is a reference type then it can only have a default value of null. But since strings, 
                 lists and collections should never be null according to rule <span class="text-info">OW1235</span>, you must use overloaded methods instead.
             </p>
-            <p><b class="text-warning">Note</b></p>
-            <ul>
-                <li>The default values of the optional parameters are stored at the caller side. As such, changing the default 
-                value without recompiling the calling code will not apply the new default value properly.</li>
-                <li>Note When an interface method defines an optional parameter, its default value is not considered during 
-                overload resolution unless you call the concrete class through the interface reference. See 
-                <a href="http://blogs.msdn.com/b/ericlippert/archive/2011/05/09/optional-argument-corner-cases-part-one.aspx">this</a> post by Eric 
-                Lippert for more details.</li>
-            </ul>
+            <div class="note-content">
+                <div class="note-title note">Note</div>
+                <ul class="note-list">
+                    <li>
+                        The default values of the optional parameters are stored at the caller side. As such, changing the default
+                        value without recompiling the calling code will not apply the new default value properly.
+                    </li>
+                    <li>
+                        Note When an interface method defines an optional parameter, its default value is not considered during
+                        overload resolution unless you call the concrete class through the interface reference. See
+                        <a href="http://blogs.msdn.com/b/ericlippert/archive/2011/05/09/optional-argument-corner-cases-part-one.aspx">this</a> post by Eric
+                        Lippert for more details.
+                    </li>
+                </ul>
+            </div>
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1555 -</span> Avoid using named arguments <span class="badge lbl-importance">***</span></h2>

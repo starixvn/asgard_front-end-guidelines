@@ -24,11 +24,16 @@
                 <li>Favor readability over brevity. The property name <i>CanScrollHorizontally</i> is better than <i>ScrollableX</i> (an obscure reference to the X-axis).</li>
                 <li>Avoid using names that conflict with keywords of widely used programming languages.</li>
             </ul>
-            <p>
-                <b class="text-info">Exception</b> In most projects, you will use words and phrases from your domain and names
-                 specific to your company. Visual Studio’s Static Code Analysis will perform a spelling check on all code,
-                 so you may need to add those terms to a <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/08/20/new-for-visual-studio-2008-custom-dictionaries.aspx">Custom Code Analysis Dictionary</a>.
-            </p>
+            <div class="note-content">
+                <div class="note-title exception">Exception</div>
+                <ul class="note-list">
+                    <li>
+                        In most projects, you will use words and phrases from your domain and names
+                        specific to your company. Visual Studio’s Static Code Analysis will perform a spelling check on all code,
+                        so you may need to add those terms to a <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/08/20/new-for-visual-studio-2008-custom-dictionaries.aspx">Custom Code Analysis Dictionary</a>.
+                    </li>
+                </ul>
+            </div>
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1702 -</span> Use proper casing for language elements <span class="badge lbl-importance">***</span></h2>
@@ -134,10 +139,15 @@
                 For example, use <i>OnButtonClick</i> rather than <i>OnBtnClick</i>. Avoid single character variable names, such
                  as <i>i</i> or <i>q</i>. Use <i>index</i> or <i>query</i> instead.
             </p>
-            <p>
-                <b class="text-info">Exceptions</b> Use well-known abbreviations that are widely accepted or well-known 
-                within the domain you work. For instance, use UI instead of <i>UserInterface</i>.
-            </p>
+            <div class="note-content">
+                <div class="note-title exception">Exception</div>
+                <ul class="note-list">
+                    <li>
+                        Use well-known abbreviations that are widely accepted or well-known
+                        within the domain you work. For instance, use UI instead of <i>UserInterface</i>.
+                    </li>
+                </ul>
+            </div>
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1707 -</span> Name a member, parameter or variable according its meaning and not its type <span class="badge lbl-importance">**</span></h2>
@@ -239,9 +249,14 @@
                     CaliburnMicro.Extensions
                 </pre>
             </div>
-            <p>
-                <b class="text-warning">Note</b> Never allow namespaces to contain the name of a type, but a noun in its plural form, e.g. Collections, is usually okay.
-            </p>
+            <div class="note-content">
+                <div class="note-title note">Note</div>
+                <ul class="note-list">
+                    <li>
+                        Never allow namespaces to contain the name of a type, but a noun in its plural form, e.g. Collections, is usually okay.
+                    </li>
+                </ul>
+            </div>
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1735 -</span> Use a verb or verb phrase to name an event <span class="badge lbl-importance">**</span></h2>
