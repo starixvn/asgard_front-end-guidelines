@@ -130,9 +130,33 @@
             </table>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1704 -</span> Don’t include numbers in variables, parameters and type members <span class="badge lbl-importance">*</span></h2>
-            <p>In most cases they are a lazy excuse for not defining a clear and intention-revealing name.</p>
+            <h2 class="sub-title"><span class="rule-item">OW1710 -</span> Don’t repeat the name of a class or enumeration in its members <span class="badge lbl-importance">***</span></h2>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    class Employee
+                    {
+                        // Wrong!
+                        public Employee GetEmployee() { }
+                        public void DeleteEmployee() { }
+                        // Right
+                        public Employee Get() { }
+                        public void Delete() { }
+                        // Also correct. 
+                        public void AddNewJob() { }
+                        public void RegisterForMeeting() { }
+                    }
+                </pre>
+            </div>
         </li>
+        <li>
+            <h2 class="sub-title"><span class="rule-item">OW1712 -</span> Avoid short names or names that can be mistaken with other names <span class="badge lbl-importance">***</span></h2>
+            <p>Although technically correct, the following statement can be quite confusing.</p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    bool b001 = (lo == l0) ? (I1 == 11) : (lOl != 101);
+                </pre>
+            </div>
+        </li>        
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1706 -</span> Don’t use abbreviations <span class="badge lbl-importance">**</span></h2>
             <p>
@@ -180,41 +204,6 @@
             </ul>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1710 -</span> Don’t repeat the name of a class or enumeration in its members <span class="badge lbl-importance">***</span></h2>
-            <div class="example-code">
-                <pre class="brush: csharp">
-                    class Employee
-                    {
-                        // Wrong!
-                        public Employee GetEmployee() { }
-                        public void DeleteEmployee() { }
-                        // Right
-                        public Employee Get() { }
-                        public void Delete() { }
-                        // Also correct. 
-                        public void AddNewJob() { }
-                        public void RegisterForMeeting() { }
-                    }
-                </pre>
-            </div>
-        </li>
-        <li>
-            <h2 class="sub-title"><span class="rule-item">OW1711 -</span> Name members similarly to members of related .NET Framework classes <span class="badge lbl-importance">*</span></h2>
-            <p>
-                .NET developers are already accustomed to the naming patterns the framework uses, so following this same pattern 
-                helps them find their way in your classes as well. For instance, if you define a class that behaves like a 
-                collection, provide members like <i>Add</i>, <i>Remove</i> and <i>Count</i> instead of <i>AddItem</i>, <i>Delete</i> or <i>NumberOfItems</i>.
-            </p>
-        <li>
-            <h2 class="sub-title"><span class="rule-item">OW1712 -</span> Avoid short names or names that can be mistaken with other names <span class="badge lbl-importance">***</span></h2>
-            <p>Although technically correct, the following statement can be quite confusing.</p>
-            <div class="example-code">
-                <pre class="brush: csharp">
-                    bool b001 = (lo == l0) ? (I1 == 11) : (lOl != 101);
-                </pre>
-            </div>
-        </li>
-        <li>
             <h2 class="sub-title"><span class="rule-item">OW1715 -</span> Properly name properties <span class="badge lbl-importance">**</span></h2>
             <ul>
                 <li>Do name properties with nouns, noun phrases, or occasionally adjective phrases.</li>
@@ -234,6 +223,30 @@
                 Name methods using a verb-object pair such as <i>ShowDialog</i>. A good name should give a hint on <i>what</i> of a member, 
                 and if possible, the <i>why</i>. Also, don’t include and in the name of the method. It implies that the method is 
                 doing more than one thing, which violates the single responsibility principle explained in <span class="text-info">OW1115</span>.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title"><span class="rule-item">OW1735 -</span> Use a verb or verb phrase to name an event <span class="badge lbl-importance">**</span></h2>
+            <p>
+                Name events with a verb or a verb phrase. For example: <i>Click</i>, <i>Deleted</i>, <i>Closing</i>, <i>Minimizing</i>, and <i>Arriving</i>.
+                For example, the declaration of the Search event may look like this:
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title"><span class="rule-item">OW1755 -</span> Postfix asynchronous methods with Async of TaskAsync <span class="badge lbl-importance">**</span></h2>
+            <p>The general convention for methods that return <i>Task</i> or <i>Task&lt;TResult&gt;</i> is to post-fix them with <i>Async</i>, but 
+            if such a method already exist, use <i>TaskAsync</i> instead.</p>
+        </li>
+        <li>
+            <h2 class="sub-title"><span class="rule-item">OW1704 -</span> Don’t include numbers in variables, parameters and type members <span class="badge lbl-importance">*</span></h2>
+            <p>In most cases they are a lazy excuse for not defining a clear and intention-revealing name.</p>
+        </li>
+        <li>
+            <h2 class="sub-title"><span class="rule-item">OW1711 -</span> Name members similarly to members of related .NET Framework classes <span class="badge lbl-importance">*</span></h2>
+            <p>
+                .NET developers are already accustomed to the naming patterns the framework uses, so following this same pattern
+                helps them find their way in your classes as well. For instance, if you define a class that behaves like a
+                collection, provide members like <i>Add</i>, <i>Remove</i> and <i>Count</i> instead of <i>AddItem</i>, <i>Delete</i> or <i>NumberOfItems</i>.
             </p>
         </li>
         <li>
@@ -259,13 +272,6 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1735 -</span> Use a verb or verb phrase to name an event <span class="badge lbl-importance">**</span></h2>
-            <p>
-                Name events with a verb or a verb phrase. For example: <i>Click</i>, <i>Deleted</i>, <i>Closing</i>, <i>Minimizing</i>, and <i>Arriving</i>.
-                For example, the declaration of the Search event may look like this:
-            </p>
-        </li>
-        <li>
             <h2 class="sub-title"><span class="rule-item">OW1737 -</span> Use <small>-ing</small> and <small>-ed</small> to express pre-events and post-events <span class="badge lbl-importance">*</span></h2>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -273,8 +279,8 @@
                 </pre>
             </div>
             <p>
-                For example, a close event that is raised before a window is closed would be called Closing and one that is 
-                raised after the window is closed would be called <i>Closed</i>. Don’t use <i>Before</i> or <i>After</i> prefixes or suffixes to 
+                For example, a close event that is raised before a window is closed would be called Closing and one that is
+                raised after the window is closed would be called <i>Closed</i>. Don’t use <i>Before</i> or <i>After</i> prefixes or suffixes to
                 indicate pre and post events.
             </p>
             <p>
@@ -290,14 +296,14 @@
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1738 -</span> Prefix an event handler with <small>On</small> <span class="badge lbl-importance">*</span></h2>
             <p>
-                It is good practice to prefix the method that handles an event with On. For example, a method that 
+                It is good practice to prefix the method that handles an event with On. For example, a method that
                 handles the Closing event could be named <i>OnClosing</i>.
             </p>
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1739 -</span> Use an underscore for irrelevant lambda parameters <span class="badge lbl-importance">*</span></h2>
             <p>
-                If you use a lambda statement, for instance, to subscribe to an event, and the actual parameters of the event are 
+                If you use a lambda statement, for instance, to subscribe to an event, and the actual parameters of the event are
                 irrelevant, use the following convention to make that more explicit.
             </p>
             <div class="example-code">
@@ -309,17 +315,10 @@
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1745 -</span> Group extension methods in a class suffixed with <small>Extensions</small> <span class="badge lbl-importance">*</span></h2>
             <p>
-                If the name of an extension method conflicts with another member or extension method, you must prefix the call 
+                If the name of an extension method conflicts with another member or extension method, you must prefix the call
                 with the class name. Having them in a dedicated class with the <i>Extensions</i> suffix improves readability.
             </p>
         </li>
-        <li>
-            <h2 class="sub-title"><span class="rule-item">OW1755 -</span> Postfix asynchronous methods with Async of TaskAsync <span class="badge lbl-importance">**</span></h2>
-            <p>The general convention for methods that return <i>Task</i> or <i>Task&lt;TResult&gt;</i> is to post-fix them with <i>Async</i>, but 
-            if such a method already exist, use <i>TaskAsync</i> instead.</p>
-        </li>
     </ul>
 </div>
-<div class="scroll-top">
-    <span class="mdi-editor-publish icon-scroll-top"></span>
-</div>
+

@@ -62,8 +62,8 @@ namespace ONEbook.FrontEndGuidelines
 
             bundles.Add(new ScriptBundle("~/bundles/layoutjs").Include(
                         "~/Scripts/Libraries/Namespace/namespace.js",
-                        "~/Scripts/Home/ONEbook.FrontEndGuidelines.js",
-                        "~/Scripts/Home/ONEbook.FrontEndGuidelines.Layout.js"));
+                        "~/Scripts/CodingGuideLine/ONEbook.FrontEndGuidelines.js",
+                        "~/Scripts/CodingGuideLine/ONEbook.FrontEndGuidelines.Layout.js"));
 
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
                         "~/Content/Bootstrap/CSS/bootstrap.css"));
@@ -90,13 +90,13 @@ namespace ONEbook.FrontEndGuidelines
         {
             // Bundle for Rules sites.
             bundles.Add(new ScriptBundle("~/bundles/rules/js").Include(
-                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Rules.js"));
+                "~/Scripts/FrontEndRules/ONEbook.FrontEndGuidelines.Rules.js"));
 
             // Bundle for Dropdown List
             bundles.Add(new ScriptBundle("~/bundles/controls/js/dropdownlist").Include(
                 "~/Scripts/Libraries/DropdownList/Select2/select2.js",
                 "~/Scripts/Libraries/DropdownList/FanexMultipleSelect/fanex.multiSelect.js",
-                "~/Scripts/Home/ONEbook.FrontEndGuidelines.DropdownList.js"));
+                "~/Scripts/HtmlCommonControls/ONEbook.FrontEndGuidelines.DropdownList.js"));
 
             bundles.Add(new StyleBundle("~/bundles/controls/css/dropdownlist").Include(
                 "~/Content/DropdownList/Select2/select2.css",
@@ -108,7 +108,7 @@ namespace ONEbook.FrontEndGuidelines
             bundles.Add(new ScriptBundle("~/bundles/controls/js/calendar").Include(
                 "~/Scripts/Libraries/Moment/moment-with-locales.min.js",
                 "~/Scripts/Libraries/Datepicker/bootstrap-datetimepicker.min.js",
-                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Calendar.js",
+                "~/Scripts/HtmlCommonControls/ONEbook.FrontEndGuidelines.Calendar.js",
                 "~/Scripts/CustomizedLibraries/daterangeselector.js"));
 
             bundles.Add(new StyleBundle("~/bundles/controls/css/calendar").Include(
@@ -117,7 +117,7 @@ namespace ONEbook.FrontEndGuidelines
             // Bundles for Treeview.
             bundles.Add(new ScriptBundle("~/bundles/controls/js/treeview").Include(
                "~/Scripts/Libraries/TreeView/JSTree/jstree.js",
-               "~/Scripts/Home/ONEbook.FrontEndGuidelines.TreeView.js"));
+               "~/Scripts/HtmlCommonControls/ONEbook.FrontEndGuidelines.TreeView.js"));
 
             bundles.Add(new StyleBundle("~/bundles/controls/css/treeview").Include(
                 "~/Content/TreeView/JSTree/default/style.css"));
@@ -125,7 +125,7 @@ namespace ONEbook.FrontEndGuidelines
             // Bundles for switch button
             bundles.Add(new ScriptBundle("~/bundles/controls/js/switch").Include(
                 "~/Scripts/Libraries/Switch/bootstrap-switch.js",
-                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Switch.js"));
+                "~/Scripts/HtmlCommonControls/ONEbook.FrontEndGuidelines.Switch.js"));
 
             bundles.Add(new StyleBundle("~/bundles/controls/css/switch").Include(
                 "~/Content/Switch/bootstrap-switch.css"));
@@ -133,7 +133,7 @@ namespace ONEbook.FrontEndGuidelines
             // Bundles for dialog
             bundles.Add(new ScriptBundle("~/bundles/controls/js/dialog").Include(
                 "~/Scripts/Libraries/Dialog/BootstrapDialog/bootstrap-dialog.js",
-                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Dialog.js"));
+                "~/Scripts/HtmlCommonControls/ONEbook.FrontEndGuidelines.Dialog.js"));
 
             bundles.Add(new StyleBundle("~/bundles/controls/css/dialog").Include(
                 "~/Content/Dialog/BootstrapDialog/css/bootstrap-dialog.css",
@@ -142,14 +142,14 @@ namespace ONEbook.FrontEndGuidelines
             // Bundles for block UI.
             bundles.Add(new ScriptBundle("~/bundles/controls/js/blockui").Include(
                 "~/Scripts/Libraries/jQuery/jquery.blockUI.js",
-                "~/Scripts/Home/ONEbook.FrontEndGuidelines.BlockUI.js"));
+                "~/Scripts/HtmlCommonControls/ONEbook.FrontEndGuidelines.BlockUI.js"));
 
             bundles.Add(new StyleBundle("~/bundles/controls/css/blockui").Include(
                 "~/Content/CustomizedControls/blockui.less"));
 
             // Bundle for tooltip.
             bundles.Add(new ScriptBundle("~/bundles/controls/js/tooltip").Include(
-                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Tooltip.js"));
+                "~/Scripts/HtmlCommonControls/ONEbook.FrontEndGuidelines.Tooltip.js"));
 
             // Bundle for Checkbox.
             bundles.Add(new StyleBundle("~/bundles/controls/css/checkbox").Include(
@@ -160,7 +160,7 @@ namespace ONEbook.FrontEndGuidelines
                 "~/Content/CustomizedControls/nav.less"));
 
             bundles.Add(new ScriptBundle("~/bundles/controls/js/nav").Include(
-                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Nav.js"));
+                "~/Scripts/HtmlCommonControls/ONEbook.FrontEndGuidelines.Nav.js"));
 
             // Bundle for Radio button.
             bundles.Add(new StyleBundle("~/bundles/controls/css/radio").Include(
@@ -173,7 +173,7 @@ namespace ONEbook.FrontEndGuidelines
 
             bundles.Add(new ScriptBundle("~/bundles/controls/js/progress").Include(
                 "~/Scripts/Libraries/Progress/jquery.circliful.js",
-                "~/Scripts/Home/ONEbook.FrontEndGuidelines.Progress.js"));
+                "~/Scripts/HtmlCommonControls/ONEbook.FrontEndGuidelines.Progress.js"));
 
             // Bundle for Message Box.
             bundles.Add(new StyleBundle("~/bundles/controls/css/messagebox").Include(
@@ -183,21 +183,18 @@ namespace ONEbook.FrontEndGuidelines
             bundles.Add(new ScriptBundle("~/bundles/controls/js/messagebox").Include(
                 "~/Scripts/Libraries/msgbox/msgbox-0.0.1.js",
                 "~/Scripts/Libraries/jQuery/jquery-migrate-1.2.1.js",
-                "~/Scripts/Home/ONEbook.FrontEndGuidelines.MessageBox.js"));
+                "~/Scripts/HtmlCommonControls/ONEbook.FrontEndGuidelines.MessageBox.js"));
 
             // Bundle for Context Menu.
             bundles.Add(new StyleBundle("~/bundles/controls/css/contextmenu").Include(
                 "~/Content/CustomizedControls/contextmenu.less"));
 
             bundles.Add(new ScriptBundle("~/bundles/controls/js/contextmenu").Include(
-                "~/Scripts/Home/ONEbook.FrontEndGuidelines.ContextMenu.js"));
+                "~/Scripts/HtmlCommonControls/ONEbook.FrontEndGuidelines.ContextMenu.js"));
 
             // Bundle for ASP.Net MVC.
             bundles.Add(new StyleBundle("~/bundles/controls/css/aspmvc").Include(
                 "~/Content/CustomizedControls/aspmvc.less"));
-
-            bundles.Add(new ScriptBundle("~/bundles/controls/js/aspmvc").Include(
-                "~/Scripts/Home/ONEbook.FrontEndGuidelines.ASPMVC.js"));
         }
     }
 }

@@ -13,20 +13,24 @@ if (ONEbook.FrontEndGuidelines) {
                 leftContent: null,
                 rightContent: null,
                 codeDemoBlocks: null,
-                commonControls: null,
-                ASPMVC: null
+                rightContainer: null,
+                rightPanel: null,
+                backToTop: null
             },
             init: function () {
                 me.cachedElements.leftContent = $('#mainContent .left-panel');
                 
                 if (me.cachedElements.leftContent.length > 0) {
-                    me.cachedElements.toggleMenu = $('#toggleMenu');
-                    me.cachedElements.commonControls = $('#commonControls');
-                    me.cachedElements.ASPMVC = $('#aspmvc');
+                    me.cachedElements.toggleMenu = $('#toggleMenu');                    
                     me.cachedElements.rightContent = $('#mainContent .right-panel');
                     me.cachedElements.codeDemoBlocks = $('.docs-section .view-source');
                     me.registerEvents();
                 }
+
+                me.cachedElements.rightContainer = $('#right-container');
+                me.cachedElements.rightPanel = $('#right-panel');
+                me.cachedElements.backToTop = $('#back-top');
+                me.scrollTop();
             },
             registerEvents: function () {
                 me.cachedElements.toggleMenu.on('click', me.toggleMenu);
@@ -50,11 +54,27 @@ if (ONEbook.FrontEndGuidelines) {
                     me.cachedElements.rightContent.addClass('show-left');
                 }
             },
-            markShowLeftPanel: function () {
-                $.cookie(me.toggleCookieName, 'show', { path: '/' });
-            },
-            unMarkShowLeftPanel: function () {
-                $.cookie(me.toggleCookieName, 'hide', { path: '/' });
+            scrollTop: function () {
+                
+                if (me.cachedElements.rightContainer.height() > ($(window).height() - 80)) {
+
+                    // fade in #back-top
+                    me.cachedElements.rightPanel.scroll(function () {
+                        if ($(this).scrollTop() > 100) {
+                            me.cachedElements.backToTop.fadeIn();
+                        } else {
+                            me.cachedElements.backToTop.fadeOut();
+                        }
+                    });
+                }
+
+                // scroll body to 0px on click
+                me.cachedElements.backToTop.click(function () {
+                    me.cachedElements.rightPanel.animate({
+                        scrollTop: 0
+                    }, 800);
+                    return false;
+                });
             }
         };
 

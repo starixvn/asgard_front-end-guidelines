@@ -39,6 +39,21 @@
             </p>
         </li>
         <li>
+            <h2 class="sub-title"><span class="rule-item">OW2506 -</span> Use criteria to pass parameters to stored procedure.  <span class="badge lbl-importance">***</span></h2>
+            <p>
+                <i>Fanex.Data</i> supports passing Criteria to stored procedure. It will help our code be more readable and maintainable.
+            </p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    using (var objectDb = new ObjectDb(criteria.GetSettingKey(), 120))
+                    {
+                       var param = criteria.GetSpParams();
+                        objectDb.ExecuteNonQuery(param);
+                    }
+                </pre>
+            </div>
+        </li>
+        <li>
             <h2 class="sub-title"><span class="rule-item">OW2504 -</span> Avoid using <i>DataSet</i>, using <i>Entity</i> instead.  <span class="badge lbl-importance">*</span></h2>
             <p>
                 A <i>DataSet</i> is (to quote Microsoft) an in-memory cache of data. 
@@ -68,24 +83,6 @@
                     }
                 </pre>
             </div>
-        </li>
-        <li>
-            <h2 class="sub-title"><span class="rule-item">OW2506 -</span> Use criteria to pass parameters to stored procedure.  <span class="badge lbl-importance">***</span></h2>
-            <p>
-                <i>Fanex.Data</i> supports passing Criteria to stored procedure. It will help our code be more readable and maintainable. 
-            </p>
-            <div class="example-code">
-                <pre class="brush: csharp">
-                    using (var objectDb = new ObjectDb(criteria.GetSettingKey(), 120))
-                    {
-                       var param = criteria.GetSpParams();
-                        objectDb.ExecuteNonQuery(param);
-                    }
-                </pre>
-            </div>
-        </li>
+        </li>        
     </ul>
-</div>
-<div class="scroll-top">
-    <span class="mdi-editor-publish icon-scroll-top"></span>
 </div>

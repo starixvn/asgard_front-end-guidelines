@@ -198,42 +198,6 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5006 -</span> DECORATE the most frequent Action Methods with OutputCache Attribute <span class="badge lbl-importance">**</span></h2>
-            <p>
-                Use OutputCache attribute when we are returning the less frequent updated data, prime candidate may be
-                our home page, feed...etc. We can use it for both Html and Json data types. When using it, only specify
-                the Cache Profile name, do not specify any other thing, use the web.config output cache session to fine tune it. For example:
-            </p>
-            <div class="example-code">
-                <pre class="brush: csharp">
-                    [AcceptVerbs(HttpVerbs.Get), OutputCache(CacheProfile = "About")]
-                    public ActionResult About()
-                    {
-                        return View();
-                    }
-                </pre>
-            </div>
-            <p>And in web.config:</p>
-            <div class="example-code">
-                <pre class="brush: xml">
-                    <system.web>
-                        <caching>
-                            <outputcachesettings>
-                                <outputcacheprofiles>
-                                &lt;clear /&gt;
-                                <!-- 15 Seconds -->
-                                &lt;add name="Dashboard"
-                                        duration="15"
-                                        varybyparam="*"
-                                        location="Client" /&gt;
-                                </outputcacheprofiles>
-                            </outputcachesettings>
-                        </caching>
-                    </system.web>
-                </pre>
-            </div>
-        </li>
-        <li>
             <h2 class="sub-title"><span class="rule-item">OW5007 -</span> DECORATE either the Action or the Controller with Authorize attribute <span class="badge lbl-importance">***</span></h2>
             <p>
                 When you mark an action method with AuthorizeAttribute, access to that action method is restricted
@@ -275,13 +239,42 @@
                 </pre>
             </div>
         </li>
+        <li>
+            <h2 class="sub-title"><span class="rule-item">OW5006 -</span> DECORATE the most frequent Action Methods with OutputCache Attribute <span class="badge lbl-importance">**</span></h2>
+            <p>
+                Use OutputCache attribute when we are returning the less frequent updated data, prime candidate may be
+                our home page, feed...etc. We can use it for both Html and Json data types. When using it, only specify
+                the Cache Profile name, do not specify any other thing, use the web.config output cache session to fine tune it. For example:
+            </p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    [AcceptVerbs(HttpVerbs.Get), OutputCache(CacheProfile = "About")]
+                    public ActionResult About()
+                    {
+                        return View();
+                    }
+                </pre>
+            </div>
+            <p>And in web.config:</p>
+            <div class="example-code">
+                <pre class="brush: xml">
+                    <system.web>
+                        <caching>
+                            <outputcachesettings>
+                                <outputcacheprofiles>
+                                &lt;clear /&gt;
+                                <!-- 15 Seconds -->
+                                &lt;add name="Dashboard"
+                                        duration="15"
+                                        varybyparam="*"
+                                        location="Client" /&gt;
+                                </outputcacheprofiles>
+                            </outputcachesettings>
+                        </caching>
+                    </system.web>
+                </pre>
+            </div>
+        </li>
+        
     </ul>
 </div>
-<div class="scroll-top">
-    <span class="mdi-editor-publish icon-scroll-top"></span>
-</div>
-@section scripts
-{
-    @Scripts.Render("~/bundles/controls/js/aspmvc")
-}
-

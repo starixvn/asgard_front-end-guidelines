@@ -17,37 +17,18 @@
 <div class="col-sm-12" id="doc-content">
     <ul class="rules unordered">
         <li>
-            <h2 class="sub-title first"><span class="rule-item">OW1200 -</span> Throw exceptions rather than returning some kind of status value <span class="badge lbl-importance">**</span></h2>
-            <p>
-                A code base that uses return values for reporting the success or failure tends to have nested <i>if-statements</i> 
-                sprinkled all over the code. Quite often, a caller forgets to check the return value anyhow. 
-                Structured exception handling has been introduced to allow you to throw exceptions and catch or replace 
-                exceptions at a higher layer. In most systems it is quite common to throw exceptions whenever an unexpected 
-                situation occurs.
-            </p>
-        </li>
-        <li>
-            <h2 class="sub-title"><span class="rule-item">OW1202 -</span> Provide a rich and meaningful exception message text <span class="badge lbl-importance">**</span></h2>
-            <p>The message should explain the cause of the exception and clearly describe what needs to be done to avoid the exception.</p>
-        </li>
-        <li>
-            <h2 class="sub-title"><span class="rule-item">OW1205 -</span> Throw the most specific exception that is appropriate <span class="badge lbl-importance">*</span></h2>
-            <p>For example, if a method receives a null argument, it should throw</p>
-            <p><i>ArgumentNullException</i> instead of its base type <i>ArgumentException</i>.</p>
-        </li>
-        <li>
             <h2 class="sub-title"><span class="rule-item">OW1210 -</span> Don’t swallow errors by catching generic exceptions <span class="badge lbl-importance">***</span></h2>
             <p>
-                Avoid swallowing errors by catching non-specific exceptions, such as Exception, <i>SystemException</i>, and so on, 
-                in application code. Only top-level code, such as a last-chance exception handler, should catch a non-specific 
+                Avoid swallowing errors by catching non-specific exceptions, such as Exception, <i>SystemException</i>, and so on,
+                in application code. Only top-level code, such as a last-chance exception handler, should catch a non-specific
                 exception for logging purposes and a graceful shutdown of the application.
             </p>
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1220 -</span> Always check an event handler delegate for <small>null</small> <span class="badge lbl-importance">***</span></h2>
             <p>
-                An event that has no subscribers is null, so before invoking, always make sure that the delegate 
-                list represented by the event variable is not <small>null</small>. Furthermore, to prevent conflicting changes from 
+                An event that has no subscribers is null, so before invoking, always make sure that the delegate
+                list represented by the event variable is not <small>null</small>. Furthermore, to prevent conflicting changes from
                 concurrent threads, use a temporary variable to prevent concurrent changes to the delegate.
             </p>
             <div class="example-code">
@@ -79,8 +60,8 @@
             <h2 class="sub-title"><span class="rule-item">OW1235 -</span> Don’t pass <small>null</small> as the sender argument when raising an event <span class="badge lbl-importance">***</span></h2>
             <p>
                 Often, an event handler is used to handle similar events from multiple senders. The sender argument is then used
-                 to get to the source of the event. Always pass a reference to the source (typically this) when raising the 
-                event. Furthermore don’t pass null as the event data parameter when raising an event. If there is no event data, 
+                to get to the source of the event. Always pass a reference to the source (typically this) when raising the
+                event. Furthermore don’t pass null as the event data parameter when raising an event. If there is no event data,
                 pass <i>EventArgs.Empty</i> instead of <i>null</i>.
             </p>
             <div class="note-content">
@@ -90,6 +71,47 @@
                 </ul>
             </div>
         </li>
+        <li>
+            <h2 class="sub-title"><span class="rule-item">OW1250 -</span> Evaluate the result of a LINQ expression before returning it <span class="badge lbl-importance">***</span></h2>
+            <p>Consider the following code snippet:</p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    class SomeClass
+                    {
+                        public IEnumerable&lt;GoldMember&gt; GetGoldMemberCustomers()
+                        {
+                            const decimal GoldMemberThresholdInEuro = 1000000;
+                            var q = from customer in db.Customers
+                                    where customer.Balance > GoldMemberThresholdInEuro
+                                    select new GoldMember(customer.Name, customer.Balance);
+                            return q;
+                        }
+                    }
+                </pre>
+            </div>
+            <p>
+                Since LINQ queries use deferred execution, returning q will actually return the expression tree representing
+                the above query. Each time the caller evaluates this result using a <i>foreach</i> or something similar, the entire
+                query is re-executed resulting in new instances of <i>GoldMember</i> every time. Consequently, you
+                cannot use the == operator to compare multiple <i>GoldMember</i> instances. Instead, always explicitly
+                evaluate the result of a LINQ query using <i>ToList()</i>, <i>ToArray()</i> or similar methods.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title first"><span class="rule-item">OW1200 -</span> Throw exceptions rather than returning some kind of status value <span class="badge lbl-importance">**</span></h2>
+            <p>
+                A code base that uses return values for reporting the success or failure tends to have nested <i>if-statements</i> 
+                sprinkled all over the code. Quite often, a caller forgets to check the return value anyhow. 
+                Structured exception handling has been introduced to allow you to throw exceptions and catch or replace 
+                exceptions at a higher layer. In most systems it is quite common to throw exceptions whenever an unexpected 
+                situation occurs.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title"><span class="rule-item">OW1202 -</span> Provide a rich and meaningful exception message text <span class="badge lbl-importance">**</span></h2>
+            <p>The message should explain the cause of the exception and clearly describe what needs to be done to avoid the exception.</p>
+        </li>
+        
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1240 -</span> Use generic constraints if applicable <span class="badge lbl-importance">**</span></h2>
             <p>
@@ -123,33 +145,9 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1250 -</span> Evaluate the result of a LINQ expression before returning it <span class="badge lbl-importance">***</span></h2>
-            <p>Consider the following code snippet:</p>
-            <div class="example-code">
-                <pre class="brush: csharp">
-                    class SomeClass
-                    {
-                        public IEnumerable&lt;GoldMember&gt; GetGoldMemberCustomers()
-                        {
-                            const decimal GoldMemberThresholdInEuro = 1000000;
-                            var q = from customer in db.Customers
-                                    where customer.Balance > GoldMemberThresholdInEuro
-                                    select new GoldMember(customer.Name, customer.Balance);
-                            return q;
-                        }
-                    }
-                </pre>
-            </div>
-            <p>
-                Since LINQ queries use deferred execution, returning q will actually return the expression tree representing 
-                the above query. Each time the caller evaluates this result using a <i>foreach</i> or something similar, the entire 
-                query is re-executed resulting in new instances of <i>GoldMember</i> every time. Consequently, you 
-                cannot use the == operator to compare multiple <i>GoldMember</i> instances. Instead, always explicitly 
-                evaluate the result of a LINQ query using <i>ToList()</i>, <i>ToArray()</i> or similar methods.
-            </p>
+            <h2 class="sub-title"><span class="rule-item">OW1205 -</span> Throw the most specific exception that is appropriate <span class="badge lbl-importance">*</span></h2>
+            <p>For example, if a method receives a null argument, it should throw</p>
+            <p><i>ArgumentNullException</i> instead of its base type <i>ArgumentException</i>.</p>
         </li>
     </ul>
-</div>
-<div class="scroll-top">
-    <span class="mdi-editor-publish icon-scroll-top"></span>
 </div>

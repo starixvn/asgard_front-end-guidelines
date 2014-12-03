@@ -40,55 +40,18 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1001 -</span> Only create a constructor that returns a useful object <span class="badge lbl-importance">*</span></h2>
-            <p>There should be no need to set additional properties before the object can be used for whatever purpose it was
-             designed. However, if you your constructor needs more than three parameters (which violates <span class="text-info">OW1561</span>), your class might 
-            have too much responsibility (and violate <span class="text-info">OW1000</span>).</p>
-        </li>
-        <li>
-            <h2 class="sub-title"><span class="rule-item">OW1003 -</span> An interface should be small and focused <span class="badge lbl-importance">**</span></h2>
-            <p>
-                Interfaces should have a name that clearly explains the purpose or role of that interface within the system. 
-                Do not combine many vaguely related members on the same interface just because they were all on the same class. 
-                Separate the members based on the responsibility of those members so that callers only need to call or implement 
-                the interface related to a particular task. This rule is more commonly known as the  <a href="http://www.objectmentor.com/resources/articles/isp.pdf">Interface Segregation Principle</a>.
-            </p>
-        </li>
-        <li>
             <h2 class="sub-title"><span class="rule-item">OW1004 -</span> Use an interface rather than a base class to support multiple implementations <span class="badge lbl-importance">***</span></h2>
             <p>
-                If you want to expose an extension point from your class, expose it as an interface rather than a base class. 
-                You don’t want to force users of that extension point to derive their implementations from a base-class that 
-                might have undesired behavior. However, for their convenience you may implement an (abstract) default 
+                If you want to expose an extension point from your class, expose it as an interface rather than a base class.
+                You don’t want to force users of that extension point to derive their implementations from a base-class that
+                might have undesired behavior. However, for their convenience you may implement an (abstract) default
                 implementation that can serve as a starting point.
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1005 -</span> Use an interface to decouple classes from each other <span class="badge lbl-importance">**</span></h2>
-            <p>Interfaces are a very effective mechanism for decoupling classes from each other.</p>
-            <ul>
-                <li>They can prevent bidirectional associations.</li>
-                <li>They simplify the replacement of one implementation with another.</li>
-                <li>They allow replacing an expensive external service or resource with a temporary stub for use in a non-production environment.</li>
-                <li>They allow replacing the actual implementation with a dummy implementation or a fake object in a unit test.</li>
-                <li>Using a dependency injection framework you can centralize the choice which class is going to be used whenever a specific interface is requested.</li>
-            </ul>
-        </li>
-        <li>
-            <h2 class="sub-title"><span class="rule-item">OW1008 -</span> Avoid static classes <span class="badge lbl-importance">*</span></h2>
-            <p>With the exception of extension method containers static classes very often lead to badly designed code. 
-            They are also very difficult, if not impossible, to test in isolation unless you’re willing to use some very hacky tools.</p>
-            <div class="note-content">
-                <div class="note-title note">Note</div>
-                <ul class="note-list">
-                    <li>If you really need that static class, mark it as static so that the compiler can prevent instance members and instantiating your class. This relieves you of creating an explicit private constructor.</li>
-                </ul>
-            </div>
-        </li>
-        <li>
             <h2 class="sub-title"><span class="rule-item">OW1010 -</span> Don’t hide inherited members with the <small>new</small> keyword  <span class="badge lbl-importance">***</span></h2>
             <p>
-                Not only does the new keyword break <a href="http://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29">Polymorphism</a>, 
+                Not only does the new keyword break <a href="http://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29">Polymorphism</a>,
                 one of the most essential object-orientation principles, it also makes subclasses more difficult to understand. Consider the following two classes:
             </p>
             <div class="example-code">
@@ -111,6 +74,52 @@
             <p>It should not make a difference whether you call Print through a reference to the base class or through the derived class.</p>
         </li>
         <li>
+            <h2 class="sub-title"><span class="rule-item">OW1013 -</span> Don’t refer to derived classes from the base class  <span class="badge lbl-importance">***</span></h2>
+            <p>
+                Having dependencies from a base class to its sub-classes goes against proper object-oriented design
+                and might prevent other developers from adding new derived classes.
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title"><span class="rule-item">OW1020 -</span> Avoid bidirectional dependencies <span class="badge lbl-importance">***</span></h2>
+            <p>
+                This means that two classes know about each other’s public members or rely on each other’s internal behavior.
+                Refactoring or replacing one of those two classes requires changes on both parties and may involve a lot of
+                unexpected work. The most obvious way of breaking that dependency is introducing an interface for one of the
+                classes and using Dependency Injection.
+            </p>
+            <div class="note-content">
+                <div class="note-title exception">Exception</div>
+                <ul class="note-list">
+                    <li>
+                        Domain models such as defined in <a href="http://domaindrivendesign.org/">Domain Driven Design</a> tend to occasionally
+                        involve bidirectional associations that model real-life associations. In those cases, I would make sure they
+                        are really necessary, but if they are, keep them in.
+                    </li>
+                </ul>
+            </div>
+        </li>        
+        <li>
+            <h2 class="sub-title"><span class="rule-item">OW1003 -</span> An interface should be small and focused <span class="badge lbl-importance">**</span></h2>
+            <p>
+                Interfaces should have a name that clearly explains the purpose or role of that interface within the system. 
+                Do not combine many vaguely related members on the same interface just because they were all on the same class. 
+                Separate the members based on the responsibility of those members so that callers only need to call or implement 
+                the interface related to a particular task. This rule is more commonly known as the  <a href="http://www.objectmentor.com/resources/articles/isp.pdf">Interface Segregation Principle</a>.
+            </p>
+        </li>        
+        <li>
+            <h2 class="sub-title"><span class="rule-item">OW1005 -</span> Use an interface to decouple classes from each other <span class="badge lbl-importance">**</span></h2>
+            <p>Interfaces are a very effective mechanism for decoupling classes from each other.</p>
+            <ul>
+                <li>They can prevent bidirectional associations.</li>
+                <li>They simplify the replacement of one implementation with another.</li>
+                <li>They allow replacing an expensive external service or resource with a temporary stub for use in a non-production environment.</li>
+                <li>They allow replacing the actual implementation with a dummy implementation or a fake object in a unit test.</li>
+                <li>Using a dependency injection framework you can centralize the choice which class is going to be used whenever a specific interface is requested.</li>
+            </ul>
+        </li>                
+        <li>
             <h2 class="sub-title"><span class="rule-item">OW1011 -</span> It should be possible to treat a derived object as if it were a base class object <span class="badge lbl-importance">**</span></h2>
             <p>
                 In other words, you should be able to use a reference to an object of a derived class wherever a reference to its 
@@ -124,14 +133,7 @@
                     <li>This rule is also known as the Liskov Substitution Principle, one of the S.O.L.I.D principles.</li>
                 </ul>
             </div>
-        </li>
-        <li>
-            <h2 class="sub-title"><span class="rule-item">OW1013 -</span> Don’t refer to derived classes from the base class  <span class="badge lbl-importance">***</span></h2>
-            <p>
-                Having dependencies from a base class to its sub-classes goes against proper object-oriented design 
-                and might prevent other developers from adding new derived classes.
-            </p>
-        </li>
+        </li>        
         <li>
             <h2 class="sub-title"><span class="rule-item">OW1014 -</span> Avoid exposing the other objects an object depends on <span class="badge lbl-importance">**</span></h2>
             <p>If you find yourself writing code like this then you might be violating the <a href="http://en.wikipedia.org/wiki/Law_of_Demeter">Law of Demeter</a>.</p>
@@ -164,26 +166,25 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1020 -</span> Avoid bidirectional dependencies <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW1001 -</span> Only create a constructor that returns a useful object <span class="badge lbl-importance">*</span></h2>
             <p>
-                This means that two classes know about each other’s public members or rely on each other’s internal behavior. 
-                Refactoring or replacing one of those two classes requires changes on both parties and may involve a lot of 
-                unexpected work. The most obvious way of breaking that dependency is introducing an interface for one of the 
-                classes and using Dependency Injection.
+                There should be no need to set additional properties before the object can be used for whatever purpose it was
+                designed. However, if you your constructor needs more than three parameters (which violates <span class="text-info">OW1561</span>), your class might
+                have too much responsibility (and violate <span class="text-info">OW1000</span>).
+            </p>
+        </li>
+        <li>
+            <h2 class="sub-title"><span class="rule-item">OW1008 -</span> Avoid static classes <span class="badge lbl-importance">*</span></h2>
+            <p>
+                With the exception of extension method containers static classes very often lead to badly designed code.
+                They are also very difficult, if not impossible, to test in isolation unless you’re willing to use some very hacky tools.
             </p>
             <div class="note-content">
-                <div class="note-title exception">Exception</div>
+                <div class="note-title note">Note</div>
                 <ul class="note-list">
-                    <li>
-                        Domain models such as defined in <a href="http://domaindrivendesign.org/">Domain Driven Design</a> tend to occasionally
-                        involve bidirectional associations that model real-life associations. In those cases, I would make sure they
-                        are really necessary, but if they are, keep them in.
-                    </li>
+                    <li>If you really need that static class, mark it as static so that the compiler can prevent instance members and instantiating your class. This relieves you of creating an explicit private constructor.</li>
                 </ul>
             </div>
         </li>
     </ul>
-</div>
-<div class="scroll-top">
-    <span class="mdi-editor-publish icon-scroll-top"></span>
 </div>

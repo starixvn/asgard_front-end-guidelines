@@ -46,8 +46,8 @@
             </div>
         }
 
-        <div class="right-panel @(hasLeftMenu ? "show-left" : string.Empty)">
-            <div class="container-fluid">
+        <div class="right-panel @(hasLeftMenu ? "show-left" : string.Empty)" id="right-panel">
+            <div class="container-fluid" id="right-container">
                 <div class="row">
                     <div class="col-sm-12">
                         <h1 class="title">@ViewBag.Title</h1>
@@ -55,6 +55,9 @@
                 </div>
                 <div class="row">
                     @RenderBody()
+                    <div class="scroll-top">
+                        <span class="mdi-editor-publish icon-scroll-top" id="back-top"></span>
+                    </div>
                 </div>
             </div>
         </div>

@@ -16,17 +16,17 @@
 <div class="col-sm-12" id="doc-content">
     <ul class="rules unordered">
         <li>
-            <h2 class="sub-title first"><span class="rule-item">OW1800 -</span> Consider using <i>Any()</i> to determine whether an <i>IEnumerable&lt;t&gt;</i> is empty <span class="badge lbl-importance">*</span></h2>
+            <h2 class="sub-title first"><span class="rule-item">OW1800 -</span> Consider using <small>Any()</small> to determine whether an <small>IEnumerable&lt;T&gt;</small> is empty <span class="badge lbl-importance">*</span></h2>
             <p>
-                When a method or other member returns an IEnumerable&lt;t&gt; or other collection class that does not expose a Count property, 
+                When a method or other member returns an IEnumerable&lt;T&gt; or other collection class that does not expose a Count property, 
                 use the <i>Any()</i> extension method rather than <i>Count()</i> to determine whether the collection contains items. If you do use <i>Count()</i>, 
-                you risk that iterating over the entire collection might have a significant impact (such as when it really is an <i>IQueryable&lt;t&gt;</i> to a persistent store).
+                you risk that iterating over the entire collection might have a significant impact (such as when it really is an <i>IQueryable&lt;T&gt;</i> to a persistent store).
             </p>
             <div class="note-content">
                 <div class="note-title note">Note</div>
                 <ul class="note-list">
                     <li>
-                        If you return an <i>IEnumerable&lt;t&gt;</i> to prevent editing from outside the owner as explained in
+                        If you return an <i>IEnumerable&lt;T&gt;</i> to prevent editing from outside the owner as explained in
                         <span class="text-info">OW1130</span> and you’re developing in .NET 4.5 or higher,
                         consider the new read-only classes.
                     </li>
@@ -34,7 +34,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1820 -</span> Only use <i>async</i>  for low-intensive long-running activities</h2>
+            <h2 class="sub-title"><span class="rule-item">OW1820 -</span> Only use <small>async</small>  for low-intensive long-running activities</h2>
             <p>
                 The usage of <i>async</i> won’t auto magically run something on a worker thread like <i>Task.Run</i> does. 
                 It just adds the necessary logic to allow releasing the current thread and marshal the result back on that same thread if a long-running asynchronies operation has completed. 
@@ -42,21 +42,21 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1825 -</span> Prefer <i>Task.Run</i> for CPU intensive activities</h2>
+            <h2 class="sub-title"><span class="rule-item">OW1825 -</span> Prefer <small>Task.Run</small> for CPU intensive activities</h2>
             <p>
                 If you do need to execute a CPU bound operation, use <i>Task.Run</i> to offload the work to a thread from the Thread Pool. <br />
                 Just don’t forget that you have to marshal the result back to your main thread manually.
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1830 -</span> Beware of mixing up <i>await/async</i> with <i>Task.Wait</i></h2>
+            <h2 class="sub-title"><span class="rule-item">OW1830 -</span> Beware of mixing up <small>await/async</small> with <small>Task.Wait</small></h2>
             <p>
                 <i>Await</i> not block the current thread but simply instruct to compiler to generate a state-machine. However,
                 <i>Task.Wait</i> will block the thread and may even cause dead-locks (see <span class="text-info">OW1835</span>)
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1835 -</span> Beware of <i>async/await</i> deadlocks in single-threaded environments</h2>
+            <h2 class="sub-title"><span class="rule-item">OW1835 -</span> Beware of <small>async/await</small> deadlocks in single-threaded environments</h2>
             <div class="example-code">
                 <pre class="brush: csharp">
                     private async Task&lt;string&gt; GetDataAsync()
@@ -82,7 +82,4 @@
                 they’ll be waiting on each other. </p>
         </li>
     </ul>
-</div>
-<div class="scroll-top">
-    <span class="mdi-editor-publish icon-scroll-top"></span>
 </div>

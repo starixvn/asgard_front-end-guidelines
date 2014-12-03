@@ -26,6 +26,18 @@
             </p>
         </li>
         <li>
+            <h2 class="sub-title"><span class="rule-item">OW5024 -</span> CONSIDER using asynchronous controllers for long running requests <span class="badge lbl-importance">***</span></h2>
+            <p>
+                ASP.NET's threading pool has a default limit of 12 concurrent worker threads per CPU. When the requests
+                overload the server's ability to process them, a queue is built up of requests.
+            </p>
+            <p>When the queue gets too large (5000 requests pending), the server starts responding with 503 (server too busy) errors.</p>
+            <p>
+                In ASP.NET 4, the number of concurrent threads is set by default to 5000. It is possible to increase the
+                default limits, there is a better way to mitigate long running requests by using asynchronous.
+            </p>
+        </li>
+        <li>
             <h2 class="sub-title"><span class="rule-item">OW5022 -</span> DO NOT overuses session, instead use TempData for short live (intra-request) storage <span class="badge lbl-importance">**</span></h2>
             <p>
                 The problem with placing these objects in the Session is that can bog down the server by having to store
@@ -67,26 +79,6 @@
                     }
                 </pre>
             </div>
-        </li>
-        <li>
-            <h2 class="sub-title"><span class="rule-item">OW5024 -</span> CONSIDER using asynchronous controllers for long running requests <span class="badge lbl-importance">***</span></h2>
-            <p>
-                ASP.NET's threading pool has a default limit of 12 concurrent worker threads per CPU. When the requests
-                overload the server's ability to process them, a queue is built up of requests.
-            </p>
-            <p>When the queue gets too large (5000 requests pending), the server starts responding with 503 (server too busy) errors.</p>
-            <p>
-                In ASP.NET 4, the number of concurrent threads is set by default to 5000. It is possible to increase the
-                default limits, there is a better way to mitigate long running requests by using asynchronous.
-            </p>
-        </li>
+        </li>        
     </ul>
 </div>
-<div class="scroll-top">
-    <span class="mdi-editor-publish icon-scroll-top"></span>
-</div>
-@section scripts
-{
-    @Scripts.Render("~/bundles/controls/js/aspmvc")
-}
-
