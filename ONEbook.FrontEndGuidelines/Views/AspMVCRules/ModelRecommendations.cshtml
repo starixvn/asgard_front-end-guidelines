@@ -17,12 +17,12 @@
 <div class="col-sm-12" id="doc-content">
     <ul class="rules unordered">
         <li>
-            <h2 class="sub-title first"><span class="rule-item">OW5000 -</span> PUT models into a distinct project <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title first"><span class="rule-item">OW12000 -</span> PUT models into a distinct project <span class="badge lbl-importance">***</span></h2>
             <p>For application with a large complex model, it's a good idea to create a separate assembly for the 
             model to avoid accidentally mixing concerns. You can then reference the model assembly in your ASP.NET MVC project.</p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5001 -</span> PUT all validation logic into your model <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW12001 -</span> PUT all validation logic into your model <span class="badge lbl-importance">***</span></h2>
             <p>
                 All input validation should occur in the model layer. This includes client side validation, which is essential
                 to performance. However, client side validation can be not enough so we need to validate on server side.
@@ -45,7 +45,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5002 -</span> PUT all business login into your model <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW12002 -</span> PUT all business login into your model <span class="badge lbl-importance">***</span></h2>
             <p>
                 We put our application and business logic into separate layers, a domain layer for business logic
                 and a service layer for application logic. This abstracts them out from the MVC project completely. We
@@ -94,7 +94,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5003 -</span> Define interfaces for data access <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW12003 -</span> Define interfaces for data access <span class="badge lbl-importance">***</span></h2>
             <p>It is preferred that interfaces be used to expose methods on a provider for data access.</p>
             <p>Beside, interfaces make your codes be testable.</p>
             <div class="example-code">
@@ -110,7 +110,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5004 -</span> PUT all session logic in the model <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW12004 -</span> PUT all session logic in the model <span class="badge lbl-importance">***</span></h2>
             <p>As a starting point, here are few of possibilities of session state storage:</p>
             <table class="table table-bordered table-striped">
                 <thead>
@@ -176,7 +176,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5005 -</span> DECORATE Action Methods with Proper AcceptVerbs Attribute <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW12005 -</span> DECORATE Action Methods with Proper AcceptVerbs Attribute <span class="badge lbl-importance">***</span></h2>
             <p>
                 ASP.NET MVC is much more vulnerable comparing to Web Forms. We need to make sure the action method that
                 modifies the data only accepts HttpVerbs.Post and HttpVerbs.Get for reading operations. If security is
@@ -198,7 +198,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5007 -</span> DECORATE either the Action or the Controller with Authorize attribute <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW12006 -</span> DECORATE either the Action or the Controller with Authorize attribute <span class="badge lbl-importance">***</span></h2>
             <p>
                 When you mark an action method with AuthorizeAttribute, access to that action method is restricted
                 to users who are both authenticated and authorized.
@@ -240,7 +240,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5006 -</span> DECORATE the most frequent Action Methods with OutputCache Attribute <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW12007 -</span> DECORATE the most frequent Action Methods with OutputCache Attribute <span class="badge lbl-importance">**</span></h2>
             <p>
                 Use OutputCache attribute when we are returning the less frequent updated data, prime candidate may be
                 our home page, feed...etc. We can use it for both Html and Json data types. When using it, only specify

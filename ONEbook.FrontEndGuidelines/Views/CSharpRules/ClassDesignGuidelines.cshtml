@@ -17,7 +17,7 @@
 <div class="col-sm-12" id="doc-content">
     <ul class="rules unordered">
         <li>
-            <h2 class="sub-title first"><span class="rule-item">OW1000 -</span> A class or interface should have a single purpose <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title first"><span class="rule-item">OW2000 -</span> A class or interface should have a single purpose <span class="badge lbl-importance">***</span></h2>
             <p>A class or interface should have a single purpose within the system it participates in. In general, a class is 
             either representing a primitive type like an email or ISBN number, an abstraction of some business concept, a plain 
             data structure or responsible for orchestrating the interaction between other classes. It is never a combination of 
@@ -40,7 +40,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1004 -</span> Use an interface rather than a base class to support multiple implementations <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW2001 -</span> Use an interface rather than a base class to support multiple implementations <span class="badge lbl-importance">***</span></h2>
             <p>
                 If you want to expose an extension point from your class, expose it as an interface rather than a base class.
                 You don’t want to force users of that extension point to derive their implementations from a base-class that
@@ -49,7 +49,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1010 -</span> Don’t hide inherited members with the <small>new</small> keyword  <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW2002 -</span> Don’t hide inherited members with the <small>new</small> keyword  <span class="badge lbl-importance">***</span></h2>
             <p>
                 Not only does the new keyword break <a href="http://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29">Polymorphism</a>,
                 one of the most essential object-orientation principles, it also makes subclasses more difficult to understand. Consider the following two classes:
@@ -74,14 +74,14 @@
             <p>It should not make a difference whether you call Print through a reference to the base class or through the derived class.</p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1013 -</span> Don’t refer to derived classes from the base class  <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW2003 -</span> Don’t refer to derived classes from the base class  <span class="badge lbl-importance">***</span></h2>
             <p>
                 Having dependencies from a base class to its sub-classes goes against proper object-oriented design
                 and might prevent other developers from adding new derived classes.
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1020 -</span> Avoid bidirectional dependencies <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW2004 -</span> Avoid bidirectional dependencies <span class="badge lbl-importance">***</span></h2>
             <p>
                 This means that two classes know about each other’s public members or rely on each other’s internal behavior.
                 Refactoring or replacing one of those two classes requires changes on both parties and may involve a lot of
@@ -100,7 +100,7 @@
             </div>
         </li>        
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1003 -</span> An interface should be small and focused <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW2005 -</span> An interface should be small and focused <span class="badge lbl-importance">**</span></h2>
             <p>
                 Interfaces should have a name that clearly explains the purpose or role of that interface within the system. 
                 Do not combine many vaguely related members on the same interface just because they were all on the same class. 
@@ -109,7 +109,7 @@
             </p>
         </li>        
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1005 -</span> Use an interface to decouple classes from each other <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW2006 -</span> Use an interface to decouple classes from each other <span class="badge lbl-importance">**</span></h2>
             <p>Interfaces are a very effective mechanism for decoupling classes from each other.</p>
             <ul>
                 <li>They can prevent bidirectional associations.</li>
@@ -120,7 +120,7 @@
             </ul>
         </li>                
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1011 -</span> It should be possible to treat a derived object as if it were a base class object <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW2007 -</span> It should be possible to treat a derived object as if it were a base class object <span class="badge lbl-importance">**</span></h2>
             <p>
                 In other words, you should be able to use a reference to an object of a derived class wherever a reference to its 
                 base class object is used without knowing the specific derived class. A very notorious example of a violation of 
@@ -135,7 +135,7 @@
             </div>
         </li>        
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1014 -</span> Avoid exposing the other objects an object depends on <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW2008 -</span> Avoid exposing the other objects an object depends on <span class="badge lbl-importance">**</span></h2>
             <p>If you find yourself writing code like this then you might be violating the <a href="http://en.wikipedia.org/wiki/Law_of_Demeter">Law of Demeter</a>.</p>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -166,7 +166,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1001 -</span> Only create a constructor that returns a useful object <span class="badge lbl-importance">*</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW2009 -</span> Only create a constructor that returns a useful object <span class="badge lbl-importance">*</span></h2>
             <p>
                 There should be no need to set additional properties before the object can be used for whatever purpose it was
                 designed. However, if you your constructor needs more than three parameters (which violates <span class="text-info">OW1561</span>), your class might
@@ -174,7 +174,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW1008 -</span> Avoid static classes <span class="badge lbl-importance">*</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW2010 -</span> Avoid static classes <span class="badge lbl-importance">*</span></h2>
             <p>
                 With the exception of extension method containers static classes very often lead to badly designed code.
                 They are also very difficult, if not impossible, to test in isolation unless you’re willing to use some very hacky tools.
