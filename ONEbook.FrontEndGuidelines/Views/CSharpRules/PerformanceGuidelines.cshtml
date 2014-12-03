@@ -27,7 +27,7 @@
                 <ul class="note-list">
                     <li>
                         If you return an <i>IEnumerable&lt;T&gt;</i> to prevent editing from outside the owner as explained in
-                        <span class="text-info">OW1130</span> and you’re developing in .NET 4.5 or higher,
+                        <span class="text-info">OW3004</span> and you’re developing in .NET 4.5 or higher,
                         consider the new read-only classes.
                     </li>
                 </ul>
@@ -52,7 +52,7 @@
             <h2 class="sub-title"><span class="rule-item">OW7003 -</span> Beware of mixing up <small>await/async</small> with <small>Task.Wait</small></h2>
             <p>
                 <i>Await</i> not block the current thread but simply instruct to compiler to generate a state-machine. However,
-                <i>Task.Wait</i> will block the thread and may even cause dead-locks (see <span class="text-info">OW1835</span>)
+                <i>Task.Wait</i> will block the thread and may even cause dead-locks (see <span class="text-info">OW7004</span>)
             </p>
         </li>
         <li>

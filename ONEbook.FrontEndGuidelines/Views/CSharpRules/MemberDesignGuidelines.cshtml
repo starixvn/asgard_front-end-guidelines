@@ -49,7 +49,7 @@
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW3002 -</span> A method or property should do only one thing <span class="badge lbl-importance">***</span></h2>
-            <p>Similarly to rule <span class="text-info">OW1000</span>, a method should have a single responsibility.</p>
+            <p>Similarly to rule <span class="text-info">OW2000</span>, a method should have a single responsibility.</p>
         </li>
         <li>
             <h2 class="sub-title"><span class="rule-item">OW3003 -</span> Properties, methods and arguments representing strings or collections should never be null <span class="badge lbl-importance">***</span></h2>
@@ -60,7 +60,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title">OW1125 Don’t expose stateful objects through static members <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title">OW1125 Don’t expose stateful objects through static members <span class="badge lbl-importance">***</span></h2>
             <p>A stateful object is an object that contains many properties and lots of behavior behind that. If you expose such 
             an object through a static property or method of some other object, it will be very difficult to refactor or unit 
             test a class that relies on such a stateful object. In general, introducing a construction like that is a great 
@@ -70,7 +70,7 @@
             to this class.</p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW3004 -</span> Return an <i>IEnumerable</i>&lt;T&gt; or <i>ICollection</i>&lt;T&gt; instead of a concrete collection class <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW3004 -</span> Return an <i>IEnumerable</i>&lt;T&gt; or <i>ICollection</i>&lt;T&gt; instead of a concrete collection class <span class="badge lbl-importance">***</span></h2>
             <p>In general, you don’t want callers to be able to change an internal collection, so don’t return arrays, 
             lists or other collection classes directly. Instead, return an <i>IEnumerable</i>&lt;T&gt;, or, if the caller must be 
                 able to determine the count, an <i>ICollection</i>&lt;T&gt;.</p>
