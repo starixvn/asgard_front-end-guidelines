@@ -242,7 +242,6 @@
     <Content Include="Content\CustomizedControls\contextmenu.less" />
     <Content Include="Content\CustomizedControls\aspmvc.less" />
     <None Include="Properties\PublishProfiles\LocalPublication.pubxml" />
-    <None Include="Scripts\Libraries\jQuery\jquery-1.11.1.intellisense.js" />
     <Content Include="Scripts\Libraries\CodeHighlight\shAutoloader.js" />
     <Content Include="Scripts\Libraries\CodeHighlight\shBrushCss.js" />
     <Content Include="Scripts\Libraries\CodeHighlight\shBrushJScript.js" />
@@ -263,6 +262,7 @@
     <Content Include="Scripts\Libraries\Dialog\BootstrapModal\bootstrap-modal.js" />
     <Content Include="Scripts\Libraries\Dialog\BootstrapModal\bootstrap-modalmanager.js" />
     <Content Include="Scripts\Libraries\DropdownList\FanexMultipleSelect\fanex.multiSelect.js" />
+    <None Include="Scripts\Libraries\jQuery\jquery-1.11.1.intellisense.js" />
     <Content Include="Scripts\Libraries\jQuery\jquery-1.11.1.js" />
     <Content Include="Scripts\Libraries\jQuery\jquery-1.11.1.min.js" />
     <Content Include="Scripts\Libraries\jQuery\jquery-1.11.1.min.map" />

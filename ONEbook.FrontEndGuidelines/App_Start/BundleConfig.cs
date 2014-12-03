@@ -181,8 +181,8 @@ namespace ONEbook.FrontEndGuidelines
                 "~/Content/CustomizedControls/messagebox.less"));
 
             bundles.Add(new ScriptBundle("~/bundles/controls/js/messagebox").Include(
-                "~/Scripts/Libraries/msgbox/msgbox-0.0.1.js",
                 "~/Scripts/Libraries/jQuery/jquery-migrate-1.2.1.js",
+                "~/Scripts/Libraries/msgbox/msgbox-0.0.1.js",                
                 "~/Scripts/HtmlCommonControls/ONEbook.FrontEndGuidelines.MessageBox.js"));
 
             // Bundle for Context Menu.
