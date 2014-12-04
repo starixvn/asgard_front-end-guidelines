@@ -11,12 +11,13 @@ namespace ONEbook.FrontEndGuidelines.ViewModels
             string activeMenu, 
             string actionName,
             string controllerName, 
-            Dictionary<string, Tuple<string, bool>> menuItems)
+            Dictionary<string, Tuple<string, bool>> menuItems, bool moreInfo)
         {
             ActiveMenu = activeMenu;
             ActionName = ActionName;
             ControllerName = controllerName;
             MenuItems = menuItems;
+            MoreInfo = moreInfo;
         }
 
         public string ActiveMenu { get; set; }
@@ -26,5 +27,7 @@ namespace ONEbook.FrontEndGuidelines.ViewModels
         public string ActionName { get; set; }
 
         public Dictionary<string, Tuple<string, bool>> MenuItems { get; set; }
+
+        public bool MoreInfo { get; set; }
     }
 }

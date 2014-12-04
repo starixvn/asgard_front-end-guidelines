@@ -13,7 +13,7 @@ namespace ONEbook.FrontEndGuidelines.Controllers
         // GET: AspMVCRules
         public ActionResult Index(string viewName = "ModelRecommendations")
         {
-            ViewBag.LeftMenuViewModel = new LeftMenuViewModel(viewName, "Index", "AspMVCRules", GetMenuItems());
+            ViewBag.LeftMenuViewModel = new LeftMenuViewModel(viewName, "Index", "AspMVCRules", GetMenuItems(), true);
             ViewBag.TabName = "aspmvc";
             return this.View(viewName);
         }

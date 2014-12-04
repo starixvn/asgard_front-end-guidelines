@@ -7,17 +7,10 @@
     @Styles.Render("~/bundles/controls/css/aspmvc")
 }
 
-<div class="mdi-action-info help" title="More information">
-    <ul class="info">
-        <li><span class="badge lbl-importance">***</span> Guidelines that you should never skip and should be applicable to all situations.</li>
-        <li><span class="badge lbl-importance">**</span> Strongly recommended guidelines.</li>
-        <li><span class="badge lbl-importance">*</span> Recommended guidelines that may not be applicable in all situations.</li>
-    </ul>
-</div>
 <div class="col-sm-12" id="doc-content">
     <ul class="rules unordered">
         <li>
-            <h2 class="sub-title first"><span class="rule-item">OW6000 -</span> Use US-English <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title first"><span class="rule-item">OW6000 </span> Use US-English <span class="lbl-importance">***</span></h2>
             <p>All type members, parameters and variables should be named using words from the American English language.</p>
             <ul>
                 <li>Choose easily readable, preferably grammatically correct names. For example, <i>HorizontalAlignment</i> is more readable than <i>AlignmentHorizontal</i>.</li>
@@ -36,7 +29,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6001 -</span> Use proper casing for language elements <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6001 </span> Use proper casing for language elements <span class="lbl-importance">***</span></h2>
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
@@ -135,7 +128,7 @@
             </table>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6002 -</span> Don’t repeat the name of a class or enumeration in its members <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6002 </span> Don’t repeat the name of a class or enumeration in its members <span class="lbl-importance">***</span></h2>
             <div class="example-code">
                 <pre class="brush: csharp">
                     class Employee
@@ -154,7 +147,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6003 -</span> Avoid short names or names that can be mistaken with other names <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6003 </span> Avoid short names or names that can be mistaken with other names <span class="lbl-importance">***</span></h2>
             <p>Although technically correct, the following statement can be quite confusing.</p>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -163,7 +156,7 @@
             </div>
         </li>        
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6004 -</span> Don’t use abbreviations <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6004 </span> Don’t use abbreviations <span class="lbl-importance">***</span></h2>
             <p>
                 For example, use <i>OnButtonClick</i> rather than <i>OnBtnClick</i>. Avoid single character variable names, such
                  as <i>i</i> or <i>q</i>. Use <i>index</i> or <i>query</i> instead.
@@ -179,7 +172,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6005 -</span> Name a member, parameter or variable according its meaning and not its type <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6005 </span> Name a member, parameter or variable according its meaning and not its type <span class="lbl-importance">***</span></h2>
             <ul>
                 <li>Use functional names. For example, <i>GetLength</i> is a better name than <i>GetInt</i>.</li>
                 <li>Don’t use terms like <i>Enum</i>, <i>Class</i> or <i>Struct</i> in a name.</li>
@@ -187,7 +180,7 @@
             </ul>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6006 -</span> Name types using nouns, noun phrases or adjective phrases <span class="badge lbl-importance">***</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6006 </span> Name types using nouns, noun phrases or adjective phrases <span class="lbl-importance">***</span></h2>
             <p>
                 Bad examples include <i>SearchExamination</i> (a page for searching for examinations), <i>Common</i> (does not end with a noun,
                  and does not explain its purpose) and <i>SiteSecurity</i> (although the name is technically okay, it does not say 
@@ -199,7 +192,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6007 -</span> Name generic type parameters with descriptive names <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6007 </span> Name generic type parameters with descriptive names <span class="lbl-importance">**</span></h2>
             <ul>
                 <li>Always prefix descriptive type parameter names with the letter T.</li>
                 <li>Always use a descriptive names unless a single-letter name is completely self-explanatory and a longer name 
@@ -209,7 +202,7 @@
             </ul>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6008 -</span> Properly name properties <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6008 </span> Properly name properties <span class="lbl-importance">**</span></h2>
             <ul>
                 <li>Do name properties with nouns, noun phrases, or occasionally adjective phrases.</li>
                 <li>Do name Boolean properties with an affirmative phrase. E.g. <i>CanSeek</i> instead of <i>CantSeek</i>.</li>
@@ -223,7 +216,7 @@
             </ul>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6009 -</span> Name methods using verb-object pair <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6009 </span> Name methods using verb-object pair <span class="lbl-importance">**</span></h2>
             <p>
                 Name methods using a verb-object pair such as <i>ShowDialog</i>. A good name should give a hint on <i>what</i> of a member, 
                 and if possible, the <i>why</i>. Also, don’t include and in the name of the method. It implies that the method is 
@@ -231,23 +224,23 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6010 -</span> Use a verb or verb phrase to name an event <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6010 </span> Use a verb or verb phrase to name an event <span class="lbl-importance">**</span></h2>
             <p>
                 Name events with a verb or a verb phrase. For example: <i>Click</i>, <i>Deleted</i>, <i>Closing</i>, <i>Minimizing</i>, and <i>Arriving</i>.
                 For example, the declaration of the Search event may look like this:
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6011 -</span> Postfix asynchronous methods with Async of TaskAsync <span class="badge lbl-importance">**</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6011 </span> Postfix asynchronous methods with Async of TaskAsync <span class="lbl-importance">**</span></h2>
             <p>The general convention for methods that return <i>Task</i> or <i>Task&lt;TResult&gt;</i> is to post-fix them with <i>Async</i>, but 
             if such a method already exist, use <i>TaskAsync</i> instead.</p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6012 -</span> Don’t include numbers in variables, parameters and type members <span class="badge lbl-importance">*</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6012 </span> Don’t include numbers in variables, parameters and type members <span class="lbl-importance">*</span></h2>
             <p>In most cases they are a lazy excuse for not defining a clear and intention-revealing name.</p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6013 -</span> Name members similarly to members of related .NET Framework classes <span class="badge lbl-importance">*</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6013 </span> Name members similarly to members of related .NET Framework classes <span class="lbl-importance">*</span></h2>
             <p>
                 .NET developers are already accustomed to the naming patterns the framework uses, so following this same pattern
                 helps them find their way in your classes as well. For instance, if you define a class that behaves like a
@@ -255,7 +248,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6014 -</span> Name namespaces using names, layers, verbs and features <span class="badge lbl-importance">*</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6014 </span> Name namespaces using names, layers, verbs and features <span class="lbl-importance">*</span></h2>
             <p>For instance, the following namespaces are good examples of that guideline.</p>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -277,7 +270,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6015 -</span> Use <small>-ing</small> and <small>-ed</small> to express pre-events and post-events <span class="badge lbl-importance">*</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6015 </span> Use <small>-ing</small> and <small>-ed</small> to express pre-events and post-events <span class="lbl-importance">*</span></h2>
             <div class="example-code">
                 <pre class="brush: csharp">
                     public event EventHandler&lt;searchargs&gt; Search;
@@ -299,14 +292,14 @@
             </ul>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6016 -</span> Prefix an event handler with <small>On</small> <span class="badge lbl-importance">*</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6016 </span> Prefix an event handler with <small>On</small> <span class="lbl-importance">*</span></h2>
             <p>
                 It is good practice to prefix the method that handles an event with On. For example, a method that
                 handles the Closing event could be named <i>OnClosing</i>.
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6017 -</span> Use an underscore for irrelevant lambda parameters <span class="badge lbl-importance">*</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6017 </span> Use an underscore for irrelevant lambda parameters <span class="lbl-importance">*</span></h2>
             <p>
                 If you use a lambda statement, for instance, to subscribe to an event, and the actual parameters of the event are
                 irrelevant, use the following convention to make that more explicit.
@@ -318,7 +311,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW6018 -</span> Group extension methods in a class suffixed with <small>Extensions</small> <span class="badge lbl-importance">*</span></h2>
+            <h2 class="sub-title"><span class="rule-item">OW6018 </span> Group extension methods in a class suffixed with <small>Extensions</small> <span class="lbl-importance">*</span></h2>
             <p>
                 If the name of an extension method conflicts with another member or extension method, you must prefix the call
                 with the class name. Having them in a dedicated class with the <i>Extensions</i> suffix improves readability.

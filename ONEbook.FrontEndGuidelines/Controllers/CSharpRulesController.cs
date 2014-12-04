@@ -13,7 +13,7 @@ namespace ONEbook.FrontEndGuidelines.Controllers
         // GET: CSharpRules
         public ActionResult Index(string viewName = "General")
         {
-            ViewBag.LeftMenuViewModel = new LeftMenuViewModel(viewName, "Index", "CSharpRules", GetMenuItems());
+            ViewBag.LeftMenuViewModel = new LeftMenuViewModel(viewName, "Index", "CSharpRules", GetMenuItems(), true);
             ViewBag.TabName = "csharp";
             return this.View(viewName);
         }

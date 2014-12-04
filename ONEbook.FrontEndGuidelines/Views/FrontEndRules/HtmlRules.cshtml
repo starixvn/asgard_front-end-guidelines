@@ -2,27 +2,26 @@
     ViewBag.Title = "HTML Rules";
 }
 <div class="col-sm-12">
-    <ol class="rules">
+    <ul class="rules unordered">
         <li>
-            <h2 class="sub-title first">Use HTML5 doctype declaration</h2>
+            <h2 class="sub-title first"><span class="rule-item">OWH001 </span> Use HTML5 doctype declaration</h2>
             <div class="example-code">
                 <pre class="text-success">@("<!DOCTYPE html>")</pre>
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Remove all trailing whitespaces</h2>
+            <h2 class="sub-title"><span class="rule-item">OWH002 </span> Remove all trailing whitespaces</h2>
             <p>
                 The number of whitespaces for a tab may vary with many editors, thus using whitespace instead of tab helps to keep the format of code be the same.
                 Do not use tabs or mix tabs and spaces for indentation.
             </p>
         </li>
         <li>
-            <h2 class="sub-title">Use spaces instead of tabs</h2>
+            <h2 class="sub-title"><span class="rule-item">OWH003 </span> Use spaces instead of tabs</h2>
             <p>The trailing whitespaces are unnecessary and can complicate diffs.</p>
         </li>
         <li>
-            <h2 class="sub-title">
-                All HTML code must pass the tests of <a href="http://validator.w3.org/nu/" target="_blank"> W3C HTML validator</a>
+            <h2 class="sub-title"><span class="rule-item">OWH004 </span> All HTML code must pass the tests of <a href="http://validator.w3.org/nu/" target="_blank"> W3C HTML validator</a>
                 or <a href="https://addons.mozilla.org/en-US/firefox/addon/html-validator/" target="_blank">HTML validator addon</a> of FireFox
             </h2>
             <p>
@@ -45,7 +44,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Use elements for what they have been created for</h2>
+            <h2 class="sub-title"><span class="rule-item">OWH005 </span> Use elements for what they have been created for</h2>
             <p>
                 For example, use heading elements for headings, <code>p</code> elements for paragraphs, <code>a</code> elements for anchors, etc.
                 Its purpose is important for accessibility, reuse, and code efficiency reasons.
@@ -62,7 +61,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Provide alternative contents for multimedia</h2>
+            <h2 class="sub-title"><span class="rule-item">OWH006 </span> Provide alternative contents for multimedia</h2>
             <p>
                 For images that means the meaningful alternative text (<code>alt</code>);
                 for video and audio those are transcripts and captions, if available.
@@ -79,7 +78,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Separate structure from presentation and behavior</h2>
+            <h2 class="sub-title"><span class="rule-item">OWH007 </span> Separate structure from presentation and behavior</h2>
             <p>
                 Strictly keep structure (markup), presentation (styling), and behavior (scripting) apart,
                 and try to keep the interaction between the three to an absolute minimum.
@@ -113,7 +112,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Do not use <code>type</code> attributes for style sheets (unless not using CSS) and scripts (unless not using JavaScript)</h2>
+            <h2 class="sub-title"><span class="rule-item">OWH008 </span> Do not use <code>type</code> attributes for style sheets (unless not using CSS) and scripts (unless not using JavaScript)</h2>
             <p>
                 Specifying <code>type</code> attributes in these contexts is not necessary as HTML5 implies <code>text/css</code> and <code>text/javascript</code> as defaults.
                 This can be safely done even for older browsers.
@@ -138,7 +137,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Use a new line for every block, list, or table element, and indent every such child element</h2>
+            <h2 class="sub-title"><span class="rule-item">OWH009 </span> Use a new line for every block, list, or table element, and indent every such child element</h2>
             <div class="example-code">
                 <pre class="text-success">@(@"
                     <ul>
@@ -150,7 +149,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">When quoting attributes values, use double quotation marks</h2>
+            <h2 class="sub-title"><span class="rule-item">OWH010 </span> When quoting attributes values, use double quotation marks</h2>
             <div class="example-code">
                 <pre class="text-danger">@(@"
                     <!-- Not recommended -->
@@ -162,7 +161,7 @@
                 </pre>
             </div>
         </li>
-    </ol>
+    </ul>
 </div>
 @section scripts
 {
