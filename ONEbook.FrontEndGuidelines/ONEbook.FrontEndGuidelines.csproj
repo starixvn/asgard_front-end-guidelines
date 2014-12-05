@@ -113,6 +113,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AspMVCRulesController.cs" />
+    <Compile Include="Controllers\WebDeveloperChecklistController.cs" />
     <Compile Include="Controllers\CodingGuideLineController.cs" />
     <Compile Include="Controllers\CSharpRulesController.cs" />
     <Compile Include="Controllers\FrontEndRulesController.cs" />
@@ -378,6 +379,7 @@
     <Content Include="Views\CSharpRules\ClassDesignGuidelines.cshtml" />
     <Content Include="Views\CSharpRules\DataAccess.cshtml" />
     <Content Include="Views\CSharpRules\LayoutGuidelines.cshtml" />
+    <Content Include="Views\WebDeveloperChecklist\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

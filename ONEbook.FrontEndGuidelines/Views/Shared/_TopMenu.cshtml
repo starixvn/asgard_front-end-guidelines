@@ -24,7 +24,8 @@
                     <li class="@(tabName == "cssrules" ? "active" : string.Empty)">@Html.ActionLink("CSS Rules", "CssRules", "FrontEndRules")</li>
                     <li class="@(tabName == "javascriptrules" ? "active" : string.Empty)">@Html.ActionLink("JavaScript Rules", "JavaScriptRules", "FrontEndRules")</li>
                     <li class="@(tabName == "csharp" ? "active" : string.Empty)">@Html.ActionLink("C# Rules", "Index", "CSharpRules")</li>
-                    <li class="@(tabName == "aspmvc" ? "active" : string.Empty)" id="aspmvc">@Html.ActionLink("ASP.NET MVC Rules", "Index", "AspMVCRules")</li>
+                    <li class="@(tabName == "aspmvc" ? "active" : string.Empty)" id="aspmvc">@Html.ActionLink("MVC Rules", "Index", "AspMVCRules")</li>
+                    <li class="@(tabName == "webdeveloperchecklist" ? "active" : string.Empty)" id="aspmvc">@Html.ActionLink("WebDev Checklist", "Index", "WebDeveloperChecklist")</li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
