@@ -8,9 +8,15 @@
 }
 
 <div class="col-sm-12" id="doc-content">
+    <ul class="rule-list">
+        <li><a href="#" class="link-sub-title" code="OW18000">OW18000 CONSIDER partial page updates using AJAX for reducing bandwidth</a></li>
+        <li><a href="#" class="link-sub-title" code="OW18001">OW18001 CONSIDER using asynchronous controllers for long running requests</a></li>
+        <li><a href="#" class="link-sub-title" code="OW18002">OW18002 DO NOT overuses session, instead use TempData for short live (intra-request) storage</a></li>
+        <li><a href="#" class="link-sub-title" code="OW18003">OW18003 USE an OutputCache Filter for static pages</a></li>
+    </ul>
     <ul class="rules unordered">
         <li>
-            <h2 class="sub-title first"><span class="rule-item">OW18000 </span> CONSIDER partial page updates using AJAX for reducing bandwidth <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title first" id="OW18000"><span class="rule-item">OW18000 </span> CONSIDER partial page updates using AJAX for reducing bandwidth <span class="lbl-importance">***</span></h2>
             <p>
                 One way to mitigate performance issues involving both server processing and request size is to use
                 asynchronous JavaScript (AJAX) to do partial page updates. ASP.NET MVC has built-in AJAX support, which
@@ -19,7 +25,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW18001 </span> CONSIDER using asynchronous controllers for long running requests <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW18001"><span class="rule-item">OW18001 </span> CONSIDER using asynchronous controllers for long running requests <span class="lbl-importance">***</span></h2>
             <p>
                 ASP.NET's threading pool has a default limit of 12 concurrent worker threads per CPU. When the requests
                 overload the server's ability to process them, a queue is built up of requests.
@@ -31,7 +37,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW18002 </span> DO NOT overuses session, instead use TempData for short live (intra-request) storage <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW18002"><span class="rule-item">OW18002 </span> DO NOT overuses session, instead use TempData for short live (intra-request) storage <span class="lbl-importance">**</span></h2>
             <p>
                 The problem with placing these objects in the Session is that can bog down the server by having to store
                 extra information that may only be necessary across a redirect. The correct way to store these temporary
@@ -56,7 +62,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW18003 </span> USE an OutputCache Filter for static pages <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW18003"><span class="rule-item">OW18003 </span> USE an OutputCache Filter for static pages <span class="lbl-importance">**</span></h2>
             <p>
                 Use OutputCache attribute when you are returning less frequently updated data; your home page
                 would be a good candidate. This technique can be used for both HTML and JSON data types. You should

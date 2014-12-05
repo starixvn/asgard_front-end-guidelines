@@ -8,9 +8,13 @@
 }
 
 <div class="col-sm-12" id="doc-content">
+    <ul class="rule-list">
+        <li><a href="#" class="link-sub-title" code="OW15000">OW15000 ORDER routes from specific to general when using standard routing</a></li>
+        <li><a href="#" class="link-sub-title" code="OW15001">OW15001 USE named route mechanism to avoid route ambiguity</a></li>
+    </ul>
     <ul class="rules unordered">        
         <li>
-            <h2 class="sub-title first"><span class="rule-item">OW15000 </span> ORDER routes from specific to general when using standard routing <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title first" id="OW15000"><span class="rule-item">OW15000 </span> ORDER routes from specific to general when using standard routing <span class="lbl-importance">**</span></h2>
             <div class="example-code">
                 <pre class="brush: csharp">
                     public static void RegisterRoutes(RouteCollection routes)
@@ -43,7 +47,7 @@
             <p>The general route should be on top and specific route should be place in bottom.</p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW15001 </span> USE named route mechanism to avoid route ambiguity <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW15000"><span class="rule-item">OW15001 </span> USE named route mechanism to avoid route ambiguity <span class="lbl-importance">**</span></h2>
             <p>For example, the following route mapping defines named routes:</p>
             <div class="example-code">
                 <pre class="brush: csharp">

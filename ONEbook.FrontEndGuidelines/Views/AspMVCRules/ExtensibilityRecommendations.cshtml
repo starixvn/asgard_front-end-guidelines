@@ -8,35 +8,39 @@
 }
 
 <div class="col-sm-12" id="doc-content">
-    <h2 class="sub-title first"><span class="rule-item">OW16000 </span> USE filter for adding behaviors <span class="lbl-importance">**</span></h2>
-    <p>
-        Filters can be applied to a specific action method to alter its behavior. Alternatively, a filter can
-        be applied to a controller class, in which case it will take effect on every action method in the
-        controller class. Base classes can be used to define common behavior patterns by applying filters
-        to the base controller class and then ensuring that other controllers derive from the base class.
-    </p>
-    <p>
-        For example, suppose that you want to add functionality to log information for each request to debug
-        a problem with HTTP headers. The following codes define class that derives from the ActionFilterAttribute class:
-    </p>
-    <div class="example-code">
-        <pre class="brush: csharp">
-            public class LogHeadersFilterAttribute : ActionFilterAttribute
-            {
-                public override void OnActionExecuting(ActionExecutingContext filterContext)
-                {
-                    foreach (string header in
-                    filterContext.HttpContext.Request.Headers.AllKeys)
+    <ul class="rules unordered">
+        <li>
+            <h2 class="sub-title first margin-top-10" id="OW16000"><span class="rule-item">OW16000 </span> USE filter for adding behaviors <span class="lbl-importance">**</span></h2>
+            <p>
+                Filters can be applied to a specific action method to alter its behavior. Alternatively, a filter can
+                be applied to a controller class, in which case it will take effect on every action method in the
+                controller class. Base classes can be used to define common behavior patterns by applying filters
+                to the base controller class and then ensuring that other controllers derive from the base class.
+            </p>
+            <p>
+                For example, suppose that you want to add functionality to log information for each request to debug
+                a problem with HTTP headers. The following codes define class that derives from the ActionFilterAttribute class:
+            </p>
+            <div class="example-code">
+                <pre class="brush: csharp">
+                    public class LogHeadersFilterAttribute : ActionFilterAttribute
                     {
-                        Debug.WriteLine("Header " + header);
-                        Debug.WriteLine("Value " +
-                                filterContext.HttpContext.Request.Headers.Get(header));
+                        public override void OnActionExecuting(ActionExecutingContext filterContext)
+                        {
+                            foreach (string header in
+                            filterContext.HttpContext.Request.Headers.AllKeys)
+                            {
+                                Debug.WriteLine("Header " + header);
+                                Debug.WriteLine("Value " +
+                                        filterContext.HttpContext.Request.Headers.Get(header));
+                            }
+                            base.OnActionExecuting(filterContext);
+                        }
                     }
-                    base.OnActionExecuting(filterContext);
-                }
-            }
-        </pre>
-    </div>
+                </pre>
+            </div>
+        </li>
+    </ul>
 </div>
 
 

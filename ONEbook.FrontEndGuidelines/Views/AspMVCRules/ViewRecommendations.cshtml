@@ -8,9 +8,15 @@
 }
 
 <div class="col-sm-12" id="doc-content">
+    <ul class="rule-list">
+        <li><a href="#" class="link-sub-title" code="OW13000">OW13000 PUT HTML in Views and Partial Views (not in a controller)</a></li>
+        <li><a href="#" class="link-sub-title" code="OW13001">OW13001 ENABLE (auto-generated) client side validation</a></li>
+        <li><a href="#" class="link-sub-title" code="OW13002">OW13002 INSERT server-side comments in templates</a></li>
+        <li><a href="#" class="link-sub-title" code="OW13003">OW13003 USE HTMLHelper extension methods </a></li>
+    </ul>
     <ul class="rules unordered">
         <li>
-            <h2 class="sub-title first"><span class="rule-item">OW13000 </span> PUT HTML in Views and Partial Views (not in a controller) <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title first" id="OW13000"><span class="rule-item">OW13000 </span> PUT HTML in Views and Partial Views (not in a controller) <span class="lbl-importance">***</span></h2>
             <p>
                 The strength of view pattern is the readability of view template files and the partial view
                 is a powerful extensibility and reuse mechanism. For example, we can include the same view in an
@@ -24,7 +30,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW13001 </span> ENABLE (auto-generated) client side validation <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW13001"><span class="rule-item">OW13001 </span> ENABLE (auto-generated) client side validation <span class="lbl-importance">**</span></h2>
             <p>
                 Previously, web developers were faced with the dilemma of keeping client and server validation synchronized.
                 Starting with ASP.NET MVC 2, it has become easy to add client side validation. Here is the example:
@@ -58,7 +64,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW13002 </span> INSERT server-side comments in templates <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW13002"><span class="rule-item">OW13002 </span> INSERT server-side comments in templates <span class="lbl-importance">**</span></h2>
             <p>
                 User server side comments in the view templates for commenting. These comments are stripped out
                 before the server returns the HTML representation.
@@ -75,7 +81,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW13003 </span> USE HTMLHelper extension methods <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW13003"><span class="rule-item">OW13003 </span> USE HTMLHelper extension methods <span class="lbl-importance">**</span></h2>
             <p>The System.Web.Mvc.Html class contains useful HTML extension methods. These extension methods include helpers for:</p>
             <ul>
                 <li>Form generation (BeginForm).</li>
