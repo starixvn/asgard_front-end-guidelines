@@ -8,9 +8,19 @@
 }
 
 <div class="col-sm-12" id="doc-content">
+    <ul class="rule-list">
+        <li><a href="#" class="link-sub-title" code="OW4000">OW4000 Don’t swallow errors by catching generic exceptions</a></li>
+        <li><a href="#" class="link-sub-title" code="OW4001">OW4001 Always check an event handler delegate for null</a></li>
+        <li><a href="#" class="link-sub-title" code="OW4002">OW4002 Don’t pass null as the sender argument when raising an event</a></li>
+        <li><a href="#" class="link-sub-title" code="OW4003">OW4003 Evaluate the result of a LINQ expression before returning it</a></li>
+        <li><a href="#" class="link-sub-title" code="OW4004">OW4004 Throw exceptions rather than returning some kind of status value</a></li>
+        <li><a href="#" class="link-sub-title" code="OW4005">OW4005 Provide a rich and meaningful exception message text</a></li>
+        <li><a href="#" class="link-sub-title" code="OW4006">OW4006 Use generic constraints if applicable</a></li>
+        <li><a href="#" class="link-sub-title" code="OW4007">OW4007 Throw the most specific exception that is appropriate</a></li>
+    </ul>
     <ul class="rules unordered">
         <li>
-            <h2 class="sub-title first"><span class="rule-item">OW4000 </span> Don’t swallow errors by catching generic exceptions <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title first" id="OW4000"><span class="rule-item">OW4000 </span> Don’t swallow errors by catching generic exceptions <span class="lbl-importance">***</span></h2>
             <p>
                 Avoid swallowing errors by catching non-specific exceptions, such as Exception, <i>SystemException</i>, and so on,
                 in application code. Only top-level code, such as a last-chance exception handler, should catch a non-specific
@@ -18,7 +28,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW4001 </span> Always check an event handler delegate for <small>null</small> <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW4001"><span class="rule-item">OW4001 </span> Always check an event handler delegate for <small>null</small> <span class="lbl-importance">***</span></h2>
             <p>
                 An event that has no subscribers is null, so before invoking, always make sure that the delegate
                 list represented by the event variable is not <small>null</small>. Furthermore, to prevent conflicting changes from
@@ -50,7 +60,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW4002 </span> Don’t pass <small>null</small> as the sender argument when raising an event <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW4002"><span class="rule-item">OW4002 </span> Don’t pass <small>null</small> as the sender argument when raising an event <span class="lbl-importance">***</span></h2>
             <p>
                 Often, an event handler is used to handle similar events from multiple senders. The sender argument is then used
                 to get to the source of the event. Always pass a reference to the source (typically this) when raising the
@@ -65,7 +75,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW4003 </span> Evaluate the result of a LINQ expression before returning it <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW4003"><span class="rule-item">OW4003 </span> Evaluate the result of a LINQ expression before returning it <span class="lbl-importance">***</span></h2>
             <p>Consider the following code snippet:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -91,7 +101,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title first"><span class="rule-item">OW4004 </span> Throw exceptions rather than returning some kind of status value <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW4004"><span class="rule-item">OW4004 </span> Throw exceptions rather than returning some kind of status value <span class="lbl-importance">***</span></h2>
             <p>
                 A code base that uses return values for reporting the success or failure tends to have nested <i>if-statements</i> 
                 sprinkled all over the code. Quite often, a caller forgets to check the return value anyhow. 
@@ -101,12 +111,12 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW4005 </span> Provide a rich and meaningful exception message text <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW4005"><span class="rule-item">OW4005 </span> Provide a rich and meaningful exception message text <span class="lbl-importance">**</span></h2>
             <p>The message should explain the cause of the exception and clearly describe what needs to be done to avoid the exception.</p>
         </li>
         
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW4006 </span> Use generic constraints if applicable <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW4006"><span class="rule-item">OW4006 </span> Use generic constraints if applicable <span class="lbl-importance">**</span></h2>
             <p>
                 Instead of casting to and from the object type in generic types or methods, use where constraints or the as
                  operator to specify the exact characteristics of the generic parameter.
@@ -138,7 +148,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW4007 </span> Throw the most specific exception that is appropriate <span class="lbl-importance">*</span></h2>
+            <h2 class="sub-title" id="OW4007"><span class="rule-item">OW4007 </span> Throw the most specific exception that is appropriate <span class="lbl-importance">*</span></h2>
             <p>For example, if a method receives a null argument, it should throw</p>
             <p><i>ArgumentNullException</i> instead of its base type <i>ArgumentException</i>.</p>
         </li>

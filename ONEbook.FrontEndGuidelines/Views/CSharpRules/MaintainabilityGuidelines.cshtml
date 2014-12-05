@@ -8,16 +8,48 @@
 }
 
 <div class="col-sm-12" id="doc-content">
+    <ul class="rule-list">
+        <li><a href="#" class="link-sub-title" code="OW5000">OW5000 Make all members <small>private</small> and types <small>internal</small> by default</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5001">OW5001 Don’t use "magic” numbers</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5002">OW5002 Only use <small>var</small> when the type is very obvious</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5003">OW5003 Don’t make explicit comparisons to <small>true</small> or <small>false</small></a></li>
+        <li><a href="#" class="link-sub-title" code="OW5004">OW5004 Always add a block after keywords such <small>if</small>, <small>else</small>, <small>while</small>, <small>for</small>, <small>foreach</small> and <small>case</small></a></li>
+        <li><a href="#" class="link-sub-title" code="OW5005">OW5005 Always add a default block after the last case in a switch statement </a></li>
+        <li><a href="#" class="link-sub-title" code="OW5006">OW5006 Don’t use <small>if-else</small> statements instead of a simple (conditional) assignment</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5007">OW5007 Encapsulate complex expressions in a method or property</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5008">OW5008 Only use optional arguments to replace overloads</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5009">OW5009 Avoid using named arguments</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5010">OW5010 Don’t allow methods and constructors with more than three parameters</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5011">OW5011 Don’t use ref or out parameters</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5012">OW5012 Always check the result of an <small>as</small> operation</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5013">OW5013 Don’t comment out code</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5014">OW5014 Avoid conditions with double negatives</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5015">OW5015 Declare and initialize variables as late as possible</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5016">OW5016 OW1522 Assign each variable in a separate statement</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5017">OW5017 Favor Object and Collection Initializers over separate statements</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5018">OW5018 Don’t change a loop variable inside a <small>for</small> or <small>foreach</small> loop</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5019">OW5019 Avoid nested loops</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5020">OW5020 Finish every <small>if-else-if</small> statement with an <small>else</small>-part</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5021">OW5021 Be reluctant with multiple return statements</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5022">OW5022 Call the most overloaded method from other overloads</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5023">OW5023 Avoid methods that take a <small>bool</small> flag</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5024">OW5024 Don’t use parameters as temporary variables</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5025">OW5025 Name assemblies after their contained namespace</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5026">OW5026 Name a source file to the type it contains</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5027">OW5027 Limit the contents of a source code file to one type</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5028">OW5028 Name a source file to the logical function of the partial type</a></li>
+        <li><a href="#" class="link-sub-title" code="OW5029">OW5029 Use <small>using</small> statements instead of fully qualified type names</a></li>
+    </ul>
     <ul class="rules unordered">
         <li>
-            <h2 class="sub-title first"><span class="rule-item">OW5000 </span> Make all members <small>private</small> and types <small>internal</small> by default <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title first" id="OW5000"><span class="rule-item">OW5000 </span> Make all members <small>private</small> and types <small>internal</small> by default <span class="lbl-importance">***</span></h2>
             <p>
                 To make a more conscious decision on which members to make available to other classes first restrict the
                 scope as much as possible. Then carefully decide what to expose as a <i>public</i> member or type.
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5001 </span> Don’t use "magic” numbers <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW5001"><span class="rule-item">OW5001 </span> Don’t use "magic” numbers <span class="lbl-importance">***</span></h2>
             <p>
                 Don’t use literal values, either numeric or strings, in your code other than to define symbolic constants.
                 For example:
@@ -63,7 +95,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5002 </span> Only use <small>var</small> when the type is very obvious <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW5002"><span class="rule-item">OW5002 </span> Only use <small>var</small> when the type is very obvious <span class="lbl-importance">***</span></h2>
             <p>
                 Only use var as the result of a LINQ query, or if the type is very obvious from the same statement and
                 using it would improve readability. So don't
@@ -93,7 +125,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5003 </span> Don’t make explicit comparisons to <small>true</small> or <small>false</small> <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW5003"><span class="rule-item">OW5003 </span> Don’t make explicit comparisons to <small>true</small> or <small>false</small> <span class="lbl-importance">***</span></h2>
             <p>
                 It is usually bad style to compare a bool-type expression to <small>true</small> or <small>false</small>. For example:
             </p>
@@ -107,7 +139,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5004 </span> Always add a block after keywords such <small>if</small>, <small>else</small>, <small>while</small>, <small>for</small>, <small>foreach</small> and <small>case</small> <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW5004"><span class="rule-item">OW5004 </span> Always add a block after keywords such <small>if</small>, <small>else</small>, <small>while</small>, <small>for</small>, <small>foreach</small> and <small>case</small> <span class="lbl-importance">***</span></h2>
             <p>Please note that this also avoids possible confusion in statements of the form:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -128,7 +160,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5005 </span> Always add a default block after the last case in a switch statement <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW5005"><span class="rule-item">OW5005 </span> Always add a default block after the last case in a switch statement <span class="lbl-importance">***</span></h2>
             <p>
                 Add a descriptive comment if the default block is supposed to be empty. Moreover, if that block is not
                 supposed to be reached throw an <i>InvalidOperationException</i> to detect future changes that may fall
@@ -156,7 +188,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5006 </span> Don’t use <small>if-else</small> statements instead of a simple (conditional) assignment <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW5006"><span class="rule-item">OW5006 </span> Don’t use <small>if-else</small> statements instead of a simple (conditional) assignment <span class="lbl-importance">***</span></h2>
             <p>Express your intentions directly. For example, rather than</p>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -196,7 +228,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5007 </span> Encapsulate complex expressions in a method or property <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW5007"><span class="rule-item">OW5007 </span> Encapsulate complex expressions in a method or property <span class="lbl-importance">***</span></h2>
             <p>Consider the following example:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -227,7 +259,7 @@
             <p>You still need to understand the expression if you are modifying it, but the calling code is now much easier to grasp.</p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5008 </span> Only use optional arguments to replace overloads <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW5008"><span class="rule-item">OW5008 </span> Only use optional arguments to replace overloads <span class="lbl-importance">***</span></h2>
             <p>
                 The only valid reason for using C# 4.0’s optional arguments is to replace the example from rule <span class="text-info">OW5022</span> with
                 a single method like:
@@ -261,7 +293,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5009 </span> Avoid using named arguments <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW5009"><span class="rule-item">OW5009 </span> Avoid using named arguments <span class="lbl-importance">***</span></h2>
             <p>
                 C# 4.0’s named arguments have been introduced to make it easier to call COM components that are known for offering
                 tons of optional parameters. If you need named arguments to improve the readability of the call to a method,
@@ -282,7 +314,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5010 </span> Don’t allow methods and constructors with more than three parameters <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW5010"><span class="rule-item">OW5010 </span> Don’t allow methods and constructors with more than three parameters <span class="lbl-importance">***</span></h2>
             <p>
                 If you end up with a method with more than three parameters, use a structure or class for passing multiple
                 arguments such as explained in the <a href="http://en.wikipedia.org/wiki/Specification_pattern">Specification</a> design pattern. In general, the fewer the number of parameters,
@@ -291,11 +323,11 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5011 </span> Don’t use ref or out parameters <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW5011"><span class="rule-item">OW5011 </span> Don’t use ref or out parameters <span class="lbl-importance">***</span></h2>
             <p>They make code less understandable and might cause people to introduce bugs. Prefer returning compound objects instead.</p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5012 </span> Always check the result of an <small>as</small> operation <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW5012"><span class="rule-item">OW5012 </span> Always check the result of an <small>as</small> operation <span class="lbl-importance">***</span></h2>
             <p>
                 If you use as to obtain a certain interface reference from an object, always ensure that this operation
                 does not return null. Failure to do so may cause a <i>NullReferenceException</i> at a much later stage if the
@@ -303,7 +335,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5013 </span> Don’t comment out code <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW5013"><span class="rule-item">OW5013 </span> Don’t comment out code <span class="lbl-importance">***</span></h2>
             <p>
                 Never check-in code that is commented-out, but instead use a work item tracking system to keep track of some
                 work to be done. Nobody knows what to do when they encounter a block of commented-out code. Was it temporarily
@@ -311,7 +343,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5014 </span> Avoid conditions with double negatives <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW5014"><span class="rule-item">OW5014 </span> Avoid conditions with double negatives <span class="lbl-importance">***</span></h2>
             <p>
                 Although a property like <i>customer.HasNoOrders</i> make sense, avoid using it in a negative condition like this:
             </p>
@@ -326,14 +358,14 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5015 </span> Declare and initialize variables as late as possible <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW5015"><span class="rule-item">OW5015 </span> Declare and initialize variables as late as possible <span class="lbl-importance">**</span></h2>
             <p>
                 Avoid the C and Visual Basic styles where all variables have to be defined at the beginning of a block,
                 but rather define and initialize each variable at the point where it is needed.
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5016 </span>OW1522 Assign each variable in a separate statement</h2>
+            <h2 class="sub-title" id="OW5016"><span class="rule-item">OW5016 </span> Assign each variable in a separate statement</h2>
             <p>Don’t use confusing constructs like the one below.</p>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -342,7 +374,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5017 </span> Favor Object and Collection Initializers over separate statements <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW5017"><span class="rule-item">OW5017 </span> Favor Object and Collection Initializers over separate statements <span class="lbl-importance">**</span></h2>
             <p>Instead of:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -376,7 +408,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5018 </span> Don’t change a loop variable inside a <small>for</small> or <small>foreach</small> loop <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW5018"><span class="rule-item">OW5018 </span> Don’t change a loop variable inside a <small>for</small> or <small>foreach</small> loop <span class="lbl-importance">**</span></h2>
             <p>
                 Updating the loop variable within the loop body is generally considered confusing, even more so if the loop
                 variable is modified in more than one place. Although this rule also applies to <small>foreach</small> loops, an enumerator
@@ -395,7 +427,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5019 </span> Avoid nested loops <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW5019"><span class="rule-item">OW5019 </span> Avoid nested loops <span class="lbl-importance">**</span></h2>
             <p>
                 A method that nests loops is more difficult to understand than one with only a single loop. In fact, in most
                 cases having nested loops can be replaced with a much simpler LINQ query that uses the keyword twice or
@@ -403,7 +435,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5020 </span> Finish every <small>if-else-if</small> statement with an <small>else-</small>part <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW5020"><span class="rule-item">OW5020 </span> Finish every <small>if-else-if</small> statement with an <small>else-</small>part <span class="lbl-importance">**</span></h2>
             <p>For example:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -429,14 +461,14 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5021 </span> Be reluctant with multiple return statements <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW5021"><span class="rule-item">OW5021 </span> Be reluctant with multiple return statements <span class="lbl-importance">**</span></h2>
             <p>
                 One entry, one exit is a sound principle and keeps control flow readable. However, if the method is very small then multiple return statements may actually improve readability over
                 some central Boolean flag that is updated at various points.
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5022 </span> Call the most overloaded method from other overloads <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW5022"><span class="rule-item">OW5022 </span> Call the most overloaded method from other overloads <span class="lbl-importance">**</span></h2>
             <p>This guideline only applies to overloads that are intended for providing optional arguments. Consider for example the following code snippet:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -479,7 +511,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5023 </span> Avoid methods that take a <small>bool</small> flag  <span class="lbl-importance">**</span></h2>
+            <h2 class="sub-title" id="OW5023"><span class="rule-item">OW5023 </span> Avoid methods that take a <small>bool</small> flag  <span class="lbl-importance">**</span></h2>
             <p>Consider the following method signature:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -498,14 +530,14 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5024 </span> Don’t use parameters as temporary variables <span class="lbl-importance">*</span></h2>
+            <h2 class="sub-title" id="OW5024"><span class="rule-item">OW5024 </span> Don’t use parameters as temporary variables <span class="lbl-importance">*</span></h2>
             <p>
                 Never use a parameter as a convenient variable for storing temporary state. Even though the type of your
                 temporary variable may be the same, the name usually does not reflect the purpose of the temporary variable.
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5025 </span> Name assemblies after their contained namespace <span class="lbl-importance">*</span></h2>
+            <h2 class="sub-title" id="OW5025"><span class="rule-item">OW5025 </span> Name assemblies after their contained namespace <span class="lbl-importance">*</span></h2>
             <p>
                 All DLLs should be named according to the pattern <i>Fanex.&lt;projectname&gt;.&lt;component&gt;.dll</i> where <i>&lt;projectname&gt;</i> refers
                 to your project’s name and <i>&lt;component&gt;</i> contains one or more dot-separated clauses. For
@@ -523,11 +555,11 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5026 </span> Name a source file to the type it contains <span class="lbl-importance">*</span></h2>
+            <h2 class="sub-title" id="OW5026"><span class="rule-item">OW5026 </span> Name a source file to the type it contains <span class="lbl-importance">*</span></h2>
             <p>Use Pascal casing for naming the file and don’t use underscores.</p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5027 </span> Limit the contents of a source code file to one type <span class="lbl-importance">*</span></h2>
+            <h2 class="sub-title" id="OW5027"><span class="rule-item">OW5027 </span> Limit the contents of a source code file to one type <span class="lbl-importance">*</span></h2>
             <div class="note-content">
                 <div class="note-title exception">Exception</div>
                 <ul class="note-list">
@@ -538,7 +570,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5028 </span> Name a source file to the logical function of the partial type <span class="lbl-importance">*</span></h2>
+            <h2 class="sub-title" id="OW5028"><span class="rule-item">OW5028 </span> Name a source file to the logical function of the partial type <span class="lbl-importance">*</span></h2>
             <p>When using partial types and allocating a part per file, name each file after the logical part that part plays. For example:</p>
             <div class="example-code">
                 <pre class="brush: csharp">
@@ -553,7 +585,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW5029 </span> Use <small>using</small> statements instead of fully qualified type names <span class="lbl-importance">*</span></h2>
+            <h2 class="sub-title" id="OW5029"><span class="rule-item">OW5029 </span> Use <small>using</small> statements instead of fully qualified type names <span class="lbl-importance">*</span></h2>
             <p>Limit usage of fully qualified type names to prevent name clashing. For example, don’t do this</p>
             <div class="example-code">
                 <pre class="brush: csharp">

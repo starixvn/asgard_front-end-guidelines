@@ -7,9 +7,17 @@
 }
 
 <div class="col-sm-12" id="doc-content">
+    <ul class="rule-list">
+        <li><a href="#" class="link-sub-title" code="OW11000">OW11000 Use ONEbook.Data in data access.</a></li>
+        <li><a href="#" class="link-sub-title" code="OW11001">OW11001 Encrypt password for SQL server accounts.</a></li>
+        <li><a href="#" class="link-sub-title" code="OW11002">OW11002 Use ExecuteNonQuery for store procedures which do not return values.</a></li>
+        <li><a href="#" class="link-sub-title" code="OW11003">OW11003 Use criteria to pass parameters to stored procedure.</a></li>
+        <li><a href="#" class="link-sub-title" code="OW11004">OW11004 Avoid using DataSet, using Entity instead.</a></li>
+        <li><a href="#" class="link-sub-title" code="OW11005">OW11005 Specify timeout value in data access requests.</a></li>
+    </ul>
     <ul class="rules unordered">
         <li>
-            <h2 class="sub-title first"><span class="rule-item">OW11000 </span> Use <i>ONEbook.Data</i> in data access. <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title first" id="OW11000"><span class="rule-item">OW11000 </span> Use <i>ONEbook.Data</i> in data access. <span class="lbl-importance">***</span></h2>
             <p><i>ONEbook.Data</i> supports many utilities for dealing with user stored procedure.</p>
             <ul>
                 <li>Query a result set</li>
@@ -18,14 +26,14 @@
             </ul>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW11001 </span> Encrypt password for SQL server accounts. <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW11001"><span class="rule-item">OW11001 </span> Encrypt password for SQL server accounts. <span class="lbl-importance">***</span></h2>
             <p>
                 Password in plain text violates security policy. It should be encrypted by DNAide<br />
                 For examples: Uqeq4MmLwveHZzqok3kHGf7fqd4SEfMq0vtQ5l2TQ50==
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW11002 </span> Use <i>ExecuteNonQuery</i> for store procedures which do not return values. <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW11002"><span class="rule-item">OW11002 </span> Use <i>ExecuteNonQuery</i> for store procedures which do not return values. <span class="lbl-importance">***</span></h2>
             <p>
                 You can use the <i>ExecuteNonQuery</i> to perform catalog operations 
                 (for example, querying the structure of a database or creating database objects such as tables), 
@@ -33,7 +41,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW11003 </span> Use criteria to pass parameters to stored procedure.  <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW11003"><span class="rule-item">OW11003 </span> Use criteria to pass parameters to stored procedure.  <span class="lbl-importance">***</span></h2>
             <p>
                 <i>Fanex.Data</i> supports passing Criteria to stored procedure. It will help our code be more readable and maintainable.
             </p>
@@ -48,7 +56,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW11004 </span> Avoid using <i>DataSet</i>, using <i>Entity</i> instead.  <span class="lbl-importance">*</span></h2>
+            <h2 class="sub-title" id="OW11004"><span class="rule-item">OW11004 </span> Avoid using <i>DataSet</i>, using <i>Entity</i> instead.  <span class="lbl-importance">*</span></h2>
             <p>
                 A <i>DataSet</i> is (to quote Microsoft) an in-memory cache of data. 
                 Essentially it’s a snapshot of part of your database. <i>DataSets</i> can be very useful, 
@@ -66,7 +74,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW11005 </span> Specify timeout value in data access requests.  <span class="lbl-importance">*</span></h2>
+            <h2 class="sub-title" id="OW11005"><span class="rule-item">OW11005 </span> Specify timeout value in data access requests.  <span class="lbl-importance">*</span></h2>
             <p>The timeout value should be set to reduce the overhead of database.</p>
             <div class="example-code">
                 <pre class="brush: csharp">

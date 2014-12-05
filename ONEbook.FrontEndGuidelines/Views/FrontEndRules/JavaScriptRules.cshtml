@@ -2,13 +2,26 @@
     ViewBag.Title = "JavaScript Rules";
 }
 <div class="col-sm-12">
-    <ol class="rules">
+    <ul class="rule-list">
+        <li><a href="#" class="link-sub-title" code="OWJ001">OWJ001 All code must pass the rules of jsHint</a></li>
+        <li><a href="#" class="link-sub-title" code="OWJ002">OWJ002 Using namespacing and object creation patterns in your code, except reusable libraries</a></li>
+        <li><a href="#" class="link-sub-title" code="OWJ003">OWJ003 Remove all trailing whitespaces</a></li>
+        <li><a href="#" class="link-sub-title" code="OWJ004">OWJ004 Use spaces instead of tabs</a></li>
+        <li><a href="#" class="link-sub-title" code="OWJ005">OWJ005 Use single quotation marks for string values</a></li>
+        <li><a href="#" class="link-sub-title" code="OWJ006">OWJ006 Avoid DOM manipulation as possible</a></li>
+        <li><a href="#" class="link-sub-title" code="OWJ007">OWJ007 Avoid using global variables</a></li>
+        <li><a href="#" class="link-sub-title" code="OWJ008">OWJ008 Use function inlining</a></li>
+        <li><a href="#" class="link-sub-title" code="OWJ009">OWJ009 Modify an invisible element</a></li>
+        <li><a href="#" class="link-sub-title" code="OWJ010">OWJ010 Making several style changes at once</a></li>
+        <li><a href="#" class="link-sub-title" code="OWJ011">OWJ011 Cache DOM elements that are commonly used</a></li>
+    </ul>
+    <ul class="rules unordered">
         <li>
-            <h2 class="sub-title first">All code must pass the rules of <a href="http://www.jshint.com/" target="_blank">jsHint</a></h2>
+            <h2 class="sub-title first" id="OWJ001"><span class="rule-item">OWJ001 </span> All code must pass the rules of <a href="http://www.jshint.com/" target="_blank">jsHint</a></h2>
             <p>jsHint will ensure that your JavaScript code follows some coding conventions and standards to meet the expected quality.</p>
         </li>
         <li>
-            <h2 class="sub-title">Using namespacing and object creation patterns in your code, except reusable libraries</h2>
+            <h2 class="sub-title" id="OWJ002"><span class="rule-item">OWJ002 </span> Using namespacing and object creation patterns in your code, except reusable libraries</h2>
             <p>
                 There are some reasons that you should apply namespacing pattern in your code:
                 <ul>
@@ -31,18 +44,18 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Remove all trailing whitespaces</h2>
+            <h2 class="sub-title" id="OWJ003"><span class="rule-item">OWJ003 </span> Remove all trailing whitespaces</h2>
             <p>
                 The number of whitespaces for a tab may vary with many editors, thus using whitespace instead of tab helps to keep the format of code be the same.
                 Do not use tabs or mix tabs and spaces for indentation.
             </p>
         </li>
         <li>
-            <h2 class="sub-title">Use spaces instead of tabs</h2>
+            <h2 class="sub-title" id="OWJ004"><span class="rule-item">OWJ004 </span> Use spaces instead of tabs</h2>
             <p>The trailing whitespaces because they are unnecessary and can complicate diffs.</p>
         </li>
         <li>
-            <h2 class="sub-title">Use single quotation marks for string values</h2>
+            <h2 class="sub-title" id="OWJ005"><span class="rule-item">OWJ005 </span> Use single quotation marks for string values</h2>
             <div class="example-code">
                 <pre class="text-danger">
                     /* Not recommended */
@@ -55,46 +68,46 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Avoid DOM manipulation as possible</h2>
+            <h2 class="sub-title" id="OWJ006"><span class="rule-item">OWJ006 </span> Avoid DOM manipulation as possible</h2>
             <p>
                 Make sure that you are manipulating elements fragments just before they are added to the DOM.
                 It will help to speed up JavaScript performance.
             </p>
         </li>
         <li>
-            <h2 class="sub-title">Avoid using global variables</h2>
+            <h2 class="sub-title" id="OWJ007"><span class="rule-item">OWJ007 </span> Avoid using global variables</h2>
             <p>
                 Variables in the local scope will be found more quickly. They are destroyed when the local scope is lost.
                 The memory they use can be freed up by the garbage collector.
             </p>
         </li>
         <li>
-            <h2 class="sub-title">Use function inlining</h2>
+            <h2 class="sub-title" id="OWJ008"><span class="rule-item">OWJ008 </span> Use function inlining</h2>
             <p>
                 Function inlining is a powerful high level optimization which eliminates call cost
                 and increase the chances of other optimization taking effect due to the breaking down of the call boundaries.
             </p>
         </li>
         <li>
-            <h2 class="sub-title">Modify an invisible element</h2>
+            <h2 class="sub-title" id="OWJ009"><span class="rule-item">OWJ009 </span> Modify an invisible element</h2>
             <p>
                 When an element is invisible, it will not need to repaint to the screen, even if its contents are changed, since it is not being displayed.
                 This can be used as an advantage if we make several changes to an invisible element or its contents before repainting it.
             </p>
         </li>
         <li>
-            <h2 class="sub-title">Making several style changes at once</h2>
+            <h2 class="sub-title" id="OWJ010"><span class="rule-item">OWJ010 </span> Making several style changes at once</h2>
             <p>
                 Using CSS classes rather than changing each property one by one to limit the times the browser refreshes your presentation.
             </p>
         </li>
         <li>
-            <h2 class="sub-title">Cache DOM elements that are commonly used</h2>
+            <h2 class="sub-title" id="OWJ011"><span class="rule-item">OWJ011 </span> Cache DOM elements that are commonly used</h2>
             <p>
                 Caching DOM elements will help to improve the performance by avoiding querying DOM many times.
             </p>
         </li>
-    </ol>
+    </ul>
 </div>
 @section scripts
 {

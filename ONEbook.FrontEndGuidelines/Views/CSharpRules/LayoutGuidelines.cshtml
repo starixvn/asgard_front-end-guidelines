@@ -7,9 +7,15 @@
 }
 
 <div class="col-sm-12" id="doc-content">
+    <ul class="rule-list">
+        <li><a href="#" class="link-sub-title" code="OW10000">OW10000 Use a common layout</a></li>
+        <li><a href="#" class="link-sub-title" code="OW10001">OW10001 Place members in a well-defined order</a></li>
+        <li><a href="#" class="link-sub-title" code="OW10002">OW10002 Be reluctant with #regions</a></li>
+        <li><a href="#" class="link-sub-title" code="OW10003">OW10003 Order and group namespaces according the company</a></li>
+    </ul>
     <ul class="rules unordered">
         <li>
-            <h2 class="sub-title first"><span class="rule-item">OW10000 </span> Use a common layout <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title first" id="OW10000"><span class="rule-item">OW10000 </span> Use a common layout <span class="lbl-importance">***</span></h2>
             <p>
                 Doesn’t indent object Initializers and initialize each property on a new line, so use a format like this:
             </p>
@@ -62,7 +68,7 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW10001 </span> Place members in a well-defined order <span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW10001"><span class="rule-item">OW10001 </span> Place members in a well-defined order <span class="lbl-importance">***</span></h2>
             <p>
                 Maintaining a common order allows other team members to find their way in your code more easily. 
                 In general, a source file should be readable from top to bottom, as if you are reading a book. 
@@ -80,7 +86,7 @@
             </ul>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW10002 </span> Be reluctant with #regions<span class="lbl-importance">***</span></h2>
+            <h2 class="sub-title" id="OW10002"><span class="rule-item">OW10002 </span> Be reluctant with #regions<span class="lbl-importance">***</span></h2>
             <p>
                 Regions can be helpful, but can also hide the main purpose of a class. Therefore, use <i>#regions</i> only for:
             </p>
@@ -91,7 +97,7 @@
             </ul>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW10003 </span> Order and group namespaces according the company <span class="lbl-importance">*</span></h2>
+            <h2 class="sub-title" id="OW10003"><span class="rule-item">OW10003 </span> Order and group namespaces according the company <span class="lbl-importance">*</span></h2>
             <div class="example-code">
                 <pre class="brush: csharp">
                     // Microsoft namespaces are first 

@@ -15,7 +15,8 @@ if (ONEbook.FrontEndGuidelines) {
                 codeDemoBlocks: null,
                 rightContainer: null,
                 rightPanel: null,
-                backToTop: null
+                backToTop: null,
+                linkSubTitle: null
             },
             init: function () {
                 me.cachedElements.leftContent = $('#mainContent .left-panel');
@@ -31,6 +32,7 @@ if (ONEbook.FrontEndGuidelines) {
                 me.cachedElements.rightPanel = $('#right-panel');
                 me.cachedElements.backToTop = $('#back-top');
                 me.scrollTop();
+                me.goToByScroll();
             },
             registerEvents: function () {
                 me.cachedElements.toggleMenu.on('click', me.toggleMenu);
@@ -72,9 +74,20 @@ if (ONEbook.FrontEndGuidelines) {
                 me.cachedElements.backToTop.click(function () {
                     me.cachedElements.rightPanel.animate({
                         scrollTop: 0
-                    }, 800);
+                    }, 400);
                     return false;
                 });
+            },
+            goToByScroll: function () {
+                me.cachedElements.linkSubTitle = $('.link-sub-title');
+
+                me.cachedElements.linkSubTitle.on('click', function () {
+                    var $this = $(this),
+                        idSubTitle = '#' + $this.attr('code');
+                    me.cachedElements.rightPanel.animate({
+                        scrollTop: ($(idSubTitle).offset().top - 40)
+                    }, 400);
+                });        
             }
         };
 

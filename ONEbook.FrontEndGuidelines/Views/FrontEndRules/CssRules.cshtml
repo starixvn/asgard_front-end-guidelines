@@ -2,31 +2,55 @@
     ViewBag.Title = "CSS/LESS Rules";
 }
 <div class="col-sm-12">
-    <ol class="rules">
+    <ul class="rule-list">
+        <li><a href="#" class="link-sub-title" code="OWC001">OWC001 Must use LESS for your styling code</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC002">OWC002 Use valid CSS where possible</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC003">OWC003 Remove all trailing whitespaces</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC004">OWC004 Use spaces instead of tabs</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC005">OWC005 Use meaningful or generic ID and class names</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC006">OWC006 Use ID and class names that are as short as possible but as long as necessary</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC007">OWC007 Avoid qualifying ID and class name with type selectors</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC008">OWC008 Prefer using class names as selectors to IDs</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC009">OWC009 Avoid descendant selector as possible</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC010">OWC010 Use shorthand properties where possible</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC011">OWC011 Omit unit specification after “0” values</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC012">OWC012 Omit leading “0”s in values between -1 and 1</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC013">OWC013 For color values, use 3 character hexadecimal notation where possible</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC014">OWC014 Separate words in ID and class names by a hyphen</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC015">OWC015 Put declarations in alphabetical order</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC016">OWC016 Indent all blocks</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC017">OWC017 Use a semicolon after every declaration</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC018">OWC018 Always use a single space between property and value (but no space between property and colon)</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC019">OWC019 Use a space between the last selector and the declaration block</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC020">OWC020 Always put a blank line between rules</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC021">OWC021 Use single quotation marks for attribute selectors and property values. Exception: If you do need to use the <code>@@charset</code> rule, use double quotation marks</a></li>
+        <li><a href="#" class="link-sub-title" code="OWC022">OWC022 If possible, group stylesheet sections together by using comments. Separate sections with new lines.</a></li>
+    </ul>
+    <ul class="rules unordered">
         <li>
-            <h2 class="sub-title first">Must use <a href="http://lesscss.org/" target="_blank">LESS</a> for your styling code</h2>
+            <h2 class="sub-title first" id="OWC001"><span class="rule-item">OWC001 </span> Must use <a href="http://lesscss.org/" target="_blank">LESS</a> for your styling code</h2>
             <p>It adds features which allow variables, mixins, functions and many other techniques that make CSS be more maintainable, themeable and extendible.</p>
         </li>
         <li>
-            <h2 class="sub-title">Use valid CSS where possible</h2>
+            <h2 class="sub-title" id="OWC002"><span class="rule-item">OWC002 </span> Use valid CSS where possible</h2>
             <p>
                 Unless dealing with CSS validator bugs or requiring proprietary syntax, you must ensure that your styling code is valid.
                 Use tools such as the <a href="http://jigsaw.w3.org/css-validator/" target="_blank">W3C CSS validator</a> to test.
             </p>
         </li>
         <li>
-            <h2 class="sub-title">Remove all trailing whitespaces</h2>
+            <h2 class="sub-title" id="OWC003"><span class="rule-item">OWC003 </span> Remove all trailing whitespaces</h2>
             <p>
                 The number of whitespaces for a tab may vary with many editors, thus using whitespace instead of tab helps to keep the format of code be the same.
                 Do not use tabs or mix tabs and spaces for indentation.
             </p>
         </li>
         <li>
-            <h2 class="sub-title">Use spaces instead of tabs</h2>
+            <h2 class="sub-title" id="OWC004"><span class="rule-item">OWC004 </span> Use spaces instead of tabs</h2>
             <p>The trailing whitespaces are unnecessary and can complicate diffs.</p>
         </li>
         <li>
-            <h2 class="sub-title">Use meaningful or generic ID and class names</h2>
+            <h2 class="sub-title" id="OWC005"><span class="rule-item">OWC005 </span> Use meaningful or generic ID and class names</h2>
             <p>
                 Names that are specific and reflect the purpose of the element should be preferred since these are most understandable and the least likely to change.
                 Using functional or generic names reduces the probability of unnecessary document or template changes.
@@ -45,7 +69,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Use ID and class names that are as short as possible but as long as necessary</h2>
+            <h2 class="sub-title" id="OWC006"><span class="rule-item">OWC006 </span> Use ID and class names that are as short as possible but as long as necessary</h2>
             <p>
                 Try to convey what an ID or class is about while being as brief as possible.
                 It contributes to acceptable levels of understandability and code efficiency.
@@ -64,7 +88,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Avoid qualifying ID and class name with type selectors</h2>
+            <h2 class="sub-title" id="OWC007"><span class="rule-item">OWC007 </span> Avoid qualifying ID and class name with type selectors</h2>
             <p>
                 It dues to performance reason.
             </p>
@@ -82,11 +106,11 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Prefer using class names as selectors to IDs</h2>
+            <h2 class="sub-title" id="OWC008"><span class="rule-item">OWC008 </span> Prefer using class names as selectors to IDs</h2>
             <p>Using class name helps the CSS code is more independent from the JavaScript code.</p>
         </li>
         <li>
-            <h2 class="sub-title">Avoid descendant selector as possible</h2>
+            <h2 class="sub-title" id="OWC009"><span class="rule-item">OWC009 </span> Avoid descendant selector as possible</h2>
             <p>
                 The descendant selectors are the most expensive selector in CSS.
             </p>
@@ -100,7 +124,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Use shorthand properties where possible</h2>
+            <h2 class="sub-title" id="OWC010"><span class="rule-item">OWC010 </span> Use shorthand properties where possible</h2>
             <p>
                 The shorthand properties are useful for code efficiency and understandability.
             </p>
@@ -125,7 +149,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Omit unit specification after “0” values</h2>
+            <h2 class="sub-title" id="OWC011"><span class="rule-item">OWC011 </span> Omit unit specification after “0” values</h2>
             <div class="example-code">
                 <pre class="text-success">
                     /* Recommended */
@@ -135,7 +159,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Omit leading “0”s in values between -1 and 1</h2>
+            <h2 class="sub-title" id="OWC012"><span class="rule-item">OWC012 </span>Omit leading “0”s in values between -1 and 1</h2>
             <div class="example-code">
                 <pre class="text-success">
                     /* Recommended */
@@ -144,7 +168,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">For color values, use 3 character hexadecimal notation where possible</h2>
+            <h2 class="sub-title" id="OWC013"><span class="rule-item">OWC013 </span> For color values, use 3 character hexadecimal notation where possible</h2>
             <p>
                 It make the code be shorter and more succinct.
             </p>
@@ -160,7 +184,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Separate words in ID and class names by a hyphen</h2>
+            <h2 class="sub-title" id="OWC014"><span class="rule-item">OWC014 </span> Separate words in ID and class names by a hyphen</h2>
             <p>
                 Do not concatenate words and abbreviations in selectors by any characters (including none at all) other than hyphens,
                 in order to improve understanding and scannability.
@@ -180,7 +204,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Put declarations in alphabetical order</h2>
+            <h2 class="sub-title" id="OWC015"><span class="rule-item">OWC015 </span> Put declarations in alphabetical order</h2>
             <p>
                 The purpose of this action is to achieve consistent code in a way that is easy to remember and maintain.
                 Ignore vendor-specific prefixes for sorting purposes.
@@ -199,7 +223,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Indent all blocks</h2>
+            <h2 class="sub-title" id="OWC016"><span class="rule-item">OWC016 </span> Indent all blocks</h2>
             <p>
                 To reflect hierarchy and improve understanding.
             </p>
@@ -219,7 +243,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Use a semicolon after every declaration</h2>
+            <h2 class="sub-title" id="OWC017"><span class="rule-item">OWC017 </span> Use a semicolon after every declaration</h2>
             <p>
                 End every declaration with a semicolon for consistency and extensibility reasons.
             </p>
@@ -241,7 +265,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Always use a single space between property and value (but no space between property and colon)</h2>
+            <h2 class="sub-title" id="OWC018"><span class="rule-item">OWC018 </span> Always use a single space between property and value (but no space between property and colon)</h2>
             <div class="example-code">
                 <pre class="text-danger">
                     /* Not recommended */
@@ -258,7 +282,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Use a space between the last selector and the declaration block</h2>
+            <h2 class="sub-title" id="OWC019"><span class="rule-item">OWC019 </span> Use a space between the last selector and the declaration block</h2>
             <p>
                 Always use a single space between the last selector and the opening brace that begins the declaration block.
                 The opening brace should be on the same line as the last selector in a given rule.
@@ -284,7 +308,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Always put a blank line between rules</h2>
+            <h2 class="sub-title" id="OWC020"><span class="rule-item">OWC020 </span> Always put a blank line between rules</h2>
             <div class="example-code">
                 <pre class="text-success">
                     /* Recommended */
@@ -299,7 +323,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">Use single quotation marks for attribute selectors and property values. Exception: If you do need to use the <code>@@charset</code> rule, use double quotation marks</h2>
+            <h2 class="sub-title" id="OWC021"><span class="rule-item">OWC021 </span> Use single quotation marks for attribute selectors and property values. Exception: If you do need to use the <code>@@charset</code> rule, use double quotation marks</h2>
             <div class="example-code">
                 <pre class="text-danger">
                     /* Not recommended */
@@ -318,7 +342,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title">If possible, group stylesheet sections together by using comments. Separate sections with new lines.</h2>
+            <h2 class="sub-title" id="OWC022"><span class="rule-item">OWC022 </span> If possible, group stylesheet sections together by using comments. Separate sections with new lines.</h2>
             <div class="example-code">
                 <pre class="text-success">
                     /********************************************************/
@@ -344,7 +368,7 @@
                 </pre>
             </div>
         </li>
-    </ol>
+    </ul>
 </div>
 @section scripts
 {

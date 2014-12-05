@@ -7,9 +7,16 @@
 }
 
 <div class="col-sm-12" id="doc-content">
+    <ul class="rule-list">
+        <li><a href="#" class="link-sub-title" code="OW7000">OW7000 Consider using <small>Any()</small> to determine whether an <small>IEnumerable&lt;T&gt;</small> is empty</a></li>
+        <li><a href="#" class="link-sub-title" code="OW7001">OW7001 Only use <small>async</small> for low-intensive long-running activities</a></li>
+        <li><a href="#" class="link-sub-title" code="OW7002">OW7002 Prefer <small>Task.Run</small> for CPU intensive activities</a></li>
+        <li><a href="#" class="link-sub-title" code="OW7003">OW7003 Beware of mixing up <small>await/async</small> with <small>Task.Wait</small></a></li>
+        <li><a href="#" class="link-sub-title" code="OW7004">OW7004 Beware of <small>async/await</small> deadlocks in single-threaded environments</a></li>
+    </ul>
     <ul class="rules unordered">
         <li>
-            <h2 class="sub-title first"><span class="rule-item">OW7000 </span> Consider using <small>Any()</small> to determine whether an <small>IEnumerable&lt;T&gt;</small> is empty <span class="lbl-importance">*</span></h2>
+            <h2 class="sub-title first" id="OW7000"><span class="rule-item">OW7000 </span> Consider using <small>Any()</small> to determine whether an <small>IEnumerable&lt;T&gt;</small> is empty <span class="lbl-importance">*</span></h2>
             <p>
                 When a method or other member returns an IEnumerable&lt;T&gt; or other collection class that does not expose a Count property, 
                 use the <i>Any()</i> extension method rather than <i>Count()</i> to determine whether the collection contains items. If you do use <i>Count()</i>, 
@@ -27,7 +34,7 @@
             </div>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW7001 </span> Only use <small>async</small>  for low-intensive long-running activities</h2>
+            <h2 class="sub-title" id="OW7001"><span class="rule-item">OW7001 </span> Only use <small>async</small>  for low-intensive long-running activities</h2>
             <p>
                 The usage of <i>async</i> won’t auto magically run something on a worker thread like <i>Task.Run</i> does. 
                 It just adds the necessary logic to allow releasing the current thread and marshal the result back on that same thread if a long-running asynchronies operation has completed. 
@@ -35,21 +42,21 @@
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW7002 </span> Prefer <small>Task.Run</small> for CPU intensive activities</h2>
+            <h2 class="sub-title" id="OW7002"><span class="rule-item">OW7002 </span> Prefer <small>Task.Run</small> for CPU intensive activities</h2>
             <p>
                 If you do need to execute a CPU bound operation, use <i>Task.Run</i> to offload the work to a thread from the Thread Pool. <br />
                 Just don’t forget that you have to marshal the result back to your main thread manually.
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW7003 </span> Beware of mixing up <small>await/async</small> with <small>Task.Wait</small></h2>
+            <h2 class="sub-title" id="OW7003"><span class="rule-item">OW7003 </span> Beware of mixing up <small>await/async</small> with <small>Task.Wait</small></h2>
             <p>
                 <i>Await</i> not block the current thread but simply instruct to compiler to generate a state-machine. However,
                 <i>Task.Wait</i> will block the thread and may even cause dead-locks (see <span class="text-info">OW7004</span>)
             </p>
         </li>
         <li>
-            <h2 class="sub-title"><span class="rule-item">OW7004 </span> Beware of <small>async/await</small> deadlocks in single-threaded environments</h2>
+            <h2 class="sub-title" id="OW7004"><span class="rule-item">OW7004 </span> Beware of <small>async/await</small> deadlocks in single-threaded environments</h2>
             <div class="example-code">
                 <pre class="brush: csharp">
                     private async Task&lt;string&gt; GetDataAsync()
