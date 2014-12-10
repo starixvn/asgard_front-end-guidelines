@@ -23,7 +23,7 @@
         {
             <div class="left-panel">
                 <ul class="sub-menu list-unstyled">
-                    @foreach (var menuItem in leftMenuViewModel.MenuItems)
+                    @foreach (KeyValuePair<string, Tuple<string, bool>> menuItem in leftMenuViewModel.MenuItems)
                     {
                         string cssClasses = leftMenuViewModel.ActiveMenu == menuItem.Key ? "active" : string.Empty;
 
@@ -31,12 +31,19 @@
                         cssClasses += " withripple";
 
                         <li>
-                            @Html.ActionLink(
-                                    menuItem.Value.Item1,
-                                     leftMenuViewModel.ActionName,
-                                     leftMenuViewModel.ControllerName,
-                                    new { viewName = menuItem.Key },
-                                    new { @class = cssClasses })
+                            @if (menuItem.Key == "DataTable")
+                            {
+                                <a href="http://116.193.67.120/fanexgrid" target="_blank">@menuItem.Value.Item1</a>
+                            }
+                            else
+                            {
+                                @Html.ActionLink(
+                                        menuItem.Value.Item1,
+                                         leftMenuViewModel.ActionName,
+                                         leftMenuViewModel.ControllerName,
+                                        new { viewName = menuItem.Key },
+                                        new { @class = cssClasses })
+                            }
                         </li>
                     }
                     @*<li><a href="http://10.18.200.209:8823/" target="_blank">Grid</a></li>*@

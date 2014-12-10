@@ -136,6 +136,7 @@ namespace ONEbook.FrontEndGuidelines.Controllers
             leftMenuItems.Add("Progress", Tuple.Create<string, bool>("Progress", true));
             leftMenuItems.Add("Breadcrumb", Tuple.Create<string, bool>("Breadcrumb", true));
             leftMenuItems.Add("BlockUI", Tuple.Create<string, bool>("Block UI", true));
+            leftMenuItems.Add("DataTable", Tuple.Create<string, bool>("Data Table", true));
             leftMenuItems.Add("Form", Tuple.Create<string, bool>("Form (with validation)", true));
 
             leftMenuItems = leftMenuItems
